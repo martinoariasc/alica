@@ -51,30 +51,14 @@ export default function Header() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <Heart
+                        <img
+                            src="/logo.svg"
+                            alt="Alica Bebés"
                             className={cn(
-                                'w-6 h-6 transition-colors duration-300 fill-current',
-                                isScrolled
-                                    ? 'text-rose-deep'
-                                    : 'text-white'
+                                "h-12 w-auto transition-all duration-300",
+                                isScrolled ? "brightness-100" : "brightness-[100] drop-shadow-md"
                             )}
                         />
-                        <span
-                            className={cn(
-                                'font-heading text-2xl font-semibold tracking-wide transition-colors duration-300',
-                                isScrolled ? 'text-charcoal' : 'text-white'
-                            )}
-                        >
-                            Alica
-                        </span>
-                        <span
-                            className={cn(
-                                'font-body text-[10px] uppercase tracking-[3px] mt-1 transition-colors duration-300',
-                                isScrolled ? 'text-muted' : 'text-white/70'
-                            )}
-                        >
-                            bebés
-                        </span>
                     </Link>
 
                     {/* Desktop Nav */}
@@ -150,10 +134,7 @@ export default function Header() {
                         >
                             <div className="flex items-center justify-between p-6 border-b border-border">
                                 <div className="flex items-center gap-2">
-                                    <Heart className="w-5 h-5 text-rose-deep fill-current" />
-                                    <span className="font-heading text-xl font-semibold text-charcoal">
-                                        Alica
-                                    </span>
+                                    <img src="/logo.svg" alt="Alica" className="h-10 w-auto" />
                                 </div>
                                 <button
                                     onClick={() => setIsMobileOpen(false)}

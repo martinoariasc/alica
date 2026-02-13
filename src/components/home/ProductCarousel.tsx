@@ -41,25 +41,27 @@ export default function ProductCarousel() {
                     >
                         {featured.map((product) => (
                             <SwiperSlide key={product.slug}>
-                                <Link href={`/producto/${product.slug}`} className="block group">
-                                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                                <Link href={`/producto/${product.slug}`} className="block group h-full">
+                                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
                                         {/* Product Image */}
-                                        <div className="aspect-square bg-gradient-to-br from-rose-light/30 to-cream relative overflow-hidden">
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="font-heading text-6xl text-rose/30">🍼</span>
-                                            </div>
+                                        <div className="aspect-square relative overflow-hidden bg-bg-warm">
+                                            <img
+                                                src={product.images[0]}
+                                                alt={product.name}
+                                                className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+                                            />
                                             {/* Sale Badge */}
-                                            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-rose-deep text-white text-xs font-medium">
+                                            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-rose-deep text-white text-xs font-medium z-10">
                                                 -30%
                                             </div>
                                         </div>
 
                                         {/* Product Info */}
-                                        <div className="p-5">
+                                        <div className="p-5 flex-1 flex flex-col">
                                             <span className="text-xs font-body uppercase tracking-widest text-rose-deep mb-1 block">
                                                 {product.category}
                                             </span>
-                                            <h3 className="font-heading text-lg font-semibold text-charcoal mb-2 group-hover:text-rose-deep transition-colors">
+                                            <h3 className="font-heading text-lg font-semibold text-charcoal mb-2 group-hover:text-rose-deep transition-colors line-clamp-1">
                                                 {product.name}
                                             </h3>
                                             <p className="text-xs text-muted mb-3 line-clamp-2">

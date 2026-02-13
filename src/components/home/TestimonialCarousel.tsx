@@ -52,11 +52,13 @@ export default function TestimonialCarousel() {
                                     </p>
 
                                     {/* Author */}
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-10 h-10 rounded-full bg-rose-light flex items-center justify-center">
-                                            <span className="text-rose-deep font-heading font-semibold text-sm">
-                                                {t.name.charAt(0)}
-                                            </span>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-light/50 bg-bg-warm">
+                                            <img
+                                                src={t.image}
+                                                alt={t.name}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
                                         <div>
                                             <p className="font-medium text-charcoal text-sm">

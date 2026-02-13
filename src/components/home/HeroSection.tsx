@@ -58,11 +58,11 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                        className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-6"
+                        className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-6 drop-shadow-lg"
                     >
                         Zapatitos hechos con amor
                         <br />
-                        <span className="text-rose-light">para los primeros pasos</span>
+                        <span className="text-rose-light drop-shadow-md">para los primeros pasos</span>
                         <br />
                         de tu bebé
                     </motion.h1>

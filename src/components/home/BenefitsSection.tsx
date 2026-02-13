@@ -49,8 +49,8 @@ export default function BenefitsSection() {
                         return (
                             <AnimatedSection key={benefit.title} delay={i * 0.1}>
                                 <div className="text-center group">
-                                    <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-rose-light/50 flex items-center justify-center group-hover:bg-rose-light group-hover:scale-110 transition-all duration-500">
-                                        <Icon className="w-7 h-7 text-rose-deep" />
+                                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-rose-light/30 flex items-center justify-center group-hover:bg-rose-light group-hover:scale-110 transition-all duration-500 shadow-sm">
+                                        <Icon className="w-9 h-9 text-rose-deep" />
                                     </div>
                                     <h3 className="font-heading text-lg font-semibold text-charcoal mb-2">
                                         {benefit.title}
