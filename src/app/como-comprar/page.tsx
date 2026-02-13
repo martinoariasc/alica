@@ -1,0 +1,116 @@
+import { Metadata } from 'next';
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionTitle from '@/components/ui/SectionTitle';
+import Button from '@/components/ui/Button';
+import { buildWhatsAppURL } from '@/lib/utils';
+import { ShoppingBag, MessageCircle, CreditCard, Hammer, Truck } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Cómo Comprar',
+    description:
+        'Conocé el proceso de compra en Alica Bebés. Elegí tu producto, coordinamos por WhatsApp, y recibí tus zapatitos artesanales.',
+};
+
+const steps = [
+    {
+        icon: ShoppingBag,
+        number: '01',
+        title: 'Elegí tu producto',
+        description: 'Explorá nuestra tienda y elegí los zapatitos o accesorios que más te gusten.',
+    },
+    {
+        icon: MessageCircle,
+        number: '02',
+        title: 'Contactanos por WhatsApp',
+        description: 'Escribinos y te asesoramos sobre talles, colores y disponibilidad.',
+    },
+    {
+        icon: CreditCard,
+        number: '03',
+        title: 'Pagá el 50% de seña',
+        description: 'Confirmá tu pedido con un depósito del 50%. Aceptamos transferencias.',
+    },
+    {
+        icon: Hammer,
+        number: '04',
+        title: 'Producción artesanal',
+        description: 'Hacemos tu pedido a mano con dedicación. Tarda entre 3 a 7 días hábiles.',
+    },
+    {
+        icon: Truck,
+        number: '05',
+        title: 'Entrega',
+        description: 'Te enviamos tu pedido a cualquier parte de Paraguay. ¡Listo para usar!',
+    },
+];
+
+export default function ComoComprarPage() {
+    return (
+        <>
+            {/* Hero */}
+            <section className="pt-32 pb-16 bg-gradient-to-b from-rose-light/30 to-bg">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+                    <AnimatedSection>
+                        <SectionTitle
+                            title="¿Cómo Comprar?"
+                            subtitle="Es muy fácil. Solo 5 pasos para tener los zapatitos de tu bebé."
+                        />
+                    </AnimatedSection>
+                </div>
+            </section>
+
+            {/* Steps */}
+            <section className="pb-20 bg-bg">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6">
+                    <div className="space-y-8">
+                        {steps.map((step, i) => {
+                            const Icon = step.icon;
+                            return (
+                                <AnimatedSection key={i} delay={i * 0.1}>
+                                    <div className="flex gap-6 items-start bg-white rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                                        <div className="flex-shrink-0">
+                                            <div className="w-16 h-16 rounded-2xl bg-rose-light/50 flex items-center justify-center relative">
+                                                <Icon className="w-7 h-7 text-rose-deep" />
+                                                <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-rose-deep text-white text-xs flex items-center justify-center font-bold">
+                                                    {step.number}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-heading text-xl font-semibold text-charcoal mb-2">
+                                                {step.title}
+                                            </h3>
+                                            <p className="text-muted leading-relaxed">
+                                                {step.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </AnimatedSection>
+                            );
+                        })}
+                    </div>
+
+                    {/* CTA */}
+                    <AnimatedSection className="text-center mt-16">
+                        <h3 className="font-heading text-2xl font-semibold text-charcoal mb-4">
+                            ¿Lista para empezar?
+                        </h3>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button href="/shop" variant="primary" size="lg">
+                                Ver productos
+                            </Button>
+                            <Button
+                                href={buildWhatsAppURL('¡Hola! Quiero hacer mi pedido 🍼')}
+                                variant="whatsapp"
+                                size="lg"
+                                external
+                            >
+                                Escribir por WhatsApp
+                            </Button>
+                        </div>
+                    </AnimatedSection>
+                </div>
+            </section>
+        </>
+    );
+}

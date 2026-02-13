@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Alica Bebes Design Tokens ── */
+:root {
+  --alica-rose: #F4C2C2;
+  --alica-rose-deep: #E8A0A0;
+  --alica-rose-light: #FBE4E4;
+  --alica-cream: #FFF8F0;
+  --alica-cream-dark: #F5E6D3;
+  --alica-gold: #C9A96E;
+  --alica-gold-light: #DFC9A0;
+  --alica-charcoal: #3D3D3D;
+  --alica-muted: #8B8B8B;
+  --alica-bg: #FEFEFE;
+  --alica-bg-warm: #FBF7F4;
+  --alica-white: #FFFFFF;
+  --alica-border: #F0E8E0;
+}
+
+@theme inline {
+  --color-rose: var(--alica-rose);
+  --color-rose-deep: var(--alica-rose-deep);
+  --color-rose-light: var(--alica-rose-light);
+  --color-cream: var(--alica-cream);
+  --color-cream-dark: var(--alica-cream-dark);
+  --color-gold: var(--alica-gold);
+  --color-gold-light: var(--alica-gold-light);
+  --color-charcoal: var(--alica-charcoal);
+  --color-muted: var(--alica-muted);
+  --color-bg: var(--alica-bg);
+  --color-bg-warm: var(--alica-bg-warm);
+  --color-border: var(--alica-border);
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ── Base Styles ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--alica-bg);
+  color: var(--alica-charcoal);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--alica-charcoal);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--alica-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--alica-rose);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--alica-rose-deep);
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--alica-rose-light);
+  color: var(--alica-charcoal);
+}
+
+/* ── Swiper Custom ── */
+.swiper-pagination-bullet {
+  background: var(--alica-rose) !important;
+  opacity: 0.4 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--alica-rose-deep) !important;
+  opacity: 1 !important;
+}
+
+/* ── Animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* ── Video Hero ── */
+.hero-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ── Glass Effect ── */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--alica-rose-deep), var(--alica-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
