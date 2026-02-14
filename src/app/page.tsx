@@ -6,6 +6,7 @@ import BenefitsSection from '@/components/home/BenefitsSection'; // Renamed conc
 import PolaroidTestimonials from '@/components/home/PolaroidTestimonials';
 import GiftExperience from '@/components/home/GiftExperience';
 import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
+import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
 import FinalCTA from '@/components/home/FinalCTA';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <StorySection />
       <SplitCategory />
       <ProductCarousel />
+      <SecondaryHeroSection /> {/* Sensory Break */}
       <GiftExperience />
       <BenefitsSection />
       <PolaroidTestimonials />

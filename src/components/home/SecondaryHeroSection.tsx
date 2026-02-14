@@ -28,31 +28,33 @@ export default function SecondaryHeroSection() {
                         <source src="/videos/hero-2.mp4" type="video/mp4" />
                     </video>
                 </motion.div>
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-charcoal/20 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-black/10" />
+                {/* Overlay - Lighter for soft luxury feel */}
+                <div className="absolute inset-0 bg-white/10 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-black/5" />
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
                 >
-                    <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mb-6 drop-shadow-md">
-                        Comodidad que se siente
+                    <h2 className="font-heading text-4xl md:text-5xl lg:text-7xl text-white mb-8 drop-shadow-md italic">
+                        Suavidad que abraza
                     </h2>
-                    <p className="font-body text-lg md:text-xl text-white/90 font-light mb-10 max-w-2xl mx-auto drop-shadow-sm">
-                        Materiales tan suaves que tu bebé ni notará que los lleva puestos.
+                    <p className="font-body text-lg md:text-2xl text-white font-light mb-12 max-w-3xl mx-auto drop-shadow-sm leading-relaxed">
+                        Materiales tan nobles que se sienten como una segunda piel.
+                        <br className="hidden md:block" />
+                        Porque sus primeros movimientos merecen libertad absoluta.
                     </p>
                     <Button
                         href="/shop"
                         variant="primary"
-                        className="!bg-white !text-charcoal hover:!bg-cream shadow-xl"
+                        className="!bg-white/90 !text-charcoal hover:!bg-white shadow-xl backdrop-blur-sm px-10 py-4 text-lg"
                     >
-                        Descubrir Modelos
+                        Sentir la Diferencia
                     </Button>
                 </motion.div>
             </div>
