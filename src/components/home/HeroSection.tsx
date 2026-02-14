@@ -60,7 +60,7 @@ export default function HeroSection() {
                     <br />
                     <span className="italic">duran un suspiro...</span>
                     <br />
-                    <span className="text-white" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>
+                    <span className="text-[#f5e6d3]" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>
                         hacelos eternos.
                     </span>
                 </motion.h1>
