@@ -38,11 +38,11 @@ export default function TrustSection() {
                         const Icon = item.icon;
                         return (
                             <AnimatedSection key={i} delay={i * 0.15}>
-                                <div className="flex flex-col items-center gap-4 p-6">
-                                    <div className="w-14 h-14 rounded-2xl bg-rose-light/50 flex items-center justify-center">
-                                        <Icon className="w-6 h-6 text-rose-deep" />
+                                <div className="flex flex-col items-center gap-4 p-6 hover:-translate-y-1 transition-transform duration-300">
+                                    <div className="w-16 h-16 rounded-full bg-rose-light/30 flex items-center justify-center mb-2">
+                                        <Icon className="w-7 h-7 text-rose-deep" />
                                     </div>
-                                    <p className="font-body text-charcoal/80 text-sm leading-relaxed">
+                                    <p className="font-body text-charcoal/70 text-sm leading-relaxed max-w-xs">
                                         {item.text}
                                     </p>
                                 </div>
