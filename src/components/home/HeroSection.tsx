@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
 import { useRef } from 'react';
 
 export default function HeroSection() {
-    const ref = useRef(null);
+    const ref = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ['start start', 'end start'],
@@ -27,10 +27,10 @@ export default function HeroSection() {
                         backgroundImage: `url('https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop')`
                     }}
                 />
-                {/* Overlays for readability */}
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+                {/* Overlays for readability - Softened for "Tender" aesthetic */}
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
             </motion.div>
 
             {/* Content */}
