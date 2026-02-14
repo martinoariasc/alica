@@ -11,13 +11,14 @@ export default function HeroSection() {
         offset: ['start start', 'end start'],
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+    const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+    const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
     return (
         <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-            {/* Video Background */}
-            <div className="absolute inset-0 z-0">
+            {/* Video Background with Parallax */}
+            <motion.div className="absolute inset-0 z-0" style={{ scale }}>
                 <video
                     autoPlay
                     loop
@@ -28,20 +29,24 @@ export default function HeroSection() {
                 >
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
-                {/* Overlays for readability - Lighter for natural look but keeping text legible */}
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
-            </div>
+                {/* Cinematic Overlays */}
+                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+            </motion.div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <motion.div
+                className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
+                style={{ y, opacity }}
+            >
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
                 >
-                    <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-md text-white font-medium text-xs md:text-sm tracking-[0.2em] uppercase mb-8 border border-white/20 shadow-lg">
-                        Confección bajo pedido · 100% Artesanal
+                    <span className="inline-block px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md text-white font-medium text-xs md:text-sm tracking-[0.2em] uppercase mb-8 border border-white/20 shadow-lg">
+                        100% Artesanal · Confección bajo pedido
                     </span>
                 </motion.div>
 
@@ -49,12 +54,14 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8 drop-shadow-lg"
+                    className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6 drop-shadow-lg"
                     style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}
                 >
-                    No son solo <span className="italic font-light">zapatos</span>
+                    No vendemos <span className="italic font-light">zapatitos</span>
                     <br />
-                    <span className="text-rose-light" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>es el inicio de su historia</span>
+                    <span className="text-rose-light" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>
+                        vendemos recuerdos eternos
+                    </span>
                 </motion.h1>
 
                 <motion.p
@@ -63,7 +70,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
                     className="font-body text-base md:text-xl text-white/90 font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md tracking-wide"
                 >
-                    Diseñados para abrazar sus primeros pasos con la suavidad de un recuerdo eterno.
+                    Diseñados para abrazar sus primeros pasos con la suavidad que solo el amor artesanal puede dar.
                 </motion.p>
 
                 <motion.div
@@ -78,18 +85,18 @@ export default function HeroSection() {
                         size="lg"
                         className="!bg-rose-deep !text-white hover:!bg-rose hover:!scale-105 min-w-[220px] shadow-xl shadow-rose-deep/20"
                     >
-                        Ver colección
+                        Descubrir la colección
                     </Button>
                     <Button
-                        href="/como-comprar"
+                        href="/regalo"
                         variant="outline"
                         size="lg"
                         className="!border-white !text-white hover:!bg-white hover:!text-charcoal min-w-[220px] backdrop-blur-sm"
                     >
-                        ¿Cómo comprar?
+                        🎁 Regalar un recuerdo
                     </Button>
                 </motion.div>
-            </div>
+            </motion.div>
 
             {/* Scroll Indicator */}
             <motion.div
@@ -99,7 +106,7 @@ export default function HeroSection() {
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
             >
                 <span className="text-white/60 text-[10px] font-body tracking-[0.2em] uppercase">
-                    Descubre más
+                    Descubrí más
                 </span>
                 <motion.div
                     animate={{ y: [0, 8, 0] }}

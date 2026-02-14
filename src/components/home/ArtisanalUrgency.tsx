@@ -1,23 +1,43 @@
 'use client';
 
-import AnimatedSection from '@/components/ui/AnimatedSection';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const tickerItems = [
+    '⏳ Slow Fashion',
+    '✋ Solo 15 pares por semana',
+    '🤍 100% Artesanal',
+    '🧵 Cosido a mano',
+    '📦 Envío a todo Paraguay',
+    '🎁 Empaque de regalo premium',
+    '🍼 Suela blanda certificada',
+    '💛 Hecho con amor de mamá',
+];
 
 export default function ArtisanalUrgency() {
+    const duplicatedItems = [...tickerItems, ...tickerItems, ...tickerItems];
+
     return (
-        <section className="py-8 bg-charcoal text-white text-center overflow-hidden relative">
-            <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 pointer-events-none"></div>
-            <div className="max-w-4xl mx-auto px-4">
-                <AnimatedSection>
-                    <p className="font-heading text-lg md:text-xl tracking-wide font-light">
-                        ⏳ <span className="italic mx-2">Slow Fashion:</span>
-                        Confeccionamos pocos pares por semana para asegurar la perfección.
-                        <Link href="/shop" className="underline underline-offset-4 decoration-gold hover:text-gold transition-colors ml-2 font-medium">
-                            ¿Reservamos el tuyo hoy?
-                        </Link>
-                    </p>
-                </AnimatedSection>
-            </div>
+        <section className="py-4 bg-charcoal text-white overflow-hidden relative">
+            <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 pointer-events-none" />
+            <motion.div
+                className="flex whitespace-nowrap gap-8"
+                animate={{ x: ['0%', '-33.33%'] }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 30,
+                    ease: 'linear',
+                }}
+            >
+                {duplicatedItems.map((item, i) => (
+                    <span
+                        key={i}
+                        className="font-heading text-sm md:text-base tracking-wide font-light flex-shrink-0 flex items-center gap-2"
+                    >
+                        <span>{item}</span>
+                        <span className="text-gold/60 text-xs">✦</span>
+                    </span>
+                ))}
+            </motion.div>
         </section>
     );
 }

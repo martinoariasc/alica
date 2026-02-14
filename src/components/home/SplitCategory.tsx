@@ -1,61 +1,75 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import Image from 'next/image';
 
 export default function SplitCategory() {
     return (
         <section className="w-full min-h-[80vh] flex flex-col md:flex-row overflow-hidden">
             {/* Pequeños Marineros (Niños) */}
-            <div className="flex-1 relative group h-[50vh] md:h-auto overflow-hidden">
-                <div className="absolute inset-0 bg-blue-soft transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-
-                {/* Background Image Placeholder (Optional) */}
-                {/* <div className="absolute inset-0 bg-[url('/images/boy-bg.jpg')] bg-cover bg-center opacity-0 group-hover:opacity-40 transition-opacity duration-700" /> */}
+            <div className="flex-1 relative group h-[50vh] md:h-auto overflow-hidden cursor-pointer">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                    <Image
+                        src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2674&auto=format&fit=crop"
+                        alt="Zapatitos para nenes"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-blue-soft/60" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                 <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
                     <AnimatedSection>
-                        <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-4 italic">
+                        <span className="inline-block text-5xl mb-4">👦</span>
+                        <h3 className="font-heading text-3xl md:text-5xl text-white mb-3 italic drop-shadow-lg">
                             Pequeños Marineros
                         </h3>
-                        <p className="font-body text-charcoal/80 text-lg mb-8 max-w-sm mx-auto">
+                        <p className="font-body text-white/90 text-lg mb-8 max-w-sm mx-auto drop-shadow-md">
                             Grandes aventuras comienzan con un paso firme y seguro.
                         </p>
                         <Button
-                            href="/shop?category=niños"
+                            href="/shop?gender=nene"
                             variant="outline"
-                            className="!border-charcoal !text-charcoal hover:!bg-charcoal hover:!text-white backdrop-blur-sm"
+                            className="!border-white !text-white hover:!bg-white hover:!text-charcoal backdrop-blur-sm"
                         >
-                            Explorar Mundo
+                            Explorar colección
                         </Button>
                     </AnimatedSection>
                 </div>
             </div>
 
             {/* Pequeñas Princesas (Niñas) */}
-            <div className="flex-1 relative group h-[50vh] md:h-auto overflow-hidden">
-                <div className="absolute inset-0 bg-pink-soft transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-
-                {/* Background Image Placeholder (Optional) */}
-                {/* <div className="absolute inset-0 bg-[url('/images/girl-bg.jpg')] bg-cover bg-center opacity-0 group-hover:opacity-40 transition-opacity duration-700" /> */}
+            <div className="flex-1 relative group h-[50vh] md:h-auto overflow-hidden cursor-pointer">
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                    <Image
+                        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=2669&auto=format&fit=crop"
+                        alt="Zapatitos para nenas"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-pink-soft/50" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                 <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
                     <AnimatedSection delay={0.2}>
-                        <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-4 italic">
+                        <span className="inline-block text-5xl mb-4">👧</span>
+                        <h3 className="font-heading text-3xl md:text-5xl text-white mb-3 italic drop-shadow-lg">
                             Pequeñas Princesas
                         </h3>
-                        <p className="font-body text-charcoal/80 text-lg mb-8 max-w-sm mx-auto">
+                        <p className="font-body text-white/90 text-lg mb-8 max-w-sm mx-auto drop-shadow-md">
                             Primeros sueños envueltos en dulzura y protección.
                         </p>
                         <Button
-                            href="/shop?category=niñas"
+                            href="/shop?gender=nena"
                             variant="outline"
-                            className="!border-charcoal !text-charcoal hover:!bg-charcoal hover:!text-white backdrop-blur-sm"
+                            className="!border-white !text-white hover:!bg-white hover:!text-charcoal backdrop-blur-sm"
                         >
-                            Ver Cuento de Hadas
+                            Ver colección
                         </Button>
                     </AnimatedSection>
                 </div>

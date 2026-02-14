@@ -10,8 +10,7 @@ const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/shop', label: 'Tienda' },
     { href: '/nosotros', label: 'Nosotros' },
-    { href: '/como-comprar', label: 'Cómo Comprar' },
-    { href: '/testimonios', label: 'Testimonios' },
+    { href: '/regalo', label: '🎁 Regalo' },
     { href: '/contacto', label: 'Contacto' },
 ];
 

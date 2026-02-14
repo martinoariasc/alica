@@ -2,35 +2,62 @@
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
-import { Gift } from 'lucide-react';
+import { Gift, Heart, Star, Package } from 'lucide-react';
+
+const reasons = [
+    { icon: Gift, text: 'Caja de regalo artesanal incluida' },
+    { icon: Heart, text: 'Tarjeta con mensaje personalizado' },
+    { icon: Star, text: 'Empaque perfumado con aroma a bebé' },
+    { icon: Package, text: 'Envío rápido a todo Paraguay' },
+];
 
 export default function GiftExperience() {
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <div className="relative rounded-[3rem] overflow-hidden bg-bg-warm px-6 py-20 md:p-24 text-center">
+                <div className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-bg-warm to-rose-light/20 px-6 py-20 md:p-24 text-center">
                     {/* Decorative Elements */}
-                    <div className="absolute top-0 left-0 w-64 h-64 bg-pink-soft/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
-                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-soft/30 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
+                    <div className="absolute top-0 left-0 w-64 h-64 bg-pink-soft/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-soft/30 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+                    <div className="absolute top-20 right-20 w-32 h-32 bg-gold/10 rounded-full blur-[60px]" />
 
                     <AnimatedSection>
-                        <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-8 shadow-sm text-gold">
-                            <Gift className="w-8 h-8" />
-                        </div>
-                        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mb-8">
-                            El regalo que recordarán<br /> <span className="italic text-muted">para siempre</span>
+                        <span className="inline-block text-6xl mb-6">🎁</span>
+                        <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-charcoal mb-4 leading-tight">
+                            ¿No sabés qué regalar?
                         </h2>
-                        <p className="font-body text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto leading-relaxed mb-12">
-                            Cada par llega en una caja artesanal, envuelto en papel de seda y con aroma a bebé.
-                            Porque abrir un paquete de Alica debería sentirse como un abrazo.
+                        <p className="font-heading text-2xl md:text-3xl text-rose-deep italic mb-8">
+                            Regalá un recuerdo.
                         </p>
+                        <p className="font-body text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto leading-relaxed mb-12">
+                            Abuelas, tías, padrinos... cada par de ALICA es un abrazo envuelto para regalo.
+                            Porque abrir un paquete de ALICA debería sentirse como recibir amor puro.
+                        </p>
+
+                        {/* Gift Features */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto">
+                            {reasons.map((reason, i) => {
+                                const Icon = reason.icon;
+                                return (
+                                    <AnimatedSection key={i} delay={i * 0.1}>
+                                        <div className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/60 backdrop-blur-sm">
+                                            <div className="w-10 h-10 rounded-full bg-rose-light/50 flex items-center justify-center">
+                                                <Icon className="w-5 h-5 text-rose-deep" />
+                                            </div>
+                                            <span className="text-xs text-charcoal/70 font-medium text-center">{reason.text}</span>
+                                        </div>
+                                    </AnimatedSection>
+                                );
+                            })}
+                        </div>
+
                         <Button
-                            href="/gift"
+                            href="/regalo"
                             variant="primary"
                             size="lg"
                             className="bg-charcoal text-white hover:bg-gold transition-colors shadow-2xl shadow-charcoal/20"
                         >
-                            Regalar Magia
+                            Ver opciones de regalo
                         </Button>
                     </AnimatedSection>
                 </div>

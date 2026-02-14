@@ -3,12 +3,13 @@
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { Heart, Shield, Footprints, Wind, HandHeart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const benefits = [
     {
         icon: Footprints,
         title: 'Pisadas Libres',
-        description: 'Diseño ergonómico que respeta la anatomía única de sus piecitos.',
+        description: 'Diseño ergonómico que respeta la anatomía única de sus piecitos en crecimiento.',
     },
     {
         icon: Shield,
@@ -18,17 +19,17 @@ const benefits = [
     {
         icon: Heart,
         title: 'Seguridad y Confort',
-        description: 'Suela de cuero antideslizante que protege sin quitar sensibilidad.',
+        description: 'Suela de cuero antideslizante que protege sin quitar sensibilidad al piso.',
     },
     {
         icon: Wind,
         title: 'Caricias para su Piel',
-        description: 'Materiales nobles y transpirables, 100% libres de plásticos.',
+        description: 'Materiales nobles y transpirables, 100% libres de plásticos y tóxicos.',
     },
     {
         icon: HandHeart,
-        title: 'Hecho a Mano',
-        description: 'Cada puntada lleva dedicación, tiempo y mucho amor de mamá.',
+        title: 'Hecho con Amor',
+        description: 'Cada puntada lleva 3 horas de dedicación, paciencia y mucho amor de mamá.',
     },
 ];
 
@@ -38,7 +39,7 @@ export default function BenefitsSection() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <AnimatedSection>
                     <SectionTitle
-                        title="¿Por qué Alica?"
+                        title="¿Por qué miles de mamás eligen ALICA?"
                         subtitle="Cada detalle importa cuando se trata de tu bebé"
                     />
                 </AnimatedSection>
@@ -48,17 +49,25 @@ export default function BenefitsSection() {
                         const Icon = benefit.icon;
                         return (
                             <AnimatedSection key={benefit.title} delay={i * 0.1}>
-                                <div className="text-center group">
-                                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-rose-light/30 flex items-center justify-center group-hover:bg-rose-light group-hover:scale-110 transition-all duration-500 shadow-sm">
+                                <motion.div
+                                    className="text-center group cursor-default"
+                                    whileHover={{ y: -8 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <motion.div
+                                        className="w-20 h-20 mx-auto mb-6 rounded-full bg-rose-light/30 flex items-center justify-center shadow-sm"
+                                        whileHover={{ scale: 1.15, backgroundColor: 'var(--alica-rose-light)' }}
+                                        transition={{ duration: 0.4 }}
+                                    >
                                         <Icon className="w-9 h-9 text-rose-deep" />
-                                    </div>
+                                    </motion.div>
                                     <h3 className="font-heading text-lg font-bold text-charcoal mb-2">
                                         {benefit.title}
                                     </h3>
-                                    <p className="font-body text-sm text-charcoal/90 leading-relaxed font-medium">
+                                    <p className="font-body text-sm text-charcoal/80 leading-relaxed">
                                         {benefit.description}
                                     </p>
-                                </div>
+                                </motion.div>
                             </AnimatedSection>
                         );
                     })}

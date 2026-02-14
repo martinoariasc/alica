@@ -5,9 +5,7 @@ import { buildWhatsAppURL } from '@/lib/utils';
 const footerLinks = [
     { href: '/shop', label: 'Tienda' },
     { href: '/nosotros', label: 'Nosotros' },
-    { href: '/como-comprar', label: 'Cómo Comprar' },
-    { href: '/testimonios', label: 'Testimonios' },
-    { href: '/ebook', label: 'Guía Gratis' },
+    { href: '/regalo', label: 'Regalos' },
     { href: '/contacto', label: 'Contacto' },
 ];
 
