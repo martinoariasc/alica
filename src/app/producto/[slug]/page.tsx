@@ -112,14 +112,14 @@ export default function ProductPage() {
                             </div>
 
                             {/* Production Time */}
-                            <div className="flex items-center gap-3 mb-8 p-4 rounded-2xl bg-cream/50 border border-border">
-                                <Clock className="w-5 h-5 text-gold" />
-                                <div>
-                                    <span className="text-sm font-medium text-charcoal">
-                                        Tiempo de producción:
+                            <div className="inline-flex items-center gap-3 mb-8 p-4 rounded-xl bg-orange-50 border border-orange-200 shadow-sm w-full sm:w-auto">
+                                <Clock className="w-6 h-6 text-orange-400" />
+                                <div className="flex flex-col">
+                                    <span className="text-xs font-bold text-orange-800 uppercase tracking-wider">
+                                        Confección Artesanal
                                     </span>
-                                    <span className="text-sm text-muted ml-2">
-                                        {product.productionTime}
+                                    <span className="text-sm text-orange-900/80 font-medium">
+                                        Tiempo de producción: {product.productionTime}
                                     </span>
                                 </div>
                             </div>

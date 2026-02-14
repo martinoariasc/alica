@@ -20,7 +20,7 @@ export default function ProductCarousel() {
                 <AnimatedSection>
                     <SectionTitle
                         title="Nuestra Colección"
-                        subtitle="Cada par es único, como tu bebé"
+                        subtitle="Sin stock. Confeccionamos cada par especialmente para vos."
                     />
                 </AnimatedSection>
 
@@ -57,17 +57,17 @@ export default function ProductCarousel() {
                                         </div>
 
                                         {/* Product Info */}
-                                        <div className="p-5 flex-1 flex flex-col">
-                                            <span className="text-xs font-body uppercase tracking-widest text-rose-deep mb-1 block">
+                                        <div className="p-5 flex-1 flex flex-col items-center text-center">
+                                            <span className="text-xs font-body uppercase tracking-[2px] text-rose-deep mb-2 block">
                                                 {product.category}
                                             </span>
-                                            <h3 className="font-heading text-lg font-semibold text-charcoal mb-2 group-hover:text-rose-deep transition-colors line-clamp-1">
+                                            <h3 className="font-heading text-xl font-semibold text-charcoal mb-2 group-hover:text-rose-deep transition-colors line-clamp-1">
                                                 {product.name}
                                             </h3>
-                                            <p className="text-xs text-muted mb-3 line-clamp-2">
+                                            <p className="text-xs text-muted mb-4 line-clamp-2 max-w-[200px] mx-auto">
                                                 {product.shortDescription}
                                             </p>
-                                            <div className="flex items-center gap-3">
+                                            <div className="flex items-center justify-center gap-3 mt-auto">
                                                 <span className="text-sm text-muted line-through">
                                                     {formatPrice(product.oldPrice)}
                                                 </span>

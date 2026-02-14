@@ -7,10 +7,12 @@ export default function ProblemSection() {
         <section className="py-20 md:py-28 bg-bg-warm">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
                 <AnimatedSection>
-                    <p className="font-heading text-xl md:text-2xl lg:text-3xl text-charcoal/50 leading-relaxed mb-10 font-light italic max-w-2xl mx-auto">
-                        &ldquo;La mayoría de los zapatitos son duros, calurosos y no
-                        respetan el desarrollo natural del pie...&rdquo;
-                    </p>
+                    <div className="relative">
+                        <p className="font-heading text-2xl md:text-3xl lg:text-4xl text-charcoal/90 leading-relaxed mb-10 font-normal max-w-3xl mx-auto">
+                            &ldquo;La mayoría de los zapatitos son duros, calurosos y no
+                            respetan el desarrollo natural del pie...&rdquo;
+                        </p>
+                    </div>
                 </AnimatedSection>
 
                 <AnimatedSection delay={0.3}>

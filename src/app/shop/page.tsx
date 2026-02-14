@@ -35,6 +35,17 @@ export default function ShopPage() {
             {/* Filters & Grid */}
             <section className="pb-20 bg-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+                    {/* Production Time Banner */}
+                    <AnimatedSection>
+                        <div className="bg-cream-dark/20 border border-cream-dark rounded-2xl p-4 mb-12 text-center max-w-2xl mx-auto">
+                            <p className="text-charcoal/80 text-sm md:text-base">
+                                ⏳ <strong>Importante:</strong> Todos nuestros zapatitos son hechos a mano bajo pedido.
+                                <span className="block sm:inline"> El tiempo de confección es de <strong>7 a 10 días hábiles</strong>.</span>
+                            </p>
+                        </div>
+                    </AnimatedSection>
+
                     {/* Filter Tabs */}
                     <AnimatedSection>
                         <div className="flex flex-wrap justify-center gap-3 mb-12">

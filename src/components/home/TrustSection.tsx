@@ -39,10 +39,10 @@ export default function TrustSection() {
                         return (
                             <AnimatedSection key={i} delay={i * 0.15}>
                                 <div className="flex flex-col items-center gap-4 p-6 hover:-translate-y-1 transition-transform duration-300">
-                                    <div className="w-16 h-16 rounded-full bg-rose-light/30 flex items-center justify-center mb-2">
+                                    <div className="w-16 h-16 rounded-full bg-rose-light flex items-center justify-center mb-2 shadow-sm">
                                         <Icon className="w-7 h-7 text-rose-deep" />
                                     </div>
-                                    <p className="font-body text-charcoal/70 text-sm leading-relaxed max-w-xs">
+                                    <p className="font-heading font-medium text-charcoal/90 text-sm md:text-base leading-relaxed max-w-xs">
                                         {item.text}
                                     </p>
                                 </div>

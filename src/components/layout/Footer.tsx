@@ -18,10 +18,10 @@ export default function Footer() {
             <div className="h-1 bg-gradient-to-r from-rose via-rose-deep to-gold" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                     {/* Brand */}
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2">
+                    <div className="space-y-4 flex flex-col items-center">
+                        <div className="flex items-center gap-2 justify-center">
                             <Heart className="w-5 h-5 text-rose fill-current" />
                             <span className="font-heading text-2xl font-semibold text-white">
                                 Alica
@@ -30,11 +30,11 @@ export default function Footer() {
                                 bebés
                             </span>
                         </div>
-                        <p className="text-sm leading-relaxed text-white/60 max-w-xs">
+                        <p className="text-sm leading-relaxed text-white/60 max-w-xs mx-auto">
                             Zapatitos artesanales de suela blanda, hechos con amor para los
                             primeros pasos de tu bebé.
                         </p>
-                        <div className="flex items-center gap-4 pt-2">
+                        <div className="flex items-center justify-center gap-4 pt-2">
                             {/* Instagram */}
                             <a
                                 href="https://instagram.com/alicabebes"
@@ -63,7 +63,7 @@ export default function Footer() {
                     </div>
 
                     {/* Links */}
-                    <div>
+                    <div className="flex flex-col items-center">
                         <h3 className="font-heading text-lg font-semibold text-white mb-6">
                             Navegación
                         </h3>
@@ -82,7 +82,7 @@ export default function Footer() {
                     </div>
 
                     {/* Contact */}
-                    <div>
+                    <div className="flex flex-col items-center">
                         <h3 className="font-heading text-lg font-semibold text-white mb-6">
                             Contacto
                         </h3>
@@ -106,10 +106,10 @@ export default function Footer() {
 
                 {/* Bottom */}
                 <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-white/40">
+                    <p className="text-xs text-white/40 text-center sm:text-left w-full">
                         © {new Date().getFullYear()} Alica Bebés. Todos los derechos reservados.
                     </p>
-                    <p className="text-xs text-white/40 flex items-center gap-1">
+                    <p className="text-xs text-white/40 flex items-center justify-center sm:justify-end gap-1 w-full">
                         Hecho con <Heart className="w-3 h-3 text-rose fill-current" /> en Paraguay
                     </p>
                 </div>

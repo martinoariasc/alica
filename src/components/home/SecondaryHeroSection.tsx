@@ -14,10 +14,10 @@ export default function SecondaryHeroSection() {
     const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
 
     return (
-        <section ref={ref} className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center my-20">
+        <section ref={ref} className="relative h-[50vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center my-12 md:my-24">
             {/* Parallax Video Background */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div style={{ y }} className="relative w-full h-[120%] -top-[10%]">
+                <motion.div style={{ y }} className="relative w-full h-[140%] -top-[20%]">
                     <video
                         autoPlay
                         loop

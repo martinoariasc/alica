@@ -28,9 +28,9 @@ export default function HeroSection() {
                 >
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
-                {/* Overlays for readability - Enhanced for "Premium" contrast */}
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+                {/* Overlays for readability - Darkened for better contrast with white text */}
+                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
             </div>
 
             {/* Content */}
@@ -40,8 +40,8 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
                 >
-                    <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-md text-white/90 text-xs md:text-sm font-body tracking-[0.2em] uppercase mb-8 border border-white/20 shadow-lg">
-                        Artesanal · Suave · Único
+                    <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-md text-white font-medium text-xs md:text-sm tracking-[0.2em] uppercase mb-8 border border-white/20 shadow-lg">
+                        Confección bajo pedido · 100% Artesanal
                     </span>
                 </motion.div>
 
@@ -49,21 +49,21 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8"
-                    style={{ textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}
+                    className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8"
+                    style={{ textShadow: '0 4px 30px rgba(0,0,0,0.5)' }}
                 >
                     Zapatitos hechos <span className="italic font-light">con amor</span>
                     <br />
-                    <span className="text-rose-light" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>para sus primeros pasos</span>
+                    <span className="text-rose-light" style={{ textShadow: '0 4px 30px rgba(0,0,0,0.5)' }}>para sus primeros pasos</span>
                 </motion.h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-body text-lg md:text-xl text-white/90 font-light mb-12 max-w-2xl mx-auto leading-relaxed"
+                    className="font-body text-base md:text-xl text-white/95 font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
                 >
-                    Diseñados para cuidar el desarrollo natural del pie de tu bebé,<br className="hidden md:block" /> con materiales suaves que abrazan cada movimiento.
+                    Sin stock, sin prisas. Cada par se confecciona exclusivamente para tu bebé,<br className="hidden md:block" /> cuidando cada detalle de su desarrollo.
                 </motion.p>
 
                 <motion.div
