@@ -30,8 +30,8 @@ export default function HeroSection() {
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic Overlays */}
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
             </motion.div>
 
             {/* Content */}
@@ -53,12 +53,12 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6 drop-shadow-2xl"
+                    className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-[1.05] mb-6 drop-shadow-2xl"
                     style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}
                 >
                     Sus primeros pasos
                     <br />
-                    <span className="italic font-light">duran un suspiro...</span>
+                    <span className="italic">duran un suspiro...</span>
                     <br />
                     <span className="text-white" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>
                         hacelos eternos.
@@ -69,7 +69,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-body text-base md:text-xl text-white font-light mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg tracking-wide"
+                    className="font-body text-base md:text-xl text-white font-light mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-xl tracking-wide"
                 >
                     Zapatitos artesanales de suela blanda que abrazan sus piecitos con la ternura que solo una mamá entiende.
                 </motion.p>

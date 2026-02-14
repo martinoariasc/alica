@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Italiana, Montserrat } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
-const playfair = Playfair_Display({
+const italiana = Italiana({
   variable: '--font-heading',
   subsets: ['latin'],
+  weight: '400',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
 });
 
-const inter = Inter({
+const montserrat = Montserrat({
   variable: '--font-body',
   subsets: ['latin'],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+      <body className={`${italiana.variable} ${montserrat.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

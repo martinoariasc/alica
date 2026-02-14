@@ -49,8 +49,8 @@
   --color-rose-deep: var(--alica-rose-deep);
   --color-rose-light: var(--alica-rose-light);
 
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Italiana', serif;
+  --font-body: 'Montserrat', sans-serif;
 
   /* Animation Utilities */
   --animate-float: float 6s ease-in-out infinite;
