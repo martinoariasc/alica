@@ -28,9 +28,9 @@ export default function HeroSection() {
                 >
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
-                {/* Overlays for readability - Darkened for better contrast with white text */}
-                <div className="absolute inset-0 bg-black/60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/50" />
+                {/* Overlays for readability - Lighter for natural look but keeping text legible */}
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
             </div>
 
             {/* Content */}

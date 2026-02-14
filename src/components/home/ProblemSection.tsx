@@ -8,10 +8,10 @@ export default function ProblemSection() {
             {/* Background Texture/Pattern (Optional - keeping it clean for now) */}
             <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 pointer-events-none"></div>
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
                 <AnimatedSection>
                     <div className="relative">
-                        <span className="block text-rose-light text-6xl font-heading opacity-30 absolute -top-10 left-1/2 -translate-x-1/2 select-none">
+                        <span className="block text-rose-light text-5xl md:text-6xl font-heading opacity-30 absolute -top-8 md:-top-10 left-1/2 -translate-x-1/2 select-none">
                             &ldquo;
                         </span>
                         <p className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-12 font-medium max-w-3xl mx-auto drop-shadow-md">
