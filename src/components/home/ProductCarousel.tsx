@@ -19,8 +19,8 @@ export default function ProductCarousel() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <AnimatedSection>
                     <SectionTitle
-                        title="Nuestra Colección"
-                        subtitle="Sin stock. Confeccionamos cada par especialmente para vos."
+                        title="Galería de Tesoros"
+                        subtitle="Piezas únicas llenas de magia para descubrir."
                     />
                 </AnimatedSection>
 

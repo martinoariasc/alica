@@ -1,26 +1,24 @@
 import HeroSection from '@/components/home/HeroSection';
-import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
-import ProblemSection from '@/components/home/ProblemSection';
-import BenefitsSection from '@/components/home/BenefitsSection';
-import ProductCarousel from '@/components/home/ProductCarousel';
-import TestimonialCarousel from '@/components/home/TestimonialCarousel';
-import UpsellSection from '@/components/home/UpsellSection';
-import TrustSection from '@/components/home/TrustSection';
-import FinalCTA from '@/components/home/FinalCTA';
 import StorySection from '@/components/home/StorySection';
+import SplitCategory from '@/components/home/SplitCategory';
+import ProductCarousel from '@/components/home/ProductCarousel';
+import BenefitsSection from '@/components/home/BenefitsSection'; // Renamed conceptually to "The Logic" but keeping component name
+import PolaroidTestimonials from '@/components/home/PolaroidTestimonials';
+import GiftExperience from '@/components/home/GiftExperience';
+import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
+import FinalCTA from '@/components/home/FinalCTA';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-bg">
       <HeroSection />
-      <ProblemSection />
-      <ProductCarousel />
-      <BenefitsSection />
-      <SecondaryHeroSection />
+      <ArtisanalUrgency /> {/* Urgent message strip right after hero */}
       <StorySection />
-      <TestimonialCarousel />
-      <UpsellSection />
-      <TrustSection />
+      <SplitCategory />
+      <ProductCarousel />
+      <GiftExperience />
+      <BenefitsSection />
+      <PolaroidTestimonials />
       <FinalCTA />
     </main>
   );

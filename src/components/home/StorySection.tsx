@@ -19,14 +19,11 @@ export default function StorySection() {
                                 className="!text-center lg:!text-left !items-center lg:!items-start"
                             />
                             <p className="font-body text-lg text-charcoal/80 leading-relaxed mb-6">
-                                No somos una fábrica industrial. Somos un pequeño taller donde cada par
-                                se corta, se cose y se empaqueta a mano, cuidando cada detalle como si
-                                fuera para nuestros propios hijos.
+                                En un mundo de prisa, nosotros elegimos la <span className="italic text-charcoal font-medium">pausa</span>.
+                                Cada par de Alica se corta, cose y amolda a mano, pensando en los deditos que protegerá.
                             </p>
                             <p className="font-body text-lg text-charcoal/80 leading-relaxed mb-10">
-                                Creemos en el <span className="italic font-medium text-charcoal">slow fashion</span>:
-                                sin prisas, con materiales nobles y respetando el tiempo que requiere
-                                hacer algo verdaderamente bien hecho.
+                                No es solo confección, es una promesa de amor y cuidado para los pies que darán los pasos del futuro.
                             </p>
 
                             <Link

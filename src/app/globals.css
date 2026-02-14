@@ -3,49 +3,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ── Alica Bebes Design Tokens ── */
-/* ── Alica Bebes Design Tokens (Premium Overhaul) ── */
+/* ── Alica Bebes "Soft Luxury" Palette (Apple + Disney Baby) ── */
 :root {
-  /* Primary Palette */
-  --alica-charcoal: #4A3B2A;
-  /* Darker Brown for better contrast */
-  --alica-bg: #ECDCC5;
-  /* Warm Beige requested */
-  --alica-bg-warm: #F5E6D3;
-  /* Lighter beige for contrast */
+  /* Bases */
+  --alica-bg: #F9F5F0;
+  /* Cream Haze - Suave, no blanco */
+  --alica-bg-warm: #F2ECE4;
+  /* Un poco más oscuro para secciones */
 
-  /* Secondary/Accent Palette */
-  --alica-rose: #D4B895;
-  /* Muted Gold/Beige */
-  --alica-rose-deep: #8A6E4B;
-  /* Darker Brown/Gold */
-  --alica-rose-light: #F9F1E8;
-  /* Very light beige */
+  /* Text */
+  --alica-text-main: #4A4A4A;
+  /* Warm Graphite - No negro puro */
+  --alica-text-muted: #8C8580;
+  /* Taupe - Elegante */
+
+  /* Accents (Emotional) */
+  --alica-blue: #D4DEE5;
+  /* Morning Sky (Marineros) */
+  --alica-pink: #EAD8D4;
+  /* Baby Petal (Princesas) */
+  --alica-gold: #C5B393;
+  /* Muted Gold (Detalles Premium) */
 
   /* Functional */
-  --alica-cream: #FFFBF5;
-  --alica-cream-dark: #E8D6BF;
-  --alica-gold: #C9A96E;
-  --alica-gold-light: #DFC9A0;
-  --alica-muted: #8B7A65;
   --alica-white: #FFFFFF;
-  --alica-border: #DBC8B0;
+  --alica-cream-dark: #E6DCCD;
+
+  /* Legacy mapping for compatibility while refactoring */
+  --alica-charcoal: var(--alica-text-main);
+  --alica-rose: var(--alica-pink);
+  --alica-rose-deep: #BFA5A0;
+  /* Darker pink for text/buttons */
+  --alica-rose-light: #F5EBE8;
 }
 
 @theme inline {
+  --color-bg: var(--alica-bg);
+  --color-bg-warm: var(--alica-bg-warm);
+  --color-charcoal: var(--alica-text-main);
+  --color-muted: var(--alica-text-muted);
+  --color-blue-soft: var(--alica-blue);
+  --color-pink-soft: var(--alica-pink);
+  --color-gold: var(--alica-gold);
   --color-rose: var(--alica-rose);
   --color-rose-deep: var(--alica-rose-deep);
   --color-rose-light: var(--alica-rose-light);
-  --color-cream: var(--alica-cream);
-  --color-cream-dark: var(--alica-cream-dark);
-  --color-gold: var(--alica-gold);
-  --color-gold-light: var(--alica-gold-light);
-  --color-charcoal: var(--alica-charcoal);
-  --color-muted: var(--alica-muted);
-  --color-bg: var(--alica-bg);
-  --color-bg-warm: var(--alica-bg-warm);
-  --color-border: var(--alica-border);
+
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Animation Utilities */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fadeIn 1s ease-out forwards;
 }
 
 /* ── Base Styles ── */

@@ -50,20 +50,20 @@ export default function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
                     className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8 drop-shadow-lg"
-                    style={{ textShadow: '0 4px 60px rgba(0,0,0,0.7)' }}
+                    style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}
                 >
-                    Zapatitos hechos <span className="italic font-light">con amor</span>
+                    No son solo <span className="italic font-light">zapatos</span>
                     <br />
-                    <span className="text-rose-light" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.7)' }}>para sus primeros pasos</span>
+                    <span className="text-rose-light" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>es el inicio de su historia</span>
                 </motion.h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-body text-base md:text-xl text-white font-normal mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
+                    className="font-body text-base md:text-xl text-white/90 font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md tracking-wide"
                 >
-                    Sin stock, sin prisas. Cada par se confecciona exclusivamente para tu bebé,<br className="hidden md:block" /> cuidando cada detalle de su desarrollo.
+                    Diseñados para abrazar sus primeros pasos con la suavidad de un recuerdo eterno.
                 </motion.p>
 
                 <motion.div
