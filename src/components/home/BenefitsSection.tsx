@@ -52,10 +52,10 @@ export default function BenefitsSection() {
                                     <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-rose-light/30 flex items-center justify-center group-hover:bg-rose-light group-hover:scale-110 transition-all duration-500 shadow-sm">
                                         <Icon className="w-9 h-9 text-rose-deep" />
                                     </div>
-                                    <h3 className="font-heading text-lg font-semibold text-charcoal mb-2">
+                                    <h3 className="font-heading text-lg font-bold text-charcoal mb-2">
                                         {benefit.title}
                                     </h3>
-                                    <p className="font-body text-sm text-muted leading-relaxed">
+                                    <p className="font-body text-sm text-charcoal/90 leading-relaxed font-medium">
                                         {benefit.description}
                                     </p>
                                 </div>
