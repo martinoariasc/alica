@@ -7,17 +7,19 @@ import TestimonialCarousel from '@/components/home/TestimonialCarousel';
 import UpsellSection from '@/components/home/UpsellSection';
 import TrustSection from '@/components/home/TrustSection';
 import FinalCTA from '@/components/home/FinalCTA';
+import StorySection from '@/components/home/StorySection';
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <HeroSection />
       <ProblemSection />
+      <ProductCarousel />
       <BenefitsSection />
       <SecondaryHeroSection />
-      <ProductCarousel />
-      <UpsellSection />
+      <StorySection />
       <TestimonialCarousel />
+      <UpsellSection />
       <TrustSection />
       <FinalCTA />
     </main>
