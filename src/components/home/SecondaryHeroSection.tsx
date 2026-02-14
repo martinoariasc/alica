@@ -24,7 +24,7 @@ export default function SecondaryHeroSection() {
                         playsInline
                         className="w-full h-full object-cover"
                     >
-                        <source src="/videos/hero-2.mp4" type="video/mp4" />
+                        <source src="/videos/hero-1.mp4" type="video/mp4" />
                     </video>
                 </motion.div>
                 <div className="absolute inset-0 bg-black/30" />
@@ -40,11 +40,11 @@ export default function SecondaryHeroSection() {
                     transition={{ duration: 1 }}
                 >
                     <h2 className="font-heading text-3xl md:text-5xl lg:text-7xl text-white mb-6 drop-shadow-lg leading-tight">
-                        Los primeros pasos<br />
-                        <span className="italic font-light text-rose-light">no vuelven.</span>
+                        Ese pasito tembloroso<br />
+                        <span className="italic font-light text-rose-light">que te hizo llorar de felicidad...</span>
                     </h2>
                     <p className="font-body text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto drop-shadow-sm leading-relaxed">
-                        Hacelos eternos con un par que protege, abraza y marca el inicio de su historia.
+                        Merece ser protegido con la suavidad que solo el amor hecho a mano puede dar.
                     </p>
                 </motion.div>
             </div>

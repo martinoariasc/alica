@@ -19,7 +19,7 @@ export default function SplitCategory() {
                     />
                     <div className="absolute inset-0 bg-blue-soft/60" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                 <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
                     <AnimatedSection>
@@ -28,14 +28,14 @@ export default function SplitCategory() {
                             Pequeños Marineros
                         </h3>
                         <p className="font-body text-white/90 text-lg mb-8 max-w-sm mx-auto drop-shadow-md">
-                            Grandes aventuras comienzan con un paso firme y seguro.
+                            Para los que nacieron para explorar el mundo con valentía y firmeza.
                         </p>
                         <Button
                             href="/shop?gender=nene"
                             variant="outline"
                             className="!border-white !text-white hover:!bg-white hover:!text-charcoal backdrop-blur-sm"
                         >
-                            Explorar colección
+                            Descubrir su par
                         </Button>
                     </AnimatedSection>
                 </div>
@@ -53,7 +53,7 @@ export default function SplitCategory() {
                     />
                     <div className="absolute inset-0 bg-pink-soft/50" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                 <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
                     <AnimatedSection delay={0.2}>
@@ -62,14 +62,14 @@ export default function SplitCategory() {
                             Pequeñas Princesas
                         </h3>
                         <p className="font-body text-white/90 text-lg mb-8 max-w-sm mx-auto drop-shadow-md">
-                            Primeros sueños envueltos en dulzura y protección.
+                            Dulzura, protección y un toque de magia en cada pisadita.
                         </p>
                         <Button
                             href="/shop?gender=nena"
                             variant="outline"
                             className="!border-white !text-white hover:!bg-white hover:!text-charcoal backdrop-blur-sm"
                         >
-                            Ver colección
+                            Elegir su par
                         </Button>
                     </AnimatedSection>
                 </div>

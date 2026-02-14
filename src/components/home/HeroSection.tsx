@@ -27,7 +27,7 @@ export default function HeroSection() {
                     className="w-full h-full object-cover"
                     poster="/images/hero-poster.jpg"
                 >
-                    <source src="/videos/hero-1.mp4" type="video/mp4" />
+                    <source src="/videos/hero-2.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic Overlays */}
                 <div className="absolute inset-0 bg-black/25" />
@@ -46,7 +46,7 @@ export default function HeroSection() {
                     transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
                 >
                     <span className="inline-block px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md text-white font-medium text-xs md:text-sm tracking-[0.2em] uppercase mb-8 border border-white/20 shadow-lg">
-                        100% Artesanal · Confección bajo pedido
+                        Cosidos a mano · Solo 15 pares por semana
                     </span>
                 </motion.div>
 
@@ -57,10 +57,12 @@ export default function HeroSection() {
                     className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] mb-6 drop-shadow-lg"
                     style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}
                 >
-                    No vendemos <span className="italic font-light">zapatitos</span>
+                    Sus primeros pasos
+                    <br />
+                    <span className="italic font-light">duran un suspiro...</span>
                     <br />
                     <span className="text-rose-light" style={{ textShadow: '0 4px 60px rgba(0,0,0,0.5)' }}>
-                        vendemos recuerdos eternos
+                        hacelos eternos.
                     </span>
                 </motion.h1>
 
@@ -70,7 +72,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
                     className="font-body text-base md:text-xl text-white/90 font-light mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md tracking-wide"
                 >
-                    Diseñados para abrazar sus primeros pasos con la suavidad que solo el amor artesanal puede dar.
+                    Zapatitos artesanales de suela blanda que abrazan sus piecitos con la ternura que solo una mamá entiende.
                 </motion.p>
 
                 <motion.div
@@ -85,7 +87,7 @@ export default function HeroSection() {
                         size="lg"
                         className="!bg-rose-deep !text-white hover:!bg-rose hover:!scale-105 min-w-[220px] shadow-xl shadow-rose-deep/20"
                     >
-                        Descubrir la colección
+                        Elegir su primer recuerdo
                     </Button>
                     <Button
                         href="/regalo"
@@ -93,7 +95,7 @@ export default function HeroSection() {
                         size="lg"
                         className="!border-white !text-white hover:!bg-white hover:!text-charcoal min-w-[220px] backdrop-blur-sm"
                     >
-                        🎁 Regalar un recuerdo
+                        🎁 Regalar amor eterno
                     </Button>
                 </motion.div>
             </motion.div>

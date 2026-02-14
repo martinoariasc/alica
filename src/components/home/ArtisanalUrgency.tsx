@@ -3,14 +3,14 @@
 import { motion } from 'framer-motion';
 
 const tickerItems = [
-    '⏳ Slow Fashion',
+    '💛 Hechos con amor de mamá',
     '✋ Solo 15 pares por semana',
-    '🤍 100% Artesanal',
-    '🧵 Cosido a mano',
-    '📦 Envío a todo Paraguay',
-    '🎁 Empaque de regalo premium',
-    '🍼 Suela blanda certificada',
-    '💛 Hecho con amor de mamá',
+    '🧵 3 horas de puntadas a mano',
+    '🍃 Materiales que cuidan su piel',
+    '📦 Envío con empaque de regalo',
+    '🐾 Suela blanda para piecitos libres',
+    '⏳ Slow Fashion consciente',
+    '🤍 Cada par es único, como tu bebé',
 ];
 
 export default function ArtisanalUrgency() {

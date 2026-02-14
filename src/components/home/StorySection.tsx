@@ -7,10 +7,10 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 const processSteps = [
-    { number: '01', title: 'Diseño', desc: 'Cada modelo nace de la inspiración maternal.' },
-    { number: '02', title: 'Corte', desc: 'Manos expertas cortan el cuero pieza a pieza.' },
-    { number: '03', title: 'Costura', desc: '3 horas de puntadas llenas de amor.' },
-    { number: '04', title: 'Entrega', desc: 'Empacado con cariño, listo para emocionar.' },
+    { number: '01', title: 'Diseño', desc: 'Imaginamos cada modelo pensando en los deditos de tu bebé.' },
+    { number: '02', title: 'Corte', desc: 'Manos de mamá seleccionan y cortan el cuero más suave.' },
+    { number: '03', title: 'Costura', desc: '3 horas de puntadas llenas de amor y paciencia infinita.' },
+    { number: '04', title: 'Entrega', desc: 'Envuelto con ternura, listo para hacerte llorar de emoción.' },
 ];
 
 export default function StorySection() {
@@ -22,17 +22,20 @@ export default function StorySection() {
                     <div className="order-2 lg:order-1 text-center lg:text-left">
                         <AnimatedSection>
                             <SectionTitle
-                                title="Manos que crean recuerdos"
-                                subtitle="Más que una marca, somos una familia"
+                                title="Cada puntada lleva el nombre de tu bebé"
+                                subtitle="No es producción, es devoción"
                                 className="!text-center lg:!text-left !items-center lg:!items-start"
                             />
                             <p className="font-body text-lg text-charcoal/80 leading-relaxed mb-4">
-                                En un mundo de prisa, nosotros elegimos la <span className="italic text-charcoal font-medium">pausa</span>.
-                                Cada par de ALICA se corta, cose y amolda a mano, pensando en los deditos que protegerá.
+                                Cuando sostenés un par de ALICA, vas a sentir algo diferente.
+                                No es solo cuero y hilo — es la <span className="italic text-charcoal font-medium">misma dedicación</span> que
+                                vos ponés al vestirlo cada mañana.
                             </p>
                             <p className="font-body text-lg text-charcoal/80 leading-relaxed mb-10">
-                                Cada par lleva <strong className="text-rose-deep">3 horas de manos que aman</strong>.
-                                No es solo confección, es una promesa de cuidado para los pies que darán los pasos más importantes.
+                                Mientras las fábricas producen miles por hora, nosotros invertimos
+                                <strong className="text-rose-deep"> 3 horas de manos que aman</strong> en cada par.
+                                Porque los piecitos que van a dar los pasos más importantes de su vida
+                                no merecen algo hecho a las apuradas.
                             </p>
 
                             {/* Process Steps */}
@@ -54,7 +57,7 @@ export default function StorySection() {
                                 href="/nosotros"
                                 className="inline-flex items-center gap-2 text-rose-deep font-heading font-semibold hover:text-charcoal transition-colors group"
                             >
-                                Conocé nuestra historia
+                                Conocé a la mamá detrás de cada par
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </AnimatedSection>

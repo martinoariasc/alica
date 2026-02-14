@@ -5,10 +5,10 @@ import Button from '@/components/ui/Button';
 import { Gift, Heart, Star, Package } from 'lucide-react';
 
 const reasons = [
-    { icon: Gift, text: 'Caja de regalo artesanal incluida' },
-    { icon: Heart, text: 'Tarjeta con mensaje personalizado' },
-    { icon: Star, text: 'Empaque perfumado con aroma a bebé' },
-    { icon: Package, text: 'Envío rápido a todo Paraguay' },
+    { icon: Gift, text: 'Caja artesanal con lazo de raso' },
+    { icon: Heart, text: 'Tarjeta escrita a mano con tu mensaje' },
+    { icon: Star, text: 'Envuelto con aroma a bebé' },
+    { icon: Package, text: 'Envío express a todo Paraguay' },
 ];
 
 export default function GiftExperience() {
@@ -24,14 +24,15 @@ export default function GiftExperience() {
                     <AnimatedSection>
                         <span className="inline-block text-6xl mb-6">🎁</span>
                         <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-charcoal mb-4 leading-tight">
-                            ¿No sabés qué regalar?
+                            ¿Querés hacer llorar<br className="hidden md:block" />
+                            de emoción a una mamá?
                         </h2>
                         <p className="font-heading text-2xl md:text-3xl text-rose-deep italic mb-8">
-                            Regalá un recuerdo.
+                            Regalale un recuerdo que guarde para siempre.
                         </p>
                         <p className="font-body text-lg md:text-xl text-charcoal/70 max-w-2xl mx-auto leading-relaxed mb-12">
-                            Abuelas, tías, padrinos... cada par de ALICA es un abrazo envuelto para regalo.
-                            Porque abrir un paquete de ALICA debería sentirse como recibir amor puro.
+                            Abuelas, tías, madrinas... abrir un paquete de ALICA no es abrir un regalo.
+                            Es abrir una cajita de ternura que va a arrancar lágrimas de felicidad.
                         </p>
 
                         {/* Gift Features */}
@@ -57,7 +58,7 @@ export default function GiftExperience() {
                             size="lg"
                             className="bg-charcoal text-white hover:bg-gold transition-colors shadow-2xl shadow-charcoal/20"
                         >
-                            Ver opciones de regalo
+                            Encontrar el regalo perfecto
                         </Button>
                     </AnimatedSection>
                 </div>

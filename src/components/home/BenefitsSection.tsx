@@ -8,28 +8,28 @@ import { motion } from 'framer-motion';
 const benefits = [
     {
         icon: Footprints,
-        title: 'Pisadas Libres',
-        description: 'Diseño ergonómico que respeta la anatomía única de sus piecitos en crecimiento.',
+        title: 'Piecitos Libres',
+        description: 'Suela blanda que deja que sus deditos se muevan, agarren y sientan el piso como si caminara descalzo.',
     },
     {
         icon: Shield,
-        title: 'Crecimiento Natural',
-        description: 'Flexibilidad total para que sus músculos se desarrollen fuertes y sanos.',
+        title: 'Crecen Sanos',
+        description: 'Diseño ergonómico aprobado por pediatras que no deforma ni aprieta. Sus músculos crecen fuertes.',
     },
     {
         icon: Heart,
-        title: 'Seguridad y Confort',
-        description: 'Suela de cuero antideslizante que protege sin quitar sensibilidad al piso.',
+        title: '0% Resbalones',
+        description: 'Suela de cuero natural con agarre antideslizante. Podés dejarlo explorar sin miedo.',
     },
     {
         icon: Wind,
-        title: 'Caricias para su Piel',
-        description: 'Materiales nobles y transpirables, 100% libres de plásticos y tóxicos.',
+        title: 'Piel de Bebé',
+        description: 'Cuero suave que respira, 100% libre de plásticos y químicos. Tan delicado como sus mejillas.',
     },
     {
         icon: HandHeart,
-        title: 'Hecho con Amor',
-        description: 'Cada puntada lleva 3 horas de dedicación, paciencia y mucho amor de mamá.',
+        title: 'Hecho con Alma',
+        description: 'No es una fábrica. Es una mamá que dedica 3 horas de amor artesanal a cada par que sale de sus manos.',
     },
 ];
 
@@ -39,8 +39,8 @@ export default function BenefitsSection() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <AnimatedSection>
                     <SectionTitle
-                        title="¿Por qué miles de mamás eligen ALICA?"
-                        subtitle="Cada detalle importa cuando se trata de tu bebé"
+                        title="¿Por qué las mamás que prueban ALICA no vuelven atrás?"
+                        subtitle="No es marketing. Es lo que sus piecitos sienten."
                     />
                 </AnimatedSection>
 
