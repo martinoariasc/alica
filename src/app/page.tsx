@@ -2,8 +2,9 @@ import HeroSection from '@/components/home/HeroSection';
 import StorySection from '@/components/home/StorySection';
 import SplitCategory from '@/components/home/SplitCategory';
 import ProductCarousel from '@/components/home/ProductCarousel';
-import BenefitsSection from '@/components/home/BenefitsSection'; // Renamed conceptually to "The Logic" but keeping component name
-import PolaroidTestimonials from '@/components/home/PolaroidTestimonials';
+import BenefitsSection from '@/components/home/BenefitsSection';
+import TestimonialCarousel from '@/components/home/TestimonialCarousel';
+import BabyGallery from '@/components/home/BabyGallery';
 import GiftExperience from '@/components/home/GiftExperience';
 import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
 import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
@@ -13,14 +14,15 @@ export default function Home() {
   return (
     <main className="overflow-hidden bg-bg">
       <HeroSection />
-      <ArtisanalUrgency /> {/* Urgent message strip right after hero */}
+      <ArtisanalUrgency />
       <StorySection />
       <SplitCategory />
       <ProductCarousel />
-      <SecondaryHeroSection /> {/* Sensory Break */}
+      <SecondaryHeroSection />
+      <TestimonialCarousel />
       <GiftExperience />
       <BenefitsSection />
-      <PolaroidTestimonials />
+      <BabyGallery />
       <FinalCTA />
     </main>
   );

@@ -1,79 +1,61 @@
 'use client';
 
+import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionTitle from '@/components/ui/SectionTitle';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import AnimatedSection from '@/components/ui/AnimatedSection';
-import { testimonials } from '@/lib/testimonials';
-import { Star } from 'lucide-react';
+
+const testimonials = Array.from({ length: 9 }).map((_, i) => `/images/testimonials/testimonio-${i + 1}.jpg`);
 
 export default function TestimonialCarousel() {
     return (
-        <section className="py-20 md:py-28 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <section className="py-20 md:py-32 bg-white overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 text-center">
                 <AnimatedSection>
-                    <div className="text-center mb-12">
-                        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal mb-4">
-                            Mamás reales. Bebés reales.{' '}
-                            <span className="gradient-text">Amor real.</span>
-                        </h2>
-                        <div className="mt-6 h-[2px] w-16 rounded-full bg-rose mx-auto" />
-                    </div>
+                    <SectionTitle
+                        title="Ellos ya caminan con ALICA"
+                        subtitle="Historias reales de mamás (y bebés) felices"
+                    />
                 </AnimatedSection>
+            </div>
 
-                <AnimatedSection delay={0.2}>
-                    <Swiper
-                        modules={[Autoplay]}
-                        spaceBetween={24}
-                        slidesPerView={1}
-                        autoplay={{ delay: 5000, disableOnInteraction: false }}
-                        loop={true}
-                        breakpoints={{
-                            640: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
-                        }}
-                    >
-                        {testimonials.map((t) => (
-                            <SwiperSlide key={t.id}>
-                                <div className="bg-bg-warm rounded-3xl p-8 h-full">
-                                    {/* Stars */}
-                                    <div className="flex gap-1 mb-4">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star
-                                                key={i}
-                                                className="w-4 h-4 text-gold fill-current"
-                                            />
-                                        ))}
-                                    </div>
-
-                                    {/* Quote */}
-                                    <p className="font-body text-charcoal/80 leading-relaxed mb-6 text-sm">
-                                        &ldquo;{t.text}&rdquo;
-                                    </p>
-
-                                    {/* Author */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-light/50 bg-bg-warm">
-                                            <img
-                                                src={t.image}
-                                                alt={t.name}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                        <div>
-                                            <p className="font-medium text-charcoal text-sm">
-                                                {t.name}
-                                            </p>
-                                            <p className="text-xs text-muted">
-                                                {t.product} · Bebé de {t.babyAge}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </AnimatedSection>
+            <div className="w-full">
+                <Swiper
+                    modules={[Autoplay]}
+                    spaceBetween={20}
+                    slidesPerView={1.2}
+                    centeredSlides={true}
+                    loop={true}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    breakpoints={{
+                        640: { slidesPerView: 2.2 },
+                        1024: { slidesPerView: 3.5, spaceBetween: 30 },
+                        1280: { slidesPerView: 4.5, spaceBetween: 40 },
+                    }}
+                    className="!pb-10 !px-4"
+                >
+                    {testimonials.map((src, i) => (
+                        <SwiperSlide key={i} className="h-auto">
+                            <div className="relative aspect-[9/16] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-bg-warm/50 hover:shadow-xl transition-all duration-500 group">
+                                <Image
+                                    src={src}
+                                    alt={`Testimonio ALICA ${i + 1}`}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 25vw"
+                                />
+                                {/* Optional: Subtle overlay if needed */}
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </section>
     );

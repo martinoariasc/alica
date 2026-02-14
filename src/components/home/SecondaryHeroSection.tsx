@@ -24,7 +24,7 @@ export default function SecondaryHeroSection() {
                         playsInline
                         className="w-full h-full object-cover"
                     >
-                        <source src="/videos/hero-1.mp4" type="video/mp4" />
+                        <source src="/videos/hero-2.mp4" type="video/mp4" />
                     </video>
                 </motion.div>
                 <div className="absolute inset-0 bg-black/30" />
