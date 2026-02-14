@@ -1,252 +1,134 @@
 export interface Product {
     slug: string;
     name: string;
-    category: string;
     price: number;
     oldPrice: number;
     description: string;
     shortDescription: string;
-    benefits: string[];
-    materials: string;
-    careInstructions: string[];
     images: string[];
+    category: 'Mocasines' | 'Botitas' | 'Sandalias' | 'Accesorios';
+    isFeatured: boolean;
+    benefits: string[];
+    materials: string[];
+    care: string[];
     productionTime: string;
-    featured?: boolean;
 }
-
-export const categories = [
-    'Todos',
-    'Alpargatitas',
-    'Botitas',
-    'Orejitas',
-    'Vinchas',
-    'Baberitos',
-    'Packs',
-] as const;
-
-export type Category = (typeof categories)[number];
 
 export const products: Product[] = [
     {
-        slug: 'alpargatita-clasica',
-        name: 'Alpargatita Clásica',
-        category: 'Alpargatitas',
-        price: 135000,
-        oldPrice: 175500,
+        slug: 'mocasines-classic-camel',
+        name: 'Mocasín Classic Camel',
+        price: 120000,
+        oldPrice: 150000,
         description:
-            'Nuestras alpargatitas clásicas son el calzado perfecto para los primeros pasos de tu bebé. Diseñadas con suela blanda y flexible que respeta el desarrollo natural del pie. Cada par es cosido a mano con amor, usando materiales hipoalergénicos que cuidan la piel sensible de tu pequeño.',
-        shortDescription: 'Suela blanda, diseño artesanal, confort real.',
+            'El clásico que combina con todo. Nuestros mocasines en tono camel son el equilibrio perfecto entre estilo y comodidad. Hechos artesanalmente con cuero genuino que se adapta al pie de tu bebé, permitiendo el libre movimiento y desarrollo natural. Ideales para primeros pasos o para lucir elegante en cualquier ocasión.',
+        shortDescription: 'Cuero genuino suave y flexible. El clásico infaltable.',
+        images: [
+            'https://images.unsplash.com/photo-1515488042361-ee0065af4151?q=80&w=2576&auto=format&fit=crop', // Sandalias/shoes close up
+            'https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2669&auto=format&fit=crop',
+        ],
+        category: 'Mocasines',
+        isFeatured: true,
         benefits: [
-            'Suela blanda y flexible',
-            'No aprietan ni deforman',
-            'Material hipoalergénico',
-            'Costuras seguras',
-            'Transpirables',
-        ],
-        materials: 'Algodón premium, suela de cuero suave, hilo reforzado',
-        careInstructions: [
-            'Lavar a mano con agua fría',
-            'No usar secadora',
-            'Secar a la sombra',
-        ],
-        images: ['/images/products/alpargatita-1.svg', '/images/products/alpargatita-2.svg'],
-        productionTime: '3-5 días hábiles',
-        featured: true,
-    },
-    {
-        slug: 'alpargatita-bordado',
-        name: 'Alpargatita con Bordado',
-        category: 'Alpargatitas',
-        price: 135000,
-        oldPrice: 175500,
-        description:
-            'Alpargatitas con delicados bordados hechos a mano que hacen de cada par una pieza única. El mismo confort y calidad de siempre, con un toque especial de arte artesanal.',
-        shortDescription: 'Bordado artesanal, única como tu bebé.',
-        benefits: [
-            'Bordado artesanal único',
-            'Suela blanda y flexible',
-            'Material hipoalergénico',
-            'Costuras seguras',
-            'Transpirables',
-        ],
-        materials: 'Algodón premium, suela de cuero suave, hilo de bordado',
-        careInstructions: [
-            'Lavar a mano con agua fría',
-            'No usar secadora',
-            'Secar a la sombra',
-        ],
-        images: ['/images/products/alpargatita-bordado-1.svg', '/images/products/alpargatita-bordado-2.svg'],
-        productionTime: '5-7 días hábiles',
-        featured: true,
-    },
-    {
-        slug: 'botita-clasica',
-        name: 'Botita Clásica',
-        category: 'Botitas',
-        price: 150000,
-        oldPrice: 195000,
-        description:
-            'Botitas que abrazan el pie de tu bebé con suavidad. Diseñadas para mantener los piecitos calentitos sin comprometer el movimiento natural. Perfectas para los días frescos.',
-        shortDescription: 'Calidez y protección para piecitos felices.',
-        benefits: [
-            'Abriga sin sobrecalentar',
-            'Suela antideslizante',
-            'Fácil de poner',
-            'Material suave y flexible',
-            'Ajuste seguro',
-        ],
-        materials: 'Algodón cepillado, suela de gamuza, cierre de velcro suave',
-        careInstructions: [
-            'Lavar a mano con agua tibia',
-            'No retorcer',
-            'Secar a la sombra',
-        ],
-        images: ['/images/products/botita-1.svg', '/images/products/botita-2.svg'],
-        productionTime: '3-5 días hábiles',
-        featured: true,
-    },
-    {
-        slug: 'orejita-clasica',
-        name: 'Orejita Clásica',
-        category: 'Orejitas',
-        price: 145000,
-        oldPrice: 188500,
-        description:
-            'Nuestro modelo más tierno. Los zapatitos con orejitas que hacen que todos digan "¡qué divinos!". El diseño perfecto para esas fotos que vas a guardar para siempre.',
-        shortDescription: 'El modelo más tierno para fotos inolvidables.',
-        benefits: [
-            'Diseño adorable con orejitas',
             'Suela blanda antideslizante',
-            'Material premium',
-            'Ideal para sesiones de fotos',
-            'Cómodos para todo el día',
+            'Elástico en tobillo para fácil calce',
+            'Transpirables y ligeros',
         ],
-        materials: 'Ecocuero premium, suela de gamuza, detalles cosidos a mano',
-        careInstructions: [
-            'Limpiar con paño húmedo',
-            'No sumergir en agua',
-            'Guardar en lugar fresco',
-        ],
-        images: ['/images/products/orejita-1.svg', '/images/products/orejita-2.svg'],
-        productionTime: '3-5 días hábiles',
-        featured: true,
+        materials: ['100% Cuero Vacuno', 'Hilo de algodón reforzado'],
+        care: ['Limpiar con paño húmedo', 'No lavar en lavarropas', 'Secar a la sombra'],
+        productionTime: '2 a 3 días hábiles',
     },
     {
-        slug: 'vincha-clasica',
-        name: 'Vincha Clásica',
-        category: 'Vinchas',
-        price: 20000,
-        oldPrice: 26000,
+        slug: 'botita-flecos-rosa',
+        name: 'Botita Flecos Rose',
+        price: 135000,
+        oldPrice: 165000,
         description:
-            'Vinchas suaves y elásticas que no aprietan la cabecita de tu bebé. Perfectas para completar cualquier outfit con un toque delicado.',
-        shortDescription: 'Suave, elástica y adorable.',
+            'Dulzura en cada paso. Estas botitas con detalles de flecos en color rosa pastel son pura ternura. Diseñadas para proteger el tobillo sin limitar el movimiento, son perfectas para los días más frescos. Su interior suave asegura que los piecitos estén siempre calentitos y cómodos.',
+        shortDescription: 'Botitas con flecos y protección de tobillo. Pura ternura.',
+        images: [
+            'https://images.unsplash.com/photo-1593453918093-8f3ee5239a56?q=80&w=2670&auto=format&fit=crop', // Pink shoes
+            'https://images.unsplash.com/photo-1560506840-a51081e1f371?q=80&w=2574&auto=format&fit=crop',
+        ],
+        category: 'Botitas',
+        isFeatured: true,
         benefits: [
-            'No aprieta ni marca',
-            'Elástico ultra suave',
-            'Talla única ajustable',
-            'Lavable',
+            'Protección extra en tobillo',
+            'Flecos decorativos artesanales',
+            'Ideal para media estación',
         ],
-        materials: 'Nylon suave, flores de tela, elástico médico',
-        careInstructions: [
-            'Lavar a mano',
-            'Secar al aire',
-        ],
-        images: ['/images/products/vincha-1.svg'],
-        productionTime: '2-3 días hábiles',
+        materials: ['Cuero descarne premium', 'Suela de goma eva flexible'],
+        care: ['Cepillar suavemente', 'Usar protector de gamuza'],
+        productionTime: '3 a 4 días hábiles',
     },
     {
-        slug: 'vincha-especial',
-        name: 'Vincha Especial',
-        category: 'Vinchas',
-        price: 30000,
-        oldPrice: 39000,
+        slug: 'sandalia-sol-blanca',
+        name: 'Sandalia Sol Blanca',
+        price: 110000,
+        oldPrice: 140000,
         description:
-            'Vinchas con diseños especiales para esos momentos importantes. Con flores más elaboradas y detalles premium que hacen la diferencia.',
-        shortDescription: 'Diseño especial para momentos especiales.',
+            'Frescura para el verano. Nuestras sandalias Sol en color blanco son esenciales para los días de calor. Con aberturas que permiten la circulación del aire y un cierre seguro que mantiene el piecito en su lugar. Un diseño atemporal y delicado para completar cualquier outfit veraniego.',
+        shortDescription: 'Frescas y seguras para el verano. Diseño aireado.',
+        images: [
+            'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=2671&auto=format&fit=crop', // White shoes
+            'https://images.unsplash.com/photo-1560506840-a51081e1f371?q=80&w=2574&auto=format&fit=crop',
+        ],
+        category: 'Sandalias',
+        isFeatured: true,
         benefits: [
-            'Diseño exclusivo',
-            'No aprieta ni marca',
-            'Ideal para eventos',
-            'Materiales premium',
+            'Máxima frescura',
+            'Cierre ajustable con velcro',
+            'Puntera abierta para libertad de dedos',
         ],
-        materials: 'Nylon suave, flores de seda, perlas decorativas, elástico médico',
-        careInstructions: [
-            'Lavar a mano con cuidado',
-            'No retorcer',
-            'Secar al aire',
-        ],
-        images: ['/images/products/vincha-especial-1.svg'],
-        productionTime: '3-5 días hábiles',
-        featured: true,
+        materials: ['Cuero sintético de alta calidad', 'Forro de algodón'],
+        care: ['Trapo húmedo con jabón neutro', 'No exponer al sol directo'],
+        productionTime: '2 a 3 días hábiles',
     },
     {
-        slug: 'pack-3-vinchas',
-        name: 'Pack 3 Vinchas',
-        category: 'Packs',
+        slug: 'oxford-baby-gris',
+        name: 'Oxford Baby Gris',
+        price: 130000,
+        oldPrice: 160000,
+        description:
+            'Elegancia en miniatura. Los Oxford Baby en gris son la opción perfecta para eventos especiales o para darle un toque sofisticado al look diario. Con cordones suaves que aseguran un ajuste personalizado y una horma ancha que respeta la anatomía del pie gordito del bebé.',
+        shortDescription: 'Estilo sofisticado para ocasiones especiales.',
+        images: [
+            'https://images.unsplash.com/photo-1507963428588-aa84da934d6c?q=80&w=2670&auto=format&fit=crop', // Grey shoes/socks
+            'https://images.unsplash.com/photo-1582236353982-f54f76274465?q=80&w=2670&auto=format&fit=crop',
+        ],
+        category: 'Mocasines',
+        isFeatured: false,
+        benefits: [
+            'Estilo formal y cómodo',
+            'Cordones para ajuste perfecto',
+            'Suela flexible',
+        ],
+        materials: ['Cuero ecológico premium', 'Cordones de algodón'],
+        care: ['Limpiar en seco', 'Guardar en caja para mantener forma'],
+        productionTime: '3 a 4 días hábiles',
+    },
+    {
+        slug: 'vincha-lazo-rosa',
+        name: 'Vincha Lazo Rosa',
         price: 45000,
-        oldPrice: 58500,
+        oldPrice: 60000,
         description:
-            '3 vinchas en colores pastel coordinados para que tu bebé siempre tenga la vincha perfecta. El pack más popular entre las mamás.',
-        shortDescription: '3 vinchas pastel, el combo favorito.',
+            'El complemento más dulce. Vincha elástica ultra suave con un lazo en color rosa. No aprieta ni marca la cabecita del bebé. Perfecta para combinar con nuestras botitas o mocasines y armar un set de regalo inolvidable.',
+        shortDescription: 'Elástica y suave. El complemento perfecto.',
+        images: [
+            'https://images.unsplash.com/photo-1596704017254-9b1b1c3127dd?q=80&w=2522&auto=format&fit=crop', // Baby accessories/clothes
+            'https://images.unsplash.com/photo-1596704017254-9b1b1c3127dd?q=80&w=2522&auto=format&fit=crop',
+        ],
+        category: 'Accesorios',
+        isFeatured: true,
         benefits: [
-            'Ahorro del 25%',
-            '3 colores combinables',
-            'Mismo confort premium',
-            'Packaging de regalo',
+            'Elástico super soft que no marca',
+            'Talle único (0-2 años)',
+            'Hecho a mano',
         ],
-        materials: 'Nylon suave, flores de tela, elástico médico',
-        careInstructions: [
-            'Lavar a mano',
-            'Secar al aire',
-        ],
-        images: ['/images/products/pack-vinchas-1.svg'],
-        productionTime: '2-3 días hábiles',
-    },
-    {
-        slug: 'baberito-clasico',
-        name: 'Baberito Clásico',
-        category: 'Baberitos',
-        price: 35000,
-        oldPrice: 45500,
-        description:
-            'Baberitos absorbentes y super suaves que protegen la ropita de tu bebé con estilo. Doble capa para máxima absorción.',
-        shortDescription: 'Absorbente, suave y con estilo.',
-        benefits: [
-            'Doble capa absorbente',
-            'Broche a presión seguro',
-            'No irrita la piel',
-            'Diseños únicos',
-        ],
-        materials: 'Algodón orgánico, forro de toalla, broche a presión',
-        careInstructions: [
-            'Lavable en lavarropas',
-            'Secar a temperatura baja',
-        ],
-        images: ['/images/products/baberito-1.svg'],
-        productionTime: '2-3 días hábiles',
-    },
-    {
-        slug: 'bandana-bebe',
-        name: 'Bandana Bebé',
-        category: 'Baberitos',
-        price: 35000,
-        oldPrice: 45500,
-        description:
-            'Bandanas con estilo que funcionan como babero. La opción más trendy para los bebés fashionistas. Absorbentes y fáciles de poner.',
-        shortDescription: 'Estilo y funcionalidad en uno.',
-        benefits: [
-            'Estilo moderno',
-            'Absorbente',
-            'Fácil de poner con broches',
-            'Reversible',
-        ],
-        materials: 'Algodón estampado, forro de toalla, broches metálicos',
-        careInstructions: [
-            'Lavable en lavarropas',
-            'Secar a temperatura baja',
-        ],
-        images: ['/images/products/bandana-1.svg'],
-        productionTime: '2-3 días hábiles',
+        materials: ['Nylon elástico suave', 'Tela de algodón'],
+        care: ['Lavar a mano', 'No planchar el lazo'],
+        productionTime: '1 a 2 días hábiles',
     },
 ];
 
@@ -254,11 +136,16 @@ export function getProductBySlug(slug: string): Product | undefined {
     return products.find((p) => p.slug === slug);
 }
 
-export function getProductsByCategory(category: Category): Product[] {
+export function getFeaturedProducts(): Product[] {
+    return products.filter((p) => p.isFeatured);
+}
+
+export function getProductsByCategory(category: string): Product[] {
     if (category === 'Todos') return products;
     return products.filter((p) => p.category === category);
 }
 
-export function getFeaturedProducts(): Product[] {
-    return products.filter((p) => p.featured);
+export function getAllCategories(): string[] {
+    const categories = Array.from(new Set(products.map((p) => p.category)));
+    return ['Todos', ...categories];
 }

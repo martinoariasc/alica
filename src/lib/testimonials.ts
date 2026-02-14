@@ -1,3 +1,5 @@
+import { Product } from './products';
+
 export interface Testimonial {
     id: number;
     name: string;
@@ -10,50 +12,34 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
     {
         id: 1,
-        name: 'María F.',
-        text: '¡Son los zapatitos más lindos que vi! Mi bebé los usa todo el día y no le molestan para nada. Se nota que están hechos con mucho amor.',
-        image: '/images/testimonials/testimonial-1.svg',
-        babyAge: '8 meses',
-        product: 'Alpargatita Clásica',
+        name: 'María González',
+        text: '¡Hermosos! La calidad del cuero es increíble, súper suavitos. A mi bebé le encantan y no se los quiere sacar nunca.',
+        image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2576&auto=format&fit=crop',
+        babyAge: '6 meses',
+        product: 'Mocasines Classic',
     },
     {
         id: 2,
-        name: 'Carolina S.',
-        text: 'Pedí las botitas y quedé encantada. Son super suaves y mi nena no se las quiere sacar. Calidad increíble.',
-        image: '/images/testimonials/testimonial-2.svg',
-        babyAge: '10 meses',
-        product: 'Botita Clásica',
+        name: 'Andrea Benítez',
+        text: 'Me encanta que sean tan flexibles. Mi nena está aprendiendo a caminar y se nota que está cómoda. ¡Súper recomendados!',
+        image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2574&auto=format&fit=crop',
+        babyAge: '11 meses',
+        product: 'Botitas Rose',
     },
     {
         id: 3,
-        name: 'Lucía M.',
-        text: 'Las orejitas son un sueño. Le hice la sesión de fotos a mi hijo y quedaron espectaculares. ¡Las amo!',
-        image: '/images/testimonials/testimonial-3.svg',
-        babyAge: '6 meses',
-        product: 'Orejita Clásica',
+        name: 'Sofía Martínez',
+        text: 'La presentación es un sueño, ideal para regalo. Compré para mi sobrino y quedé súper bien. ¡Volveré a comprar!',
+        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop',
+        babyAge: '3 meses',
+        product: 'Sandalias Sol',
     },
     {
         id: 4,
-        name: 'Valentina R.',
-        text: 'Ya compré 3 veces. La atención es increíble y los productos llegarón perfectos. Mi bebé los ama.',
-        image: '/images/testimonials/testimonial-4.svg',
-        babyAge: '1 año',
-        product: 'Pack 3 Vinchas',
-    },
-    {
-        id: 5,
-        name: 'Sofía G.',
-        text: 'Regalé las alpargatitas para un baby shower y fue el regalo estrella. Vienen en un packaging divino.',
-        image: '/images/testimonials/testimonial-5.svg',
-        babyAge: 'Regalo',
-        product: 'Alpargatita con Bordado',
-    },
-    {
-        id: 6,
-        name: 'Ana P.',
-        text: 'Las bandanas de Alica son lo mejor que compré. Absorbentes, lindas y mi bebé se ve hermoso con ellas.',
-        image: '/images/testimonials/testimonial-6.svg',
-        babyAge: '4 meses',
-        product: 'Bandana Bebé',
+        name: 'Laura Villalba',
+        text: 'Tenía miedo de pedir online pero la atención por WhatsApp fue excelente. Me ayudaron con el talle y llegaron rapidísimo.',
+        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
+        babyAge: '9 meses',
+        product: 'Oxford Baby',
     },
 ];

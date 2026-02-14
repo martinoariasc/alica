@@ -6,7 +6,7 @@ export function formatPrice(amount: number): string {
 // Build WhatsApp URL with pre-filled message
 export function buildWhatsAppURL(message?: string): string {
     // TODO: Replace with actual WhatsApp number
-    const phone = '595981000000';
+    const phone = '595984328246';
     const baseUrl = `https://wa.me/${phone}`;
     if (message) {
         return `${baseUrl}?text=${encodeURIComponent(message)}`;

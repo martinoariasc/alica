@@ -3,7 +3,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Button from '@/components/ui/Button';
 import { buildWhatsAppURL } from '@/lib/utils';
-import { MapPin, Phone, Clock, Instagram } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Contacto',
@@ -25,6 +25,13 @@ const contactInfo = [
         text: '@alicabebes',
         action: 'Ver perfil',
         href: 'https://instagram.com/alicabebes',
+    },
+    {
+        icon: Mail,
+        title: 'Email',
+        text: 'alicabebes@gmail.com',
+        action: 'Enviar correo',
+        href: 'mailto:alicabebes@gmail.com',
     },
     {
         icon: MapPin,
