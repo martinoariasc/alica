@@ -4,38 +4,38 @@ import Button from '@/components/ui/Button';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Image from 'next/image';
 
+// ... (imports)
 export default function SplitCategory() {
     return (
         <section className="w-full min-h-[80vh] flex flex-col md:flex-row overflow-hidden">
             {/* Pequeños Marineros (Niños) */}
             <div className="flex-1 relative group h-[50vh] md:h-auto overflow-hidden cursor-pointer">
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105">
                     <Image
-                        src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2674&auto=format&fit=crop"
-                        alt="Zapatitos para nenes"
+                        src="/images/categories/marineritos.png"
+                        alt="Zapatitos para nenes - Pequeños Marineros"
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-blue-soft/60" />
+                    {/* Subtle overlay, no heavy tint */}
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-12">
                     <AnimatedSection>
-                        <span className="inline-block text-5xl mb-4">👦</span>
-                        <h3 className="font-heading text-3xl md:text-5xl text-white mb-3 italic drop-shadow-lg">
+                        <h3 className="font-heading text-4xl md:text-6xl text-white mb-4 italic drop-shadow-xl tracking-wide">
                             Pequeños Marineros
                         </h3>
-                        <p className="font-body text-white/90 text-lg mb-8 max-w-sm mx-auto drop-shadow-md">
-                            Para los que nacieron para explorar el mundo con valentía y firmeza.
+                        <p className="font-body text-white text-lg mb-10 max-w-sm mx-auto drop-shadow-lg font-light tracking-wider">
+                            Para los que nacieron para explorar el mundo con valentía.
                         </p>
                         <Button
                             href="/shop?gender=nene"
                             variant="outline"
-                            className="!border-white !text-white hover:!bg-white hover:!text-charcoal backdrop-blur-sm"
+                            className="!border-white !text-white hover:!bg-white hover:!text-stone-800 backdrop-blur-md px-10 py-3 uppercase tracking-widest text-xs"
                         >
-                            Descubrir su par
+                            Descubrir
                         </Button>
                     </AnimatedSection>
                 </div>
@@ -43,31 +43,29 @@ export default function SplitCategory() {
 
             {/* Pequeñas Princesas (Niñas) */}
             <div className="flex-1 relative group h-[50vh] md:h-auto overflow-hidden cursor-pointer">
-                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105">
                     <Image
-                        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=2669&auto=format&fit=crop"
-                        alt="Zapatitos para nenas"
+                        src="/images/categories/princesas.png"
+                        alt="Zapatitos para nenas - Pequeñas Princesas"
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-pink-soft/50" />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-8">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-12">
                     <AnimatedSection delay={0.2}>
-                        <span className="inline-block text-5xl mb-4">👧</span>
-                        <h3 className="font-heading text-3xl md:text-5xl text-white mb-3 italic drop-shadow-lg">
+                        <h3 className="font-heading text-4xl md:text-6xl text-white mb-4 italic drop-shadow-xl tracking-wide">
                             Pequeñas Princesas
                         </h3>
-                        <p className="font-body text-white/90 text-lg mb-8 max-w-sm mx-auto drop-shadow-md">
+                        <p className="font-body text-white text-lg mb-10 max-w-sm mx-auto drop-shadow-lg font-light tracking-wider">
                             Dulzura, protección y un toque de magia en cada pisadita.
                         </p>
                         <Button
                             href="/shop?gender=nena"
                             variant="outline"
-                            className="!border-white !text-white hover:!bg-white hover:!text-charcoal backdrop-blur-sm"
+                            className="!border-white !text-white hover:!bg-white hover:!text-stone-800 backdrop-blur-md px-10 py-3 uppercase tracking-widest text-xs"
                         >
                             Elegir su par
                         </Button>

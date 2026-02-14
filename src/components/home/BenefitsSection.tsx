@@ -19,12 +19,12 @@ const benefits = [
     {
         icon: Heart,
         title: '0% Resbalones',
-        description: 'Suela de cuero natural con agarre antideslizante. Podés dejarlo explorar sin miedo.',
+        description: 'Suela de tela con agarre suave. Podés dejarlo explorar sin miedo.',
     },
     {
         icon: Wind,
         title: 'Piel de Bebé',
-        description: 'Cuero suave que respira, 100% libre de plásticos y químicos. Tan delicado como sus mejillas.',
+        description: 'Algodón suave que respira, 100% libre de plásticos y químicos. Tan delicado como sus mejillas.',
     },
     {
         icon: HandHeart,

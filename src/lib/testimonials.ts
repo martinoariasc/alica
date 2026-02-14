@@ -13,7 +13,7 @@ export const testimonials: Testimonial[] = [
     {
         id: 1,
         name: 'María González',
-        text: 'Nunca vi zapatitos tan delicados. El cuero es una manteca, ideal para los primeros pasos de mi bebé. Se nota el amor en cada costura.',
+        text: 'Nunca vi zapatitos tan delicados. La tela es una manteca, ideal para los primeros pasos de mi bebé. Se nota el amor en cada costura.',
         image: '/images/738b4594-6f52-4567-b980-b5887423b94a.jpg',
         babyAge: '6 meses',
         product: 'Mocasines Classic',

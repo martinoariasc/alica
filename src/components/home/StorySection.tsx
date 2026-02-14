@@ -28,7 +28,7 @@ export default function StorySection() {
                             />
                             <p className="font-body text-lg text-stone-600 leading-loose mb-6 font-light">
                                 Cuando sostenés un par de ALICA, vas a sentir algo diferente.
-                                No es solo cuero y hilo — es la <span className="italic font-medium text-stone-800">misma dedicación</span> que
+                                No es solo tela e hilo — es la <span className="italic font-medium text-stone-800">misma dedicación</span> que
                                 vos ponés al vestirlo cada mañana.
                             </p>
                             <p className="font-body text-lg text-stone-600 leading-loose mb-12 font-light">
