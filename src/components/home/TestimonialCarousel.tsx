@@ -42,12 +42,12 @@ export default function TestimonialCarousel() {
                 >
                     {testimonials.map((src, i) => (
                         <SwiperSlide key={i} className="h-auto">
-                            <div className="relative aspect-[9/16] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-bg-warm/50 hover:shadow-xl transition-all duration-500 group">
+                            <div className="relative aspect-[9/16] rounded-2xl overflow-hidden shadow-lg border border-stone-100 bg-stone-50 hover:shadow-xl transition-all duration-500 group">
                                 <Image
                                     src={src}
                                     alt={`Testimonio ALICA ${i + 1}`}
                                     fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    className="object-contain transition-transform duration-700 p-1"
                                     sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 25vw"
                                 />
                                 {/* Optional: Subtle overlay if needed */}
