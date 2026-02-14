@@ -16,22 +16,22 @@ export default function HeroSection() {
 
     return (
         <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-            {/* Parallax Background Image */}
-            <motion.div
-                style={{ y, opacity }}
-                className="absolute inset-0 z-0"
-            >
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: `url('https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop')`
-                    }}
-                />
-                {/* Overlays for readability - Softened for "Tender" aesthetic */}
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
-            </motion.div>
+            {/* Video Background */}
+            <div className="absolute inset-0 z-0">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                    poster="/images/hero-poster.jpg"
+                >
+                    <source src="/videos/hero-1.mp4" type="video/mp4" />
+                </video>
+                {/* Overlays for readability - Enhanced for "Premium" contrast */}
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+            </div>
 
             {/* Content */}
             <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">

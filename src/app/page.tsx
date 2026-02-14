@@ -1,4 +1,5 @@
 import HeroSection from '@/components/home/HeroSection';
+import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
 import ProblemSection from '@/components/home/ProblemSection';
 import BenefitsSection from '@/components/home/BenefitsSection';
 import ProductCarousel from '@/components/home/ProductCarousel';
@@ -7,17 +8,18 @@ import UpsellSection from '@/components/home/UpsellSection';
 import TrustSection from '@/components/home/TrustSection';
 import FinalCTA from '@/components/home/FinalCTA';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
+    <main className="overflow-hidden">
       <HeroSection />
       <ProblemSection />
       <BenefitsSection />
+      <SecondaryHeroSection />
       <ProductCarousel />
-      <TestimonialCarousel />
       <UpsellSection />
+      <TestimonialCarousel />
       <TrustSection />
       <FinalCTA />
-    </>
+    </main>
   );
 }

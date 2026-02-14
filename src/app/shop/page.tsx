@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button';
 import { products, getAllCategories, type Category } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
+import { ShoppingBag } from 'lucide-react';
 
 export default function ShopPage() {
     const categories = getAllCategories();
@@ -64,9 +65,7 @@ export default function ShopPage() {
                                         {/* Image */}
                                         <div className="aspect-square bg-gradient-to-br from-rose-light/30 to-cream relative overflow-hidden">
                                             <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="font-heading text-6xl text-rose/30 group-hover:scale-110 transition-transform duration-500">
-                                                    🍼
-                                                </span>
+                                                <ShoppingBag className="w-16 h-16 text-rose/30 group-hover:scale-110 transition-transform duration-500" />
                                             </div>
                                             <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-deep text-white text-xs font-medium">
                                                 -30%

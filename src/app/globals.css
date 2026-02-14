@@ -3,20 +3,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ── Alica Bebes Design Tokens ── */
+/* ── Alica Bebes Design Tokens (Premium Overhaul) ── */
 :root {
-  --alica-rose: #F4C2C2;
-  --alica-rose-deep: #E8A0A0;
-  --alica-rose-light: #FBE4E4;
-  --alica-cream: #FFF8F0;
-  --alica-cream-dark: #F5E6D3;
+  /* Primary Palette */
+  --alica-charcoal: #6C5538;
+  /* Warm Brown/Charcoal requested */
+  --alica-bg: #ECDCC5;
+  /* Warm Beige requested */
+  --alica-bg-warm: #F5E6D3;
+  /* Lighter beige for contrast */
+
+  /* Secondary/Accent Palette */
+  --alica-rose: #D4B895;
+  /* Muted Gold/Beige */
+  --alica-rose-deep: #8A6E4B;
+  /* Darker Brown/Gold */
+  --alica-rose-light: #F9F1E8;
+  /* Very light beige */
+
+  /* Functional */
+  --alica-cream: #FFFBF5;
+  --alica-cream-dark: #E8D6BF;
   --alica-gold: #C9A96E;
   --alica-gold-light: #DFC9A0;
-  --alica-charcoal: #3D3D3D;
-  --alica-muted: #8B8B8B;
-  --alica-bg: #FEFEFE;
-  --alica-bg-warm: #FBF7F4;
+  --alica-muted: #8B7A65;
   --alica-white: #FFFFFF;
-  --alica-border: #F0E8E0;
+  --alica-border: #DBC8B0;
 }
 
 @theme inline {
