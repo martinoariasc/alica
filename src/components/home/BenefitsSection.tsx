@@ -7,28 +7,28 @@ import { Heart, Shield, Footprints, Wind, HandHeart } from 'lucide-react';
 const benefits = [
     {
         icon: Footprints,
-        title: 'No aprietan',
-        description: 'Suela blanda que respeta el desarrollo natural del pie.',
+        title: 'Pisadas Libres',
+        description: 'Diseño ergonómico que respeta la anatomía única de sus piecitos.',
     },
     {
         icon: Shield,
-        title: 'No deforman',
-        description: 'Flexibles y ligeros, perfectos para pies en crecimiento.',
+        title: 'Crecimiento Natural',
+        description: 'Flexibilidad total para que sus músculos se desarrollen fuertes y sanos.',
     },
     {
         icon: Heart,
-        title: 'No resbalan',
-        description: 'Suela de cuero suave que da agarre sin rigidez.',
+        title: 'Seguridad y Confort',
+        description: 'Suela de cuero antideslizante que protege sin quitar sensibilidad.',
     },
     {
         icon: Wind,
-        title: 'No irritan',
-        description: 'Materiales hipoalergénicos, amigables con la piel sensible.',
+        title: 'Caricias para su Piel',
+        description: 'Materiales nobles y transpirables, 100% libres de plásticos.',
     },
     {
         icon: HandHeart,
-        title: 'Hechos con amor',
-        description: 'Cada par es cosido a mano, con atención al detalle.',
+        title: 'Hecho a Mano',
+        description: 'Cada puntada lleva dedicación, tiempo y mucho amor de mamá.',
     },
 ];
 

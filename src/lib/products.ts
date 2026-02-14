@@ -1,3 +1,5 @@
+export type Category = 'Mocasines' | 'Botitas' | 'Sandalias' | 'Accesorios';
+
 export interface Product {
     slug: string;
     name: string;
@@ -6,7 +8,7 @@ export interface Product {
     description: string;
     shortDescription: string;
     images: string[];
-    category: 'Mocasines' | 'Botitas' | 'Sandalias' | 'Accesorios';
+    category: Category;
     isFeatured: boolean;
     benefits: string[];
     materials: string[];

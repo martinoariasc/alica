@@ -4,12 +4,13 @@ import { useState } from 'react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Button from '@/components/ui/Button';
-import { products, categories, type Category } from '@/lib/products';
+import { products, getAllCategories, type Category } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function ShopPage() {
-    const [activeCategory, setActiveCategory] = useState<Category>('Todos');
+    const categories = getAllCategories();
+    const [activeCategory, setActiveCategory] = useState<string>('Todos');
 
     const filtered =
         activeCategory === 'Todos'
@@ -41,8 +42,8 @@ export default function ShopPage() {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${activeCategory === cat
-                                            ? 'bg-rose-deep text-white shadow-md shadow-rose/20'
-                                            : 'bg-cream text-charcoal/60 hover:bg-cream-dark hover:text-charcoal'
+                                        ? 'bg-rose-deep text-white shadow-md shadow-rose/20'
+                                        : 'bg-cream text-charcoal/60 hover:bg-cream-dark hover:text-charcoal'
                                         }`}
                                 >
                                     {cat}

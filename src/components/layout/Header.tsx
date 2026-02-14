@@ -68,10 +68,10 @@ export default function Header() {
                                 key={link.href}
                                 href={link.href}
                                 className={cn(
-                                    'font-body text-sm font-medium tracking-wide transition-all duration-300 hover:-translate-y-0.5',
+                                    'font-heading text-base font-medium tracking-wide transition-all duration-300 hover:-translate-y-0.5',
                                     isScrolled
-                                        ? 'text-charcoal/70 hover:text-rose-deep'
-                                        : 'text-white/80 hover:text-white'
+                                        ? 'text-charcoal/80 hover:text-rose-deep'
+                                        : 'text-white/90 hover:text-white'
                                 )}
                             >
                                 {link.label}
