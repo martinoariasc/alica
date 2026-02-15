@@ -23,60 +23,38 @@ export default function Button({
     type = 'button',
 }: ButtonProps) {
 
-    // 1. Structure: Relative container with overflow-hidden for "Curtain" effect
-    const containerBase = "relative inline-flex items-center justify-center overflow-hidden border transition-all duration-300 ease-out group cursor-pointer select-none active:scale-[0.98]";
+    // 1. Structure: Relative container
+    const containerBase = "relative inline-flex items-center justify-center font-bold transition-all duration-200 ease-out cursor-pointer select-none active:scale-[0.98]";
 
-    // 2. Shape: STRICTLY SQUARE (rounded-sm or none)
-    const shape = "rounded-sm";
+    // 2. Shape: Friendly Rounded (High Conversion)
+    const shape = "rounded-xl";
 
-    // 3. Variant Colors (Borders & Text)
+    // 3. 3D & Shadows (Depth = Clickability)
+    const depth = "shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-md";
+
+    // 4. Variants
     const variants = {
-        primary: "border-rose-deep text-white bg-rose-deep",
-        secondary: "border-stone-200 text-stone-800 bg-white hover:border-stone-800",
-        outline: "border-white text-white bg-transparent",
-        whatsapp: "border-[#25D366] text-white bg-[#25D366]"
+        primary: "bg-rose-deep text-white border-2 border-rose-deep bg-gradient-to-b from-rose-deep to-[#a88b85]",
+        secondary: "bg-white text-stone-800 border-2 border-stone-200 hover:border-stone-400",
+        outline: "bg-transparent text-white border-2 border-white hover:bg-white hover:text-stone-900",
+        whatsapp: "bg-[#25D366] text-white border-2 border-[#25D366] shadow-[#25D366]/30"
     };
 
-    // 4. Curtain Colors (The layer that slides in)
-    const curtainColors = {
-        primary: "bg-stone-900", // Rose -> Dark Stone
-        secondary: "bg-stone-200", // White -> Light Grey
-        outline: "bg-white", // Transparent -> White
-        whatsapp: "bg-[#1da851]" // Green -> Dark Green
-    };
-
-    // 5. Text Hover Colors (If needed to change text color on hover)
-    const textHover = {
-        primary: "group-hover:text-white",
-        secondary: "group-hover:text-stone-900",
-        outline: "group-hover:text-stone-900", // White text -> Dark text
-        whatsapp: "group-hover:text-white"
-    };
-
-    // 6. Sizes
+    // 5. Sizes (Larger touch targets for accessibility)
     const sizes = {
-        sm: 'h-10 px-6 text-[10px]',
-        md: 'h-12 px-8 text-xs',
-        lg: 'h-14 px-10 text-xs sm:text-sm',
+        sm: 'h-10 px-6 text-sm',
+        md: 'h-12 px-8 text-base', // Standard readable size
+        lg: 'h-14 px-10 text-lg', // Big CTA
     };
 
-    // 7. Typography
-    const typog = "font-body font-semibold uppercase tracking-[0.2em]";
+    const finalClassName = `${containerBase} ${shape} ${depth} ${variants[variant]} ${sizes[size]} ${className}`;
 
-    const finalClassName = `${containerBase} ${shape} ${variants[variant]} ${sizes[size]} ${typog} ${className}`;
-
-    const limitWidth = className.includes('w-full') ? '' : 'min-w-[160px]'; // Ensure minimum luxury width
+    const limitWidth = className.includes('w-full') ? '' : 'min-w-[160px]';
 
     const content = (
-        <>
-            {/* Curtain Element */}
-            <span className={`absolute inset-0 w-full h-full -mt-1 rounded-sm opacity-0 transition-opacity duration-300 ease-out ${curtainColors[variant]} group-hover:opacity-100 group-hover:mt-0`} />
-
-            {/* Text Content (Relative to sit on top of curtain) */}
-            <span className={`relative flex items-center gap-3 ${textHover[variant]}`}>
-                {children}
-            </span>
-        </>
+        <span className="flex items-center gap-2 drop-shadow-sm">
+            {children}
+        </span>
     );
 
     if (href) {
