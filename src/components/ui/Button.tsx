@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -8,7 +7,7 @@ interface ButtonProps {
     size?: 'sm' | 'md' | 'lg';
     href?: string;
     external?: boolean;
-    className?: string;
+    className?: string; // Kept for margin/width but NOT for styling overrides
     onClick?: () => void;
     type?: 'button' | 'submit';
 }
@@ -23,56 +22,81 @@ export default function Button({
     onClick,
     type = 'button',
 }: ButtonProps) {
-    const baseStyles =
-        'inline-flex items-center justify-center gap-3 font-body font-semibold text-xs uppercase tracking-[0.2em] rounded-md transition-all duration-300 ease-out cursor-pointer select-none border active:scale-[0.98]';
 
-    const variantStyles = {
-        primary:
-            'bg-rose-deep text-white border-transparent hover:bg-stone-800 hover:text-white shadow-md hover:shadow-xl hover:-translate-y-0.5',
-        secondary:
-            'bg-white text-stone-800 border-stone-200 hover:border-stone-800 hover:text-black hover:shadow-lg hover:-translate-y-0.5',
-        outline:
-            'bg-transparent text-white border-white hover:bg-white hover:text-stone-900 hover:border-white shadow-sm hover:shadow-md hover:-translate-y-0.5',
-        whatsapp:
-            'bg-[#25D366] text-white border-transparent hover:bg-[#1DA851] shadow-lg hover:shadow-[#25D366]/40 hover:-translate-y-0.5',
+    // 1. Structure: Relative container with overflow-hidden for "Curtain" effect
+    const containerBase = "relative inline-flex items-center justify-center overflow-hidden border transition-all duration-300 ease-out group cursor-pointer select-none active:scale-[0.98]";
+
+    // 2. Shape: STRICTLY SQUARE (rounded-sm or none)
+    const shape = "rounded-sm";
+
+    // 3. Variant Colors (Borders & Text)
+    const variants = {
+        primary: "border-rose-deep text-white bg-rose-deep",
+        secondary: "border-stone-200 text-stone-800 bg-white hover:border-stone-800",
+        outline: "border-white text-white bg-transparent",
+        whatsapp: "border-[#25D366] text-white bg-[#25D366]"
     };
 
-    const sizeStyles = {
-        sm: 'px-5 py-2 text-sm',
-        md: 'px-7 py-3 text-base',
-        lg: 'px-10 py-4 text-lg',
+    // 4. Curtain Colors (The layer that slides in)
+    const curtainColors = {
+        primary: "bg-stone-900", // Rose -> Dark Stone
+        secondary: "bg-stone-200", // White -> Light Grey
+        outline: "bg-white", // Transparent -> White
+        whatsapp: "bg-[#1da851]" // Green -> Dark Green
     };
 
-    const combinedClassName = cn(
-        baseStyles,
-        variantStyles[variant],
-        sizeStyles[size],
-        className
+    // 5. Text Hover Colors (If needed to change text color on hover)
+    const textHover = {
+        primary: "group-hover:text-white",
+        secondary: "group-hover:text-stone-900",
+        outline: "group-hover:text-stone-900", // White text -> Dark text
+        whatsapp: "group-hover:text-white"
+    };
+
+    // 6. Sizes
+    const sizes = {
+        sm: 'h-10 px-6 text-[10px]',
+        md: 'h-12 px-8 text-xs',
+        lg: 'h-14 px-10 text-xs sm:text-sm',
+    };
+
+    // 7. Typography
+    const typog = "font-body font-semibold uppercase tracking-[0.2em]";
+
+    const finalClassName = `${containerBase} ${shape} ${variants[variant]} ${sizes[size]} ${typog} ${className}`;
+
+    const limitWidth = className.includes('w-full') ? '' : 'min-w-[160px]'; // Ensure minimum luxury width
+
+    const content = (
+        <>
+            {/* Curtain Element */}
+            <span className={`absolute inset-0 w-full h-full -mt-1 rounded-sm opacity-0 transition-opacity duration-300 ease-out ${curtainColors[variant]} group-hover:opacity-100 group-hover:mt-0`} />
+
+            {/* Text Content (Relative to sit on top of curtain) */}
+            <span className={`relative flex items-center gap-3 ${textHover[variant]}`}>
+                {children}
+            </span>
+        </>
     );
 
     if (href) {
         if (external) {
             return (
-                <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={combinedClassName}
-                >
-                    {children}
+                <a href={href} target="_blank" rel="noopener noreferrer" className={`${finalClassName} ${limitWidth}`}>
+                    {content}
                 </a>
             );
         }
         return (
-            <Link href={href} className={combinedClassName}>
-                {children}
+            <Link href={href} className={`${finalClassName} ${limitWidth}`}>
+                {content}
             </Link>
         );
     }
 
     return (
-        <button type={type} onClick={onClick} className={combinedClassName}>
-            {children}
+        <button type={type} onClick={onClick} className={`${finalClassName} ${limitWidth}`}>
+            {content}
         </button>
     );
 }

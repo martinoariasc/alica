@@ -24,6 +24,7 @@ export default function HeroSection() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover"
                     poster="/images/hero-poster.jpg"
                 >
@@ -85,7 +86,6 @@ export default function HeroSection() {
                         href="/shop"
                         variant="primary"
                         size="lg"
-                        className="!bg-rose-deep !text-white hover:!bg-rose hover:!scale-105 min-w-[220px] shadow-xl shadow-rose-deep/20"
                     >
                         Elegir su primer recuerdo
                     </Button>
@@ -93,7 +93,6 @@ export default function HeroSection() {
                         href="/regalo"
                         variant="outline"
                         size="lg"
-                        className="!border-white !text-white hover:!bg-white hover:!text-charcoal min-w-[220px] backdrop-blur-sm"
                     >
                         🎁 Regalar amor eterno
                     </Button>
