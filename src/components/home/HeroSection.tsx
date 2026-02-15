@@ -53,12 +53,12 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                    className="font-body text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white leading-tight mb-6 drop-shadow-2xl tracking-tight"
-                    style={{ textShadow: '0 2px 5px rgba(0,0,0,0.8), 0 5px 20px rgba(0,0,0,0.5)' }}
+                    className="font-body text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-white leading-tight mb-6 drop-shadow-2xl tracking-tight"
+                    style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3)' }}
                 >
                     Sus primeros pasos
                     <br />
-                    <span className="italic font-light opacity-90">duran un suspiro...</span>
+                    <span className="italic font-normal text-white opacity-100">duran un suspiro...</span>
                     <br />
                     <span className="font-heading text-[#FFFDD0] italic font-medium tracking-normal" style={{ textShadow: '0 2px 5px rgba(0,0,0,0.8), 0 5px 20px rgba(0,0,0,0.5)' }}>
                         hacelos eternos.
