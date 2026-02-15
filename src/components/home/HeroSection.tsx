@@ -99,24 +99,6 @@ export default function HeroSection() {
                 </motion.div>
             </motion.div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
-            >
-                <span className="text-white/60 text-[10px] font-body tracking-[0.2em] uppercase">
-                    Descubrí más
-                </span>
-                <motion.div
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-                    className="w-6 h-10 rounded-full border border-white/40 flex items-start justify-center p-1.5 backdrop-blur-sm"
-                >
-                    <div className="w-1 h-2 rounded-full bg-white" />
-                </motion.div>
-            </motion.div>
         </section>
     );
 }

@@ -23,38 +23,38 @@ export default function Button({
     type = 'button',
 }: ButtonProps) {
 
-    // 1. Structure: Relative container
-    const containerBase = "relative inline-flex items-center justify-center font-bold transition-all duration-200 ease-out cursor-pointer select-none active:scale-[0.98]";
+    // 1. Structure: Reined Pill (Universal Standard for Premium)
+    const containerBase = "relative inline-flex items-center justify-center font-body font-semibold tracking-wide transition-all duration-300 ease-in-out cursor-pointer select-none active:scale-[0.98]";
 
-    // 2. Shape: Friendly Rounded (High Conversion)
-    const shape = "rounded-xl";
+    // 2. Shape: Pill (Friendly, Trusted, Luxury)
+    const shape = "rounded-full";
 
-    // 3. 3D & Shadows (Depth = Clickability)
-    const depth = "shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:shadow-md";
-
-    // 4. Variants
+    // 3. World-Class Variants (Inspired by Apple/Dior)
     const variants = {
-        // Primary: Vibrant Rose (High Visibility) + White Ring
-        primary: "bg-[#BE3B4F] text-white border-2 border-[#BE3B4F] shadow-lg shadow-rose-900/20 ring-2 ring-white/50 ring-offset-2 ring-offset-black/10",
-        secondary: "bg-white text-stone-800 border-2 border-stone-200 hover:border-stone-400 shadow-sm",
-        outline: "bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-stone-900 shadow-lg",
-        whatsapp: "bg-[#25D366] text-white border-2 border-[#25D366] shadow-[#25D366]/30"
+        // High Contrast, "Sold Out" Luxury
+        primary: "bg-stone-900 text-white border-2 border-transparent hover:bg-stone-800 shadow-xl shadow-stone-900/10 hover:shadow-2xl hover:-translate-y-0.5",
+        // Elegant & Accessible
+        secondary: "bg-white text-stone-900 border-2 border-stone-200 hover:border-stone-900 shadow-sm",
+        // Floating / Hero Visibility
+        outline: "bg-white/10 backdrop-blur-md text-white border-2 border-white hover:bg-white hover:text-stone-900 shadow-lg",
+        // Trusted Communication
+        whatsapp: "bg-[#25D366] text-white border-2 border-transparent hover:bg-[#1da851] shadow-lg shadow-[#25D366]/20"
     };
 
-    // 5. Sizes (Larger touch targets for accessibility)
+    // 4. Global Brand Sizes
     const sizes = {
-        sm: 'h-10 px-6 text-sm',
-        md: 'h-12 px-8 text-base', // Standard readable size
-        lg: 'h-14 px-10 text-lg', // Big CTA
+        sm: 'h-11 px-6 text-sm',
+        md: 'h-13 px-9 text-base',
+        lg: 'h-16 px-12 text-lg', // Apple size CTA
     };
 
-    const finalClassName = `${containerBase} ${shape} ${depth} ${variants[variant]} ${sizes[size]} ${className}`;
-
-    const limitWidth = className.includes('w-full') ? '' : 'min-w-[160px]';
+    const finalClassName = `${containerBase} ${shape} ${variants[variant]} ${sizes[size]} ${className}`;
+    const limitWidth = className.includes('w-full') ? '' : 'min-w-[200px]';
 
     const content = (
-        <span className="flex items-center gap-2 drop-shadow-sm">
+        <span className="flex items-center justify-center gap-3">
             {children}
+            {variant === 'primary' && <span className="text-white/40 group-hover:translate-x-1 transition-transform">→</span>}
         </span>
     );
 
