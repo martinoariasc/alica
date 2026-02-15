@@ -8,7 +8,7 @@ import { Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
-const babyImages = Array.from({ length: 8 }).map((_, i) => `/images/bebes/bebe-${i + 1}.jpg`);
+const babyImages = Array.from({ length: 9 }).map((_, i) => `/images/bebes/bebe-${i + 1}.jpg`);
 
 export default function BabyGallery() {
     return (
