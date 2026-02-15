@@ -25,6 +25,7 @@ export interface Product {
     videoUrl?: string;
     guaranteeText: string;
     scarcityText: string;
+    isBestSeller?: boolean;
 }
 
 export const products: Product[] = [
@@ -57,6 +58,7 @@ export const products: Product[] = [
         productionTime: '2 a 3 días hábiles',
         guaranteeText: 'Si no te enamora, te devolvemos cada guaraní.',
         scarcityText: 'Solo 4 pares disponibles esta semana',
+        isBestSeller: true,
     },
     {
         slug: 'botita-flecos-rosa',
@@ -147,6 +149,7 @@ export const products: Product[] = [
         productionTime: '3 a 4 días hábiles',
         guaranteeText: 'Si no te enamora, te devolvemos cada guaraní.',
         scarcityText: 'Solo hacemos 5 pares por mes',
+        isBestSeller: true,
     },
     {
         slug: 'vincha-lazo-rosa',
@@ -327,6 +330,7 @@ export const products: Product[] = [
         productionTime: '2 a 3 días hábiles',
         guaranteeText: 'Garantía de amor incondicional.',
         scarcityText: 'Solo 6 pares disponibles este mes',
+        isBestSeller: true,
     },
     {
         slug: 'set-regalo-princesa',

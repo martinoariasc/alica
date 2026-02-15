@@ -52,7 +52,7 @@ export default function FinalCTA() {
                             </svg>
                             Quiero elegir los suyos 💛
                         </Button>
-                        <Button href="/shop" variant="outline" size="lg">
+                        <Button href="/shop" variant="secondary" size="lg">
                             Ver toda la colección
                         </Button>
                     </div>

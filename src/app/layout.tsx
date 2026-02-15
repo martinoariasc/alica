@@ -3,6 +3,7 @@ import { Italiana, Montserrat } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import WhatsAppWidget from '@/components/ui/WhatsAppWidget';
 
 const italiana = Italiana({
   variable: '--font-heading',
@@ -55,6 +56,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );

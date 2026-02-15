@@ -43,47 +43,67 @@ export default function ProductCarousel() {
                         {featured.map((product) => (
                             <SwiperSlide key={product.slug}>
                                 <Link href={`/producto/${product.slug}`} className="block group h-full">
-                                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col border border-transparent hover:border-rose-light">
+                                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col border border-stone-100 hover:border-rose-light relative">
                                         {/* Product Image */}
-                                        <div className="aspect-square relative overflow-hidden bg-bg-warm">
+                                        <div className="aspect-[4/5] relative overflow-hidden bg-bg-warm">
                                             <img
                                                 src={product.images[0]}
                                                 alt={product.name}
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                             />
-                                            {/* Sale Badge */}
-                                            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-rose-deep text-white text-xs font-medium z-10">
-                                                -{Math.round((1 - product.price / product.oldPrice) * 100)}%
-                                            </div>
-                                            {/* Wishlist */}
-                                            <div className="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 hover:bg-rose-light cursor-pointer">
-                                                <Heart className="w-4 h-4 text-rose-deep" />
+                                            {/* Badges Container */}
+                                            <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
+                                                <div className="flex flex-col gap-2">
+                                                    {/* Sale Badge */}
+                                                    <div className="px-3 py-1 rounded-full bg-[#BE3B4F] text-white text-[10px] uppercase font-bold shadow-md">
+                                                        -{Math.round((1 - product.price / product.oldPrice) * 100)}%
+                                                    </div>
+                                                    {/* Best Seller Badge */}
+                                                    {product.isBestSeller && (
+                                                        <div className="px-3 py-1 rounded-full bg-stone-900 text-white text-[10px] uppercase font-bold shadow-md flex items-center gap-1">
+                                                            <span>★</span> MÁS VENDIDO
+                                                        </div>
+                                                    )}
+                                                </div>
+                                                {/* Wishlist */}
+                                                <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-rose-light cursor-pointer shadow-sm">
+                                                    <Heart className="w-4 h-4 text-[#BE3B4F]" />
+                                                </div>
                                             </div>
                                         </div>
 
                                         {/* Product Info */}
-                                        <div className="p-5 flex-1 flex flex-col items-center text-center">
-                                            <span className="text-[10px] font-body uppercase tracking-[2px] text-rose-deep mb-1 block">
+                                        <div className="p-6 flex-1 flex flex-col items-center text-center">
+                                            <span className="text-[10px] font-body uppercase tracking-[2px] text-stone-400 mb-2 block">
                                                 {product.category}
                                             </span>
-                                            <h3 className="font-heading text-lg font-semibold text-charcoal mb-1 group-hover:text-rose-deep transition-colors line-clamp-1">
+                                            <h3 className="font-heading text-xl font-bold text-stone-800 mb-1 group-hover:text-[#BE3B4F] transition-colors line-clamp-1">
                                                 {product.emotionalName}
                                             </h3>
-                                            <p className="text-xs text-muted mb-3 line-clamp-1 italic">
+                                            <p className="text-sm text-stone-500 mb-3 line-clamp-1 italic font-light">
                                                 {product.emotionalPhrase}
                                             </p>
-                                            <div className="flex items-center justify-center gap-3 mt-auto mb-3">
-                                                <span className="text-sm text-muted line-through">
+
+                                            {/* Social Proof Placeholder */}
+                                            <div className="flex items-center gap-1 mb-4">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <span key={i} className="text-xs text-yellow-500">★</span>
+                                                ))}
+                                                <span className="text-[10px] text-stone-400 ml-1">(12 reseñas)</span>
+                                            </div>
+
+                                            <div className="flex items-center justify-center gap-3 mt-auto">
+                                                <span className="text-sm text-stone-400 line-through">
                                                     {formatPrice(product.oldPrice)}
                                                 </span>
-                                                <span className="text-lg font-semibold text-charcoal">
+                                                <span className="text-xl font-bold text-stone-900">
                                                     {formatPrice(product.price)}
                                                 </span>
                                             </div>
-                                            <span className="text-xs text-rose-deep font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                Ver detalle →
-                                            </span>
                                         </div>
+
+                                        {/* Quick View Overlay (Small hint) */}
+                                        <div className="h-1 bg-[#BE3B4F]/10 w-0 group-hover:w-full transition-all duration-500" />
                                     </div>
                                 </Link>
                             </SwiperSlide>
@@ -91,9 +111,9 @@ export default function ProductCarousel() {
                     </Swiper>
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.4} className="text-center mt-8">
-                    <Button href="/shop" variant="outline" size="lg">
-                        Ver toda la colección
+                <AnimatedSection delay={0.4} className="text-center mt-4">
+                    <Button href="/shop" variant="primary" size="lg" className="px-16 shadow-2xl">
+                        Explorar toda la colección
                     </Button>
                 </AnimatedSection>
             </div>

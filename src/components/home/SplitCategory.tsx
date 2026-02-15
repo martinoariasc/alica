@@ -32,8 +32,8 @@ export default function SplitCategory() {
                         </p>
                         <Button
                             href="/shop?gender=nene"
-                            variant="outline"
-                            className="!border-white !text-white hover:!bg-white hover:!text-stone-800 backdrop-blur-md px-10 py-3 uppercase tracking-widest text-xs"
+                            variant="primary"
+                            className="px-10"
                         >
                             Descubrir
                         </Button>
@@ -64,8 +64,8 @@ export default function SplitCategory() {
                         </p>
                         <Button
                             href="/shop?gender=nena"
-                            variant="outline"
-                            className="!border-white !text-white hover:!bg-white hover:!text-stone-800 backdrop-blur-md px-10 py-3 uppercase tracking-widest text-xs"
+                            variant="primary"
+                            className="px-10"
                         >
                             Elegir su par
                         </Button>
