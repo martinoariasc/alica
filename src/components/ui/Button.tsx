@@ -34,9 +34,10 @@ export default function Button({
 
     // 4. Variants
     const variants = {
-        primary: "bg-rose-deep text-white border-2 border-rose-deep bg-gradient-to-b from-rose-deep to-[#a88b85]",
-        secondary: "bg-white text-stone-800 border-2 border-stone-200 hover:border-stone-400",
-        outline: "bg-transparent text-white border-2 border-white hover:bg-white hover:text-stone-900",
+        // Primary: Vibrant Rose (High Visibility) + White Ring
+        primary: "bg-[#BE3B4F] text-white border-2 border-[#BE3B4F] shadow-lg shadow-rose-900/20 ring-2 ring-white/50 ring-offset-2 ring-offset-black/10",
+        secondary: "bg-white text-stone-800 border-2 border-stone-200 hover:border-stone-400 shadow-sm",
+        outline: "bg-black/30 backdrop-blur-sm text-white border-2 border-white hover:bg-white hover:text-stone-900 shadow-lg",
         whatsapp: "bg-[#25D366] text-white border-2 border-[#25D366] shadow-[#25D366]/30"
     };
 
