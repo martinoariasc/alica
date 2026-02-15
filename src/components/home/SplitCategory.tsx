@@ -4,7 +4,6 @@ import Button from '@/components/ui/Button';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Image from 'next/image';
 
-// ... (imports)
 export default function SplitCategory() {
     return (
         <section className="w-full min-h-[80vh] flex flex-col md:flex-row overflow-hidden">
