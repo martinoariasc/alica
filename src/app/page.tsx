@@ -8,6 +8,7 @@ import BabyGallery from '@/components/home/BabyGallery';
 import GiftExperience from '@/components/home/GiftExperience';
 import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
 import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
+import SizeChart from '@/components/home/SizeChart';
 import FinalCTA from '@/components/home/FinalCTA';
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <GiftExperience />
       <BenefitsSection />
       <BabyGallery />
+      <SizeChart />
       <FinalCTA />
     </main>
   );

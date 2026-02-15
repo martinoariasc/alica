@@ -1,81 +1,112 @@
+import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'whatsapp';
+type ButtonSize = 'sm' | 'md' | 'lg';
+
 interface ButtonProps {
     children: ReactNode;
-    variant?: 'primary' | 'secondary' | 'outline' | 'whatsapp';
-    size?: 'sm' | 'md' | 'lg';
     href?: string;
-    external?: boolean;
-    className?: string; // Kept for margin/width but NOT for styling overrides
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    className?: string;
     onClick?: () => void;
-    type?: 'button' | 'submit';
+    external?: boolean;
+    type?: 'button' | 'submit' | 'reset';
+    disabled?: boolean;
 }
 
+/**
+ * World-Class Boutique Button (v5)
+ * Powered by Framer Motion for high-end interaction design.
+ */
 export default function Button({
     children,
+    href,
     variant = 'primary',
     size = 'md',
-    href,
-    external = false,
     className = '',
     onClick,
+    external = false,
     type = 'button',
+    disabled = false,
 }: ButtonProps) {
 
-    // 1. Structure: Reined Pill (Universal Standard for Premium)
-    const containerBase = "relative inline-flex items-center justify-center font-body font-semibold tracking-wide transition-all duration-300 ease-in-out cursor-pointer select-none active:scale-[0.98]";
-
-    // 2. Shape: Pill (Friendly, Trusted, Luxury)
-    const shape = "rounded-full";
-
-    // 3. World-Class Variants (Inspired by Apple/Dior)
+    // 1. Boutique Visual Config
     const variants = {
-        // High Contrast, "Sold Out" Luxury
-        primary: "bg-stone-900 text-white border-2 border-transparent hover:bg-stone-800 shadow-xl shadow-stone-900/10 hover:shadow-2xl hover:-translate-y-0.5",
-        // Elegant & Accessible
-        secondary: "bg-white text-stone-900 border-2 border-stone-200 hover:border-stone-900 shadow-sm",
-        // Floating / Hero Visibility
+        primary: "bg-stone-900 text-white border-2 border-transparent shadow-xl shadow-stone-900/10",
+        secondary: "bg-stone-50 text-stone-900 border-2 border-stone-200 hover:border-stone-900 shadow-sm",
         outline: "bg-white/10 backdrop-blur-md text-white border-2 border-white hover:bg-white hover:text-stone-900 shadow-lg",
-        // Trusted Communication
-        whatsapp: "bg-[#25D366] text-white border-2 border-transparent hover:bg-[#1da851] shadow-lg shadow-[#25D366]/20"
+        whatsapp: "bg-[#25D366] text-white border-2 border-transparent shadow-lg shadow-[#25D366]/20"
     };
 
-    // 4. Global Brand Sizes
     const sizes = {
-        sm: 'h-11 px-6 text-sm',
-        md: 'h-13 px-9 text-base',
-        lg: 'h-16 px-12 text-lg', // Apple size CTA
+        sm: 'h-11 px-7 text-sm',
+        md: 'h-13 px-10 text-base',
+        lg: 'h-16 px-14 text-lg',
     };
 
-    const finalClassName = `${containerBase} ${shape} ${variants[variant]} ${sizes[size]} ${className}`;
-    const limitWidth = className.includes('w-full') ? '' : 'min-w-[200px]';
+    const baseStyles = "relative inline-flex items-center justify-center font-body font-semibold tracking-widest uppercase text-[11px] rounded-full transition-colors duration-300 select-none cursor-pointer overflow-hidden group";
+    const finalStyles = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
 
     const content = (
-        <span className="flex items-center justify-center gap-3">
+        <span className="relative z-10 flex items-center justify-center gap-3">
             {children}
-            {variant === 'primary' && <span className="text-white/40 group-hover:translate-x-1 transition-transform">→</span>}
+            {variant === 'primary' && (
+                <motion.span
+                    initial={{ x: 0 }}
+                    whileHover={{ x: 5 }}
+                    className="text-white/40"
+                >
+                    →
+                </motion.span>
+            )}
         </span>
     );
 
+    // 3. Render Logic
     if (href) {
         if (external) {
             return (
-                <a href={href} target="_blank" rel="noopener noreferrer" className={`${finalClassName} ${limitWidth}`}>
+                <motion.a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={finalStyles}
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    whileTap={{ scale: 0.98, y: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                >
                     {content}
-                </a>
+                </motion.a>
             );
         }
         return (
-            <Link href={href} className={`${finalClassName} ${limitWidth}`}>
-                {content}
+            <Link href={href} passHref legacyBehavior>
+                <motion.a
+                    className={finalStyles}
+                    whileHover={{ y: -4, scale: 1.02 }}
+                    whileTap={{ scale: 0.98, y: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                >
+                    {content}
+                </motion.a>
             </Link>
         );
     }
 
     return (
-        <button type={type} onClick={onClick} className={`${finalClassName} ${limitWidth}`}>
+        <motion.button
+            type={type}
+            onClick={onClick}
+            disabled={disabled}
+            className={finalStyles}
+            whileHover={{ y: -4, scale: 1.02 }}
+            whileTap={{ scale: 0.98, y: 0 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
             {content}
-        </button>
+        </motion.button>
     );
 }
