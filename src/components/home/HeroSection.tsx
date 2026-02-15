@@ -30,8 +30,9 @@ export default function HeroSection() {
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic Overlays */}
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+                {/* Cinematic Overlays - Lightened for "No Oscuro" request */}
+                {/* <div className="absolute inset-0 bg-black/40" /> Removed to keep it bright */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-60" />
             </motion.div>
 
             {/* Content */}
