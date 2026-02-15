@@ -26,12 +26,12 @@ export default function StorySection() {
                                 subtitle="No es producción, es devoción"
                                 className="!text-center lg:!text-left !items-center lg:!items-start mb-8"
                             />
-                            <p className="font-body text-lg text-stone-600 leading-loose mb-6 font-light">
+                            <p className="font-body text-lg text-charcoal leading-loose mb-6 font-normal">
                                 Cuando sostenés un par de ALICA, vas a sentir algo diferente.
-                                No es solo tela e hilo — es la <span className="italic font-medium text-stone-800">misma dedicación</span> que
+                                No es solo tela e hilo — es la <span className="italic font-medium text-black">misma dedicación</span> que
                                 vos ponés al vestirlo cada mañana.
                             </p>
-                            <p className="font-body text-lg text-stone-600 leading-loose mb-12 font-light">
+                            <p className="font-body text-lg text-charcoal leading-loose mb-12 font-normal">
                                 Mientras las fábricas producen miles por hora, nosotros invertimos
                                 <strong className="text-rose-deep font-medium"> 3 horas de manos que aman</strong> en cada par.
                                 Porque los piecitos que van a dar los pasos más importantes de su vida
@@ -44,8 +44,8 @@ export default function StorySection() {
                                     <AnimatedSection key={step.number} delay={i * 0.1}>
                                         <div className="group">
                                             <span className="block font-heading text-4xl text-rose-deep/20 mb-2 group-hover:text-rose-deep/40 transition-colors">{step.number}</span>
-                                            <h4 className="font-heading text-lg text-stone-800 mb-1">{step.title}</h4>
-                                            <p className="text-sm text-stone-500 font-light leading-relaxed">{step.desc}</p>
+                                            <h4 className="font-heading text-lg text-charcoal font-semibold mb-1">{step.title}</h4>
+                                            <p className="text-sm text-stone-600 font-medium leading-relaxed">{step.desc}</p>
                                         </div>
                                     </AnimatedSection>
                                 ))}
