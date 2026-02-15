@@ -64,7 +64,7 @@ export default function BenefitsSection() {
                                     <h3 className="font-heading text-lg font-bold text-charcoal mb-2">
                                         {benefit.title}
                                     </h3>
-                                    <p className="font-body text-sm text-charcoal/80 leading-relaxed">
+                                    <p className="font-body text-sm text-charcoal leading-relaxed font-medium">
                                         {benefit.description}
                                     </p>
                                 </motion.div>
