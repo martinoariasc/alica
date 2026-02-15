@@ -57,7 +57,7 @@ export default function SizeChart() {
                                 <div className="text-right pr-4">Medida</div>
                             </div>
                             <div className="divide-y divide-[#F0EAE6]">
-                                {sizes.map((item, idx) => (
+                                {sizes.map((item) => (
                                     <motion.div
                                         key={item.range}
                                         whileHover={{ backgroundColor: '#FAF7F5' }}

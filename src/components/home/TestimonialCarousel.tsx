@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-const testimonials = Array.from({ length: 9 }).map((_, i) => `/images/testimonials/testimonio-${i + 1}.jpg`);
+const testimonials = Array.from({ length: 9 }).map((_unused, i) => `/images/testimonials/testimonio-${i + 1}.jpg`);
 
 export default function TestimonialCarousel() {
     return (

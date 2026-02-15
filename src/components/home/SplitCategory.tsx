@@ -35,7 +35,7 @@ export default function SplitCategory() {
                             variant="primary"
                             className="px-10"
                         >
-                            Descubrir
+                            Inicia su aventura
                         </Button>
                     </AnimatedSection>
                 </div>
