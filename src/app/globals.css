@@ -6,16 +6,16 @@
 /* ── Alica Bebes "Soft Luxury" Palette (Apple + Disney Baby) ── */
 :root {
   /* Bases */
-  --alica-bg: #F9F5F0;
-  /* Cream Haze - Suave, no blanco */
-  --alica-bg-warm: #F2ECE4;
-  /* Un poco más oscuro para secciones */
+  --alica-bg: #FAF7F5;
+  /* Soft Cloud - Más limpio y cálido */
+  --alica-bg-warm: #F0EBE5;
+  /* Stone Warm - Para secciones */
 
   /* Text */
-  --alica-text-main: #4A4A4A;
-  /* Warm Graphite - No negro puro */
-  --alica-text-muted: #8C8580;
-  /* Taupe - Elegante */
+  --alica-text-main: #4E423C;
+  /* Deep Espresso - Más contraste */
+  --alica-text-muted: #857A74;
+  /* Deep Taupe */
 
   /* Accents (Emotional) */
   --alica-blue: #D4DEE5;
