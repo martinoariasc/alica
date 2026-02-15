@@ -24,17 +24,17 @@ export default function Button({
     type = 'button',
 }: ButtonProps) {
     const baseStyles =
-        'inline-flex items-center justify-center gap-2 font-body font-medium rounded-2xl transition-all duration-300 ease-out cursor-pointer select-none border border-transparent tracking-wide active:scale-[0.98]';
+        'inline-flex items-center justify-center gap-3 font-body font-semibold text-xs uppercase tracking-[0.2em] rounded-md transition-all duration-300 ease-out cursor-pointer select-none border active:scale-[0.98]';
 
     const variantStyles = {
         primary:
-            'bg-rose-deep text-white shadow-xl shadow-rose-deep/20 hover:bg-rose hover:shadow-2xl hover:shadow-rose-deep/30 hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-b from-rose-deep to-[#B0928C]',
+            'bg-rose-deep text-white border-transparent hover:bg-stone-800 hover:text-white shadow-md hover:shadow-xl hover:-translate-y-0.5',
         secondary:
-            'bg-white text-charcoal border border-stone-200 hover:border-rose-deep/30 hover:shadow-lg hover:-translate-y-0.5',
+            'bg-white text-stone-800 border-stone-200 hover:border-stone-800 hover:text-black hover:shadow-lg hover:-translate-y-0.5',
         outline:
-            'border-2 border-rose-deep text-rose-deep bg-transparent hover:bg-rose-deep hover:text-white hover:shadow-xl hover:shadow-rose/20 hover:-translate-y-0.5',
+            'bg-transparent text-white border-white hover:bg-white hover:text-stone-900 hover:border-white shadow-sm hover:shadow-md hover:-translate-y-0.5',
         whatsapp:
-            'bg-[#25D366] text-white shadow-lg shadow-[#25D366]/20 hover:bg-[#20BD5A] hover:shadow-xl hover:-translate-y-0.5',
+            'bg-[#25D366] text-white border-transparent hover:bg-[#1DA851] shadow-lg hover:shadow-[#25D366]/40 hover:-translate-y-0.5',
     };
 
     const sizeStyles = {
