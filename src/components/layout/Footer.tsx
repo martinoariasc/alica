@@ -24,11 +24,11 @@ export default function Footer() {
                             <span className="font-heading text-2xl font-semibold text-white">
                                 Alica
                             </span>
-                            <span className="font-body text-[10px] uppercase tracking-[3px] text-white/50 mt-1">
+                            <span className="font-body text-[10px] uppercase tracking-[3px] text-white/70 mt-1">
                                 bebés
                             </span>
                         </div>
-                        <p className="text-sm leading-relaxed text-white/60 max-w-xs mx-auto">
+                        <p className="text-sm leading-relaxed text-white/90 max-w-xs mx-auto">
                             Zapatitos artesanales de suela blanda, hechos con amor para los
                             primeros pasos de tu bebé.
                         </p>
@@ -70,7 +70,7 @@ export default function Footer() {
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm text-white/60 hover:text-rose transition-colors duration-200"
+                                        className="text-sm text-white/80 hover:text-white transition-colors duration-200"
                                     >
                                         {link.label}
                                     </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
                         <h3 className="font-heading text-lg font-semibold text-white mb-6">
                             Contacto
                         </h3>
-                        <div className="space-y-4 text-sm text-white/60">
+                        <div className="space-y-4 text-sm text-white/80">
                             <p>📍 Paraguay</p>
                             <p>📱 WhatsApp: Escribinos para consultar</p>
                             <p>📸 @alicabebes en Instagram</p>
@@ -104,10 +104,10 @@ export default function Footer() {
 
                 {/* Bottom */}
                 <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-white/40 text-center sm:text-left w-full">
+                    <p className="text-xs text-white/60 text-center sm:text-left w-full">
                         © {new Date().getFullYear()} Alica Bebés. Todos los derechos reservados.
                     </p>
-                    <p className="text-xs text-white/40 flex items-center justify-center sm:justify-end gap-1 w-full">
+                    <p className="text-xs text-white/60 flex items-center justify-center sm:justify-end gap-1 w-full">
                         Hecho con <Heart className="w-3 h-3 text-rose fill-current" /> en Paraguay
                     </p>
                 </div>
