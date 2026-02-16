@@ -1,13 +1,12 @@
+'use client';
+
 import HeroSection from '@/components/home/HeroSection';
-import StorySection from '@/components/home/StorySection';
-import SplitCategory from '@/components/home/SplitCategory';
+import BarefootBenefits from '@/components/home/BarefootBenefits'; // Renamed
+import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
 import ProductCarousel from '@/components/home/ProductCarousel';
-import BenefitsSection from '@/components/home/BenefitsSection';
+import StorySection from '@/components/home/StorySection'; // Refined
 import TestimonialCarousel from '@/components/home/TestimonialCarousel';
 import BabyGallery from '@/components/home/BabyGallery';
-import GiftExperience from '@/components/home/GiftExperience';
-import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
-import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
 import SizeChart from '@/components/home/SizeChart';
 import FinalCTA from '@/components/home/FinalCTA';
 import Separator from '@/components/ui/Separator';
@@ -15,69 +14,80 @@ import VideoSection from '@/components/ui/VideoSection';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-bg">
+    <main className="overflow-hidden min-h-screen">
+      {/* 1. HERO: The Emotional Hook ("Make them eternal") */}
       <HeroSection />
+
       <Separator showLine={false} />
 
-      {/* Sección 2 — StorySection + Video */}
-      <StorySection />
-      <section className="py-16 md:py-24 bg-bg-warm/30">
+      {/* 2. PROBLEM/SOLUTION + SAFETY: "Why soft sole?" */}
+      <BarefootBenefits />
+
+      <Separator />
+
+      {/* 3. SCARCITY + ARTISANAL VALUE: "Not a factory, a workshop." */}
+      <ArtisanalUrgency />
+
+      {/* Video Interlude 1: The Process */}
+      <section className="py-12 md:py-24">
         <div className="max-w-6xl mx-auto px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="max-w-sm mx-auto md:max-w-none">
+            <div className="max-w-sm mx-auto md:max-w-none w-full">
               <VideoSection src="/videos/video-seccion-2.mp4" />
             </div>
             <div className="text-center md:text-left">
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">Mirá esto</span>
-              <h3 className="font-heading text-3xl md:text-4xl text-charcoal mb-6 leading-tight italic">
-                Cada puntada cuenta una historia de amor
+              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">Sin Prisas</span>
+              <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-6 leading-tight italic">
+                Coser memorias,<br />no solo zapatos.
               </h3>
-              <p className="font-body text-muted leading-relaxed font-light">
-                Nuestros zapatitos se hacen uno a uno, con la misma paciencia y delicadeza con la que cuidás a tu bebé. Mirá el proceso artesanal que hace de cada par algo único e irrepetible.
+              <p className="font-body text-muted leading-relaxed font-light text-lg">
+                En un mundo donde todo es rápido y desechable, nosotros elegimos la pausa. Cada par de ALICA lleva horas de manos pacientes que saben que están vistiendo los pies de alguien muy importante.
               </p>
             </div>
           </div>
         </div>
       </section>
+
       <Separator />
 
-      {/* Sección 3 — ArtisanalUrgency + Video */}
-      <ArtisanalUrgency />
-      <section className="py-16 md:py-24 bg-white">
+      {/* 4. DESIRE: The Product Showcase */}
+      <ProductCarousel />
+
+      <Separator />
+
+      {/* 5. MEMORY/EMOTION: "They grow too fast" */}
+      <StorySection />
+
+      {/* Video Interlude 2: The Feeling */}
+      <section className="py-12 md:py-24">
         <div className="max-w-6xl mx-auto px-6 sm:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 text-center md:text-left">
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">El detalle importa</span>
-              <h3 className="font-heading text-3xl md:text-4xl text-charcoal mb-6 leading-tight italic">
-                Suavidad que se siente, calidad que se ve
+              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">Sensorial</span>
+              <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-6 leading-tight italic">
+                Como caminar sobre<br />nubes de algodón.
               </h3>
-              <p className="font-body text-muted leading-relaxed font-light">
-                Materiales 100% naturales, costuras invisibles y una suela blanda que abraza sus piecitos. Cada detalle está pensado para la comodidad y seguridad de tu bebé.
+              <p className="font-body text-muted leading-relaxed font-light text-lg">
+                Imaginate la suavidad de tu remera favorita. Ahora imaginate eso abrazando sus piecitos. Sin rigidez, sin costuras que molesten. Solo libertad puta para que exploren su mundo.
               </p>
             </div>
-            <div className="order-1 md:order-2 max-w-sm mx-auto md:max-w-none">
+            <div className="order-1 md:order-2 max-w-sm mx-auto md:max-w-none w-full">
               <VideoSection src="/videos/video-seccion-3.mp4" />
             </div>
           </div>
         </div>
       </section>
+
       <Separator />
 
-      <BenefitsSection />
-      <Separator />
-      <SplitCategory />
-      <Separator />
-      <ProductCarousel />
-      <Separator />
-      <SecondaryHeroSection />
-      <Separator />
+      {/* 6. TRUST: Social Proof */}
       <TestimonialCarousel />
+
       <Separator />
-      <GiftExperience />
-      <Separator />
-      <BabyGallery />
-      <Separator />
+
+      {/* 7. UTILITY & CLOSING */}
       <SizeChart />
+      <BabyGallery />
       <Separator />
       <FinalCTA />
     </main>

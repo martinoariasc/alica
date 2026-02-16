@@ -18,12 +18,12 @@ export default function ProductCarousel() {
     const featured = getFeaturedProducts();
 
     return (
-        <section className="py-32 md:py-48 bg-bg-warm overflow-hidden">
+        <section className="py-24 md:py-32 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <AnimatedSection blur>
                     <SectionTitle
-                        title="Galería de Tesoros"
-                        subtitle="Cada par tiene una historia esperándote."
+                        title="Tesoros de Edición Limitada"
+                        subtitle="Cada par es único. Cuando se va, se va para siempre."
                     />
                 </AnimatedSection>
 
