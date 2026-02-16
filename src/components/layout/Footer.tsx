@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Heart } from 'lucide-react';
 import { buildWhatsAppURL } from '@/lib/utils';
 
@@ -19,15 +20,13 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                     {/* Brand */}
                     <div className="space-y-4 flex flex-col items-center">
-                        <div className="flex items-center gap-2 justify-center">
-                            <Heart className="w-5 h-5 text-rose fill-current" />
-                            <span className="font-heading text-2xl font-semibold text-white">
-                                Alica
-                            </span>
-                            <span className="font-body text-[10px] uppercase tracking-[3px] text-white/70 mt-1">
-                                bebés
-                            </span>
-                        </div>
+                        <Image
+                            src="/images/brand/logo sin fondo.png"
+                            alt="Alica Bebés"
+                            width={100}
+                            height={100}
+                            className="h-20 w-auto object-contain brightness-[100] invert"
+                        />
                         <p className="text-sm leading-relaxed text-white/90 max-w-xs mx-auto">
                             Zapatitos artesanales de suela blanda, hechos con amor para los
                             primeros pasos de tu bebé.

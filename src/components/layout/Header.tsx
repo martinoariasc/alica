@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import { buildWhatsAppURL, cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -22,7 +23,7 @@ export default function Header() {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -48,15 +49,18 @@ export default function Header() {
                 )}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-                    {/* Logo */}
+                    {/* Logo — horizontal variant for header */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <img
-                            src="/logo.svg"
+                        <Image
+                            src="/images/brand/logo horizontal sin fondo.png"
                             alt="Alica Bebés"
+                            width={160}
+                            height={50}
                             className={cn(
-                                "h-12 w-auto transition-all duration-300",
+                                "h-10 md:h-12 w-auto transition-all duration-300 object-contain",
                                 isScrolled ? "brightness-100" : "brightness-[100] drop-shadow-md"
                             )}
+                            priority
                         />
                     </Link>
 
@@ -132,9 +136,13 @@ export default function Header() {
                             className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col"
                         >
                             <div className="flex items-center justify-between p-6 border-b border-border">
-                                <div className="flex items-center gap-2">
-                                    <img src="/logo.svg" alt="Alica" className="h-10 w-auto" />
-                                </div>
+                                <Image
+                                    src="/images/brand/logo sin fondo.png"
+                                    alt="Alica"
+                                    width={80}
+                                    height={80}
+                                    className="h-12 w-auto object-contain"
+                                />
                                 <button
                                     onClick={() => setIsMobileOpen(false)}
                                     className="p-2 text-charcoal hover:text-rose-deep transition-colors"
