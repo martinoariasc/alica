@@ -3,37 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ── Alica Bebes Design Tokens ── */
-/* ── Alica Bebes "Soft Luxury" Palette (Apple + Disney Baby) ── */
 :root {
-  /* Bases */
   --alica-bg: #FAF7F5;
-  /* Soft Cloud - Más limpio y cálido */
   --alica-bg-warm: #F0EBE5;
-  /* Stone Warm - Para secciones */
-
-  /* Text */
   --alica-text-main: #4E423C;
-  /* Deep Espresso - Más contraste */
   --alica-text-muted: #857A74;
-  /* Deep Taupe */
-
-  /* Accents (Emotional) */
   --alica-blue: #D4DEE5;
-  /* Morning Sky (Marineros) */
   --alica-pink: #EAD8D4;
-  /* Baby Petal (Princesas) */
   --alica-gold: #C5B393;
-  /* Muted Gold (Detalles Premium) */
-
-  /* Functional */
   --alica-white: #FFFFFF;
   --alica-cream-dark: #E6DCCD;
-
-  /* Legacy mapping for compatibility while refactoring */
   --alica-charcoal: var(--alica-text-main);
   --alica-rose: var(--alica-pink);
   --alica-rose-deep: #BFA5A0;
-  /* Darker pink for text/buttons */
   --alica-rose-light: #F5EBE8;
 }
 
@@ -48,11 +30,8 @@
   --color-rose: var(--alica-rose);
   --color-rose-deep: var(--alica-rose-deep);
   --color-rose-light: var(--alica-rose-light);
-
   --font-heading: 'Italiana', serif;
   --font-body: 'Montserrat', sans-serif;
-
-  /* Animation Utilities */
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-in: fadeIn 1s ease-out forwards;
 }
@@ -91,16 +70,16 @@ h6 {
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--alica-cream);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--alica-rose);
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -124,7 +103,7 @@ h6 {
   opacity: 1 !important;
 }
 
-/* ── Animations ── */
+/* ── Animations (GPU-accelerated) ── */
 @keyframes float {
 
   0%,
@@ -149,13 +128,31 @@ h6 {
   }
 }
 
-@keyframes shimmer {
+@keyframes gradient-shift {
   0% {
-    background-position: -200% 0;
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
   }
 
   100% {
-    background-position: 200% 0;
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scroll-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
   }
 }
 
@@ -165,6 +162,21 @@ h6 {
 
 .animate-pulse-soft {
   animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* ── Ticker Fade Edges ── */
+.ticker-fade {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 /* ── Video Hero ── */
@@ -191,4 +203,16 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

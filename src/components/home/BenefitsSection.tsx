@@ -1,8 +1,8 @@
 'use client';
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import SectionTitle from '@/components/ui/SectionTitle';
-import { ShieldCheck, Heart, Sparkles, Smile, Baby } from 'lucide-react';
+import FloatingElement from '@/components/ui/FloatingElement';
+import { ShieldCheck, Heart, Sparkles, Smile, Footprints } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const benefits = [
@@ -12,7 +12,7 @@ const benefits = [
         description: 'Materiales 100% naturales y costuras internas invisibles. Cuidamos su piel para que vos no tengas que preocuparte por roces o alergias.',
     },
     {
-        icon: Footprints, // Wait, Footprints is more descriptive for baby
+        icon: Footprints,
         title: 'Su libertad, tu orgullo',
         description: 'Nuestra tecnología de suela blanda imita el caminar descalzo. Vas a amar verlo descubrir el mundo con total seguridad y equilibrio.',
     },
@@ -33,13 +33,19 @@ const benefits = [
     },
 ];
 
-import { Footprints } from 'lucide-react';
-
 export default function BenefitsSection() {
     return (
-        <section className="py-32 md:py-48 bg-white">
+        <section className="py-32 md:py-48 bg-white relative overflow-hidden">
+            {/* Floating Decorative Sparkles */}
+            <FloatingElement className="absolute top-[15%] right-[12%] pointer-events-none opacity-20" amplitude={15} duration={7} rotate={10}>
+                <div className="w-3 h-3 rounded-full bg-gold" />
+            </FloatingElement>
+            <FloatingElement className="absolute bottom-[20%] left-[8%] pointer-events-none opacity-15" amplitude={12} duration={9} delay={3} rotate={-8}>
+                <div className="w-4 h-4 rounded-full bg-rose-light" />
+            </FloatingElement>
+
             <div className="max-w-6xl mx-auto px-6 sm:px-12">
-                <AnimatedSection>
+                <AnimatedSection blur>
                     <div className="text-center mb-24 md:mb-32">
                         <span className="font-body text-[11px] tracking-[0.4em] uppercase text-stone-300 mb-6 block font-bold">Inversión en Calidad</span>
                         <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-medium text-stone-900 leading-[1.1]">
@@ -52,11 +58,11 @@ export default function BenefitsSection() {
                     {benefits.map((benefit, i) => {
                         const Icon = benefit.icon;
                         return (
-                            <AnimatedSection key={benefit.title} delay={i * 0.1}>
+                            <AnimatedSection key={benefit.title} delay={i * 0.12} blur scale={0.95}>
                                 <motion.div
                                     className="flex flex-col items-center text-center group"
                                     whileHover={{ y: -10 }}
-                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    transition={{ duration: 0.5, ease: 'easeOut' }}
                                 >
                                     <div className="w-20 h-20 mb-8 rounded-full bg-rose-light/20 flex items-center justify-center relative">
                                         <motion.div

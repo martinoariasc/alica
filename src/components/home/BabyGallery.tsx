@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import { motion } from 'framer-motion';
 
 const babyImages = Array.from({ length: 9 }).map((_unused, i) => `/images/bebes/bebe-${i + 1}.jpg`);
 
@@ -14,7 +15,7 @@ export default function BabyGallery() {
     return (
         <section className="py-32 md:py-48 bg-bg-warm/30 overflow-hidden">
             <div className="max-w-[1920px] mx-auto">
-                <AnimatedSection>
+                <AnimatedSection blur>
                     <SectionTitle
                         title="Bebés ALICA"
                         subtitle="La comunidad más tierna del mundo"
@@ -29,11 +30,11 @@ export default function BabyGallery() {
                         slidesPerView={1.5}
                         loop={true}
                         freeMode={true}
-                        speed={5000} // Linear continuous scroll
+                        speed={5000}
                         autoplay={{
                             delay: 0,
                             disableOnInteraction: false,
-                            pauseOnMouseEnter: true, // Allow user to pause by hovering
+                            pauseOnMouseEnter: true,
                         }}
                         breakpoints={{
                             640: { slidesPerView: 2.5, spaceBetween: 24 },
@@ -43,17 +44,24 @@ export default function BabyGallery() {
                     >
                         {babyImages.map((src, i) => (
                             <SwiperSlide key={i}>
-                                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group cursor-grab active:cursor-grabbing">
+                                <motion.div
+                                    className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-sm group cursor-grab active:cursor-grabbing"
+                                    whileHover={{
+                                        scale: 1.04,
+                                        rotate: i % 2 === 0 ? 1.5 : -1.5,
+                                        boxShadow: '0 15px 40px -10px rgba(0,0,0,0.15)',
+                                    }}
+                                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                                >
                                     <Image
                                         src={src}
                                         alt={`Bebé ALICA ${i + 1}`}
                                         fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        className="object-cover transition-transform duration-700"
                                         sizes="(max-width: 640px) 70vw, (max-width: 1024px) 40vw, 25vw"
                                     />
-                                    {/* Subtle overlay on hover */}
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                                </div>
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                                </motion.div>
                             </SwiperSlide>
                         ))}
                     </Swiper>

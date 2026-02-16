@@ -19,25 +19,27 @@ export default function ArtisanalUrgency() {
     return (
         <section className="py-4 bg-stone-50 text-stone-900 border-y border-stone-200/50 overflow-hidden relative">
             <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 pointer-events-none" />
-            <motion.div
-                className="flex whitespace-nowrap gap-8"
-                animate={{ x: ['0%', '-33.33%'] }}
-                transition={{
-                    repeat: Infinity,
-                    duration: 30,
-                    ease: 'linear',
-                }}
-            >
-                {duplicatedItems.map((item, i) => (
-                    <span
-                        key={i}
-                        className="font-heading text-sm md:text-base tracking-wide font-light flex-shrink-0 flex items-center gap-2"
-                    >
-                        <span>{item}</span>
-                        <span className="text-gold/60 text-xs">✦</span>
-                    </span>
-                ))}
-            </motion.div>
+            <div className="ticker-fade">
+                <motion.div
+                    className="flex whitespace-nowrap gap-8"
+                    animate={{ x: ['0%', '-33.33%'] }}
+                    transition={{
+                        repeat: Infinity,
+                        duration: 30,
+                        ease: 'linear',
+                    }}
+                >
+                    {duplicatedItems.map((item, i) => (
+                        <span
+                            key={i}
+                            className="font-heading text-sm md:text-base tracking-wide font-light flex-shrink-0 flex items-center gap-2"
+                        >
+                            <span>{item}</span>
+                            <span className="text-gold/60 text-xs">✦</span>
+                        </span>
+                    ))}
+                </motion.div>
+            </div>
         </section>
     );
 }

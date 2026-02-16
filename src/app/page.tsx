@@ -11,16 +11,29 @@ import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
 import SizeChart from '@/components/home/SizeChart';
 import FinalCTA from '@/components/home/FinalCTA';
 import Separator from '@/components/ui/Separator';
+import VideoSection from '@/components/ui/VideoSection';
 
 export default function Home() {
   return (
     <main className="overflow-hidden bg-bg">
+      {/* Sección 1 */}
       <HeroSection />
       <Separator showLine={false} />
+
+      {/* Sección 2 — with video */}
       <StorySection />
+      <div className="max-w-md mx-auto px-6 py-8 md:py-16">
+        <VideoSection src="/videos/video-seccion-2.mp4" />
+      </div>
       <Separator />
+
+      {/* Sección 3 — with video */}
       <ArtisanalUrgency />
+      <div className="max-w-md mx-auto px-6 py-8 md:py-16">
+        <VideoSection src="/videos/video-seccion-3.mp4" />
+      </div>
       <Separator />
+
       <BenefitsSection />
       <Separator />
       <SplitCategory />

@@ -2,6 +2,8 @@
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
+import FloatingElement from '@/components/ui/FloatingElement';
+import ParallaxLayer from '@/components/ui/ParallaxLayer';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -24,10 +26,6 @@ const momPillars = [
     },
 ];
 
-/**
- * StorySection Optimized for Conversion: "The Mom's Perspective"
- * Focuses on the user (The Mom) rather than the brand.
- */
 export default function StorySection() {
     const sectionRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
@@ -39,10 +37,14 @@ export default function StorySection() {
 
     return (
         <section ref={sectionRef} className="py-32 md:py-48 bg-[#FAF7F5] relative overflow-hidden">
-            {/* Soft Ambient Background Elements */}
+            {/* Soft Ambient Background Elements with Parallax */}
             <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-                <div className="absolute top-20 right-[10%] w-64 h-64 bg-rose/10 blur-[100px] rounded-full" />
-                <div className="absolute bottom-20 left-[10%] w-80 h-80 bg-gold/5 blur-[120px] rounded-full" />
+                <ParallaxLayer speed={0.2}>
+                    <div className="absolute top-20 right-[10%] w-64 h-64 bg-rose/10 blur-[100px] rounded-full" />
+                </ParallaxLayer>
+                <ParallaxLayer speed={0.4}>
+                    <div className="absolute bottom-20 left-[10%] w-80 h-80 bg-gold/5 blur-[120px] rounded-full" />
+                </ParallaxLayer>
             </div>
 
             <div className="max-w-6xl mx-auto px-6 sm:px-12 relative z-10">
@@ -65,28 +67,30 @@ export default function StorySection() {
 
                                 <div className="absolute bottom-10 left-10 right-10">
                                     <p className="font-heading text-2xl text-white italic leading-tight drop-shadow-lg">
-                                        "Es el primer regalo que le hago a su futuro."
+                                        &quot;Es el primer regalo que le hago a su futuro.&quot;
                                     </p>
                                 </div>
                             </div>
                         </AnimatedSection>
 
-                        {/* Social Proof Badge */}
-                        <motion.div
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            className="absolute -right-8 -bottom-8 bg-white p-8 rounded-full shadow-2xl border border-stone-100 hidden md:flex flex-col items-center justify-center w-40 h-40 text-center"
-                        >
-                            <span className="text-3xl mb-1">⭐</span>
-                            <span className="font-heading text-xl font-bold text-stone-800">800+</span>
-                            <span className="text-[10px] uppercase tracking-tighter text-stone-500 font-bold">Reseñas de Mamás</span>
-                        </motion.div>
+                        {/* Social Proof Badge — Floating */}
+                        <FloatingElement amplitude={8} duration={5} className="absolute -right-8 -bottom-8 hidden md:block">
+                            <motion.div
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                className="bg-white p-8 rounded-full shadow-2xl border border-stone-100 flex flex-col items-center justify-center w-40 h-40 text-center"
+                            >
+                                <span className="text-3xl mb-1">⭐</span>
+                                <span className="font-heading text-xl font-bold text-stone-800">800+</span>
+                                <span className="text-[10px] uppercase tracking-tighter text-stone-500 font-bold">Reseñas de Mamás</span>
+                            </motion.div>
+                        </FloatingElement>
                     </div>
 
                     {/* The Sales Manifesto (Text) */}
                     <div className="order-1 lg:order-2">
-                        <AnimatedSection>
+                        <AnimatedSection blur>
                             <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-8 block font-bold">
                                 Entendemos tu mundo
                             </span>
@@ -100,7 +104,7 @@ export default function StorySection() {
 
                             <div className="space-y-12 mb-16">
                                 {momPillars.map((pillar, i) => (
-                                    <AnimatedSection key={pillar.number} delay={i * 0.1} direction="right">
+                                    <AnimatedSection key={pillar.number} delay={i * 0.15} direction="right" blur>
                                         <div className="flex gap-6 items-start group">
                                             <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0 border border-stone-100 group-hover:border-rose-light transition-colors duration-500">
                                                 <span className="font-heading text-rose-deep font-bold italic">{pillar.number}</span>
@@ -116,8 +120,8 @@ export default function StorySection() {
                                 ))}
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-8 mt-4">
-                                <Button href="/shop" variant="primary" size="lg" className="shadow-2xl">
+                            <div className="flex flex-col sm:flex-row gap-8 mt-6">
+                                <Button href="/shop" variant="primary" size="lg">
                                     Ver la Colección Actual
                                 </Button>
                                 <Button href="/testimonios" variant="caviar" size="lg">

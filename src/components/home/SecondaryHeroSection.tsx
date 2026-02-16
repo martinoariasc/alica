@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Button from '@/components/ui/Button';
+import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function SecondaryHeroSection() {
     const ref = useRef<HTMLElement>(null);
@@ -11,13 +12,14 @@ export default function SecondaryHeroSection() {
         offset: ['start end', 'end start'],
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+    const videoY = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+    const contentY = useTransform(scrollYProgress, [0, 1], ['10%', '-10%']);
 
     return (
         <section ref={ref} className="relative h-[50vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center bg-stone-100">
             {/* Parallax Video Background */}
             <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div style={{ y }} className="relative w-full h-[140%] -top-[20%]">
+                <motion.div style={{ y: videoY }} className="relative w-full h-[140%] -top-[20%]">
                     <video
                         autoPlay
                         loop
@@ -33,14 +35,12 @@ export default function SecondaryHeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                >
+            {/* Content with separate parallax speed */}
+            <motion.div
+                className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
+                style={{ y: contentY }}
+            >
+                <AnimatedSection blur>
                     <h2 className="font-heading text-3xl md:text-5xl lg:text-7xl text-white mb-6 drop-shadow-lg leading-tight">
                         Ese pasito tembloroso<br />
                         <span className="italic font-light text-rose-light">que te hizo llorar de felicidad...</span>
@@ -58,8 +58,8 @@ export default function SecondaryHeroSection() {
                             Elegir su primer par
                         </Button>
                     </div>
-                </motion.div>
-            </div>
+                </AnimatedSection>
+            </motion.div>
         </section>
     );
 }

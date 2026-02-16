@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import ParallaxLayer from '@/components/ui/ParallaxLayer';
 
 const sizes = [
     { range: 'Prematuros', measure: '8cm' },
@@ -18,12 +19,14 @@ const sizes = [
 export default function SizeChart() {
     return (
         <section className="py-24 bg-[#FAF7F5] relative overflow-hidden">
-            {/* Subtle Texture/Paper Effect */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/paper.png")` }} />
+            {/* Parallax Paper Texture */}
+            <ParallaxLayer speed={0.15} className="absolute inset-0 pointer-events-none">
+                <div className="w-full h-[130%] opacity-[0.03]"
+                    style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/paper.png")` }} />
+            </ParallaxLayer>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-                <AnimatedSection className="text-center mb-16">
+                <AnimatedSection className="text-center mb-16" blur>
                     <h2 className="font-heading text-4xl md:text-5xl text-[#4E423C] mb-4">
                         Tabla de medidas
                     </h2>
@@ -33,8 +36,8 @@ export default function SizeChart() {
                 </AnimatedSection>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    {/* Visual Guide Placeholder / Image */}
-                    <AnimatedSection delay={0.2} className="hidden md:block">
+                    {/* Visual Guide */}
+                    <AnimatedSection delay={0.2} className="hidden md:block" direction="left" blur>
                         <div className="aspect-[4/5] rounded-2xl bg-white/50 backdrop-blur-sm p-8 border border-[#E8E2DE] shadow-inner flex flex-col justify-center items-center text-center">
                             <div className="w-32 h-32 mb-6 opacity-20">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#4E423C]">
@@ -50,16 +53,20 @@ export default function SizeChart() {
                     </AnimatedSection>
 
                     {/* The Table */}
-                    <AnimatedSection delay={0.3}>
+                    <AnimatedSection delay={0.3} direction="right">
                         <div className="bg-white rounded-3xl shadow-xl shadow-stone-200/50 overflow-hidden border border-[#E8E2DE]">
                             <div className="grid grid-cols-2 bg-[#4E423C] p-4 text-white font-heading tracking-widest text-sm uppercase">
                                 <div className="pl-4">Edad</div>
                                 <div className="text-right pr-4">Medida</div>
                             </div>
                             <div className="divide-y divide-[#F0EAE6]">
-                                {sizes.map((item) => (
+                                {sizes.map((item, i) => (
                                     <motion.div
                                         key={item.range}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                                         whileHover={{ backgroundColor: '#FAF7F5' }}
                                         className="grid grid-cols-2 p-4 items-center group transition-colors"
                                     >

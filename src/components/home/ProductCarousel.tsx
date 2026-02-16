@@ -12,6 +12,7 @@ import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Heart } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ProductCarousel() {
     const featured = getFeaturedProducts();
@@ -19,7 +20,7 @@ export default function ProductCarousel() {
     return (
         <section className="py-32 md:py-48 bg-bg-warm overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <AnimatedSection>
+                <AnimatedSection blur>
                     <SectionTitle
                         title="Galería de Tesoros"
                         subtitle="Cada par tiene una historia esperándote."
@@ -44,7 +45,11 @@ export default function ProductCarousel() {
                         {featured.map((product) => (
                             <SwiperSlide key={product.slug}>
                                 <Link href={`/producto/${product.slug}`} className="block group h-full">
-                                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col border border-stone-100 hover:border-rose-light relative">
+                                    <motion.div
+                                        className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col border border-stone-100 hover:border-rose-light relative"
+                                        whileHover={{ y: -6, rotate: 0.5, scale: 1.02 }}
+                                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                                    >
                                         {/* Product Image */}
                                         <div className="aspect-[4/5] relative overflow-hidden bg-bg-warm">
                                             <Image
@@ -57,18 +62,15 @@ export default function ProductCarousel() {
                                             {/* Badges Container */}
                                             <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
                                                 <div className="flex flex-col gap-2">
-                                                    {/* Sale Badge */}
                                                     <div className="px-3 py-1 rounded-full bg-[#BE3B4F] text-white text-[10px] uppercase font-bold shadow-md">
                                                         -{Math.round((1 - product.price / product.oldPrice) * 100)}%
                                                     </div>
-                                                    {/* Best Seller Badge */}
                                                     {product.isBestSeller && (
                                                         <div className="px-3 py-1 rounded-full bg-stone-900 text-white text-[10px] uppercase font-bold shadow-md flex items-center gap-1">
                                                             <span>★</span> MÁS VENDIDO
                                                         </div>
                                                     )}
                                                 </div>
-                                                {/* Wishlist */}
                                                 <div className="w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-rose-light cursor-pointer shadow-sm">
                                                     <Heart className="w-4 h-4 text-[#BE3B4F]" />
                                                 </div>
@@ -87,7 +89,6 @@ export default function ProductCarousel() {
                                                 {product.emotionalPhrase}
                                             </p>
 
-                                            {/* Social Proof Placeholder */}
                                             <div className="flex items-center gap-1 mb-4">
                                                 {[...Array(5)].map((_, i) => (
                                                     <span key={i} className="text-xs text-yellow-500">★</span>
@@ -105,9 +106,8 @@ export default function ProductCarousel() {
                                             </div>
                                         </div>
 
-                                        {/* Quick View Overlay (Small hint) */}
                                         <div className="h-1 bg-[#BE3B4F]/10 w-0 group-hover:w-full transition-all duration-500" />
-                                    </div>
+                                    </motion.div>
                                 </Link>
                             </SwiperSlide>
                         ))}

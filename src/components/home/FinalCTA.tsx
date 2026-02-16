@@ -2,6 +2,7 @@
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
+import FloatingElement from '@/components/ui/FloatingElement';
 import { buildWhatsAppURL } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Clock } from 'lucide-react';
@@ -9,18 +10,21 @@ import { Clock } from 'lucide-react';
 export default function FinalCTA() {
     return (
         <section className="py-24 md:py-32 bg-gradient-to-br from-rose-light/40 via-bg-warm to-rose-light/20 relative overflow-hidden">
-            {/* Decorative Elements */}
-            <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-rose/10 blur-3xl" />
-            <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-gold/10 blur-3xl" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-pink-soft/10 blur-[120px]" />
+            {/* Reduced to 2 floating blobs (from 6+) */}
+            <FloatingElement className="absolute top-10 left-10 pointer-events-none" amplitude={15} duration={10}>
+                <div className="w-40 h-40 rounded-full bg-rose/10 blur-3xl" />
+            </FloatingElement>
+            <FloatingElement className="absolute bottom-10 right-10 pointer-events-none" amplitude={12} duration={12} delay={3}>
+                <div className="w-48 h-48 rounded-full bg-gold/8 blur-3xl" />
+            </FloatingElement>
 
             <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
-                <AnimatedSection>
+                <AnimatedSection blur>
                     {/* Urgency Badge */}
                     <motion.div
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-charcoal/5 border border-charcoal/10 mb-8"
                         animate={{ scale: [1, 1.02, 1] }}
-                        transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+                        transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
                     >
                         <Clock className="w-4 h-4 text-rose-deep" />
                         <span className="text-sm text-charcoal/80 font-medium">
@@ -45,7 +49,7 @@ export default function FinalCTA() {
                             variant="primary"
                             size="lg"
                             external
-                            className="text-lg px-12 shadow-2xl"
+                            className="text-lg px-12"
                         >
                             Quiero elegir los suyos 💛
                         </Button>
