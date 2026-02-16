@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function ArtisanalUrgency() {
     return (
-        <section className="py-32 md:py-48 relative overflow-hidden">
+        <section className="py-24 md:py-48 relative overflow-hidden">
             {/* Ticker - Moved to top as a subtle border */}
             <div className="absolute top-0 left-0 w-full overflow-hidden py-4 border-b border-rose-deep/10 bg-rose-light/20 backdrop-blur-sm">
                 <motion.div

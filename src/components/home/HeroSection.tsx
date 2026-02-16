@@ -56,7 +56,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="font-body text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold !text-white leading-tight mb-6 drop-shadow-2xl tracking-tight"
+                    className="font-body text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold !text-white leading-tight mb-6 drop-shadow-2xl"
                     style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3)' }}
                 >
                     <span className="text-white">Sus primeros pasos</span>

@@ -14,7 +14,7 @@ import VideoSection from '@/components/ui/VideoSection';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden min-h-screen">
+    <main className="overflow-hidden min-h-screen w-full">
       {/* 1. HERO: The Emotional Hook ("Make them eternal") */}
       <HeroSection />
 

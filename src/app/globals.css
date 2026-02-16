@@ -53,8 +53,19 @@ body {
   background-color: transparent;
   color: var(--alica-charcoal);
   font-family: var(--font-body);
-  line-height: 1.7;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 
 h1,
