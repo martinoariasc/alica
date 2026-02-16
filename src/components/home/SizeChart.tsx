@@ -18,7 +18,7 @@ const sizes = [
 
 export default function SizeChart() {
     return (
-        <section className="py-32 md:py-64 bg-[#FAF7F5] relative overflow-hidden">
+        <section className="py-40 md:py-80 bg-[#FAF7F5] relative overflow-hidden w-full">
             {/* Parallax Paper Texture */}
             <ParallaxLayer speed={0.15} className="absolute inset-0 pointer-events-none">
                 <div className="w-full h-[130%] opacity-[0.03]"

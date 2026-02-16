@@ -17,7 +17,7 @@ export default function HeroSection() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
     return (
-        <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-stone-900">
+        <section ref={ref} className="relative min-h-[100dvh] w-full overflow-hidden flex items-center justify-center bg-stone-900">
             {/* Video Background with Parallax */}
             <motion.div className="absolute inset-0 z-0" style={{ scale, willChange: 'transform' }}>
                 <video

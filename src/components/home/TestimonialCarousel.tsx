@@ -12,7 +12,7 @@ const testimonials = Array.from({ length: 9 }).map((_unused, i) => `/images/test
 
 export default function TestimonialCarousel() {
     return (
-        <section className="py-32 md:py-64 relative overflow-hidden">
+        <section className="py-40 md:py-80 relative overflow-hidden w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 text-center">
                 <AnimatedSection blur>
                     <SectionTitle
@@ -22,7 +22,7 @@ export default function TestimonialCarousel() {
                 </AnimatedSection>
             </div>
 
-            <div className="w-full">
+            <div className="w-full max-w-[1920px] mx-auto px-4">
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={20}
@@ -35,11 +35,12 @@ export default function TestimonialCarousel() {
                         pauseOnMouseEnter: true,
                     }}
                     breakpoints={{
-                        640: { slidesPerView: 2.2 },
-                        1024: { slidesPerView: 3.5, spaceBetween: 30 },
-                        1280: { slidesPerView: 4.5, spaceBetween: 40 },
+                        640: { slidesPerView: 2.2, spaceBetween: 24 },
+                        1024: { slidesPerView: 3.2, spaceBetween: 32 },
+                        1280: { slidesPerView: 4.2, spaceBetween: 40 },
+                        1600: { slidesPerView: 5.2, spaceBetween: 48 },
                     }}
-                    className="!pb-10 !px-4"
+                    className="!pb-20"
                 >
                     {testimonials.map((src, i) => (
                         <SwiperSlide key={i} className="h-auto">

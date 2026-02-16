@@ -13,7 +13,7 @@ const babyImages = Array.from({ length: 9 }).map((_unused, i) => `/images/bebes/
 
 export default function BabyGallery() {
     return (
-        <section className="py-32 md:py-64 relative overflow-hidden">
+        <section className="py-40 md:py-80 relative overflow-hidden w-full">
             <div className="max-w-[1920px] mx-auto">
                 <AnimatedSection blur>
                     <SectionTitle
@@ -23,12 +23,13 @@ export default function BabyGallery() {
                     />
                 </AnimatedSection>
 
-                <div className="px-4">
+                <div className="w-full max-w-[1920px] mx-auto px-4">
                     <Swiper
                         modules={[Autoplay, FreeMode]}
                         spaceBetween={20}
                         slidesPerView={1.5}
                         loop={true}
+                        centeredSlides={true}
                         freeMode={true}
                         speed={5000}
                         autoplay={{
@@ -39,8 +40,10 @@ export default function BabyGallery() {
                         breakpoints={{
                             640: { slidesPerView: 2.5, spaceBetween: 24 },
                             1024: { slidesPerView: 4.5, spaceBetween: 32 },
+                            1400: { slidesPerView: 5.5, spaceBetween: 40 },
+                            1800: { slidesPerView: 6.5, spaceBetween: 48 },
                         }}
-                        className="w-full"
+                        className="w-full !pb-12"
                     >
                         {babyImages.map((src, i) => (
                             <SwiperSlide key={i}>

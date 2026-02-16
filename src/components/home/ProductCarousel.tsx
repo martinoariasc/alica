@@ -18,7 +18,7 @@ export default function ProductCarousel() {
     const featured = getFeaturedProducts();
 
     return (
-        <section className="py-32 md:py-64 relative overflow-hidden">
+        <section className="py-40 md:py-80 relative overflow-hidden w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <AnimatedSection blur>
                     <SectionTitle
@@ -27,7 +27,7 @@ export default function ProductCarousel() {
                     />
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.2}>
+                <AnimatedSection delay={0.2} className="w-full max-w-[1920px] mx-auto">
                     <Swiper
                         modules={[Autoplay, Pagination]}
                         spaceBetween={24}
@@ -38,7 +38,8 @@ export default function ProductCarousel() {
                         breakpoints={{
                             640: { slidesPerView: 2.2 },
                             1024: { slidesPerView: 3.2 },
-                            1280: { slidesPerView: 3.5 },
+                            1280: { slidesPerView: 4.2 },
+                            1600: { slidesPerView: 5.2 },
                         }}
                         className="!pb-14"
                     >
