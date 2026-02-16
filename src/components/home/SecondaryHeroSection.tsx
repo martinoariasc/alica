@@ -51,9 +51,9 @@ export default function SecondaryHeroSection() {
                     <div className="flex justify-center">
                         <Button
                             href="/shop"
-                            variant="ghost"
+                            variant="caviar"
                             size="lg"
-                            className="bg-white/5 backdrop-blur-md border-white/20 hover:bg-white hover:text-stone-900"
+                            className="text-white border-white/30 hover:border-white px-12"
                         >
                             Elegir su primer par
                         </Button>

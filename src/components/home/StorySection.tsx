@@ -2,8 +2,9 @@
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 const momPillars = [
     {
@@ -28,8 +29,16 @@ const momPillars = [
  * Focuses on the user (The Mom) rather than the brand.
  */
 export default function StorySection() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ['start end', 'end start'],
+    });
+
+    const imageY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
+
     return (
-        <section className="py-32 md:py-48 bg-[#FAF7F5] relative overflow-hidden">
+        <section ref={sectionRef} className="py-32 md:py-48 bg-[#FAF7F5] relative overflow-hidden">
             {/* Soft Ambient Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
                 <div className="absolute top-20 right-[10%] w-64 h-64 bg-rose/10 blur-[100px] rounded-full" />
@@ -43,14 +52,16 @@ export default function StorySection() {
                     <div className="relative order-2 lg:order-1">
                         <AnimatedSection direction="left">
                             <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1544126592-807daa2b567b?q=80&w=2670&auto=format&fit=crop"
-                                    alt="Mom and baby's first steps"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent" />
+                                <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[110%] -top-[5%]">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1544126592-807daa2b567b?q=80&w=2670&auto=format&fit=crop"
+                                        alt="Mom and baby's first steps"
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 1024px) 100vw, 50vw"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent" />
+                                </motion.div>
 
                                 <div className="absolute bottom-10 left-10 right-10">
                                     <p className="font-heading text-2xl text-white italic leading-tight drop-shadow-lg">
@@ -105,11 +116,11 @@ export default function StorySection() {
                                 ))}
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-6">
+                            <div className="flex flex-col sm:flex-row gap-8 mt-4">
                                 <Button href="/shop" variant="primary" size="lg" className="shadow-2xl">
                                     Ver la Colección Actual
                                 </Button>
-                                <Button href="/testimonios" variant="ghost" size="lg" className="border-stone-200 text-stone-600">
+                                <Button href="/testimonios" variant="caviar" size="lg">
                                     Historias de otras mamás
                                 </Button>
                             </div>

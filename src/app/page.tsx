@@ -10,21 +10,33 @@ import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
 import SecondaryHeroSection from '@/components/home/SecondaryHeroSection';
 import SizeChart from '@/components/home/SizeChart';
 import FinalCTA from '@/components/home/FinalCTA';
+import Separator from '@/components/ui/Separator';
 
 export default function Home() {
   return (
     <main className="overflow-hidden bg-bg">
       <HeroSection />
+      <Separator showLine={false} />
       <StorySection />
+      <Separator />
       <ArtisanalUrgency />
+      <Separator />
       <BenefitsSection />
+      <Separator />
       <SplitCategory />
+      <Separator />
       <ProductCarousel />
+      <Separator />
       <SecondaryHeroSection />
+      <Separator />
       <TestimonialCarousel />
+      <Separator />
       <GiftExperience />
+      <Separator />
       <BabyGallery />
+      <Separator />
       <SizeChart />
+      <Separator />
       <FinalCTA />
     </main>
   );

@@ -17,7 +17,7 @@ export default function ProductCarousel() {
     const featured = getFeaturedProducts();
 
     return (
-        <section className="py-20 md:py-28 bg-bg-warm overflow-hidden">
+        <section className="py-32 md:py-48 bg-bg-warm overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <AnimatedSection>
                     <SectionTitle
@@ -114,8 +114,8 @@ export default function ProductCarousel() {
                     </Swiper>
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.4} className="text-center mt-4">
-                    <Button href="/shop" variant="primary" size="lg" className="px-16 shadow-2xl">
+                <AnimatedSection delay={0.4} className="text-center mt-12">
+                    <Button href="/shop" variant="caviar" size="lg" className="px-20 border-stone-200">
                         Explorar toda la colección
                     </Button>
                 </AnimatedSection>

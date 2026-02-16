@@ -12,7 +12,7 @@ const babyImages = Array.from({ length: 9 }).map((_unused, i) => `/images/bebes/
 
 export default function BabyGallery() {
     return (
-        <section className="py-20 bg-bg-warm/30 overflow-hidden">
+        <section className="py-32 md:py-48 bg-bg-warm/30 overflow-hidden">
             <div className="max-w-[1920px] mx-auto">
                 <AnimatedSection>
                     <SectionTitle

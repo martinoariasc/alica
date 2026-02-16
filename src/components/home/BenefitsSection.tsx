@@ -37,12 +37,12 @@ import { Footprints } from 'lucide-react';
 
 export default function BenefitsSection() {
     return (
-        <section className="py-24 md:py-32 bg-white">
+        <section className="py-32 md:py-48 bg-white">
             <div className="max-w-6xl mx-auto px-6 sm:px-12">
                 <AnimatedSection>
-                    <div className="text-center mb-16 md:mb-24">
-                        <span className="font-body text-[11px] tracking-[0.3em] uppercase text-stone-400 mb-4 block font-bold">Inversión en Calidad</span>
-                        <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-medium text-stone-900 leading-tight">
+                    <div className="text-center mb-24 md:mb-32">
+                        <span className="font-body text-[11px] tracking-[0.4em] uppercase text-stone-300 mb-6 block font-bold">Inversión en Calidad</span>
+                        <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-medium text-stone-900 leading-[1.1]">
                             ¿Por qué las mamás eligen <span className="italic">ALICA</span><br className="hidden md:block" /> para el tesoro más grande de su vida?
                         </h2>
                     </div>

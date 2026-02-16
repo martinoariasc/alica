@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'whatsapp' | 'ghost';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'whatsapp' | 'ghost' | 'caviar';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
@@ -20,8 +20,8 @@ interface ButtonProps {
 }
 
 /**
- * World-Class Boutique Button (v5)
- * Powered by Framer Motion for high-end interaction design.
+ * World-Class Boutique Button (v6)
+ * Inspired by high-fashion minimalism (FromCaviar style).
  */
 export default function Button({
     children,
@@ -39,9 +39,10 @@ export default function Button({
     const variants = {
         primary: "bg-stone-900 text-white border-2 border-transparent shadow-xl shadow-stone-900/10",
         secondary: "bg-stone-50 text-stone-900 border-2 border-stone-200 hover:border-stone-900 shadow-sm",
-        outline: "bg-transparent text-white border-2 border-white/40 hover:border-white hover:bg-white/10 shadow-lg backdrop-blur-sm",
+        outline: "bg-transparent text-white border border-white/40 hover:border-white transition-all duration-500",
         whatsapp: "bg-[#25D366] text-white border-2 border-transparent shadow-lg shadow-[#25D366]/20",
-        ghost: "bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white hover:text-stone-900 shadow-2xl transition-all duration-500"
+        ghost: "bg-transparent text-stone-900 border border-stone-200 hover:border-stone-900 hover:bg-stone-50 transition-all duration-500",
+        caviar: "bg-transparent text-stone-900 border-b border-stone-300 hover:border-stone-900 hover:text-stone-950 px-0 rounded-none transition-all duration-700 tracking-[0.3em] font-light"
     };
 
     const sizes = {

@@ -11,7 +11,7 @@ const testimonials = Array.from({ length: 9 }).map((_unused, i) => `/images/test
 
 export default function TestimonialCarousel() {
     return (
-        <section className="py-20 md:py-32 bg-white overflow-hidden">
+        <section className="py-32 md:py-48 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 text-center">
                 <AnimatedSection>
                     <SectionTitle

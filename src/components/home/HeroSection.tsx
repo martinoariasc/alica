@@ -89,8 +89,9 @@ export default function HeroSection() {
                     </Button>
                     <Button
                         href="/regalo"
-                        variant="ghost"
+                        variant="caviar"
                         size="lg"
+                        className="text-white border-white/30 hover:border-white"
                     >
                         🎁 Regalar amor eterno
                     </Button>

@@ -21,18 +21,19 @@ export default function SplitCategory() {
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-12">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-12 md:p-24">
                     <AnimatedSection>
-                        <h3 className="font-heading text-4xl md:text-6xl text-white mb-4 italic drop-shadow-xl tracking-wide">
+                        <h3 className="font-heading text-5xl md:text-7xl text-white mb-6 italic drop-shadow-xl tracking-tight">
                             Pequeños Marineros
                         </h3>
-                        <p className="font-body text-white text-lg mb-10 max-w-sm mx-auto drop-shadow-lg font-light tracking-wider">
+                        <p className="font-body text-white text-lg md:text-xl mb-12 max-w-md mx-auto drop-shadow-lg font-light tracking-wide leading-relaxed">
                             Para los que nacieron para explorar el mundo con valentía.
                         </p>
                         <Button
                             href="/shop?gender=nene"
-                            variant="ghost"
-                            className="px-10"
+                            variant="caviar"
+                            size="lg"
+                            className="text-white border-white/40 hover:border-white px-12"
                         >
                             Inicia su aventura
                         </Button>
@@ -53,18 +54,19 @@ export default function SplitCategory() {
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-12">
-                    <AnimatedSection delay={0.2}>
-                        <h3 className="font-heading text-4xl md:text-6xl text-white mb-4 italic drop-shadow-xl tracking-wide">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-12 md:p-24">
+                    <AnimatedSection>
+                        <h3 className="font-heading text-5xl md:text-7xl text-white mb-6 italic drop-shadow-xl tracking-tight">
                             Pequeñas Princesas
                         </h3>
-                        <p className="font-body text-white text-lg mb-10 max-w-sm mx-auto drop-shadow-lg font-light tracking-wider">
+                        <p className="font-body text-white text-lg md:text-xl mb-12 max-w-md mx-auto drop-shadow-lg font-light tracking-wide leading-relaxed">
                             Dulzura, protección y un toque de magia en cada pisadita.
                         </p>
                         <Button
                             href="/shop?gender=nena"
-                            variant="ghost"
-                            className="px-10"
+                            variant="caviar"
+                            size="lg"
+                            className="text-white border-white/40 hover:border-white px-12"
                         >
                             Elegir su par
                         </Button>
