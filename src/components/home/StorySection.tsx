@@ -34,13 +34,15 @@ export default function StorySection() {
                         <AnimatedSection direction="left">
                             <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white/50">
                                 <motion.div style={{ y: imageY }} className="absolute inset-0 w-full h-[110%] -top-[5%]">
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1544126592-807daa2b567b?q=80&w=2670&auto=format&fit=crop"
-                                        alt="Mom and baby's first steps"
-                                        fill
-                                        className="object-cover"
-                                        sizes="(max-width: 1024px) 100vw, 50vw"
-                                    />
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="w-full h-full object-cover"
+                                    >
+                                        <source src="/videos/video-seccion-3.mp4" type="video/mp4" />
+                                    </video>
                                     <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent" />
                                 </motion.div>
 

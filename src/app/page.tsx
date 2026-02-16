@@ -30,21 +30,14 @@ export default function Home() {
 
       {/* Video Interlude 1: The Process */}
       <section className="py-12 md:py-24">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="max-w-sm mx-auto md:max-w-none w-full">
-              <VideoSection src="/videos/video-seccion-2.mp4" />
-            </div>
-            <div className="text-center md:text-left">
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">Sin Prisas</span>
-              <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-6 leading-tight italic">
-                Coser memorias,<br />no solo zapatos.
-              </h3>
-              <p className="font-body text-muted leading-relaxed font-light text-lg">
-                En un mundo donde todo es rápido y desechable, nosotros elegimos la pausa. Cada par de ALICA lleva horas de manos pacientes que saben que están vistiendo los pies de alguien muy importante.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto px-6 sm:px-12 text-center">
+          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">Sin Prisas</span>
+          <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-6 leading-tight italic">
+            Coser memorias,<br />no solo zapatos.
+          </h3>
+          <p className="font-body text-muted leading-relaxed font-light text-lg">
+            En un mundo donde todo es rápido y desechable, nosotros elegimos la pausa. Cada par de ALICA lleva horas de manos pacientes que saben que están vistiendo los pies de alguien muy importante.
+          </p>
         </div>
       </section>
 
@@ -58,25 +51,7 @@ export default function Home() {
       {/* 5. MEMORY/EMOTION: "They grow too fast" */}
       <StorySection />
 
-      {/* Video Interlude 2: The Feeling */}
-      <section className="py-12 md:py-24">
-        <div className="max-w-6xl mx-auto px-6 sm:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 text-center md:text-left">
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-4 block font-bold">Sensorial</span>
-              <h3 className="font-heading text-3xl md:text-5xl text-charcoal mb-6 leading-tight italic">
-                Como caminar sobre<br />nubes de algodón.
-              </h3>
-              <p className="font-body text-muted leading-relaxed font-light text-lg">
-                Imaginate la suavidad de tu remera favorita. Ahora imaginate eso abrazando sus piecitos. Sin rigidez, sin costuras que molesten. Solo libertad puta para que exploren su mundo.
-              </p>
-            </div>
-            <div className="order-1 md:order-2 max-w-sm mx-auto md:max-w-none w-full">
-              <VideoSection src="/videos/video-seccion-3.mp4" />
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <Separator />
 
