@@ -9,7 +9,7 @@ import { Clock } from 'lucide-react';
 
 export default function FinalCTA() {
     return (
-        <section className="py-24 md:py-32 bg-gradient-to-br from-rose-light/40 via-bg-warm to-rose-light/20 relative overflow-hidden">
+        <section className="py-32 md:py-64 bg-gradient-to-br from-rose-light/40 via-bg-warm to-rose-light/20 relative overflow-hidden">
             {/* Reduced to 2 floating blobs (from 6+) */}
             <FloatingElement className="absolute top-10 left-10 pointer-events-none" amplitude={15} duration={10}>
                 <div className="w-40 h-40 rounded-full bg-rose/10 blur-3xl" />
