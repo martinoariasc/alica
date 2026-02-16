@@ -10,6 +10,7 @@ import Button from '@/components/ui/Button';
 import { getFeaturedProducts } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Heart } from 'lucide-react';
 
 export default function ProductCarousel() {
@@ -46,10 +47,12 @@ export default function ProductCarousel() {
                                     <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col border border-stone-100 hover:border-rose-light relative">
                                         {/* Product Image */}
                                         <div className="aspect-[4/5] relative overflow-hidden bg-bg-warm">
-                                            <img
+                                            <Image
                                                 src={product.images[0]}
                                                 alt={product.name}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                             {/* Badges Container */}
                                             <div className="absolute top-4 left-4 right-4 flex justify-between items-start z-10">

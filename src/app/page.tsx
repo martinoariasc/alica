@@ -15,14 +15,14 @@ export default function Home() {
   return (
     <main className="overflow-hidden bg-bg">
       <HeroSection />
-      <ArtisanalUrgency />
       <StorySection />
+      <ArtisanalUrgency />
+      <BenefitsSection />
       <SplitCategory />
       <ProductCarousel />
       <SecondaryHeroSection />
       <TestimonialCarousel />
       <GiftExperience />
-      <BenefitsSection />
       <BabyGallery />
       <SizeChart />
       <FinalCTA />
