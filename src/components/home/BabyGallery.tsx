@@ -14,7 +14,7 @@ const babyImages = Array.from({ length: 9 }).map((_unused, i) => `/images/bebes/
 export default function BabyGallery() {
     return (
         <section className="py-40 md:py-80 relative overflow-hidden w-full">
-            <div className="max-w-[1920px] mx-auto">
+            <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto">
                 <AnimatedSection blur>
                     <SectionTitle
                         title="Bebés ALICA"

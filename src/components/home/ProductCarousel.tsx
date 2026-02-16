@@ -19,7 +19,7 @@ export default function ProductCarousel() {
 
     return (
         <section className="py-40 md:py-80 relative overflow-hidden w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6">
                 <AnimatedSection blur>
                     <SectionTitle
                         title="Tesoros de Edición Limitada"

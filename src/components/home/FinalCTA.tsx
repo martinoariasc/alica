@@ -18,7 +18,7 @@ export default function FinalCTA() {
                 <div className="w-48 h-48 rounded-full bg-gold/8 blur-3xl" />
             </FloatingElement>
 
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <div className="max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 text-center relative z-10">
                 <AnimatedSection blur>
                     {/* Urgency Badge */}
                     <motion.div

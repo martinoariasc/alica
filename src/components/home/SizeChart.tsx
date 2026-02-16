@@ -25,7 +25,7 @@ export default function SizeChart() {
                     style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/paper.png")` }} />
             </ParallaxLayer>
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 relative z-10">
                 <AnimatedSection className="text-center mb-16" blur>
                     <h2 className="font-heading text-4xl md:text-5xl text-[#4E423C] mb-4">
                         Tabla de medidas

@@ -13,7 +13,7 @@ const testimonials = Array.from({ length: 9 }).map((_unused, i) => `/images/test
 export default function TestimonialCarousel() {
     return (
         <section className="py-40 md:py-80 relative overflow-hidden w-full">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 text-center">
+            <div className="max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 mb-16 text-center">
                 <AnimatedSection blur>
                     <SectionTitle
                         title="Ellos ya caminan con ALICA"

@@ -35,11 +35,13 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Single Floating Orb (reduced from 3 to 1) */}
-            <FloatingElement className="absolute top-[20%] left-[10%] w-40 h-40 rounded-full bg-rose-light/8 blur-[80px] pointer-events-none z-[1]" amplitude={15} duration={10} />
+            <FloatingElement className="absolute top-[20%] left-[10%] w-40 h-40 rounded-full bg-rose-light/8 blur-[80px] pointer-events-none z-[1]" amplitude={15} duration={10}>
+                <div />
+            </FloatingElement>
 
             {/* Content */}
             <motion.div
-                className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center"
+                className="relative z-10 max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 text-center"
                 style={{ y, opacity, willChange: 'transform, opacity' }}
             >
                 <motion.div
