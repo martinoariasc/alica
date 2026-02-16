@@ -30,7 +30,7 @@ const benefits = [
 
 export default function BarefootBenefits() {
     return (
-        <section className="py-24 md:py-32 relative overflow-hidden">
+        <section className="py-32 md:py-48 relative overflow-hidden">
             {/* Texture overlay handled by global CSS, just need transparent bg */}
 
             {/* Floating Decorative Elements */}

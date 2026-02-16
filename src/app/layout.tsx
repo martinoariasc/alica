@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppWidget from '@/components/ui/WhatsAppWidget';
+import GlobalVideoBackground from '@/components/layout/GlobalVideoBackground';
 
 const italiana = Italiana({
   variable: '--font-heading',
@@ -53,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${italiana.variable} ${montserrat.variable} antialiased`}>
+        <GlobalVideoBackground />
         <Header />
         <main>{children}</main>
         <Footer />

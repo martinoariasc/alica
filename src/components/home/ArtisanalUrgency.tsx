@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function ArtisanalUrgency() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-32 md:py-48 relative overflow-hidden">
             {/* Ticker - Moved to top as a subtle border */}
             <div className="absolute top-0 left-0 w-full overflow-hidden py-4 border-b border-rose-deep/10 bg-rose-light/20 backdrop-blur-sm">
                 <motion.div
@@ -42,7 +42,7 @@ export default function ArtisanalUrgency() {
                         </h2>
 
                         <p className="font-body text-base md:text-lg text-muted font-light leading-relaxed mb-6">
-                            Cada par de Alica toma días en hacerse. No tenemos un depósito lleno de cajas idénticas. Tenemos una mesa de corte, manos que eligen el cuero más suave, y el tiempo necesario para que quede perfecto.
+                            Cada par de Alica toma días en hacerse. No tenemos un depósito lleno de cajas idénticas. Tenemos una mesa de corte, manos que eligen las telas más nobles, y el tiempo necesario para que quede perfecto.
                         </p>
 
                         <p className="font-heading text-xl text-rose-deep">

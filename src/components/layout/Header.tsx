@@ -52,14 +52,11 @@ export default function Header() {
                     {/* Logo — horizontal variant for header */}
                     <Link href="/" className="flex items-center gap-2 group">
                         <Image
-                            src="/images/brand/logo horizontal sin fondo.png"
+                            src={isScrolled ? "/images/brand/logo horizontal sin fondo.png" : "/images/brand/logo horizontal blanco sin fondo.png"}
                             alt="Alica Bebés"
                             width={160}
                             height={50}
-                            className={cn(
-                                "h-10 md:h-12 w-auto transition-all duration-300 object-contain",
-                                isScrolled ? "brightness-100" : "brightness-[100] drop-shadow-md"
-                            )}
+                            className="h-10 md:h-12 w-auto transition-all duration-300 object-contain drop-shadow-sm"
                             priority
                         />
                     </Link>
