@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'whatsapp';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'whatsapp' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
@@ -39,8 +39,9 @@ export default function Button({
     const variants = {
         primary: "bg-stone-900 text-white border-2 border-transparent shadow-xl shadow-stone-900/10",
         secondary: "bg-stone-50 text-stone-900 border-2 border-stone-200 hover:border-stone-900 shadow-sm",
-        outline: "bg-white/10 backdrop-blur-md text-white border-2 border-white hover:bg-white hover:text-stone-900 shadow-lg",
-        whatsapp: "bg-[#25D366] text-white border-2 border-transparent shadow-lg shadow-[#25D366]/20"
+        outline: "bg-transparent text-white border-2 border-white/40 hover:border-white hover:bg-white/10 shadow-lg backdrop-blur-sm",
+        whatsapp: "bg-[#25D366] text-white border-2 border-transparent shadow-lg shadow-[#25D366]/20",
+        ghost: "bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white hover:text-stone-900 shadow-2xl transition-all duration-500"
     };
 
     const sizes = {

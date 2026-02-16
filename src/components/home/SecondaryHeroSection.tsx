@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Button from '@/components/ui/Button';
 
 export default function SecondaryHeroSection() {
     const ref = useRef<HTMLElement>(null);
@@ -43,9 +44,19 @@ export default function SecondaryHeroSection() {
                         Ese pasito tembloroso<br />
                         <span className="italic font-light text-rose-light">que te hizo llorar de felicidad...</span>
                     </h2>
-                    <p className="font-body text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto drop-shadow-sm leading-relaxed">
+                    <p className="font-body text-lg md:text-2xl text-white/90 font-light max-w-3xl mx-auto drop-shadow-sm leading-relaxed mb-10">
                         Merece ser protegido con la suavidad que solo el amor hecho a mano puede dar.
                     </p>
+                    <div className="flex justify-center">
+                        <Button
+                            href="/shop"
+                            variant="ghost"
+                            size="lg"
+                            className="bg-white/5 backdrop-blur-md border-white/20 hover:bg-white hover:text-stone-900"
+                        >
+                            Elegir su primer par
+                        </Button>
+                    </div>
                 </motion.div>
             </div>
         </section>

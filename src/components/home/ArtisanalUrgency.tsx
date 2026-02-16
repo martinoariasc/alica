@@ -17,7 +17,7 @@ export default function ArtisanalUrgency() {
     const duplicatedItems = [...tickerItems, ...tickerItems, ...tickerItems];
 
     return (
-        <section className="py-4 bg-charcoal text-white overflow-hidden relative">
+        <section className="py-4 bg-stone-50 text-stone-900 border-y border-stone-200/50 overflow-hidden relative">
             <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5 pointer-events-none" />
             <motion.div
                 className="flex whitespace-nowrap gap-8"

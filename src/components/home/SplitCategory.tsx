@@ -31,7 +31,7 @@ export default function SplitCategory() {
                         </p>
                         <Button
                             href="/shop?gender=nene"
-                            variant="primary"
+                            variant="ghost"
                             className="px-10"
                         >
                             Inicia su aventura
@@ -63,7 +63,7 @@ export default function SplitCategory() {
                         </p>
                         <Button
                             href="/shop?gender=nena"
-                            variant="primary"
+                            variant="ghost"
                             className="px-10"
                         >
                             Elegir su par
