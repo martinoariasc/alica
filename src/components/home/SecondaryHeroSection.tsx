@@ -14,7 +14,7 @@ export default function SecondaryHeroSection() {
     const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
 
     return (
-        <section ref={ref} className="relative h-[50vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center my-0">
+        <section ref={ref} className="relative h-[50vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center bg-stone-100">
             {/* Parallax Video Background */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <motion.div style={{ y }} className="relative w-full h-[140%] -top-[20%]">
@@ -23,13 +23,14 @@ export default function SecondaryHeroSection() {
                         loop
                         muted
                         playsInline
+                        preload="metadata"
                         className="w-full h-full object-cover"
                     >
                         <source src="/videos/hero-2.mp4" type="video/mp4" />
                     </video>
                 </motion.div>
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
             </div>
 
             {/* Content */}

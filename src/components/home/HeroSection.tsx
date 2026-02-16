@@ -16,7 +16,7 @@ export default function HeroSection() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
     return (
-        <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <section ref={ref} className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-stone-900">
             {/* Video Background with Parallax */}
             <motion.div className="absolute inset-0 z-0" style={{ scale }}>
                 <video
@@ -24,14 +24,12 @@ export default function HeroSection() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
-                    className="w-full h-full object-cover"
-                    poster="/images/hero-poster.jpg"
+                    preload="metadata"
+                    className="w-full h-full object-cover opacity-80"
                 >
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
                 {/* Cinematic Overlays */}
-                {/* Cinematic Overlays - Lightened for "No Oscuro" request */}
                 <div className="absolute inset-0 bg-black/15" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80" />
             </motion.div>
