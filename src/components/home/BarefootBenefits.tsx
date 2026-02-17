@@ -42,15 +42,15 @@ export default function BarefootBenefits() {
 
             <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
                 <AnimatedSection blur>
-                    <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
+                    <div className="text-center mb-16 md:mb-24 flex flex-col items-center justify-center">
                         <span className="font-body text-[10px] tracking-[0.5em] uppercase text-rose-deep mb-6 block font-bold opacity-70">Diseño Fisiológico</span>
-                        <h2 className="font-heading text-charcoal leading-[1.3] mb-8"
+                        <h2 className="font-heading text-charcoal leading-[1.3] mb-8 text-center"
                             style={{ fontSize: 'clamp(2rem, 4vw + 0.5rem, 4.5rem)' }}>
                             Su piecito necesita <span className="italic text-rose-deep">entender</span><br />
                             el mundo que pisa.
                         </h2>
                         <div className="w-12 h-px bg-stone-200 mb-8" />
-                        <p className="font-body text-muted max-w-2xl text-center font-light leading-relaxed"
+                        <p className="font-body text-muted max-w-xl text-center font-light leading-relaxed mx-auto"
                             style={{ fontSize: 'clamp(0.95rem, 1.1vw, 1.1rem)' }}>
                             Los expertos coinciden: lo mejor para un bebé es andar descalzo. Pero no siempre se puede. Por eso creamos <span className="font-medium text-charcoal">ALICA</span>: la experiencia más cercana a no llevar nada, pero con la protección que te da tranquilidad.
                         </p>
