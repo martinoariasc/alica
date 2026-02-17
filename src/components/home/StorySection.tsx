@@ -78,9 +78,6 @@ export default function StorySection() {
                                 <Button href="/shop" variant="primary" size="lg" className="w-full sm:w-auto min-w-[200px]">
                                     Ver Colección
                                 </Button>
-                                <Button href="/regalo" variant="caviar" size="lg" className="w-full sm:w-auto min-w-[200px]">
-                                    Un regalo eterno
-                                </Button>
                             </div>
                         </AnimatedSection>
                     </div>

@@ -12,7 +12,6 @@ const navLinks = [
     { href: '/', label: 'Inicio' },
     { href: '/shop', label: 'Tienda' },
     { href: '/nosotros', label: 'Nosotros' },
-    { href: '/regalo', label: '🎁 Regalo' },
     { href: '/contacto', label: 'Contacto' },
 ];
 

@@ -102,14 +102,6 @@ export default function HeroSection() {
                             >
                                 Ver Colección
                             </Button>
-                            <Button
-                                href="/regalo"
-                                variant="outline"
-                                size="lg"
-                                className="w-full sm:w-auto min-w-[220px] backdrop-blur-md"
-                            >
-                                🎁 Guía de Regalos
-                            </Button>
                         </motion.div>
                     </div>
                 </motion.div>
