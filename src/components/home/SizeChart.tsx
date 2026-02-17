@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import ParallaxLayer from '@/components/ui/ParallaxLayer';
 
 const sizes = [
     { range: 'Prematuros', measure: '8cm' },
@@ -18,70 +17,74 @@ const sizes = [
 
 export default function SizeChart() {
     return (
-        <section className="py-40 md:py-80 bg-[#FAF7F5] relative overflow-hidden w-full">
-            {/* Parallax Paper Texture */}
-            <ParallaxLayer speed={0.15} className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-[130%] opacity-[0.03]"
-                    style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/paper.png")` }} />
-            </ParallaxLayer>
+        <section className="py-24 md:py-32 bg-[#FAF7F5] relative overflow-hidden w-full">
+            {/* Background - Clean Minimalist (No Texture) */}
 
-            <div className="max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 relative z-10">
-                <AnimatedSection className="text-center mb-16" blur>
-                    <h2 className="font-heading text-4xl md:text-5xl text-[#4E423C] mb-4">
+            <div className="max-w-[95%] xl:max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <AnimatedSection className="text-center mb-12 md:mb-16" blur>
+                    <h2 className="font-heading text-3xl md:text-5xl text-[#4E423C] mb-4">
                         Tabla de medidas
                     </h2>
-                    <p className="font-body text-[#857A74] italic text-lg">
+                    <p className="font-body text-[#857A74] italic text-base md:text-lg">
                         (Nos manejamos en centímetros)
                     </p>
                 </AnimatedSection>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    {/* Visual Guide */}
-                    <AnimatedSection delay={0.2} className="hidden md:block" direction="left" blur>
-                        <div className="aspect-[4/5] rounded-2xl bg-white/50 backdrop-blur-sm p-8 border border-[#E8E2DE] shadow-inner flex flex-col justify-center items-center text-center">
-                            <div className="w-32 h-32 mb-6 opacity-20">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#4E423C]">
-                                    <path d="M3 6h18M3 12h18M3 18h18" strokeLinecap="round" />
-                                    <circle cx="12" cy="12" r="9" />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    {/* Visual Guide - Simplified */}
+                    <AnimatedSection delay={0.2} className="hidden lg:block sticky top-24" direction="left" blur>
+                        <div className="rounded-2xl bg-white p-8 border border-stone-100 shadow-sm flex flex-col justify-center items-center text-center">
+                            <div className="w-32 h-32 mb-6 opacity-80 p-4 bg-stone-50 rounded-full flex items-center justify-center">
+                                {/* Simple Foot Icon */}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-16 h-16 text-[#4E423C]">
+                                    <path d="M4 10c0 4.418 3.582 8 8 8s8-3.582 8-8-3.582-8-8-8-8 3.582-8 8z" />
+                                    <path d="M9 10c0 1.657 1.343 3 3 3s3-1.343 3-3" strokeLinecap="round" />
+                                    <path d="M12 14v4" strokeLinecap="round" strokeDasharray="2 2" />
                                 </svg>
                             </div>
-                            <h3 className="font-heading text-2xl text-[#4E423C] mb-4">¿Cómo medir?</h3>
-                            <p className="text-sm text-[#857A74] leading-relaxed">
-                                Recomendamos medir el piecito de tu bebé desde el talón hasta el dedo más largo y sumar **0.5cm** para que esté cómodo.
+                            <h3 className="font-heading text-xl text-[#4E423C] mb-3">¿Cómo medir?</h3>
+                            <p className="text-sm text-[#857A74] leading-relaxed max-w-xs mx-auto">
+                                Medí el piecito desde el talón hasta el dedo más largo y sumá <strong className="text-rose-deep font-medium">0.5cm</strong> para mayor comodidad.
                             </p>
                         </div>
                     </AnimatedSection>
 
-                    {/* The Table */}
-                    <AnimatedSection delay={0.3} direction="right">
-                        <div className="bg-white rounded-3xl shadow-xl shadow-stone-200/50 overflow-hidden border border-[#E8E2DE]">
-                            <div className="grid grid-cols-2 bg-[#4E423C] p-4 text-white font-heading tracking-widest text-sm uppercase">
-                                <div className="pl-4">Edad</div>
-                                <div className="text-right pr-4">Medida</div>
+                    {/* The Table - Clean List for Mobile */}
+                    <AnimatedSection delay={0.3} direction="right" className="w-full">
+                        <div className="bg-white rounded-3xl overflow-hidden border border-stone-100 shadow-sm">
+                            <div className="grid grid-cols-2 bg-stone-100/50 p-5 border-b border-stone-100 text-stone-500 font-heading tracking-widest text-xs uppercase">
+                                <div className="pl-2">Edad Aproximada</div>
+                                <div className="text-right pr-2">Largo del Pie</div>
                             </div>
-                            <div className="divide-y divide-[#F0EAE6]">
+                            <div className="divide-y divide-stone-100">
                                 {sizes.map((item, i) => (
                                     <motion.div
                                         key={item.range}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: i * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                                        whileHover={{ backgroundColor: '#FAF7F5' }}
-                                        className="grid grid-cols-2 p-4 items-center group transition-colors"
+                                        transition={{ delay: i * 0.03 }}
+                                        className="grid grid-cols-2 p-5 items-center hover:bg-[#FAF7F5] transition-colors duration-300"
                                     >
-                                        <span className="font-body text-[#4E423C] font-medium pl-4 group-hover:translate-x-1 transition-transform">
+                                        <span className="font-body text-stone-600 font-medium pl-2 text-sm md:text-base">
                                             {item.range}
                                         </span>
-                                        <span className="font-body text-[#857A74] text-right pr-4 font-semibold uppercase tracking-tighter">
+                                        <span className="font-body text-stone-800 text-right pr-2 font-bold text-sm md:text-base tracking-tight">
                                             {item.measure}
                                         </span>
                                     </motion.div>
                                 ))}
                             </div>
+
+                            {/* Mobile visual guide note included inside the card */}
+                            <div className="lg:hidden p-6 bg-stone-50 text-center border-t border-stone-100">
+                                <p className="text-xs text-[#857A74] leading-relaxed">
+                                    💡 Tip: Sumá <strong>0.5cm</strong> a la medida del piecito.
+                                </p>
+                            </div>
                         </div>
                         <p className="text-[10px] text-[#857A74] mt-4 text-center uppercase tracking-widest opacity-60">
-                            * Las medidas pueden variar levemente por ser un producto artesanal
+                            * Producto artesanal, medidas aproximadas.
                         </p>
                     </AnimatedSection>
                 </div>

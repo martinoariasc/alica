@@ -18,8 +18,8 @@ export default function FinalCTA() {
                 <div className="w-48 h-48 rounded-full bg-gold/8 blur-3xl" />
             </FloatingElement>
 
-            <div className="max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 text-center relative z-10">
-                <AnimatedSection blur>
+            <div className="max-w-[90%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 text-center relative z-10 flex flex-col items-center">
+                <AnimatedSection blur className="w-full flex flex-col items-center">
                     {/* Urgency Badge */}
                     <motion.div
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-charcoal/5 border border-charcoal/10 mb-8"
@@ -32,28 +32,31 @@ export default function FinalCTA() {
                         </span>
                     </motion.div>
 
-                    <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal mb-6 leading-tight">
+                    <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal mb-6 leading-tight text-center">
                         Cerrá los ojos e imaginá
                         <br />
                         <span className="gradient-text italic">su primer pasito hacia vos...</span>
                     </h2>
-                    <p className="text-lg text-muted font-light mb-3 max-w-xl mx-auto">
+
+                    {/* Centered paragraphs as requested */}
+                    <p className="text-lg text-muted font-light mb-3 max-w-xl mx-auto text-center">
                         Ahora imaginalo con los zapatitos más suaves que existen.
                     </p>
-                    <p className="text-base text-muted font-light mb-10 max-w-xl mx-auto">
+                    <p className="text-base text-muted font-light mb-10 max-w-xl mx-auto text-center">
                         Escribinos por WhatsApp y en 2 minutos te ayudamos a elegir el par perfecto para tu bebé. Sin compromiso.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
                         <Button
                             href={buildWhatsAppURL('¡Hola! Quiero elegir los zapatitos de mi bebé 🍼')}
                             variant="primary"
                             size="lg"
                             external
-                            className="text-lg px-12"
+                            className="text-lg px-12 w-full sm:w-auto"
                         >
                             Quiero elegir los suyos 💛
                         </Button>
-                        <Button href="/shop" variant="caviar" size="lg">
+                        <Button href="/shop" variant="caviar" size="lg" className="w-full sm:w-auto">
                             Ver toda la colección
                         </Button>
                     </div>
