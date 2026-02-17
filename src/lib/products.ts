@@ -303,9 +303,9 @@ export const products: Product[] = [
         benefits: [
             '🎀 Vincha Clásica: 20.000 Gs',
             '👑 Vincha Especial: 30.000 Gs',
-            '🎁 Pack x3 Vinchas: 45.000 Gs (ahorro)',
+            '🎁 Pack x3 Vinchas: 45.000 Gs',
             '🤍 Baberito/Bandana: 35.000 Gs',
-            '🎁 Pack x3 Baberitos: 85.000 Gs (ahorro)',
+            '🎁 Pack x3 Baberitos: 45.000 Gs',
             '🤍 Cubrepañal Lino: 95.000 Gs'
         ],
         materials: ['Algodón orgánico', 'Lino', 'Seda', 'Elástico premium'],
@@ -318,11 +318,11 @@ export const products: Product[] = [
     {
         slug: 'set-primer-look-alica',
         name: 'Combo "Mi Primer Look"',
-        emotionalName: 'Elegancia desde el Día 1',
-        emotionalPhrase: 'Un outfit completo pensado para sus primeras memorias.',
+        emotionalName: 'Cápsula "Mi Primer Look"',
+        emotionalPhrase: 'Su primer outfit completo, diseñado para sus mejores memorias.',
         price: 215000,
         oldPrice: 255000,
-        description: 'La solución ideal para sus primeras fotos o salidas. Incluye: 1 par de Zapatitos de cuero suave + 1 Cubrepañal + 1 Accesorio a elección (Vincha artesanal para nena o Baberito para nene). + De Regalo: Ebook "50 Consejos para tu bebé". Todo lo que necesita para lucir impecable y sentirse cómodo.',
+        description: 'La solución ideal para sus primeras fotos o salidas. Incluye: 1 par de Zapatitos de cuero suave + 1 Cubrepañal premium + 1 Accesorio coordinado según el género (Vincha artesanal para nena o Baberito para nene). + De Regalo: Ebook "50 Consejos para tu bebé".',
         shortDescription: 'Zapatito + Cubrepañal + Vincha/Babero + Ebook.',
         images: [
             '/images/products/combos/combo 1/86a79d33-f191-46b9-88f9-a68739804258.jpg',
@@ -344,11 +344,11 @@ export const products: Product[] = [
     {
         slug: 'plan-evolucion-feliz',
         name: 'Cápsula "ALICA Premium"',
-        emotionalName: 'La Oferta Irresistible',
-        emotionalPhrase: 'Todo lo que tu bebé necesita para sus primeras etapas de oro.',
-        price: 385000,
-        oldPrice: 495000,
-        description: 'Nuestra oferta más completa. Incluye: 2 pares de Zapatitos de diferentes tamaños para acompañar su crecimiento + 1 Cubrepañal + 1 Baberito + Accesorios según elección (Pack de 3 Vinchas para nena). + De Regalo: Ebook "50 Consejos para tu bebé". La máxima expresión de ALICA en un solo paquete pensado para durar.',
+        emotionalName: 'Ajuar "ALICA Premium"',
+        emotionalPhrase: 'Todo lo que tu bebé necesita para sus etapas de oro.',
+        price: 365000,
+        oldPrice: 485000,
+        description: 'Nuestra propuesta más completa. Incluye: 2 pares de Zapatitos de diferentes talles para acompañar su crecimiento + 1 Cubrepañal + 1 Baberito + Accesorios según el género del bebé (Pack de 3 Vinchas para nena o Pack de 3 Baberitos para nene). + De Regalo: Ebook "50 Consejos para tu bebé".',
         shortDescription: '2 Zapatitos + Accesorios + Cubrepañal + Baberito + Ebook.',
         images: [
             '/images/products/combos/combo 3/3583681e-da95-4c77-b33b-ff06d74afa40.jpg'
@@ -368,12 +368,12 @@ export const products: Product[] = [
     },
     {
         slug: 'trio-ternura-y-cuento',
-        name: 'Combo "Detalles que Enamoran"',
-        emotionalName: 'Ternura en cada Accesorio',
-        emotionalPhrase: 'Accesorios esenciales con Ebook de Regalo.',
-        price: 65000,
-        oldPrice: 85000,
-        description: 'Un kit de accesorios esenciales para el día a día. Puedes elegir entre Pack de 3 Vinchas artesanales (versión nena) o Set de Baberitos/Bandanas premium. + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". El toque de elegancia que complementa cualquier look.',
+        name: 'Pack "Trío de Esenciales"',
+        emotionalName: 'Trío de Esenciales',
+        emotionalPhrase: 'Accesorios indispensables con el toque ALICA.',
+        price: 45000,
+        oldPrice: 65000,
+        description: 'Un set diseñado para el día a día. Puedes elegir entre un Pack de 3 Vinchas artesanales (versión nena) o un Pack de 3 Baberitos/Bandanas premium (versión nene). Incluye de regalo nuestro Ebook "50 Consejos para cuidar a tu bebé".',
         shortDescription: 'Accesorios Pack + Ebook.',
         images: [
             '/images/products/combos/combo 2/Whisk_f2be5b1fb2af7acb63748dde1191dad1eg.png'
