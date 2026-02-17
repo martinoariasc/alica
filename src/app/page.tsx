@@ -37,9 +37,11 @@ export default function Home() {
         <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-48 items-center">
             <div className="w-full h-full">
-              <div className="aspect-[4/5] w-full relative overflow-hidden rounded-[2rem] shadow-2xl">
-                <VideoSection src="/videos/video-seccion-2.mp4" />
-              </div>
+              <VideoSection
+                src="/videos/video-seccion-2.mp4"
+                aspectRatio="aspect-[4/5]"
+                rounded="rounded-[2.5rem]"
+              />
             </div>
             <div className="text-center md:text-left flex flex-col justify-center">
               <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-8 block font-bold">Sin Prisas</span>

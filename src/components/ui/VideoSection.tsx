@@ -55,13 +55,14 @@ export default function VideoSection({
 
             <video
                 ref={videoRef}
+                autoPlay
                 loop
                 muted
                 playsInline
-                preload="none"
+                preload="auto"
                 onLoadedData={() => setIsLoaded(true)}
                 onError={() => setHasError(true)}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
             >
                 <source src={src} type="video/mp4" />
             </video>
