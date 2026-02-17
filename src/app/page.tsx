@@ -1,10 +1,9 @@
 'use client';
 
 import HeroSection from '@/components/home/HeroSection';
-import BarefootBenefits from '@/components/home/BarefootBenefits'; // Renamed
-import ArtisanalUrgency from '@/components/home/ArtisanalUrgency';
+import BarefootBenefits from '@/components/home/BarefootBenefits';
 import ProductCarousel from '@/components/home/ProductCarousel';
-import StorySection from '@/components/home/StorySection'; // Refined
+import StorySection from '@/components/home/StorySection';
 import TestimonialCarousel from '@/components/home/TestimonialCarousel';
 import BabyGallery from '@/components/home/BabyGallery';
 import SizeChart from '@/components/home/SizeChart';
@@ -12,28 +11,33 @@ import FinalCTA from '@/components/home/FinalCTA';
 import Separator from '@/components/ui/Separator';
 import VideoSection from '@/components/ui/VideoSection';
 
+// Custom Luxury Spacer - "The Art of the Pause"
+const LuxurySpacer = () => (
+  <div className="w-full py-24 md:py-32 lg:py-40 flex items-center justify-center">
+    <div className="w-px h-20 md:h-32 bg-gradient-to-b from-transparent via-rose-deep/30 to-transparent" />
+  </div>
+);
+
 export default function Home() {
   return (
-    <main className="overflow-hidden min-h-screen w-full relative">
-      {/* 1. HERO: The Emotional Hook ("Make them eternal") */}
+    <main className="overflow-hidden min-h-screen w-full relative bg-[#FAF7F5]">
+
+      {/* 1. HERO: The Emotional Hook */}
       <HeroSection />
 
-      <Separator showLine={false} />
+      <LuxurySpacer />
 
-      {/* 2. PROBLEM/SOLUTION + SAFETY: "Why soft sole?" */}
+      {/* 2. PROBLEM/SOLUTION: "Why soft sole?" */}
       <BarefootBenefits />
 
-      <div className="py-12 md:py-24" />
+      <LuxurySpacer />
 
-      {/* 3. SCARCITY + ARTISANAL VALUE: "Not a factory, a workshop." */}
-
-
-      {/* Video Interlude 1: The Process */}
-      <section className="py-48 md:py-96 w-full px-6 sm:px-12">
+      {/* 3. BRAND VALUE: "Sin Prisas" (Video Interlude) */}
+      <section className="w-full px-6 sm:px-12">
         <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-48 items-center">
             <div className="w-full h-full">
-              <div className="aspect-[4/5] w-full relative">
+              <div className="aspect-[4/5] w-full relative overflow-hidden rounded-[2rem] shadow-2xl">
                 <VideoSection src="/videos/video-seccion-2.mp4" />
               </div>
             </div>
@@ -50,29 +54,42 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="py-12 md:py-24" />
+      <LuxurySpacer />
 
       {/* 4. DESIRE: The Product Showcase */}
-      <ProductCarousel />
+      <div className="relative">
+        <h2 className="text-center font-heading text-4xl md:text-5xl text-charcoal mb-16">
+          Favoritos de la semana
+        </h2>
+        <ProductCarousel />
+      </div>
 
-      <div className="py-12 md:py-24" />
+      <LuxurySpacer />
 
-      {/* 5. MEMORY/EMOTION: "They grow too fast" */}
+      {/* 5. CONNECTION: "They grow too fast" */}
       <StorySection />
 
-
-
-      <div className="py-12 md:py-24" />
+      <LuxurySpacer />
 
       {/* 6. TRUST: Social Proof */}
+      <div className="text-center mb-16">
+        <span className="font-body text-xs tracking-[0.3em] uppercase text-stone-400">Mamás Alica</span>
+      </div>
       <TestimonialCarousel />
 
-      <div className="py-12 md:py-24" />
+      <LuxurySpacer />
 
-      {/* 7. UTILITY & CLOSING */}
+      {/* 7. UTILITY: Size Chart */}
       <SizeChart />
+
+      <LuxurySpacer />
+
+      {/* 8. VISUALS: Gallery */}
       <BabyGallery />
-      <div className="py-12 md:py-24" />
+
+      <LuxurySpacer />
+
+      {/* 9. ACTION: Final CTA */}
       <FinalCTA />
     </main >
   );

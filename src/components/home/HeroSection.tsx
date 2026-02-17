@@ -18,7 +18,7 @@ export default function HeroSection() {
 
     return (
         <section ref={ref} className="relative h-[100dvh] w-screen overflow-hidden flex items-center justify-center bg-stone-900">
-            {/* Video Background with Parallax */}
+            {/* Video Background with Parallax - Fixed to w-screen to prevent zoom issues */}
             <motion.div className="absolute inset-0 z-0 w-screen h-full" style={{ scale, willChange: 'transform' }}>
                 <video
                     autoPlay
@@ -30,27 +30,28 @@ export default function HeroSection() {
                 >
                     <source src="/videos/hero-1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/20" /> {/* Darker overlay for better contrast */}
+                <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20 opacity-80" />
             </motion.div>
 
-            {/* Single Floating Orb (reduced from 3 to 1) */}
-            <FloatingElement className="absolute top-[20%] left-[10%] w-40 h-40 rounded-full bg-rose-light/8 blur-[80px] pointer-events-none z-[1]" amplitude={15} duration={10}>
+            {/* Single Floating Orb */}
+            <FloatingElement className="absolute top-[20%] left-[10%] w-[20vw] h-[20vw] max-w-[200px] max-h-[200px] rounded-full bg-rose-light/8 blur-[80px] pointer-events-none z-[1]" amplitude={15} duration={10}>
                 <div />
             </FloatingElement>
 
-            {/* Content */}
+            {/* Content - Using Fluid Typography (clamp) */}
             <motion.div
-                className="relative z-10 max-w-[95%] xl:max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center h-full"
+                className="relative z-10 w-full max-w-[90vw] mx-auto px-4 text-center flex flex-col items-center justify-center h-full"
                 style={{ y, opacity, willChange: 'transform, opacity' }}
             >
-                <div className="flex-1 flex flex-col items-center justify-center pt-20">
+                <div className="flex-1 flex flex-col items-center justify-center pt-[10vh]">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white font-medium text-[10px] md:text-sm tracking-[0.2em] uppercase mb-6 md:mb-8 border border-white/20 shadow-lg">
+                        <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white font-medium tracking-[0.2em] uppercase mb-8 border border-white/20 shadow-lg"
+                            style={{ fontSize: 'clamp(0.6rem, 1vw + 0.2rem, 0.875rem)' }}>
                             Cosidos a mano · Solo 15 pares por semana
                         </span>
                     </motion.div>
@@ -59,12 +60,19 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-body text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold !text-white leading-[1.1] mb-6 drop-shadow-2xl"
-                        style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3)' }}
+                        className="font-body font-semibold !text-white leading-[1.1] mb-6 drop-shadow-2xl"
+                        style={{
+                            textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3)',
+                            fontSize: 'clamp(2.5rem, 6vw + 1rem, 6rem)' /* Fluid Typography */
+                        }}
                     >
                         <span className="text-white block">Sus primeros pasos</span>
                         <span className="italic font-light text-white block mt-2">duran un suspiro...</span>
-                        <span className="font-heading text-[#FFFDD0] italic font-medium tracking-normal block mt-4" style={{ textShadow: '0 2px 5px rgba(0,0,0,0.8), 0 5px 20px rgba(0,0,0,0.5)' }}>
+                        <span className="font-heading text-[#FFFDD0] italic font-medium tracking-normal block mt-4"
+                            style={{
+                                textShadow: '0 2px 5px rgba(0,0,0,0.8), 0 5px 20px rgba(0,0,0,0.5)',
+                                fontSize: 'clamp(3rem, 7vw + 1rem, 7rem)'
+                            }}>
                             hacelos eternos.
                         </span>
                     </motion.h1>
@@ -73,7 +81,8 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-body text-sm md:text-lg text-white/90 font-light mb-12 max-w-xl mx-auto leading-relaxed drop-shadow-xl tracking-wide"
+                        className="font-body text-white/90 font-light mb-12 max-w-[90vw] md:max-w-2xl mx-auto leading-relaxed drop-shadow-xl tracking-wide"
+                        style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)' }}
                     >
                         Zapatitos artesanales de suela blanda que abrazan sus piecitos con la ternura que solo una mamá entiende.
                     </motion.p>
@@ -88,7 +97,7 @@ export default function HeroSection() {
                             href="/shop"
                             variant="outline"
                             size="lg"
-                            className="border-white/40 hover:border-white w-full sm:w-auto max-w-xs"
+                            className="border-white/40 hover:border-white w-full sm:w-auto min-w-[200px]"
                         >
                             Elegir su primer recuerdo
                         </Button>
@@ -96,7 +105,7 @@ export default function HeroSection() {
                             href="/regalo"
                             variant="caviar"
                             size="lg"
-                            className="text-white border-white/30 hover:border-white w-full sm:w-auto max-w-xs"
+                            className="text-white border-white/30 hover:border-white w-full sm:w-auto min-w-[200px]"
                         >
                             🎁 Regalar amor eterno
                         </Button>
