@@ -36,23 +36,23 @@ export default function Button({
 }: ButtonProps) {
 
     const variants = {
-        primary: "bg-white text-stone-900 border border-stone-200 hover:border-stone-900 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.15)] transition-all duration-500",
-        secondary: "bg-stone-900 text-white border border-stone-900 hover:bg-stone-800 shadow-lg hover:shadow-xl transition-all duration-500",
-        outline: "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/[0.1] backdrop-blur-md transition-all duration-500",
-        outlineDark: "bg-transparent text-charcoal border border-charcoal/20 hover:border-charcoal hover:bg-charcoal/5 transition-all duration-300",
-        whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_10px_30px_-10px_rgba(37,211,102,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(37,211,102,0.6)] hover:-translate-y-1",
-        ghost: "bg-transparent text-stone-600 hover:text-stone-900 transition-all duration-500",
-        caviar: "bg-white/40 backdrop-blur-sm text-stone-900 border border-stone-200 hover:border-stone-900 hover:bg-white transition-all duration-700 tracking-[0.4em] font-light italic shadow-sm hover:shadow-md",
-        luxury: "bg-stone-900 text-white border-none shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]"
+        primary: "bg-white text-cacao border border-stone-100 hover:border-gold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-all duration-700",
+        secondary: "bg-cacao text-white border border-cacao hover:bg-cacao-light shadow-xl hover:shadow-2xl transition-all duration-500",
+        outline: "bg-transparent text-white border border-white/30 hover:border-white hover:bg-white/[0.05] backdrop-blur-md transition-all duration-500",
+        outlineDark: "bg-transparent text-cacao border border-cacao/10 hover:border-cacao hover:bg-cacao/[0.02] transition-all duration-500",
+        whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_15px_35px_-10px_rgba(37,211,102,0.4)] hover:shadow-[0_25px_45px_-10px_rgba(37,211,102,0.5)]",
+        ghost: "bg-transparent text-cacao/60 hover:text-cacao transition-all duration-500",
+        caviar: "bg-white/40 backdrop-blur-sm text-cacao border border-stone-200 hover:border-gold hover:bg-white transition-all duration-700 tracking-[0.4em] font-light italic",
+        luxury: "bg-cacao text-white border border-cacao hover:border-gold hover:bg-transparent hover:text-cacao shadow-[0_15px_45px_-15px_rgba(0,0,0,0.3)] transition-all duration-700"
     };
 
     const sizes = {
-        sm: 'h-12 px-8 text-[10px]',
-        md: 'h-14 px-12 text-[11px]',
-        lg: 'h-16 px-16 text-[12px]',
+        sm: 'h-11 px-6 text-[10px]',
+        md: 'h-14 px-10 text-[11px]',
+        lg: 'h-16 px-14 text-[12px]',
     };
 
-    const baseStyles = "relative inline-flex items-center justify-center font-body font-medium tracking-[0.3em] uppercase transition-all duration-500 select-none cursor-pointer overflow-hidden group rounded-full";
+    const baseStyles = "relative inline-flex items-center justify-center font-body font-semibold tracking-[0.25em] uppercase transition-all duration-700 select-none cursor-pointer overflow-hidden group rounded-full";
     const finalStyles = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
 
     const hoverAnimation = {

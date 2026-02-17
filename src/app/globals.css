@@ -2,35 +2,37 @@
 @source "../../src";
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* ── Alica Bebes Design Tokens ── */
+/* ── Alica Bebes Luxury Design Tokens ── */
 :root {
   --alica-bg: #FDFCFB;
   --alica-bg-warm: #F9F6F2;
   --alica-linen: #F0EBE5;
-  --alica-cocoa: #2A2421;
-  --alica-text-main: #4A423E;
-  --alica-text-muted: #857A74;
-  --alica-blue: #D4DEE5;
-  --alica-pink: #EAD8D4;
-  --alica-gold: #C5B393;
-  --alica-white: #FFFFFF;
-  --alica-cream-dark: #E6DCCD;
-  --alica-charcoal: var(--alica-text-main);
-  --alica-rose: var(--alica-pink);
+  --alica-cacao: #2A1F1B;
+  /* Deeper, richer espresso */
+  --alica-cacao-light: #4A3B36;
+  --alica-gold: #D4B692;
+  /* More refined gilded gold */
+  --alica-gold-muted: #E2D1B9;
+  --alica-rose: #EAD8D4;
   --alica-rose-deep: #BFA5A0;
   --alica-rose-light: #F5EBE8;
+  --alica-white: #FFFFFF;
+
+  /* Semantic Mappings */
+  --alica-text-main: #2A1F1B;
+  --alica-text-muted: #8A7B74;
+  --alica-charcoal: var(--alica-cacao);
 }
 
 @theme inline {
   --color-bg: var(--alica-bg);
   --color-bg-warm: var(--alica-bg-warm);
   --color-linen: var(--alica-linen);
-  --color-cocoa: var(--alica-cocoa);
+  --color-cacao: var(--alica-cacao);
   --color-charcoal: var(--alica-charcoal);
   --color-muted: var(--alica-text-muted);
-  --color-blue-soft: var(--alica-blue);
-  --color-pink-soft: var(--alica-pink);
   --color-gold: var(--alica-gold);
+  --color-gold-muted: var(--alica-gold-muted);
   --color-rose: var(--alica-rose);
   --color-rose-deep: var(--alica-rose-deep);
   --color-rose-light: var(--alica-rose-light);

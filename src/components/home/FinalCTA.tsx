@@ -32,7 +32,7 @@ export default function FinalCTA() {
                         </span>
                     </motion.div>
 
-                    <h2 className="font-heading text-3xl md:text-5xl lg:text-7xl font-semibold text-charcoal mb-8 leading-[1.2] text-center">
+                    <h2 className="font-heading text-3xl md:text-5xl lg:text-7xl font-semibold text-cacao mb-8 leading-[1.2] text-center">
                         Cerrá los ojos e imaginá
                         <br />
                         <span className="gradient-text italic font-light font-display">su primer pasito hacia vos...</span>
@@ -51,18 +51,18 @@ export default function FinalCTA() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
                         <Button
                             href={buildWhatsAppURL('¡Hola! Quiero elegir los zapatitos de mi bebé 🍼')}
-                            variant="primary"
+                            variant="luxury"
                             size="lg"
                             external
-                            className="bg-charcoal text-white border-charcoal hover:bg-stone-800 text-lg px-12 w-full sm:w-auto min-w-[260px] h-16 rounded-full"
+                            className="text-lg px-12 w-full sm:w-auto min-w-[280px] h-16"
                         >
                             Quiero elegir los suyos 🤍
                         </Button>
                         <Button
                             href="/shop"
-                            variant="outline"
+                            variant="outlineDark"
                             size="lg"
-                            className="w-full sm:w-auto min-w-[260px] h-16 rounded-full border-charcoal/20 text-charcoal hover:bg-charcoal/5"
+                            className="w-full sm:w-auto min-w-[280px] h-16"
                         >
                             Ver toda la colección
                         </Button>

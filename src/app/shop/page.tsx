@@ -16,19 +16,7 @@ const genderFilters: { label: string; value: Gender | 'todos' }[] = [
     { label: 'Nenas', value: 'nena' },
 ];
 
-const ageFilters: { label: string; value: AgeRange | 'todos' }[] = [
-    { label: 'Todas las edades', value: 'todos' },
-    { label: '0-6 meses', value: '0-6 meses' },
-    { label: '6-12 meses', value: '6-12 meses' },
-    { label: '1-2 años', value: '1-2 años' },
-];
 
-const useFilters: { label: string; value: UseType | 'todos' }[] = [
-    { label: 'Ocasión', value: 'todos' },
-    { label: 'Primeros Pasos', value: 'primeros pasos' },
-    { label: 'Gateo', value: 'gateo' },
-    { label: 'Regalo', value: 'regalo' },
-];
 
 export default function ShopPage() {
     const [gender, setGender] = useState<Gender | 'todos'>('todos');
@@ -88,24 +76,8 @@ export default function ShopPage() {
                             ))}
                         </div>
 
-                        {/* Dropdowns / Specifics */}
+                        {/* Dropdowns / Specifics - Removed Age and Use as per request */}
                         <div className="flex items-center gap-4 w-full md:w-auto overflow-x-auto no-scrollbar">
-                            <select
-                                value={age}
-                                onChange={(e) => setAge(e.target.value as any)}
-                                className="appearance-none bg-transparent border-none text-[10px] font-bold tracking-[0.1em] uppercase text-stone-500 focus:outline-none cursor-pointer"
-                            >
-                                {ageFilters.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
-                            </select>
-
-                            <select
-                                value={use}
-                                onChange={(e) => setUse(e.target.value as any)}
-                                className="appearance-none bg-transparent border-none text-[10px] font-bold tracking-[0.1em] uppercase text-stone-500 focus:outline-none cursor-pointer"
-                            >
-                                {useFilters.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
-                            </select>
-
                             {hasActiveFilters && (
                                 <button
                                     onClick={clearFilters}
