@@ -68,7 +68,7 @@ export default function NosotrosPage() {
     return (
         <>
             {/* Hero */}
-            <section className="pt-32 pb-20 bg-gradient-to-b from-rose-light/30 to-bg relative overflow-hidden">
+            <section className="pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-soft/20 rounded-full blur-[120px]" />
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px]" />
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative">
@@ -88,7 +88,7 @@ export default function NosotrosPage() {
             </section>
 
             {/* Origin Story */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <AnimatedSection>
@@ -133,7 +133,7 @@ export default function NosotrosPage() {
             </section>
 
             {/* Timeline */}
-            <section className="py-20 bg-bg-warm/50">
+            <section className="py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
                     <AnimatedSection>
                         <SectionTitle
@@ -172,7 +172,7 @@ export default function NosotrosPage() {
             </section>
 
             {/* Values */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <AnimatedSection>
                         <SectionTitle
@@ -204,7 +204,7 @@ export default function NosotrosPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-br from-rose-light/30 to-bg-warm">
+            <section className="py-20 bg-gradient-to-br from-rose-light/20 to-transparent">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
                     <AnimatedSection>
                         <span className="text-5xl mb-6 inline-block">💛</span>

@@ -42,7 +42,7 @@ export default function ProductoPage({
     return (
         <>
             {/* Breadcrumb */}
-            <div className="pt-28 pb-4 bg-bg">
+            <div className="pt-28 pb-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <nav className="flex items-center gap-2 text-sm text-muted">
                         <Link href="/" className="hover:text-charcoal transition-colors">Inicio</Link>
@@ -55,7 +55,7 @@ export default function ProductoPage({
             </div>
 
             {/* Main Product Section */}
-            <section className="pb-12 bg-bg">
+            <section className="pb-12">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         {/* Image Gallery */}
@@ -195,7 +195,7 @@ export default function ProductoPage({
             </section>
 
             {/* Details Section */}
-            <section className="py-16 bg-white">
+            <section className="py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Benefits */}
@@ -257,7 +257,7 @@ export default function ProductoPage({
 
             {/* Related Products */}
             {relatedProducts.length > 0 && (
-                <section className="py-16 bg-bg-warm">
+                <section className="py-16 border-t border-stone-100">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">
                         <AnimatedSection>
                             <h2 className="font-heading text-2xl md:text-3xl font-semibold text-charcoal text-center mb-10">

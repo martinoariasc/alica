@@ -64,7 +64,7 @@ export default function ShopPage() {
     return (
         <>
             {/* Hero Banner */}
-            <section className="pt-32 pb-16 bg-gradient-to-b from-rose-light/30 to-bg relative overflow-hidden">
+            <section className="pt-32 pb-16 bg-gradient-to-b from-rose-light/10 to-transparent relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-pink-soft/20 rounded-full blur-[120px] -translate-y-1/2" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-soft/20 rounded-full blur-[100px] translate-y-1/2" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
@@ -81,7 +81,7 @@ export default function ShopPage() {
             </section>
 
             {/* Filters & Grid */}
-            <section className="pb-20 bg-bg">
+            <section className="pb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
                     {/* Production Time Banner */}
@@ -146,14 +146,14 @@ export default function ShopPage() {
                             </div>
 
                             {/* Use Filter */}
-                            <div className="flex flex-wrap justify-center gap-2">
+                            <div className="flex flex-wrap justify-center gap-3">
                                 {useFilters.map((f) => (
                                     <button
                                         key={f.value}
                                         onClick={() => setUse(f.value)}
-                                        className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer ${use === f.value
-                                            ? 'bg-gold text-white shadow-md'
-                                            : 'bg-white text-charcoal/50 hover:bg-bg-warm hover:text-charcoal border border-transparent hover:border-gold/20'
+                                        className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium transition-all duration-500 cursor-pointer ${use === f.value
+                                            ? 'bg-stone-900 text-white shadow-xl scale-105'
+                                            : 'bg-white/40 backdrop-blur-sm text-stone-500 hover:bg-white hover:text-stone-900 border border-stone-200/50 shadow-sm'
                                             }`}
                                     >
                                         {f.label}

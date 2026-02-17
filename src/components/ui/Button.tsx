@@ -36,12 +36,12 @@ export default function Button({
 }: ButtonProps) {
 
     const variants = {
-        primary: "bg-white text-stone-900 border border-stone-200 hover:border-stone-900 shadow-sm hover:shadow-md transition-all duration-500",
-        secondary: "bg-stone-900 text-white border border-stone-900 hover:bg-stone-800 shadow-md hover:shadow-xl transition-all duration-500",
-        outline: "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/[0.08] backdrop-blur-sm transition-all duration-500",
-        whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_10px_30px_-10px_rgba(37,211,102,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(37,211,102,0.6)] hover:-translate-y-1 scale-[0.98]",
+        primary: "bg-white text-stone-900 border border-stone-200 hover:border-stone-900 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.15)] transition-all duration-500",
+        secondary: "bg-stone-900 text-white border border-stone-900 hover:bg-stone-800 shadow-lg hover:shadow-xl transition-all duration-500",
+        outline: "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/[0.1] backdrop-blur-md transition-all duration-500",
+        whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_10px_30px_-10px_rgba(37,211,102,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(37,211,102,0.6)] hover:-translate-y-1",
         ghost: "bg-transparent text-stone-600 hover:text-stone-900 transition-all duration-500",
-        caviar: "bg-transparent text-stone-900 border-b border-stone-200 hover:border-stone-900 hover:text-stone-950 px-0 rounded-none transition-all duration-700 tracking-[0.4em] font-light italic"
+        caviar: "bg-white/40 backdrop-blur-sm text-stone-900 border border-stone-200 hover:border-stone-900 hover:bg-white transition-all duration-700 tracking-[0.4em] font-light italic shadow-sm hover:shadow-md"
     };
 
     const sizes = {

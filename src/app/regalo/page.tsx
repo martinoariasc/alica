@@ -48,7 +48,7 @@ export default function RegaloPage() {
     return (
         <>
             {/* Hero */}
-            <section className="pt-32 pb-20 bg-gradient-to-b from-pink-soft/30 via-rose-light/20 to-bg relative overflow-hidden">
+            <section className="pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute top-10 right-10 w-96 h-96 bg-gold/10 rounded-full blur-[100px]" />
                 <div className="absolute bottom-10 left-10 w-72 h-72 bg-pink-soft/20 rounded-full blur-[100px]" />
 
@@ -99,7 +99,7 @@ export default function RegaloPage() {
             </section>
 
             {/* Occasions */}
-            <section className="py-16 bg-white">
+            <section className="py-16">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
                     <AnimatedSection>
                         <SectionTitle
@@ -125,7 +125,7 @@ export default function RegaloPage() {
             </section>
 
             {/* Why Gift ALICA */}
-            <section className="py-20 bg-bg-warm/50">
+            <section className="py-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <AnimatedSection>
                         <SectionTitle
@@ -157,7 +157,7 @@ export default function RegaloPage() {
             </section>
 
             {/* Gift Products */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <AnimatedSection>
                         <SectionTitle
@@ -234,7 +234,7 @@ export default function RegaloPage() {
             </section>
 
             {/* Final CTA */}
-            <section className="py-24 bg-gradient-to-br from-rose-light/40 to-bg-warm">
+            <section className="py-24 bg-gradient-to-br from-rose-light/20 to-transparent">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
                     <AnimatedSection>
                         <span className="text-5xl mb-6 block">💝</span>

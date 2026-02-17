@@ -53,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className={`${italiana.variable} ${montserrat.variable} antialiased bg-[#FAF7F5] overflow-x-hidden`}>
+      <body className={`${italiana.variable} ${montserrat.variable} antialiased overflow-x-hidden`}>
         <GlobalVideoBackground />
         <Header />
         <main>{children}</main>

@@ -115,8 +115,8 @@ export default function ProductCarousel() {
                     </Swiper>
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.4} className="text-center mt-12">
-                    <Button href="/shop" variant="caviar" size="lg" className="px-20 border-stone-200">
+                <AnimatedSection delay={0.4} className="text-center mt-20">
+                    <Button href="/shop" variant="primary" size="lg" className="min-w-[300px] shadow-2xl">
                         Explorar toda la colección
                     </Button>
                 </AnimatedSection>

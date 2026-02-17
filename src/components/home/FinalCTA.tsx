@@ -9,7 +9,7 @@ import { Clock } from 'lucide-react';
 
 export default function FinalCTA() {
     return (
-        <section className="py-40 md:py-80 bg-gradient-to-br from-rose-light/40 via-bg-warm to-rose-light/20 relative overflow-hidden w-full">
+        <section className="py-40 md:py-80 bg-gradient-to-br from-rose-light/20 via-transparent to-rose-light/10 relative overflow-hidden w-full">
             {/* Reduced to 2 floating blobs (from 6+) */}
             <FloatingElement className="absolute top-10 left-10 pointer-events-none" amplitude={15} duration={10}>
                 <div className="w-40 h-40 rounded-full bg-rose/10 blur-3xl" />
@@ -52,11 +52,11 @@ export default function FinalCTA() {
                             variant="primary"
                             size="lg"
                             external
-                            className="text-lg px-12 w-full sm:w-auto"
+                            className="text-lg px-12 w-full sm:w-auto shadow-2xl"
                         >
                             Quiero elegir los suyos 💛
                         </Button>
-                        <Button href="/shop" variant="caviar" size="lg" className="w-full sm:w-auto">
+                        <Button href="/shop" variant="outline" size="lg" className="w-full sm:w-auto border-charcoal/20 text-charcoal hover:bg-charcoal/5">
                             Ver toda la colección
                         </Button>
                     </div>

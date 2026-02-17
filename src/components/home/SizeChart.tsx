@@ -17,7 +17,7 @@ const sizes = [
 
 export default function SizeChart() {
     return (
-        <section className="py-24 md:py-32 bg-[#FAF7F5] relative overflow-hidden w-full">
+        <section className="py-24 md:py-32 relative overflow-hidden w-full">
             {/* Background - Clean Minimalist (No Texture) */}
 
             <div className="max-w-[95%] xl:max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

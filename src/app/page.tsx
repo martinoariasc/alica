@@ -20,7 +20,7 @@ const LuxurySpacer = () => (
 
 export default function Home() {
   return (
-    <main className="overflow-hidden min-h-screen w-full relative bg-[#FAF7F5]">
+    <main className="overflow-hidden min-h-screen w-full relative">
 
       {/* 1. HERO: The Emotional Hook */}
       <HeroSection />
