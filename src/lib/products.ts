@@ -30,14 +30,14 @@ export interface Product {
 
 export const products: Product[] = [
     {
-        slug: 'mocasin-luxury-nena-rosado',
-        name: 'Mocasín Luxury Rosado',
-        emotionalName: 'Dulzura en Rosa',
-        emotionalPhrase: 'La suavidad que su piel merece, el estilo que vos amás.',
+        slug: 'mocasin-luxury-nena-blanco',
+        name: 'Mocasín Luxury Blanco',
+        emotionalName: 'Pureza en tus Pasos',
+        emotionalPhrase: 'La elegancia del blanco puro para sus momentos más sagrados.',
         price: 185000,
         oldPrice: 220000,
-        description: 'Mocasines de cuero soft premium en tono rosa pastel. Diseñados para respetar la anatomía del piecito en crecimiento.',
-        shortDescription: 'Mocasín de cuero soft en rosa pastel.',
+        description: 'Mocasines de cuero soft premium en color blanco nieve. Diseñados con una suela extremadamente flexible para proteger el desarrollo natural de sus piecitos.',
+        shortDescription: 'Mocasín de cuero soft en blanco puro.',
         images: [
             '/images/products/nenas/1/05e143d3-3786-4b06-ae01-186978982994.png',
             '/images/products/nenas/1/1fbad623-70d7-49fe-b3f0-71079a080bda.png',
@@ -85,14 +85,14 @@ export const products: Product[] = [
         scarcityText: 'Edición Limitada',
     },
     {
-        slug: 'mocasin-classic-blanco',
-        name: 'Mocasín Classic Blanco',
-        emotionalName: 'Pureza Eterna',
-        emotionalPhrase: 'Un clásico que cuenta historias de pureza y amor.',
+        slug: 'mocasin-luxury-nena-arena',
+        name: 'Mocasín Luxury Arena',
+        emotionalName: 'Esencia Natural',
+        emotionalPhrase: 'Tonos tierra que abrazan la calidez de su infancia.',
         price: 185000,
         oldPrice: 220000,
-        description: 'El infaltable color blanco en cuero soft. Ideal para bautismos, cumpleaños o el día a día más sofisticado.',
-        shortDescription: 'Mocasín clásico en blanco puro.',
+        description: 'Mocasín de cuero soft en tono arena. Versátil, elegante y diseñado bajo estándares de calzado respetuoso.',
+        shortDescription: 'Mocasín de cuero soft en tono arena.',
         images: [
             '/images/products/nenas/3/0c1ef560-6056-4a67-9f31-18657c222124.png',
             '/images/products/nenas/3/4f1a8ae6-f21c-4be3-8796-1d2612fe65cf.png',
@@ -113,11 +113,11 @@ export const products: Product[] = [
     {
         slug: 'mocasin-aventura-nene-marron',
         name: 'Mocasín Aventura Marrón',
-        emotionalName: 'Primeros Pasos Firmes',
+        emotionalName: 'Pequeño Gran Explorador',
         emotionalPhrase: 'Preparado para descubrir el mundo a su ritmo.',
         price: 185000,
         oldPrice: 220000,
-        description: 'Mocasín robusto pero suave en tono tierra. El compañero ideal para sus exploraciones diarias.',
+        description: 'Mocasín de nene en tono tierra. Suela blanda que permite sentir el suelo, fundamental para el desarrollo del equilibrio.',
         shortDescription: 'Mocasín de nene en tono tierra.',
         images: [
             '/images/products/nenes/1/d036d442-5186-4a03-a7bb-c52641120ac6.png',
@@ -139,13 +139,13 @@ export const products: Product[] = [
         isBestSeller: true,
     },
     {
-        slug: 'vincha-nudo-romantica',
-        name: 'Vincha Nudo Romántica',
+        slug: 'vincha-nudo-marron',
+        name: 'Vincha Nudo Marrón',
         emotionalName: 'El Detalle Final',
         emotionalPhrase: 'Porque los pequeños detalles crean los grandes recuerdos.',
         price: 65000,
         oldPrice: 85000,
-        description: 'Vincha de tela elástica premium que no marca la cabecita de tu bebé. Suave, ligera y eterna.',
+        description: 'Vincha de tela elástica premium en tono marrón chocolate. Suave, ligera y eterna.',
         shortDescription: 'Vincha elástica de nudo suave.',
         images: [
             '/images/products/accesorios/Accesorios/f8fb2468-c130-4f46-8952-ec5918a890b7.jpg'
