@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, MessageCircle, MapPin, Heart, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Instagram, MessageCircle, Heart } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-cacao text-white relative overflow-hidden pt-24 pb-12">
+        <footer className="bg-[#3d3229] text-white relative overflow-hidden pt-24 pb-12">
             {/* Simple elegant separator */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
@@ -40,15 +40,15 @@ export default function Footer() {
                             src="/images/brand/logo horizontal blanco sin fondo.png"
                             alt="Alica Bebés"
                             fill
-                            className="object-contain"
+                            className="object-contain brightness-0 invert"
                         />
                     </motion.div>
 
                     <h2 className="font-heading text-3xl md:text-5xl text-white leading-tight italic max-w-2xl px-4">
-                        &ldquo;Porque sus primeros pasos son el comienzo de <span className="text-gold">su historia más linda</span>.&rdquo;
+                        &ldquo;Porque sus primeros pasos son el comienzo de <span className="text-[#d4af37]">su historia más linda</span>.&rdquo;
                     </h2>
 
-                    <div className="w-12 h-px bg-gold/30" />
+                    <div className="w-12 h-px bg-white/30" />
 
                     <div className="flex flex-col items-center gap-6">
                         <Button
@@ -56,11 +56,11 @@ export default function Footer() {
                             variant="primary"
                             size="lg"
                             external
-                            className="bg-white text-cacao hover:bg-gold-muted px-12 h-16 shadow-2xl"
+                            className="bg-white text-[#3d3229] hover:bg-[#d4af37] hover:text-white px-12 h-16 shadow-2xl transition-all duration-500"
                         >
                             Hacer mi pedido 🤍
                         </Button>
-                        <span className="text-[10px] tracking-[0.4em] uppercase text-gold font-bold">Atención Exclusiva vía WhatsApp</span>
+                        <span className="text-[10px] tracking-[0.4em] uppercase text-[#d4af37] font-bold">Atención Exclusiva vía WhatsApp</span>
                     </div>
                 </div>
 
@@ -68,20 +68,20 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-white/10">
                     {/* Location */}
                     <div className="space-y-4 text-center md:text-left">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Ubicación</h3>
-                        <p className="text-lg font-body font-light text-white/90">Asunción, República del Paraguay</p>
-                        <p className="text-sm font-body font-light text-white/60 italic">Envíos a todo el país</p>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Ubicación</h3>
+                        <p className="text-lg font-body font-light text-white">Asunción, República del Paraguay</p>
+                        <p className="text-sm font-body font-light text-white/70 italic">Envíos a todo el país</p>
                     </div>
 
                     {/* Quick Links */}
                     <div className="space-y-4 text-center md:text-left">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Explorar</h3>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Explorar</h3>
                         <div className="grid grid-cols-1 gap-3">
                             {footerLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-base font-body text-white/70 hover:text-white transition-colors duration-300 w-fit mx-auto md:mx-0"
+                                    className="text-base font-body text-white/80 hover:text-white transition-colors duration-300 w-fit mx-auto md:mx-0"
                                 >
                                     {link.name}
                                 </Link>
@@ -91,15 +91,15 @@ export default function Footer() {
 
                     {/* Promise */}
                     <div className="space-y-4 text-center md:text-left">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Promesa ALICA</h3>
-                        <p className="text-sm font-body font-light leading-relaxed text-white/60 italic">
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Promesa ALICA</h3>
+                        <p className="text-sm font-body font-light leading-relaxed text-white/70 italic">
                             Calzado diseñado para respetar el crecimiento natural, cosido a mano con materiales premium.
                         </p>
                     </div>
 
                     {/* Social */}
                     <div className="space-y-6 flex flex-col items-center md:items-start lg:items-end">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Sigamos Conectadas</h3>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Sigamos Conectadas</h3>
                         <div className="flex gap-4">
                             {socialLinks.map((social) => {
                                 const Icon = social.icon;
@@ -109,7 +109,7 @@ export default function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-cacao transition-all duration-500 group"
+                                        className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-[#3d3229] transition-all duration-500 group"
                                         aria-label={social.label}
                                     >
                                         <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -121,14 +121,14 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Credits */}
-                <div className="pt-12 flex flex-col md:flex-row items-center justify-between gap-6 opacity-50">
-                    <div className="flex items-center gap-3 text-[9px] tracking-[0.5em] uppercase font-bold text-white">
+                <div className="pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="flex items-center gap-3 text-[9px] tracking-[0.5em] uppercase font-bold text-white/60">
                         <span>Alica Bebés</span>
-                        <div className="w-1 h-1 rounded-full bg-gold" />
+                        <div className="w-1 h-1 rounded-full bg-[#d4af37]" />
                         <span>Heredando Elegancia</span>
                     </div>
 
-                    <p className="text-[9px] tracking-[0.3em] uppercase flex items-center gap-1 font-bold text-white">
+                    <p className="text-[9px] tracking-[0.3em] uppercase flex items-center gap-1 font-bold text-white/60">
                         © {currentYear} · Confeccionado con <Heart className="w-2.5 h-2.5 text-rose-deep fill-current" /> desde Paraguay
                     </p>
                 </div>

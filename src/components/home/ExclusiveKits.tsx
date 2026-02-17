@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkles, Check, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Check, ArrowRight, ShieldCheck, Zap, BookOpen } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import { getProductsByCategory } from '@/lib/products';
 
@@ -11,22 +11,24 @@ export default function ExclusiveKits() {
     const kits = getProductsByCategory('Ediciones Especiales');
 
     return (
-        <section className="py-24 md:py-32 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
+        <section className="py-24 md:py-32 relative overflow-hidden bg-cream-light/30">
+            {/* Elegant Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="max-w-[95%] xl:max-w-7xl mx-auto px-6 relative z-10">
                 <AnimatedSection className="text-center mb-20 md:mb-28" blur>
                     <div className="flex items-center justify-center gap-3 mb-6">
-                        <Zap className="w-5 h-5 text-rose-deep fill-current animate-pulse" />
-                        <span className="font-body text-[11px] tracking-[0.5em] uppercase text-rose-deep font-bold">Oportunidades Únicas</span>
-                        <Zap className="w-5 h-5 text-rose-deep fill-current animate-pulse" />
+                        <BookOpen className="w-5 h-5 text-gold animate-bounce" />
+                        <span className="font-body text-[11px] tracking-[0.5em] uppercase text-cacao/40 font-bold">Cápsulas de Bienestar</span>
+                        <BookOpen className="w-5 h-5 text-gold animate-bounce" />
                     </div>
                     <h2 className="font-heading text-4xl md:text-7xl text-cacao mb-8 leading-[1.1]">
-                        Kits de Bienvenida <br className="hidden md:block" />
-                        <span className="italic font-light text-stone-400">Ediciones Coleccionista</span>
+                        Soluciones que <br className="hidden md:block" />
+                        <span className="italic font-light text-stone-400">cuidan su historia</span>
                     </h2>
-                    <p className="font-body text-cacao/60 text-lg md:text-xl max-w-2xl mx-auto italic">
-                        Selecciones curadas con beneficios exclusivos, diseñadas para resolver todas las necesidades de tu bebé mientras ahorrás en el proceso.
+                    <p className="font-body text-cacao/60 text-lg md:text-xl max-w-3xl mx-auto italic">
+                        Hemos combinado nuestro calzado artesanal con el nuevo Ebook "50 Consejos para tu bebé" de regalo. Porque una madre informada es una madre tranquila.
                     </p>
                 </AnimatedSection>
 
@@ -72,11 +74,15 @@ export default function ExclusiveKits() {
                                     {/* Features List (Hormozi Stacking) */}
                                     <div className="space-y-4 mb-10 flex-grow">
                                         {kit.benefits.map((benefit, i) => (
-                                            <div key={i} className="flex items-start gap-3">
-                                                <div className="mt-1 w-5 h-5 rounded-full bg-cream flex items-center justify-center flex-shrink-0">
-                                                    <Check className="w-3 h-3 text-cacao" />
+                                            <div key={i} className="flex items-start gap-4 p-3 rounded-2xl bg-stone-50/50 hover:bg-white border border-transparent hover:border-gold/20 transition-all duration-300">
+                                                <div className="mt-0.5 w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+                                                    {benefit.includes('Ebook') || benefit.includes('🎁') ? (
+                                                        <BookOpen className="w-3.5 h-3.5 text-gold" />
+                                                    ) : (
+                                                        <Check className="w-3.5 h-3.5 text-cacao" />
+                                                    )}
                                                 </div>
-                                                <p className="text-sm font-body font-medium text-cacao/80">{benefit}</p>
+                                                <p className="text-[13px] font-body font-medium text-cacao/80">{benefit}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -121,29 +127,6 @@ export default function ExclusiveKits() {
                         </AnimatedSection>
                     ))}
                 </div>
-
-                {/* The "Why Now" Section (Risk Reversal & Scarcity) */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-20 p-10 md:p-14 bg-cream-light rounded-[3rem] border border-gold/10 text-center relative overflow-hidden"
-                >
-                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 max-w-5xl mx-auto">
-                        <div className="text-left md:w-2/3">
-                            <h4 className="font-heading text-2xl md:text-3xl text-cacao mb-4">La Garantía Boutique ALICA</h4>
-                            <p className="text-cacao/60 text-lg leading-relaxed italic">
-                                "Si al recibir tu kit sentís que no es lo más suave y puro que ha tocado sus pies, te devolvemos tu inversión sin preguntas. Nuestro compromiso no es solo con el estilo, es con la paz mental de cada mamá."
-                            </p>
-                        </div>
-                        <div className="flex flex-col items-center gap-4">
-                            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center border border-gold/30 shadow-inner">
-                                <Sparkles className="w-10 h-10 text-gold" />
-                            </div>
-                            <span className="text-[10px] tracking-[0.4em] uppercase text-cacao/40 font-bold">Hecho con Amor Puro</span>
-                        </div>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

@@ -79,6 +79,11 @@ export default function Home() {
 
       <LuxurySpacer />
 
+      {/* 4c. SACRED MOMENTS: Baptism Collection */}
+      <BaptismCollection />
+
+      <LuxurySpacer />
+
       {/* 5. CONNECTION: "They grow too fast" */}
       <StorySection />
 
