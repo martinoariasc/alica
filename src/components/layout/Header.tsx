@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { buildWhatsAppURL, cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
     { href: '/', label: 'Inicio' },
@@ -18,6 +19,12 @@ const navLinks = [
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const pathname = usePathname();
+
+    // Pages that should have a dark header (light text) by default
+    // Usually Home (with video) and Nosotros (with hero)
+    const isDarkHeaderPage = pathname === '/' || pathname === '/nosotros';
+    const forceDarkText = !isDarkHeaderPage || isScrolled;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,8 +50,8 @@ export default function Header() {
             <header
                 className={cn(
                     'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-                    isScrolled
-                        ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-border py-3'
+                    forceDarkText
+                        ? 'bg-bg/98 backdrop-blur-lg shadow-md border-b border-stone-100 py-3'
                         : 'bg-transparent py-5'
                 )}
             >
@@ -52,11 +59,11 @@ export default function Header() {
                     {/* Logo — horizontal variant for header */}
                     <Link href="/" className="flex items-center gap-2 group">
                         <Image
-                            src={isScrolled ? "/images/brand/logo horizontal sin fondo.png" : "/images/brand/logo horizontal blanco sin fondo.png"}
+                            src={forceDarkText ? "/images/brand/logo horizontal sin fondo.png" : "/images/brand/logo horizontal blanco sin fondo.png"}
                             alt="Alica Bebés"
                             width={160}
                             height={50}
-                            className="h-10 md:h-12 w-auto transition-all duration-300 object-contain drop-shadow-sm"
+                            className="h-10 md:h-12 w-auto transition-all duration-500 object-contain drop-shadow-md"
                             priority
                         />
                     </Link>
@@ -69,7 +76,7 @@ export default function Header() {
                                 href={link.href}
                                 className={cn(
                                     'font-heading text-base font-medium tracking-wide transition-all duration-300 hover:-translate-y-0.5',
-                                    isScrolled
+                                    forceDarkText
                                         ? 'text-charcoal/80 hover:text-rose-deep'
                                         : 'text-white/90 hover:text-white'
                                 )}
@@ -86,8 +93,8 @@ export default function Header() {
                         rel="noopener noreferrer"
                         className={cn(
                             'hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-500 hover:shadow-lg hover:-translate-y-0.5',
-                            isScrolled
-                                ? 'bg-rose-deep text-white hover:shadow-rose/30'
+                            forceDarkText
+                                ? 'bg-charcoal text-white hover:shadow-xl'
                                 : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
                         )}
                     >
@@ -102,7 +109,7 @@ export default function Header() {
                         onClick={() => setIsMobileOpen(!isMobileOpen)}
                         className={cn(
                             'lg:hidden p-2 rounded-lg transition-colors duration-300',
-                            isScrolled ? 'text-charcoal' : 'text-white'
+                            forceDarkText ? 'text-charcoal' : 'text-white'
                         )}
                         aria-label="Toggle menu"
                     >

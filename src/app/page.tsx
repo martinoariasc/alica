@@ -20,7 +20,7 @@ const LuxurySpacer = () => (
 
 export default function Home() {
   return (
-    <main className="overflow-hidden min-h-screen w-full relative">
+    <main className="overflow-hidden min-h-screen w-full relative bg-bg">
 
       {/* 1. HERO: The Emotional Hook */}
       <HeroSection />
@@ -97,6 +97,8 @@ export default function Home() {
 
       {/* 9. ACTION: Final CTA */}
       <FinalCTA />
+
+      <LuxurySpacer />
     </main >
   );
 }

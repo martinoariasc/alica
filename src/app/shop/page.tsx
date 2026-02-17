@@ -64,41 +64,23 @@ export default function ShopPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#FDFCFB]">
-            {/* Immersive Hero Header */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0 bg-neutral-50/50" />
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-light/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+        <main className="min-h-screen bg-bg">
+            {/* Header Spacer */}
+            <div className="h-20" />
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                    <AnimatedSection>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-rose-deep/5 text-rose-deep text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
-                            Colección Permanente
-                        </span>
-                        <h1 className="font-heading text-5xl md:text-7xl text-charcoal mb-6 tracking-tight">
-                            Nuestra <span className="italic font-light text-stone-400">Colección</span>
-                        </h1>
-                        <p className="font-body text-stone-500 max-w-xl mx-auto text-lg font-light leading-relaxed">
-                            Diseñados para respetar el crecimiento natural, <br className="hidden md:block" />
-                            creados para ser guardados como un tesoro.
-                        </p>
-                    </AnimatedSection>
-                </div>
-            </section>
-
-            {/* Sticky Filter Bar - Luxury Style */}
-            <div className="sticky top-[72px] z-30 bg-white/80 backdrop-blur-md border-y border-stone-100 shadow-sm">
+            {/* Sticky Filter Bar - Minimalist */}
+            <div className="sticky top-[72px] md:top-[80px] z-30 bg-bg/90 backdrop-blur-md border-b border-stone-100">
                 <div className="max-w-7xl mx-auto px-6 py-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         {/* Categories Desktop */}
-                        <div className="hidden md:flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 md:pb-0">
+                        <div className="hidden md:flex items-center gap-6">
                             {genderFilters.map((f) => (
                                 <button
                                     key={f.value}
                                     onClick={() => setGender(f.value)}
-                                    className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 whitespace-nowrap ${gender === f.value
-                                        ? 'bg-charcoal text-white shadow-lg'
-                                        : 'text-stone-400 hover:text-charcoal hover:bg-stone-50'
+                                    className={`text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${gender === f.value
+                                        ? 'text-charcoal border-b-2 border-charcoal pb-1'
+                                        : 'text-stone-300 hover:text-stone-500'
                                         }`}
                                 >
                                     {f.label}
@@ -106,18 +88,12 @@ export default function ShopPage() {
                             ))}
                         </div>
 
-                        {/* Mobile Selector / Info */}
-                        <div className="md:hidden flex items-center justify-center gap-4 w-full">
-                            <span className="text-xs font-bold tracking-widest uppercase text-stone-400">Filtrar por</span>
-                            <div className="h-px w-8 bg-stone-200" />
-                        </div>
-
                         {/* Dropdowns / Specifics */}
-                        <div className="flex items-center gap-4 w-full md:w-auto overflow-x-auto md:overflow-visible no-scrollbar">
+                        <div className="flex items-center gap-4 w-full md:w-auto overflow-x-auto no-scrollbar">
                             <select
                                 value={age}
                                 onChange={(e) => setAge(e.target.value as any)}
-                                className="appearance-none bg-stone-50 border border-stone-100 rounded-full px-6 py-2 text-xs font-medium text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-light/50 cursor-pointer min-w-[140px]"
+                                className="appearance-none bg-transparent border-none text-[10px] font-bold tracking-[0.1em] uppercase text-stone-500 focus:outline-none cursor-pointer"
                             >
                                 {ageFilters.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
                             </select>
@@ -125,7 +101,7 @@ export default function ShopPage() {
                             <select
                                 value={use}
                                 onChange={(e) => setUse(e.target.value as any)}
-                                className="appearance-none bg-stone-50 border border-stone-100 rounded-full px-6 py-2 text-xs font-medium text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-light/50 cursor-pointer min-w-[140px]"
+                                className="appearance-none bg-transparent border-none text-[10px] font-bold tracking-[0.1em] uppercase text-stone-500 focus:outline-none cursor-pointer"
                             >
                                 {useFilters.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
                             </select>
@@ -133,10 +109,9 @@ export default function ShopPage() {
                             {hasActiveFilters && (
                                 <button
                                     onClick={clearFilters}
-                                    className="p-2 rounded-full bg-rose-deep/10 text-rose-deep hover:bg-rose-deep/20 transition-colors"
-                                    title="Limpiar filtros"
+                                    className="text-[10px] font-bold tracking-[0.1em] uppercase text-rose-deep"
                                 >
-                                    <X className="w-4 h-4" />
+                                    Limpiar
                                 </button>
                             )}
                         </div>
@@ -147,22 +122,6 @@ export default function ShopPage() {
             {/* Product Section */}
             <section className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    {/* Slow Fashion Banner Reimagined */}
-                    <AnimatedSection>
-                        <div className="mb-16 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left bg-stone-900 text-stone-100 p-6 md:p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-rose-deep/20 transition-colors duration-700" />
-                            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                <Sparkles className="w-6 h-6 text-rose-deep" />
-                            </div>
-                            <div>
-                                <h4 className="font-heading text-xl mb-1">Tu par se cose exclusivamente para vos</h4>
-                                <p className="font-body text-sm font-light text-stone-400">
-                                    En un mundo industrial, nosotros elegimos lo artesanal. <span className="text-white font-medium">Entrega en 7-10 días hábiles.</span>
-                                </p>
-                            </div>
-                        </div>
-                    </AnimatedSection>
-
                     <AnimatePresence mode="popLayout">
                         {filtered.length > 0 ? (
                             <motion.div
@@ -253,34 +212,7 @@ export default function ShopPage() {
                     </AnimatePresence>
                 </div>
             </section>
-
-            {/* Bottom Emotional CTA */}
-            <section className="py-32 bg-stone-50 overflow-hidden relative">
-                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-                    <AnimatedSection blur>
-                        <h2 className="font-heading text-4xl md:text-5xl text-charcoal mb-8 leading-tight">
-                            ¿Dudas con el talle o el modelo?
-                        </h2>
-                        <p className="font-body text-lg text-stone-500 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-                            No te preocupes. Escribinos ahora mismo y una mamá de nuestro equipo te ayudará a elegir el talle perfecto según el piecito de tu bebé.
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Button
-                                href="https://wa.me/595981000000" // Replace with real number or utility
-                                variant="primary"
-                                size="lg"
-                                className="min-w-[260px] shadow-2xl"
-                                external
-                            >
-                                Escribir por WhatsApp 🍼
-                            </Button>
-                            <Button href="/contacto" variant="outline" size="lg" className="min-w-[260px]">
-                                Ver guía de talles
-                            </Button>
-                        </div>
-                    </AnimatedSection>
-                </div>
-            </section>
         </main>
     );
 }
+

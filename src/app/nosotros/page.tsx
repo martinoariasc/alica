@@ -73,7 +73,7 @@ const values = [
 
 export default function NosotrosPage() {
     return (
-        <main className="w-full flex flex-col items-center">
+        <main className="w-full flex flex-col items-center bg-bg">
             {/* Hero */}
             <section className="pt-40 pb-20 relative overflow-hidden w-full">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-pink-soft/20 rounded-full blur-[120px]" />
@@ -256,6 +256,8 @@ export default function NosotrosPage() {
                     </AnimatedSection>
                 </div>
             </section>
+
+            <LuxurySpacer />
         </main>
     );
 }

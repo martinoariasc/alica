@@ -14,7 +14,7 @@ const footerLinks = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#2A2421] text-[#F9F6F2] relative overflow-hidden">
+        <footer className="bg-bg-warm text-charcoal relative overflow-hidden border-t border-stone-100">
             {/* Top sophisticated line */}
             <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
 
@@ -27,9 +27,9 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-5 space-y-10 flex flex-col items-center lg:items-start text-center lg:text-left">
                         <Link href="/" className="inline-block group">
-                            <div className="relative w-32 h-32 md:w-40 md:h-40 grayscale brightness-200 transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-110">
+                            <div className="relative w-32 h-32 md:w-40 md:h-40 transition-all duration-700 group-hover:scale-105">
                                 <Image
-                                    src="/images/brand/logo sin fondo.png"
+                                    src="/images/brand/logo horizontal sin fondo.png"
                                     alt="Alica Bebés"
                                     fill
                                     className="object-contain"
@@ -38,7 +38,7 @@ export default function Footer() {
                             </div>
                         </Link>
 
-                        <p className="text-lg md:text-xl font-body font-light text-[#D1C9C2] leading-relaxed max-w-sm italic">
+                        <p className="text-lg md:text-xl font-body font-light text-muted leading-relaxed max-w-sm italic">
                             &ldquo;Porque sus primeros pasos son el comienzo de su historia más linda.&rdquo;
                         </p>
 
@@ -46,7 +46,7 @@ export default function Footer() {
                             <a
                                 href="https://instagram.com/alicapy_"
                                 target="_blank"
-                                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#F9F6F2] hover:text-[#2A2421] transition-all duration-500 group"
+                                className="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center hover:bg-rose-deep hover:text-white transition-all duration-500 group"
                                 aria-label="Instagram"
                             >
                                 <Instagram className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -54,7 +54,7 @@ export default function Footer() {
                             <a
                                 href={buildWhatsAppURL('¡Hola! Quiero conocer más sobre Alica 🍼')}
                                 target="_blank"
-                                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all duration-500 group"
+                                className="w-12 h-12 rounded-full border border-stone-200 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all duration-500 group"
                                 aria-label="WhatsApp"
                             >
                                 <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -63,13 +63,13 @@ export default function Footer() {
                     </div>
 
                     <div className="lg:col-span-3 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left pt-4">
-                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-[#F9F6F2]/40 font-bold">Explorar</h3>
+                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-stone-400 font-bold">Explorar</h3>
                         <ul className="space-y-6">
                             {footerLinks.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-lg font-body font-light text-[#D1C9C2] hover:text-[#F9F6F2] transition-all duration-300 flex items-center gap-2 group"
+                                        className="text-lg font-body font-light text-muted hover:text-charcoal transition-all duration-300 flex items-center gap-2 group"
                                     >
                                         <span>{link.label}</span>
                                         <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-40 transition-opacity" />
@@ -81,10 +81,10 @@ export default function Footer() {
 
                     {/* Contact Column */}
                     <div className="lg:col-span-4 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left pt-4">
-                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-[#F9F6F2]/40 font-bold">Contacto</h3>
+                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-stone-400 font-bold">Contacto</h3>
                         <div className="space-y-6">
-                            <div className="flex items-center justify-center lg:justify-start gap-4 text-[#D1C9C2] group">
-                                <MapPin className="w-5 h-5 text-gold opacity-60" />
+                            <div className="flex items-center justify-center lg:justify-start gap-4 text-muted group">
+                                <MapPin className="w-5 h-5 text-rose-deep opacity-60" />
                                 <span className="text-lg font-light">Asunción, Paraguay</span>
                             </div>
 
@@ -93,10 +93,10 @@ export default function Footer() {
                                     href={buildWhatsAppURL('¡Hola! Quiero hacer un pedido 🍼')}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-[#F9F6F2] text-[#2A2421] text-sm font-bold tracking-[0.2em] uppercase overflow-hidden group transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,246,242,0.2)] hover:-translate-y-1"
+                                    className="relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-charcoal text-white text-sm font-bold tracking-[0.2em] uppercase overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
                                 >
                                     <span className="relative z-10">Hacer mi pedido</span>
-                                    <div className="absolute inset-0 bg-[#E6DCCD] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                    <div className="absolute inset-0 bg-stone-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                                 </a>
                             </div>
                         </div>
@@ -104,13 +104,13 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-28 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <p className="text-[11px] text-[#F9F6F2]/30 tracking-[0.3em] uppercase">
+                <div className="mt-28 pt-10 border-t border-stone-200 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <p className="text-[11px] text-stone-400 tracking-[0.3em] uppercase">
                         © {new Date().getFullYear()} Alica Bebés · Fine Handcrafted
                     </p>
-                    <div className="flex items-center gap-2 text-[11px] text-[#F9F6F2]/30 tracking-[0.3em] uppercase">
+                    <div className="flex items-center gap-2 text-[11px] text-stone-400 tracking-[0.3em] uppercase">
                         <span>Hecho con</span>
-                        <Heart className="w-3 h-3 text-gold fill-current opacity-60" />
+                        <Heart className="w-3 h-3 text-rose-deep fill-current opacity-60" />
                         <span>desde Paraguay</span>
                     </div>
                 </div>

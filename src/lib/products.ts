@@ -9,7 +9,7 @@
  * 5. scarcityText: El texto de urgencia (ej: "Solo 5 pares").
  */
 
-export type Category = 'Mocasines' | 'Botitas' | 'Sandalias' | 'Alpargatitas' | 'Accesorios';
+export type Category = 'Línea Respetuosa' | 'Botitas con Alma' | 'Sandalias' | 'Alpargatitas' | 'Accesorios';
 export type Gender = 'nene' | 'nena' | 'unisex';
 export type AgeRange = '0-6 meses' | '6-12 meses' | '1-2 años';
 export type UseType = 'primeros pasos' | 'gateo' | 'regalo' | 'día a día' | 'ocasión especial';
@@ -54,7 +54,7 @@ export const products: Product[] = [
             '/images/products/nenas/1/1fbad623-70d7-49fe-b3f0-71079a080bda.png',
             '/images/products/nenas/1/5b611885-55c2-4935-bc9f-113529eee138.png'
         ],
-        category: 'Mocasines',
+        category: 'Línea Respetuosa',
         gender: 'nena',
         ageRange: '6-12 meses',
         use: ['primeros pasos', 'regalo', 'ocasión especial'],
@@ -83,7 +83,7 @@ export const products: Product[] = [
             '/images/products/nenas/2/5dd8e748-19fd-4037-872d-2645efbd9b46.png',
             '/images/products/nenas/2/9fffcfca-1dc2-40e8-9ded-1918956b89a7.png'
         ],
-        category: 'Botitas',
+        category: 'Botitas con Alma',
         gender: 'nena',
         ageRange: '1-2 años',
         use: ['ocasión especial', 'regalo'],
@@ -109,7 +109,7 @@ export const products: Product[] = [
             '/images/products/nenas/3/4f1a8ae6-f21c-4be3-8796-1d2612fe65cf.png',
             '/images/products/nenas/3/87d45b68-d750-471e-846c-ace3f23614fd.png'
         ],
-        category: 'Mocasines',
+        category: 'Línea Respetuosa',
         gender: 'nena',
         ageRange: '6-12 meses',
         use: ['ocasión especial', 'primeros pasos', 'día a día'],
@@ -136,7 +136,7 @@ export const products: Product[] = [
             '/images/products/nenes/1/89ef0bae-2925-4a38-af6a-53b64e09dbff.jpg',
             '/images/products/nenes/1/acbe8213-011b-4e09-b12a-246a5138a2f3.jpg'
         ],
-        category: 'Mocasines',
+        category: 'Línea Respetuosa',
         gender: 'nene',
         ageRange: '1-2 años',
         use: ['gateo', 'primeros pasos', 'día a día'],
@@ -172,6 +172,31 @@ export const products: Product[] = [
         productionTime: '2-3 días',
         guaranteeText: 'Ternura Garantizada',
         scarcityText: 'Ideal para combinar',
+    },
+    {
+        slug: 'combo-ternura-accesorios',
+        name: 'Combo Ternura (Vinchas + Baberito)',
+        emotionalName: 'El Detalle Perfecto',
+        emotionalPhrase: 'Pack promocional: 3 vinchas premium + 1 baberito artesanal.',
+        price: 65000,
+        oldPrice: 95000,
+        description: 'La forma más tierna de completar su look. Este combo incluye nuestro pack de 3 vinchas elásticas que no aprietan y un baberito de algodón ultra suave. Por tiempo limitado a un precio especial.',
+        shortDescription: 'Combo de 3 vinchas y 1 baberito.',
+        images: [
+            '/images/products/accesorios/Accesorios/f8fb2468-c130-4f46-8952-ec5918a890b7.jpg'
+        ],
+        category: 'Accesorios',
+        gender: 'nena',
+        ageRange: '0-6 meses',
+        use: ['regalo', 'ocasión especial'],
+        isFeatured: true,
+        benefits: ['Ahorro exclusivo', 'Suavidad garantizada', 'Fácil de lavar'],
+        materials: ['Algodón orgánico', 'Elástico premium'],
+        care: ['Lavar con agua fría'],
+        productionTime: '2-3 días',
+        guaranteeText: 'Calidad ALICA',
+        scarcityText: '¡Combo más vendido!',
+        isBestSeller: true,
     }
 ];
 

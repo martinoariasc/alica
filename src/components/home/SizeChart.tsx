@@ -17,7 +17,7 @@ const sizes = [
 
 export default function SizeChart() {
     return (
-        <section className="py-24 md:py-32 relative overflow-hidden w-full bg-[#FAF9F6]">
+        <section className="py-24 md:py-32 relative overflow-hidden w-full bg-bg">
             <div className="max-w-[95%] xl:max-w-7xl mx-auto px-6 relative z-10">
                 <AnimatedSection className="text-center mb-16 md:mb-20" blur>
                     <h2 className="font-heading text-4xl md:text-6xl text-charcoal mb-4">
@@ -52,7 +52,8 @@ export default function SizeChart() {
                     {/* The Table - Refined for readability */}
                     <AnimatedSection delay={0.3} direction="right" className="w-full">
                         <div className="bg-white rounded-[2.5rem] overflow-hidden border border-stone-100 shadow-2xl shadow-stone-200/50">
-                            <div className="grid grid-cols-2 bg-stone-50 p-6 md:p-8 border-b border-stone-100 text-charcoal/50 font-heading tracking-[0.2em] text-[10px] uppercase font-bold">
+                            {/* Increased top padding (pt-12) to avoid clipping with rounded-3xl/2.5rem top corners */}
+                            <div className="grid grid-cols-2 bg-stone-50 px-6 md:px-8 pt-10 pb-6 md:pt-12 md:pb-8 border-b border-stone-100 text-charcoal/50 font-heading tracking-[0.2em] text-[10px] uppercase font-bold">
                                 <span>Edad Aproximada</span>
                                 <span className="text-right">Largo del Pie</span>
                             </div>

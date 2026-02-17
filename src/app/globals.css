@@ -4,9 +4,11 @@
 
 /* ── Alica Bebes Design Tokens ── */
 :root {
-  --alica-bg: #FAF7F5;
-  --alica-bg-warm: #F0EBE5;
-  --alica-text-main: #6c5538;
+  --alica-bg: #FDFCFB;
+  --alica-bg-warm: #F9F6F2;
+  --alica-linen: #F0EBE5;
+  --alica-cocoa: #2A2421;
+  --alica-text-main: #4A423E;
   --alica-text-muted: #857A74;
   --alica-blue: #D4DEE5;
   --alica-pink: #EAD8D4;
@@ -22,7 +24,9 @@
 @theme inline {
   --color-bg: var(--alica-bg);
   --color-bg-warm: var(--alica-bg-warm);
-  --color-charcoal: var(--alica-text-main);
+  --color-linen: var(--alica-linen);
+  --color-cocoa: var(--alica-cocoa);
+  --color-charcoal: var(--alica-charcoal);
   --color-muted: var(--alica-text-muted);
   --color-blue-soft: var(--alica-blue);
   --color-pink-soft: var(--alica-pink);
