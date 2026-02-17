@@ -53,8 +53,9 @@ body {
   background-color: transparent;
   color: var(--alica-charcoal);
   font-family: var(--font-body);
-  line-height: 1.8;
-  letter-spacing: 0.02em;
+  line-height: 2.2;
+  letter-spacing: 0.05em;
+  /* Increased for airy feel */
   overflow-x: hidden;
 }
 
@@ -64,19 +65,16 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: 0.05em;
-  line-height: 1.2;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
   font-family: var(--font-heading);
-  line-height: 1.2;
   color: var(--alica-charcoal);
+  letter-spacing: 0.1em;
+  /* Premium spacing */
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+  /* Elegant breaks */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Scrollbar ── */

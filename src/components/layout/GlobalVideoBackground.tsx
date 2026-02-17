@@ -11,10 +11,10 @@ export default function GlobalVideoBackground() {
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 
     return (
-        <div className="fixed inset-0 w-screen h-screen -z-50 overflow-hidden bg-[#FAF7F5]">
+        <div className="fixed inset-0 w-full h-screen -z-50 overflow-hidden bg-[#FAF7F5]">
             {/* The Video Layer - Fabric Texture */}
             <motion.div
-                className="absolute inset-0 w-screen h-[110%]"
+                className="absolute inset-0 w-full h-[110%]"
                 style={{ y }}
             >
                 <video

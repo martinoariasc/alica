@@ -35,7 +35,7 @@ export default function Home() {
       {/* 3. BRAND VALUE: "Sin Prisas" (Video Interlude) */}
       <section className="w-full px-6 sm:px-12">
         <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-48 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-32 lg:gap-64 items-center">
             <div className="w-full h-full">
               <VideoSection
                 src="/videos/video-seccion-2.mp4"
@@ -43,12 +43,12 @@ export default function Home() {
                 rounded="rounded-[2.5rem]"
               />
             </div>
-            <div className="text-center md:text-left flex flex-col justify-center">
-              <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-8 block font-bold">Sin Prisas</span>
-              <h3 className="font-heading text-5xl md:text-7xl lg:text-8xl text-charcoal mb-12 leading-[0.9] italic">
+            <div className="text-center flex flex-col justify-center items-center">
+              <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-10 block font-bold">Sin Prisas</span>
+              <h3 className="font-heading text-5xl md:text-7xl lg:text-8xl text-charcoal mb-16 leading-[1.3] italic">
                 Coser memorias,<br />no solo zapatos.
               </h3>
-              <p className="font-body text-muted leading-relaxed font-light text-xl md:text-2xl max-w-2xl mx-auto md:mx-0">
+              <p className="font-body text-muted leading-[2.2] font-light text-xl md:text-2xl max-w-3xl mx-auto">
                 En un mundo donde todo es rápido y desechable, nosotros elegimos la pausa. Cada par de ALICA lleva horas de manos pacientes que saben que están vistiendo los pies de alguien muy importante.
               </p>
             </div>

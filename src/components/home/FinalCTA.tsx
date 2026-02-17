@@ -32,31 +32,33 @@ export default function FinalCTA() {
                         </span>
                     </motion.div>
 
-                    <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal mb-6 leading-tight text-center">
+                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-semibold text-charcoal mb-12 leading-[1.3] text-center">
                         Cerrá los ojos e imaginá
                         <br />
                         <span className="gradient-text italic">su primer pasito hacia vos...</span>
                     </h2>
 
                     {/* Centered paragraphs as requested */}
-                    <p className="text-lg text-muted font-light mb-3 max-w-xl mx-auto text-center">
-                        Ahora imaginalo con los zapatitos más suaves que existen.
-                    </p>
-                    <p className="text-base text-muted font-light mb-10 max-w-xl mx-auto text-center">
-                        Escribinos por WhatsApp y en 2 minutos te ayudamos a elegir el par perfecto para tu bebé. Sin compromiso.
-                    </p>
+                    <div className="space-y-8 mb-16">
+                        <p className="text-xl text-muted font-light max-w-2xl mx-auto text-center leading-[2.2]">
+                            Ahora imaginalo con los zapatitos más suaves que existen.
+                        </p>
+                        <p className="text-lg text-muted font-light max-w-2xl mx-auto text-center leading-[2.2]">
+                            Escribinos por WhatsApp y en 2 minutos te ayudamos a elegir el par perfecto para tu bebé. Sin compromiso.
+                        </p>
+                    </div>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-12 w-full sm:w-auto">
                         <Button
                             href={buildWhatsAppURL('¡Hola! Quiero elegir los zapatitos de mi bebé 🍼')}
                             variant="primary"
                             size="lg"
                             external
-                            className="text-lg px-12 w-full sm:w-auto shadow-2xl"
+                            className="text-lg px-12 w-full sm:w-auto shadow-2xl min-w-[280px]"
                         >
                             Quiero elegir los suyos 💛
                         </Button>
-                        <Button href="/shop" variant="outline" size="lg" className="w-full sm:w-auto border-charcoal/20 text-charcoal hover:bg-charcoal/5">
+                        <Button href="/shop" variant="outline" size="lg" className="w-full sm:w-auto border-charcoal/20 text-charcoal hover:bg-charcoal/5 min-w-[280px]">
                             Ver toda la colección
                         </Button>
                     </div>

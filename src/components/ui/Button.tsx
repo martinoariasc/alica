@@ -45,12 +45,12 @@ export default function Button({
     };
 
     const sizes = {
-        sm: 'h-10 px-6 text-[9px]',
-        md: 'h-12 px-9 text-[10px]',
-        lg: 'h-14 px-12 text-[11px]',
+        sm: 'h-12 px-8 text-[10px]',
+        md: 'h-14 px-12 text-[11px]',
+        lg: 'h-16 px-16 text-[12px]',
     };
 
-    const baseStyles = "relative inline-flex items-center justify-center font-body font-medium tracking-[0.3em] uppercase transition-all duration-500 select-none cursor-pointer overflow-hidden group rounded-sm";
+    const baseStyles = "relative inline-flex items-center justify-center font-body font-medium tracking-[0.3em] uppercase transition-all duration-500 select-none cursor-pointer overflow-hidden group rounded-full";
     const finalStyles = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
 
     const hoverAnimation = {
@@ -65,7 +65,7 @@ export default function Button({
     };
 
     const content = (
-        <span className="relative z-10 flex items-center justify-center gap-3">
+        <span className="relative z-10 flex items-center justify-center gap-4">
             {children}
         </span>
     );
