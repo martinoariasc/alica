@@ -64,12 +64,12 @@ export default function ShopPage() {
     };
 
     return (
-        <main className="min-h-screen bg-bg">
+        <main className="min-h-screen bg-transparent">
             {/* Header Spacer */}
             <div className="h-20" />
 
             {/* Sticky Filter Bar - Minimalist */}
-            <div className="sticky top-[72px] md:top-[80px] z-30 bg-bg/90 backdrop-blur-md border-b border-stone-100">
+            <div className="sticky top-[72px] md:top-[80px] z-30 bg-bg/60 backdrop-blur-md border-b border-stone-100">
                 <div className="max-w-7xl mx-auto px-6 py-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         {/* Categories Desktop */}

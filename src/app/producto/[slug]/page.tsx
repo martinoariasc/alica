@@ -46,7 +46,7 @@ export default function ProductoPage({
     ];
 
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-transparent min-h-screen">
             {/* Breadcrumb - More subtle and high-up */}
             <div className="pt-32 pb-8">
                 <div className="max-w-7xl mx-auto px-6">
@@ -190,7 +190,7 @@ export default function ProductoPage({
             <LuxurySpacer />
 
             {/* Feature Tabs (Static for now but refined) */}
-            <section className="py-24 bg-[#FAF9F6]">
+            <section className="py-24 bg-bg-warm/40 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
                         {/* Column: Benefits */}

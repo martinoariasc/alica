@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { buildWhatsAppURL, cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
@@ -21,10 +21,11 @@ export default function Header() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const pathname = usePathname();
 
-    // Pages that should have a dark header (light text) by default
-    // Usually Home (with video) and Nosotros (with hero)
-    const isDarkHeaderPage = pathname === '/' || pathname === '/nosotros';
-    const forceDarkText = !isDarkHeaderPage || isScrolled;
+    // Pages that have a large hero/video where we want a transparent header with WHITE text
+    const isTransparentPage = pathname === '/' || pathname === '/nosotros';
+
+    // We only use the light (transparent) header if we are on a transparent page AND haven't scrolled
+    const isLightHeader = isTransparentPage && !isScrolled;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,16 +51,16 @@ export default function Header() {
             <header
                 className={cn(
                     'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-                    forceDarkText
-                        ? 'bg-bg/98 backdrop-blur-lg shadow-md border-b border-stone-100 py-3'
-                        : 'bg-transparent py-5'
+                    isLightHeader
+                        ? 'bg-transparent py-5'
+                        : 'bg-bg/98 backdrop-blur-lg shadow-md border-b border-stone-100 py-3'
                 )}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-                    {/* Logo — horizontal variant for header */}
+                    {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
                         <Image
-                            src={forceDarkText ? "/images/brand/logo horizontal sin fondo.png" : "/images/brand/logo horizontal blanco sin fondo.png"}
+                            src={isLightHeader ? "/images/brand/logo horizontal blanco sin fondo.png" : "/images/brand/logo horizontal sin fondo.png"}
                             alt="Alica Bebés"
                             width={160}
                             height={50}
@@ -76,9 +77,9 @@ export default function Header() {
                                 href={link.href}
                                 className={cn(
                                     'font-heading text-base font-medium tracking-wide transition-all duration-300 hover:-translate-y-0.5',
-                                    forceDarkText
-                                        ? 'text-charcoal/80 hover:text-rose-deep'
-                                        : 'text-white/90 hover:text-white'
+                                    isLightHeader
+                                        ? 'text-white/90 hover:text-white'
+                                        : 'text-charcoal/80 hover:text-rose-deep'
                                 )}
                             >
                                 {link.label}
@@ -93,15 +94,13 @@ export default function Header() {
                         rel="noopener noreferrer"
                         className={cn(
                             'hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-500 hover:shadow-lg hover:-translate-y-0.5',
-                            forceDarkText
-                                ? 'bg-charcoal text-white hover:shadow-xl'
-                                : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
+                            isLightHeader
+                                ? 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'
+                                : 'bg-charcoal text-white hover:shadow-xl'
                         )}
                     >
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        Escribinos
+                        <span>Escribinos</span>
+                        <MessageCircle className="w-4 h-4" />
                     </a>
 
                     {/* Mobile Menu Button */}
@@ -109,7 +108,7 @@ export default function Header() {
                         onClick={() => setIsMobileOpen(!isMobileOpen)}
                         className={cn(
                             'lg:hidden p-2 rounded-lg transition-colors duration-300',
-                            forceDarkText ? 'text-charcoal' : 'text-white'
+                            isLightHeader ? 'text-white' : 'text-charcoal'
                         )}
                         aria-label="Toggle menu"
                     >
@@ -126,10 +125,10 @@ export default function Header() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-40 lg:hidden"
+                        className="fixed inset-0 z-[100] lg:hidden"
                     >
                         <div
-                            className="absolute inset-0 bg-charcoal/50 backdrop-blur-sm"
+                            className="absolute inset-0 bg-charcoal/40 backdrop-blur-sm"
                             onClick={() => setIsMobileOpen(false)}
                         />
                         <motion.nav
@@ -137,26 +136,31 @@ export default function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
-                            className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col"
+                            className="absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-bg flex flex-col"
                         >
-                            <div className="flex items-center justify-between p-6 border-b border-border">
+                            <div className="flex items-center justify-between p-6 border-b border-stone-100">
                                 <Image
-                                    src="/images/brand/logo sin fondo.png"
+                                    src="/images/brand/logo horizontal sin fondo.png"
                                     alt="Alica"
-                                    width={80}
-                                    height={80}
-                                    className="h-12 w-auto object-contain"
+                                    width={120}
+                                    height={40}
+                                    className="h-10 w-auto object-contain"
                                 />
                                 <button
                                     onClick={() => setIsMobileOpen(false)}
                                     className="p-2 text-charcoal hover:text-rose-deep transition-colors"
                                     aria-label="Close menu"
                                 >
-                                    <X className="w-5 h-5" />
+                                    <X className="w-6 h-6" />
                                 </button>
                             </div>
 
-                            <div className="flex-1 py-6 px-6 space-y-1 overflow-y-auto">
+                            <div className="flex-1 py-10 px-6 space-y-2 overflow-y-auto">
+                                <div className="mb-10">
+                                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-deep/60 mb-2">Ayuda & Consultas</p>
+                                    <p className="text-sm text-stone-600 italic">Estamos para ayudarte con mucho amor.</p>
+                                </div>
+
                                 {navLinks.map((link, i) => (
                                     <motion.div
                                         key={link.href}
@@ -167,7 +171,7 @@ export default function Header() {
                                         <Link
                                             href={link.href}
                                             onClick={() => setIsMobileOpen(false)}
-                                            className="block py-3 px-4 rounded-xl text-charcoal/80 font-medium hover:bg-rose-light/50 hover:text-rose-deep transition-all duration-200"
+                                            className="block py-4 px-2 text-2xl font-heading text-charcoal hover:text-rose-deep transition-all duration-300"
                                         >
                                             {link.label}
                                         </Link>
@@ -175,17 +179,15 @@ export default function Header() {
                                 ))}
                             </div>
 
-                            <div className="p-6 border-t border-border">
+                            <div className="p-8 border-t border-stone-100 bg-stone-50/50">
                                 <a
                                     href={buildWhatsAppURL('¡Hola! Me interesa conocer los productos de Alica 🍼')}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-[#25D366] text-white font-medium hover:bg-[#20BD5A] transition-colors"
+                                    className="flex items-center justify-center gap-3 w-full py-4 rounded-full bg-charcoal text-white font-bold tracking-widest uppercase text-[11px] hover:bg-stone-800 transition-all duration-300 shadow-xl"
                                 >
-                                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                    </svg>
-                                    Hacer mi pedido
+                                    <MessageCircle className="w-4 h-4" />
+                                    <span>Hacer mi pedido</span>
                                 </a>
                             </div>
                         </motion.nav>

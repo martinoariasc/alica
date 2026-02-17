@@ -18,7 +18,7 @@ export default function ProductCarousel() {
     const featured = getFeaturedProducts();
 
     return (
-        <section className="py-20 md:py-32 relative overflow-hidden w-full bg-white">
+        <section className="py-20 md:py-32 relative overflow-hidden w-full bg-transparent">
             <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6">
                 <AnimatedSection blur>
                     <div className="text-center mb-16 md:mb-20 flex flex-col items-center">
