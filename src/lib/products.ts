@@ -1,3 +1,14 @@
+/**
+ * ALICA - Catálogo de Productos
+ * 
+ * INSTRUCCIONES PARA MODIFICAR:
+ * 1. emotionalName: Es el título grande que aparece en la web.
+ * 2. emotionalPhrase: Es la frase poética debajo del título.
+ * 3. description: Descripción detallada.
+ * 4. images: Rutas de las imágenes (asegurate de que existan en public/images/products/...).
+ * 5. scarcityText: El texto de urgencia (ej: "Solo 5 pares").
+ */
+
 export type Category = 'Mocasines' | 'Botitas' | 'Sandalias' | 'Alpargatitas' | 'Accesorios';
 export type Gender = 'nene' | 'nena' | 'unisex';
 export type AgeRange = '0-6 meses' | '6-12 meses' | '1-2 años';

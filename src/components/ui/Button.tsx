@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'whatsapp' | 'ghost' | 'caviar';
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'outlineDark' | 'whatsapp' | 'ghost' | 'caviar' | 'luxury';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
@@ -39,9 +39,11 @@ export default function Button({
         primary: "bg-white text-stone-900 border border-stone-200 hover:border-stone-900 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.15)] transition-all duration-500",
         secondary: "bg-stone-900 text-white border border-stone-900 hover:bg-stone-800 shadow-lg hover:shadow-xl transition-all duration-500",
         outline: "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/[0.1] backdrop-blur-md transition-all duration-500",
+        outlineDark: "bg-transparent text-charcoal border border-charcoal/20 hover:border-charcoal hover:bg-charcoal/5 transition-all duration-300",
         whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_10px_30px_-10px_rgba(37,211,102,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(37,211,102,0.6)] hover:-translate-y-1",
         ghost: "bg-transparent text-stone-600 hover:text-stone-900 transition-all duration-500",
-        caviar: "bg-white/40 backdrop-blur-sm text-stone-900 border border-stone-200 hover:border-stone-900 hover:bg-white transition-all duration-700 tracking-[0.4em] font-light italic shadow-sm hover:shadow-md"
+        caviar: "bg-white/40 backdrop-blur-sm text-stone-900 border border-stone-200 hover:border-stone-900 hover:bg-white transition-all duration-700 tracking-[0.4em] font-light italic shadow-sm hover:shadow-md",
+        luxury: "bg-stone-900 text-white border-none shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]"
     };
 
     const sizes = {

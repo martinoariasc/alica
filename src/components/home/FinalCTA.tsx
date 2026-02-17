@@ -51,14 +51,14 @@ export default function FinalCTA() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
                         <Button
                             href={buildWhatsAppURL('¡Hola! Quiero elegir los zapatitos de mi bebé 🍼')}
-                            variant="primary"
+                            variant="luxury"
                             size="lg"
                             external
-                            className="text-lg px-12 w-full sm:w-auto shadow-2xl min-w-[240px]"
+                            className="text-lg px-12 w-full sm:w-auto min-w-[240px]"
                         >
                             Quiero elegir los suyos 💛
                         </Button>
-                        <Button href="/shop" variant="outline" size="lg" className="w-full sm:w-auto border-charcoal/20 text-charcoal hover:bg-charcoal/5 min-w-[240px]">
+                        <Button href="/shop" variant="outlineDark" size="lg" className="w-full sm:w-auto min-w-[240px]">
                             Ver toda la colección
                         </Button>
                     </div>
