@@ -26,7 +26,7 @@ export default function SectionTitle({
             <h2
                 className={cn(
                     'font-heading text-3xl md:text-4xl lg:text-5xl font-semibold mb-4',
-                    light ? 'text-white' : 'text-charcoal'
+                    light ? 'text-white' : 'text-cacao'
                 )}
             >
                 {title}

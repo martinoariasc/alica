@@ -82,7 +82,7 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                            className="font-body text-white/90 font-light mb-10 max-w-[90vw] md:max-w-2xl mx-auto leading-relaxed drop-shadow-xl tracking-wide text-center"
+                            className="font-body text-white/95 font-medium mb-10 max-w-[90vw] md:max-w-2xl mx-auto leading-relaxed drop-shadow-xl tracking-wide text-center"
                             style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1rem)' }}
                         >
                             Zapatitos artesanales de suela blanda que abrazan sus piecitos con la ternura que solo una mamá entiende.

@@ -52,12 +52,19 @@ export default function SizeChart() {
                     {/* The Table - Refined for readability */}
                     <AnimatedSection delay={0.3} direction="right" className="w-full">
                         <div className="bg-white rounded-[2.5rem] overflow-hidden border border-stone-100 shadow-2xl shadow-stone-200/50">
-                            {/* Increased top padding (pt-12) to avoid clipping with rounded-3xl/2.5rem top corners */}
-                            <div className="grid grid-cols-2 bg-stone-50 px-6 md:px-8 pt-10 pb-6 md:pt-12 md:pb-8 border-b border-stone-100 text-charcoal/50 font-heading tracking-[0.2em] text-[10px] uppercase font-bold">
-                                <span>Edad Aproximada</span>
-                                <span className="text-right">Largo del Pie</span>
+                            {/* High Contrast Header - Premium Look */}
+                            <div className="grid grid-cols-2 bg-cacao px-6 md:px-10 py-6 text-cream-light font-heading tracking-[0.3em] text-[11px] uppercase font-bold">
+                                <span className="flex items-center gap-2">
+                                    <div className="w-1 h-1 rounded-full bg-gold" />
+                                    Edad Aproximada
+                                </span>
+                                <span className="text-right flex items-center justify-end gap-2">
+                                    Largo del Pie
+                                    <div className="w-1 h-1 rounded-full bg-gold" />
+                                </span>
                             </div>
-                            <div className="divide-y divide-stone-50">
+
+                            <div className="divide-y divide-stone-100">
                                 {sizes.map((item, i) => (
                                     <motion.div
                                         key={item.range}
@@ -65,19 +72,25 @@ export default function SizeChart() {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.05 }}
-                                        className="grid grid-cols-2 p-6 md:p-7 items-center hover:bg-rose-light/5 transition-colors duration-500 group"
+                                        className="grid grid-cols-2 p-6 md:p-8 items-center hover:bg-stone-50 transition-all duration-500 group"
                                     >
-                                        <span className="font-body text-charcoal/80 font-medium text-base md:text-lg group-hover:text-charcoal transition-colors">
-                                            {item.range}
-                                        </span>
-                                        <span className="font-body text-charcoal text-right font-bold text-base md:text-lg tracking-tight">
-                                            {item.measure}
-                                        </span>
+                                        <div className="flex flex-col">
+                                            <span className="font-body text-cacao font-semibold text-lg md:text-xl group-hover:text-rose-deep transition-colors">
+                                                {item.range}
+                                            </span>
+                                            <span className="text-[10px] text-cacao/40 uppercase tracking-widest font-bold">Respetuoso</span>
+                                        </div>
+                                        <div className="text-right">
+                                            <span className="font-heading text-cacao font-bold text-xl md:text-2xl tracking-tighter">
+                                                {item.measure}
+                                            </span>
+                                            <span className="block text-[10px] text-rose-deep/60 font-bold uppercase tracking-wider">Interior</span>
+                                        </div>
                                     </motion.div>
                                 ))}
                             </div>
                         </div>
-                        <p className="text-[10px] text-muted mt-8 text-center uppercase tracking-[0.3em] font-medium opacity-60 italic">
+                        <p className="text-[11px] text-cacao/60 mt-8 text-center uppercase tracking-[0.4em] font-bold italic">
                             * Producto artesanal, medidas aproximadas.
                         </p>
                     </AnimatedSection>

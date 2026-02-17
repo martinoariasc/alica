@@ -148,7 +148,7 @@ export default function Header() {
                                 />
                                 <button
                                     onClick={() => setIsMobileOpen(false)}
-                                    className="p-2 text-charcoal hover:text-rose-deep transition-colors"
+                                    className="p-2 text-cacao hover:text-rose-deep transition-colors"
                                     aria-label="Close menu"
                                 >
                                     <X className="w-6 h-6" />
@@ -157,8 +157,10 @@ export default function Header() {
 
                             <div className="flex-1 py-10 px-6 space-y-2 overflow-y-auto">
                                 <div className="mb-10">
-                                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-deep/60 mb-2">Ayuda & Consultas</p>
-                                    <p className="text-sm text-stone-600 italic">Estamos para ayudarte con mucho amor.</p>
+                                    <p className="text-[10px] tracking-[0.3em] uppercase text-cacao/30 font-semibold mb-6">
+                                        Boutique Artesanal
+                                    </p>
+                                    <p className="text-sm text-cacao-light font-medium italic">Estamos para ayudarte con mucho amor.</p>
                                 </div>
 
                                 {navLinks.map((link, i) => (
@@ -171,7 +173,7 @@ export default function Header() {
                                         <Link
                                             href={link.href}
                                             onClick={() => setIsMobileOpen(false)}
-                                            className="block py-4 px-2 text-2xl font-heading text-charcoal hover:text-rose-deep transition-all duration-300"
+                                            className="block py-4 px-2 text-2xl font-heading text-cacao hover:text-rose-deep transition-all duration-300"
                                         >
                                             {link.label}
                                         </Link>

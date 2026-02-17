@@ -67,8 +67,8 @@ export default function ShopPage() {
                                     key={f.value}
                                     onClick={() => setGender(f.value)}
                                     className={`text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-300 ${gender === f.value
-                                        ? 'text-charcoal border-b-2 border-charcoal pb-1'
-                                        : 'text-stone-300 hover:text-stone-500'
+                                        ? 'text-cacao border-b-2 border-cacao pb-1'
+                                        : 'text-cacao/40 hover:text-cacao/70'
                                         }`}
                                 >
                                     {f.label}
@@ -137,32 +137,46 @@ export default function ShopPage() {
                                                     </span>
                                                 </div>
 
-                                                {/* Mini Tags */}
+                                                {/* Mini Tags - Higher Contrast */}
                                                 <div className="absolute bottom-6 left-6 flex gap-2">
-                                                    <span className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide">
+                                                    <span className="bg-white/80 backdrop-blur-md text-cacao border border-stone-100 px-3 py-1 rounded-full text-[10px] font-bold tracking-wide shadow-sm">
                                                         {product.ageRange}
                                                     </span>
                                                 </div>
                                             </div>
 
-                                            {/* Product Info - Refined Typography */}
-                                            <div className="mt-8 text-center space-y-3">
-                                                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-rose-deep/60 block">
-                                                    {product.category}
-                                                </span>
-                                                <h3 className="font-heading text-2xl md:text-3xl text-charcoal group-hover:text-rose-deep transition-colors duration-300">
-                                                    {product.emotionalName}
-                                                </h3>
-                                                <p className="font-body text-sm text-stone-400 italic font-light max-w-[240px] mx-auto line-clamp-1">
+                                            {/* Product Info - High Contrast & Action Button */}
+                                            <div className="mt-8 text-center space-y-4">
+                                                <div className="space-y-1">
+                                                    <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-rose-deep block">
+                                                        {product.category}
+                                                    </span>
+                                                    <h3 className="font-heading text-2xl md:text-3xl text-cacao group-hover:text-rose-deep transition-colors duration-300 font-medium">
+                                                        {product.emotionalName}
+                                                    </h3>
+                                                </div>
+
+                                                <p className="font-body text-base text-cacao italic font-medium max-w-[260px] mx-auto line-clamp-1 opacity-90">
                                                     "{product.emotionalPhrase}"
                                                 </p>
-                                                <div className="flex items-center justify-center gap-3 pt-2">
-                                                    <span className="text-sm text-stone-300 line-through font-light">
-                                                        {formatPrice(product.oldPrice)}
-                                                    </span>
-                                                    <span className="text-xl font-medium text-charcoal">
-                                                        {formatPrice(product.price)}
-                                                    </span>
+
+                                                <div className="flex flex-col items-center gap-4 pt-2">
+                                                    <div className="flex items-center justify-center gap-3">
+                                                        <span className="text-sm text-cacao/60 line-through font-medium decoration-rose-deep/40 decoration-2">
+                                                            {formatPrice(product.oldPrice)}
+                                                        </span>
+                                                        <span className="text-2xl font-bold text-cacao tracking-tight">
+                                                            {formatPrice(product.price)}
+                                                        </span>
+                                                    </div>
+
+                                                    {/* Dedicated Call to Action for Intuition */}
+                                                    <div className="w-full pt-2">
+                                                        <div className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-cacao text-white text-[11px] font-bold uppercase tracking-[0.2em] group-hover:bg-rose-deep transition-all duration-500 shadow-lg shadow-cacao/10 group-hover:shadow-rose-deep/20">
+                                                            <span>Lo quiero</span>
+                                                            <Heart className="w-3.5 h-3.5 fill-current" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </Link>

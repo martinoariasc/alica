@@ -65,34 +65,49 @@ export default function ProductoPage({
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
 
-                        {/* Column 1: Gallery (7 cols) */}
+                        {/* Column 1: Gallery (7 cols) - Improved Intuition */}
                         <div className="lg:col-span-7">
                             <AnimatedSection direction="none">
-                                <div className="rounded-[2.5rem] overflow-hidden bg-stone-50 shadow-2xl shadow-stone-200/50 relative group">
-                                    <Swiper
-                                        modules={[Pagination, Autoplay]}
-                                        pagination={{ clickable: true }}
-                                        autoplay={{ delay: 6000 }}
-                                        className="w-full aspect-square md:aspect-[4/4.5]"
-                                    >
-                                        {product.images.map((src, i) => (
-                                            <SwiperSlide key={i}>
-                                                <img
-                                                    src={src}
-                                                    alt={product.name}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
+                                <div className="space-y-6">
+                                    <div className="rounded-[2.5rem] overflow-hidden bg-stone-50 shadow-2xl shadow-stone-200/50 relative group border border-stone-100">
+                                        <Swiper
+                                            modules={[Pagination, Autoplay]}
+                                            pagination={{
+                                                clickable: true,
+                                                dynamicBullets: true
+                                            }}
+                                            autoplay={{ delay: 6000 }}
+                                            className="w-full aspect-square md:aspect-[4/5] product-gallery-swiper"
+                                        >
+                                            {product.images.map((src, i) => (
+                                                <SwiperSlide key={i}>
+                                                    <img
+                                                        src={src}
+                                                        alt={`${product.name} visualización ${i + 1}`}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </SwiperSlide>
+                                            ))}
+                                        </Swiper>
 
-                                    {/* Subtle Best Seller Badge */}
-                                    {product.isBestSeller && (
-                                        <div className="absolute top-8 left-8 z-10 bg-white/90 backdrop-blur-md px-5 py-2 rounded-full border border-stone-100 shadow-sm flex items-center gap-2">
-                                            <Sparkles className="w-3.5 h-3.5 text-gold" />
-                                            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-stone-900">Más Favorito</span>
+                                        {/* Best Seller Badge */}
+                                        {product.isBestSeller && (
+                                            <div className="absolute top-6 left-6 z-10 bg-white/95 backdrop-blur-md px-5 py-2 rounded-full border border-stone-100 shadow-lg flex items-center gap-2">
+                                                <Sparkles className="w-4 h-4 text-gold fill-current" />
+                                                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-cacao">Favorito de Mamás</span>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* Visual Indicator for Multiple Photos */}
+                                    <div className="flex justify-center items-center gap-4 py-2">
+                                        <div className="flex gap-2">
+                                            {product.images.map((_, i) => (
+                                                <div key={i} className="w-2.5 h-2.5 rounded-full bg-cacao/10" />
+                                            ))}
                                         </div>
-                                    )}
+                                        <span className="text-[10px] uppercase tracking-widest text-cacao/40 font-bold">Deslizá para ver más fotos</span>
+                                    </div>
                                 </div>
                             </AnimatedSection>
                         </div>
@@ -121,27 +136,32 @@ export default function ProductoPage({
                                     </div>
                                 </AnimatedSection>
 
-                                {/* Pricing & Scarcity */}
+                                {/* Pricing & Scarcity - Increased Visibility */}
                                 <AnimatedSection delay={0.2}>
-                                    <div className="flex flex-col gap-6 p-8 rounded-[2rem] bg-stone-50 border border-stone-100">
-                                        <div className="flex items-baseline gap-4">
-                                            <span className="text-4xl font-bold text-stone-900">{formatPrice(product.price)}</span>
-                                            <span className="text-lg text-stone-400 line-through opacity-60 font-light">{formatPrice(product.oldPrice)}</span>
-                                            <span className="ml-auto bg-rose-deep text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">
-                                                SALE -{discount}%
+                                    <div className="flex flex-col gap-6 p-8 rounded-[2rem] bg-white border border-stone-100 shadow-sm">
+                                        <div className="flex items-center flex-wrap gap-4">
+                                            <span className="text-4xl md:text-5xl font-bold text-cacao tracking-tight">{formatPrice(product.price)}</span>
+                                            <div className="flex flex-col">
+                                                <span className="text-lg text-cacao/40 line-through font-medium decoration-rose-deep/40 decoration-2">{formatPrice(product.oldPrice)}</span>
+                                                <span className="text-[10px] font-bold text-rose-deep uppercase tracking-widest">Ahorrás {formatPrice(product.oldPrice - product.price)}</span>
+                                            </div>
+                                            <span className="ml-auto bg-rose-deep text-white text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-rose-deep/20">
+                                                OFERTA -{discount}%
                                             </span>
                                         </div>
 
-                                        <div className="flex items-center gap-3 text-rose-deep">
-                                            <div className="w-2 h-2 rounded-full bg-rose-deep animate-pulse" />
-                                            <span className="text-xs font-bold uppercase tracking-[0.1em]">{product.scarcityText}</span>
+                                        <div className="h-px w-full bg-stone-100" />
+
+                                        <div className="flex items-center gap-3 text-rose-deep bg-rose-light/10 p-4 rounded-xl border border-rose-light/20">
+                                            <Clock className="w-5 h-5" />
+                                            <span className="text-sm font-bold uppercase tracking-[0.05em]">{product.scarcityText}</span>
                                         </div>
                                     </div>
                                 </AnimatedSection>
 
-                                {/* Description */}
+                                {/* Description - Better weight */}
                                 <AnimatedSection delay={0.3}>
-                                    <p className="text-lg text-stone-500 font-light leading-relaxed">
+                                    <p className="text-lg md:text-xl text-cacao-light font-medium leading-relaxed">
                                         {product.description}
                                     </p>
                                 </AnimatedSection>

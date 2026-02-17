@@ -18,9 +18,12 @@
   --alica-rose-light: #F5EBE8;
   --alica-white: #FFFFFF;
 
-  /* Semantic Mappings */
+  /* Semantic Mappings - Increased contrast for readability */
   --alica-text-main: #2A1F1B;
-  --alica-text-muted: #8A7B74;
+  --alica-text-muted: #5A4D48;
+  /* Darkened for better readability */
+  --alica-text-light: #7A6F6A;
+  /* Replacement for cases where text was too light */
   --alica-charcoal: var(--alica-cacao);
 }
 
@@ -59,9 +62,10 @@ body {
   background-color: transparent;
   color: var(--alica-charcoal);
   font-family: var(--font-body);
-  line-height: 1.7;
-  /* Balanced premium line height */
-  letter-spacing: 0.02em;
+  line-height: 1.6;
+  font-weight: 500;
+  /* Increased from 300/400 for better legibility */
+  letter-spacing: 0.01em;
   overflow-x: hidden;
 }
 
@@ -73,9 +77,10 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--alica-charcoal);
-  letter-spacing: 0.02em;
-  /* More refined for luxury */
+  letter-spacing: 0.01em;
   line-height: 1.2;
+  font-weight: 500;
+  /* Ensured solid presence */
   text-align: center;
   text-wrap: balance;
   margin-left: auto;

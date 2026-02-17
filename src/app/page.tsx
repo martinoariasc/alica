@@ -53,7 +53,7 @@ export default function Home() {
             </div>
             <div className="text-center flex flex-col justify-center items-center">
               <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-6 block font-bold">Para mamás extraordinarias</span>
-              <h3 className="font-heading text-4xl md:text-6xl lg:text-7xl text-charcoal mb-8 md:mb-12 leading-[1.2]">
+              <h3 className="font-heading text-4xl md:text-6xl lg:text-7xl text-cacao mb-8 md:mb-12 leading-[1.2]">
                 Lo elegís por su piel,<br />
                 <span className="italic font-light text-stone-400">lo amás por su historia.</span>
               </h3>

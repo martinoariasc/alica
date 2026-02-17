@@ -82,32 +82,30 @@ export default function ProductCarousel() {
                                             </div>
                                         </div>
 
-                                        {/* Product Info */}
+                                        {/* Product Info - High Contrast for Legibility */}
                                         <div className="p-6 flex-1 flex flex-col items-center text-center">
-                                            <span className="text-[10px] font-body uppercase tracking-[2px] text-stone-400 mb-2 block">
+                                            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-rose-deep/80 mb-2 block">
                                                 {product.category}
                                             </span>
-                                            <h3 className="font-heading text-xl font-bold text-stone-800 mb-1 group-hover:text-[#BE3B4F] transition-colors line-clamp-1">
+                                            <h3 className="font-heading text-xl font-bold text-cacao mb-1 group-hover:text-rose-deep transition-colors line-clamp-1">
                                                 {product.emotionalName}
                                             </h3>
-                                            <p className="text-sm text-stone-500 mb-3 line-clamp-1 italic font-light">
+                                            <p className="text-sm text-cacao-light mb-3 line-clamp-1 italic font-medium">
                                                 {product.emotionalPhrase}
                                             </p>
 
-                                            <div className="flex items-center gap-1 mb-4">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <span key={i} className="text-xs text-yellow-500">★</span>
-                                                ))}
-                                                <span className="text-[10px] text-stone-400 ml-1">(12 reseñas)</span>
-                                            </div>
-
-                                            <div className="flex items-center justify-center gap-3 mt-auto">
-                                                <span className="text-sm text-stone-400 line-through">
+                                            <div className="flex items-center justify-center gap-3 mt-auto mb-2">
+                                                <span className="text-sm text-cacao/60 line-through font-medium decoration-rose-deep/40 decoration-2">
                                                     {formatPrice(product.oldPrice)}
                                                 </span>
-                                                <span className="text-xl font-bold text-stone-900">
+                                                <span className="text-xl font-bold text-cacao">
                                                     {formatPrice(product.price)}
                                                 </span>
+                                            </div>
+
+                                            {/* Visual helper for Swiper */}
+                                            <div className="text-[9px] uppercase tracking-widest text-cacao/30 font-bold mt-2">
+                                                Deslizá para ver más
                                             </div>
                                         </div>
 
