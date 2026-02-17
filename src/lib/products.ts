@@ -159,6 +159,7 @@ export const products: Product[] = [
         description: 'Botitas en tono miel con cordones elásticos. Diseñadas para brindar soporte sin limitar el movimiento natural del tobillo.',
         shortDescription: 'Botita urbana en color miel.',
         images: [
+            '/images/products/nenes/2/1.jpg',
             '/images/products/nenes/2/16babfbd-8729-4686-b4fd-ff99d815d52c.jpg',
             '/images/products/nenes/2/46342ef0-a398-4104-a5cb-d14eeab11264.jpg',
             '/images/products/nenes/2/827e6b75-1504-4751-a8ab-3a8bf9b507f7.jpg',
@@ -186,6 +187,7 @@ export const products: Product[] = [
         description: 'Mocasín en azul marino profundo. La elegancia clásica combinada con la tecnología de calzado respetuoso ALICA.',
         shortDescription: 'Mocasín azul marino elegante.',
         images: [
+            '/images/products/nenes/3/1.png',
             '/images/products/nenes/3/35938f31-3d22-4327-8fc0-230317b5ebac.png',
             '/images/products/nenes/3/7ab99723-e6df-4fe7-b255-a01f8bd7061d.png',
             '/images/products/nenes/3/89bdeca1-b855-4f77-8798-a407f7959f80.png',
@@ -213,6 +215,7 @@ export const products: Product[] = [
         description: 'Alpargatitas de lona premium en color gris. El calzado más liviano y fresco para la temporada.',
         shortDescription: 'Alpargatita de lona gris.',
         images: [
+            '/images/products/nenes/4/1.png',
             '/images/products/nenes/4/6b813f25-b344-4832-843d-042a612c8c51.png',
             '/images/products/nenes/4/6f3fb437-b40b-4fca-a874-d50d2a31f7ea.png',
             '/images/products/nenes/4/b1c432ee-6a42-44ef-9705-868207df3e86.png',

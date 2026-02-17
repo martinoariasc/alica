@@ -10,10 +10,10 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     const footerLinks = [
-        { name: 'Colección Completa', href: '/shop' },
-        { name: 'Nuestra Esencia', href: '/nosotros' },
-        { name: 'Guía de Regalos', href: '/regalo' },
-        { name: 'Contacto Directo', href: '/contacto' },
+        { name: 'Catálogo', href: '/shop' },
+        { name: 'Filosofía', href: '/nosotros' },
+        { name: 'Regalar Alica', href: '/regalo' },
+        { name: 'Contacto', href: '/contacto' },
     ];
 
     const socialLinks = [
@@ -22,42 +22,55 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-cacao text-white relative overflow-hidden border-t border-white/5 pt-20 pb-10">
-            {/* Ambient Luxury Glows */}
-            <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-rose-deep/5 blur-[100px] rounded-full pointer-events-none" />
-
-            {/* Texture Overlay (Fabric feel) */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
+        <footer className="bg-cacao text-white relative overflow-hidden pt-32 pb-12">
+            {/* Ambient Boutique Lighting */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[300px] bg-gold/5 blur-[120px] rounded-[100%] pointer-events-none" />
+            <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-rose-deep/5 blur-[100px] rounded-full pointer-events-none opacity-50" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+                {/* Upper Section: Brand Statement & CTA */}
+                <div className="flex flex-col items-center text-center mb-32 space-y-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="relative w-48 h-24 mb-4"
+                    >
+                        <Image
+                            src="/images/brand/logo horizontal blanco sin fondo.png"
+                            alt="Alica Bebés"
+                            fill
+                            className="object-contain"
+                        />
+                    </motion.div>
 
-                    {/* Brand Meta Column */}
-                    <div className="lg:col-span-5 space-y-12 flex flex-col items-center lg:items-start text-center lg:text-left">
-                        <Link href="/" className="group inline-block">
-                            <div className="relative w-40 h-20 transition-all duration-1000 group-hover:scale-105">
-                                <Image
-                                    src="/images/brand/logo horizontal blanco sin fondo.png"
-                                    alt="Alica Bebés"
-                                    fill
-                                    className="object-contain"
-                                    priority
-                                />
-                            </div>
-                        </Link>
+                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl text-white/90 leading-tight italic max-w-4xl mx-auto">
+                        &ldquo;Elevando sus primeros pasos a la <span className="text-gold">categoría de arte</span>.&rdquo;
+                    </h2>
 
-                        <div className="space-y-6">
-                            <p className="text-xl md:text-2xl font-heading italic text-white/40 leading-relaxed max-w-sm">
-                                &ldquo;Porque sus primeros pasos son el comienzo de su historia más linda.&rdquo;
-                            </p>
-                            <div className="flex items-center justify-center lg:justify-start gap-3">
-                                <Sparkles className="w-4 h-4 text-gold/40" />
-                                <span className="text-[10px] tracking-[0.4em] uppercase text-gold/40 font-bold">Hecho a mano en Paraguay</span>
-                            </div>
+                    <div className="pt-8">
+                        <Button
+                            href="https://wa.me/595984328246?text=¡Hola! Quiero hacer un pedido 🍼"
+                            variant="luxury"
+                            size="lg"
+                            external
+                            className="px-16 h-16 bg-white text-cacao hover:bg-gold-muted border-none shadow-[0_20px_60px_-15px_rgba(212,182,146,0.3)]"
+                        >
+                            Hacer mi pedido 🤍
+                        </Button>
+                        <p className="mt-8 text-[11px] tracking-[0.4em] uppercase text-gold/40 font-bold">Asesoría personalizada por WhatsApp</p>
+                    </div>
+                </div>
+
+                {/* Middle Section: Navigation & Identity */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-16 py-16 border-t border-white/5">
+                    {/* Column 1: Identity */}
+                    <div className="md:col-span-5 space-y-8">
+                        <div className="space-y-4">
+                            <h3 className="font-heading text-[10px] tracking-[0.5em] uppercase text-white/30 font-bold">Nuestra Ubicación</h3>
+                            <p className="text-xl font-body font-light italic text-white/70">Asunción, República del Paraguay</p>
                         </div>
-
-                        <div className="flex items-center gap-5">
+                        <div className="flex gap-4">
                             {socialLinks.map((social) => {
                                 const Icon = social.icon;
                                 return (
@@ -66,76 +79,54 @@ export default function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-cacao transition-all duration-700 group relative overflow-hidden"
+                                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-cacao transition-all duration-700 group"
                                         aria-label={social.label}
                                     >
-                                        <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                                        <Icon className="w-5 h-5 relative z-10 transition-transform group-hover:scale-110" />
+                                        <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
                                     </a>
                                 );
                             })}
                         </div>
                     </div>
 
-                    {/* Navigation Luxury List */}
-                    <div className="lg:col-span-3 space-y-10 flex flex-col items-center lg:items-start text-center lg:text-left pt-4">
+                    {/* Column 2: Quick Links */}
+                    <div className="md:col-span-3 space-y-8">
                         <h3 className="font-heading text-[10px] tracking-[0.5em] uppercase text-white/30 font-bold">Explorar</h3>
-                        <ul className="space-y-6">
+                        <ul className="grid grid-cols-1 gap-4">
                             {footerLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-lg font-body font-light text-white/60 hover:text-white transition-all duration-500 flex items-center gap-3 group"
+                                        className="text-base font-body text-white/50 hover:text-gold transition-all duration-300 flex items-center gap-2 group"
                                     >
-                                        <span className="relative">
-                                            {link.name}
-                                            <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold/40 transition-all duration-500 group-hover:w-full" />
-                                        </span>
-                                        <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-40 transition-all duration-500 translate-y-1 group-hover:translate-y-0" />
+                                        <span className="w-1 h-px bg-white/10 group-hover:w-4 group-hover:bg-gold transition-all duration-500" />
+                                        {link.name}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Contact & Boutique Action */}
-                    <div className="lg:col-span-4 space-y-10 flex flex-col items-center lg:items-start text-center lg:text-left pt-4">
-                        <h3 className="font-heading text-[10px] tracking-[0.5em] uppercase text-white/30 font-bold">Contacto Boutique</h3>
-                        <div className="space-y-8">
-                            <div className="flex items-center justify-center lg:justify-start gap-4 text-white/60 group hover:text-white transition-colors duration-500">
-                                <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center group-hover:border-white/20 transition-colors">
-                                    <MapPin className="w-4 h-4 text-gold/40" />
-                                </div>
-                                <span className="text-lg font-light italic">Asunción, Paraguay</span>
-                            </div>
-
-                            <div className="pt-6 relative group">
-                                <div className="absolute -inset-4 bg-gold/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <Button
-                                    href="https://wa.me/595984328246?text=¡Hola! Quiero hacer un pedido 🍼"
-                                    variant="primary"
-                                    size="lg"
-                                    external
-                                    className="px-12 h-16 bg-white text-cacao hover:bg-gold-muted transition-colors shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] relative z-10"
-                                >
-                                    Hacer mi pedido 🤍
-                                </Button>
-                                <p className="mt-6 text-[10px] tracking-[0.2em] uppercase text-white/20 font-medium">Atención personalizada por WhatsApp</p>
-                            </div>
-                        </div>
+                    {/* Column 3: The Promise */}
+                    <div className="md:col-span-4 space-y-8 text-right hidden md:block">
+                        <h3 className="font-heading text-[10px] tracking-[0.5em] uppercase text-white/30 font-bold text-right">La Promesa ALICA</h3>
+                        <p className="text-sm font-body font-light text-white/40 leading-relaxed italic max-w-xs ml-auto">
+                            Cada puntada es un compromiso con la salud fisiológica de tu bebé y la elegancia eterna de tu familia.
+                        </p>
                     </div>
                 </div>
 
-                {/* Bottom Signature Line */}
-                <div className="mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 opacity-40">
-                    <p className="text-[10px] tracking-[0.4em] uppercase font-light">
-                        © {currentYear} Alica Bebés · Fine Handcrafted Footwear
-                    </p>
-                    <div className="flex items-center gap-3 text-[10px] tracking-[0.4em] uppercase font-light">
-                        <span>Confeccionado con</span>
-                        <Heart className="w-3 h-3 text-rose-deep fill-current" />
-                        <span>desde Paraguay</span>
+                {/* Bottom Signature Section */}
+                <div className="pt-12 mt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-30">
+                    <div className="flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase font-bold">
+                        <span>Alica Bebés</span>
+                        <div className="w-1 h-1 rounded-full bg-gold" />
+                        <span>Heredando Elegancia</span>
                     </div>
+
+                    <p className="text-[10px] tracking-[0.3em] uppercase">
+                        © {currentYear} · Handcrafted with <Heart className="inline w-3 h-3 text-rose-deep mx-1" /> from Paraguay
+                    </p>
                 </div>
             </div>
         </footer>
