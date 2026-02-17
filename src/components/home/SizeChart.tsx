@@ -81,7 +81,7 @@ export default function SizeChart() {
                                             <span className="text-[10px] text-cacao/40 uppercase tracking-widest font-bold">Respetuoso</span>
                                         </div>
                                         <div className="text-right">
-                                            <span className="font-heading text-cacao font-bold text-xl md:text-2xl tracking-tighter">
+                                            <span className="font-body text-cacao font-bold text-xl md:text-2xl tracking-tighter">
                                                 {item.measure}
                                             </span>
                                             <span className="block text-[10px] text-rose-deep/60 font-bold uppercase tracking-wider">Interior</span>

@@ -10,6 +10,7 @@ import SizeChart from '@/components/home/SizeChart';
 import FinalCTA from '@/components/home/FinalCTA';
 import Separator from '@/components/ui/Separator';
 import VideoSection from '@/components/ui/VideoSection';
+import ExclusiveKits from '@/components/home/ExclusiveKits';
 
 // Custom Luxury Spacer - "The Art of the Pause"
 const LuxurySpacer = () => (
@@ -44,9 +45,9 @@ export default function Home() {
               >
                 <div className="flex flex-col items-center justify-center">
                   <span className="font-heading text-2xl md:text-4xl text-white/90 leading-tight drop-shadow-lg">
-                    EL REFUGIO<br />
-                    PERFECTO PARA<br />
-                    <span className="italic font-light text-white">TU TESORO</span>
+                    PUNTADAS QUE<br />
+                    ABRAZAN SUS<br />
+                    <span className="italic font-light text-white">PRIMEROS PASOS</span>
                   </span>
                 </div>
               </VideoSection>
@@ -69,6 +70,11 @@ export default function Home() {
 
       {/* 4. DESIRE: The Product Showcase */}
       <ProductCarousel />
+
+      <LuxurySpacer />
+
+      {/* 4b. CONVERSION: Exclusive Kits (Hormozi Offers) */}
+      <ExclusiveKits />
 
       <LuxurySpacer />
 
