@@ -23,15 +23,15 @@ export default function Home() {
       {/* 2. PROBLEM/SOLUTION + SAFETY: "Why soft sole?" */}
       <BarefootBenefits />
 
-      <Separator />
+      <div className="py-12 md:py-24" />
 
       {/* 3. SCARCITY + ARTISANAL VALUE: "Not a factory, a workshop." */}
 
 
       {/* Video Interlude 1: The Process */}
-      <section className="py-40 md:py-80 w-full px-6 sm:px-12">
+      <section className="py-48 md:py-96 w-full px-6 sm:px-12">
         <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-40 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-48 items-center">
             <div className="w-full h-full">
               <div className="aspect-[4/5] w-full relative">
                 <VideoSection src="/videos/video-seccion-2.mp4" />
@@ -39,7 +39,7 @@ export default function Home() {
             </div>
             <div className="text-center md:text-left flex flex-col justify-center">
               <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-8 block font-bold">Sin Prisas</span>
-              <h3 className="font-heading text-5xl md:text-7xl lg:text-8xl text-charcoal mb-10 leading-[0.9] italic">
+              <h3 className="font-heading text-5xl md:text-7xl lg:text-8xl text-charcoal mb-12 leading-[0.9] italic">
                 Coser memorias,<br />no solo zapatos.
               </h3>
               <p className="font-body text-muted leading-relaxed font-light text-xl md:text-2xl max-w-2xl mx-auto md:mx-0">
@@ -50,29 +50,29 @@ export default function Home() {
         </div>
       </section>
 
-      <Separator />
+      <div className="py-12 md:py-24" />
 
       {/* 4. DESIRE: The Product Showcase */}
       <ProductCarousel />
 
-      <Separator />
+      <div className="py-12 md:py-24" />
 
       {/* 5. MEMORY/EMOTION: "They grow too fast" */}
       <StorySection />
 
 
 
-      <Separator />
+      <div className="py-12 md:py-24" />
 
       {/* 6. TRUST: Social Proof */}
       <TestimonialCarousel />
 
-      <Separator />
+      <div className="py-12 md:py-24" />
 
       {/* 7. UTILITY & CLOSING */}
       <SizeChart />
       <BabyGallery />
-      <Separator />
+      <div className="py-12 md:py-24" />
       <FinalCTA />
     </main >
   );

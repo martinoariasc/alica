@@ -42,11 +42,11 @@ export default function StorySection() {
                                     >
                                         <source src="/videos/video-seccion-3.mp4" type="video/mp4" />
                                     </video>
-                                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent" />
                                 </motion.div>
 
-                                <div className="absolute bottom-10 left-8 right-8 md:block hidden">
-                                    <p className="font-heading text-xl md:text-2xl text-white italic leading-tight drop-shadow-lg text-center">
+                                <div className="absolute bottom-12 left-10 right-10 md:block hidden">
+                                    <p className="font-heading text-xl md:text-3xl text-white italic leading-tight drop-shadow-lg text-center px-4">
                                         &quot;Verlo caminar es ver mi corazón fuera del cuerpo.&quot;
                                     </p>
                                 </div>
