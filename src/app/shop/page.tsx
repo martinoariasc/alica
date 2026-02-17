@@ -11,10 +11,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const genderFilters: { label: string; value: Gender | 'todos' }[] = [
-    { label: 'Todos', value: 'todos' },
+    { label: 'Todo', value: 'todos' },
     { label: 'Nenes', value: 'nene' },
     { label: 'Nenas', value: 'nena' },
-    { label: 'Unisex', value: 'unisex' },
 ];
 
 const ageFilters: { label: string; value: AgeRange | 'todos' }[] = [
@@ -25,12 +24,10 @@ const ageFilters: { label: string; value: AgeRange | 'todos' }[] = [
 ];
 
 const useFilters: { label: string; value: UseType | 'todos' }[] = [
-    { label: 'Todo uso', value: 'todos' },
-    { label: 'Primeros pasos', value: 'primeros pasos' },
+    { label: 'Ocasión', value: 'todos' },
+    { label: 'Primeros Pasos', value: 'primeros pasos' },
     { label: 'Gateo', value: 'gateo' },
     { label: 'Regalo', value: 'regalo' },
-    { label: 'Día a día', value: 'día a día' },
-    { label: 'Fiesta', value: 'ocasión especial' },
 ];
 
 export default function ShopPage() {
@@ -100,8 +97,8 @@ export default function ShopPage() {
                                     key={f.value}
                                     onClick={() => setGender(f.value)}
                                     className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 whitespace-nowrap ${gender === f.value
-                                            ? 'bg-charcoal text-white shadow-lg'
-                                            : 'text-stone-400 hover:text-charcoal hover:bg-stone-50'
+                                        ? 'bg-charcoal text-white shadow-lg'
+                                        : 'text-stone-400 hover:text-charcoal hover:bg-stone-50'
                                         }`}
                                 >
                                     {f.label}
