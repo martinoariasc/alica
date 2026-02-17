@@ -22,12 +22,12 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-cacao text-cream-light relative overflow-hidden pt-24 pb-12 border-t border-gold/10">
-            {/* Subtle Texture Overlay */}
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
+        <footer className="bg-cacao text-white relative overflow-hidden pt-24 pb-12">
+            {/* Simple elegant separator */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                {/* 1. Brand Pillar */}
+                {/* Brand Section */}
                 <div className="flex flex-col items-center text-center space-y-8 mb-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export default function Footer() {
                         />
                     </motion.div>
 
-                    <h2 className="font-heading text-3xl md:text-5xl text-cream-light/90 italic leading-tight max-w-2xl px-4">
+                    <h2 className="font-heading text-3xl md:text-5xl text-white leading-tight italic max-w-2xl px-4">
                         &ldquo;Porque sus primeros pasos son el comienzo de <span className="text-gold">su historia más linda</span>.&rdquo;
                     </h2>
 
@@ -56,7 +56,7 @@ export default function Footer() {
                             variant="primary"
                             size="lg"
                             external
-                            className="bg-white text-cacao hover:bg-gold-muted px-12 h-16 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]"
+                            className="bg-white text-cacao hover:bg-gold-muted px-12 h-16 shadow-2xl"
                         >
                             Hacer mi pedido 🤍
                         </Button>
@@ -64,24 +64,24 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* 2. Directory & Promise Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-cream-light/5">
+                {/* Info Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-white/10">
                     {/* Location */}
-                    <div className="space-y-4">
+                    <div className="space-y-4 text-center md:text-left">
                         <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Ubicación</h3>
-                        <p className="text-lg font-body font-light text-cream-light/60">Asunción, República del Paraguay</p>
-                        <p className="text-sm font-body font-light text-cream-light/40 italic">Envíos a todo el país</p>
+                        <p className="text-lg font-body font-light text-white/90">Asunción, República del Paraguay</p>
+                        <p className="text-sm font-body font-light text-white/60 italic">Envíos a todo el país</p>
                     </div>
 
-                    {/* Quick Explore */}
-                    <div className="space-y-4">
+                    {/* Quick Links */}
+                    <div className="space-y-4 text-center md:text-left">
                         <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Explorar</h3>
                         <div className="grid grid-cols-1 gap-3">
                             {footerLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-base font-body text-cream-light/50 hover:text-white transition-colors duration-300 w-fit"
+                                    className="text-base font-body text-white/70 hover:text-white transition-colors duration-300 w-fit mx-auto md:mx-0"
                                 >
                                     {link.name}
                                 </Link>
@@ -89,16 +89,16 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Identity Tags */}
-                    <div className="space-y-4">
+                    {/* Promise */}
+                    <div className="space-y-4 text-center md:text-left">
                         <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Promesa ALICA</h3>
-                        <p className="text-sm font-body font-light leading-relaxed text-cream-light/40 italic">
-                            Calzado diseñado para respetar el crecimiento natural, cosido a mano con materiales premium y cargado de amor.
+                        <p className="text-sm font-body font-light leading-relaxed text-white/60 italic">
+                            Calzado diseñado para respetar el crecimiento natural, cosido a mano con materiales premium.
                         </p>
                     </div>
 
-                    {/* Social Boutique */}
-                    <div className="space-y-6 flex flex-col items-start lg:items-end">
+                    {/* Social */}
+                    <div className="space-y-6 flex flex-col items-center md:items-start lg:items-end">
                         <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-gold font-bold">Sigamos Conectadas</h3>
                         <div className="flex gap-4">
                             {socialLinks.map((social) => {
@@ -109,7 +109,7 @@ export default function Footer() {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-full border border-cream-light/10 flex items-center justify-center hover:bg-white hover:text-cacao transition-all duration-500 group"
+                                        className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-cacao transition-all duration-500 group"
                                         aria-label={social.label}
                                     >
                                         <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -120,15 +120,15 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* 3. Bottom Credits */}
-                <div className="pt-12 flex flex-col md:flex-row items-center justify-between gap-6 opacity-40">
-                    <div className="flex items-center gap-3 text-[9px] tracking-[0.5em] uppercase font-bold">
+                {/* Bottom Credits */}
+                <div className="pt-12 flex flex-col md:flex-row items-center justify-between gap-6 opacity-50">
+                    <div className="flex items-center gap-3 text-[9px] tracking-[0.5em] uppercase font-bold text-white">
                         <span>Alica Bebés</span>
                         <div className="w-1 h-1 rounded-full bg-gold" />
                         <span>Heredando Elegancia</span>
                     </div>
 
-                    <p className="text-[9px] tracking-[0.3em] uppercase flex items-center gap-1 font-bold">
+                    <p className="text-[9px] tracking-[0.3em] uppercase flex items-center gap-1 font-bold text-white">
                         © {currentYear} · Confeccionado con <Heart className="w-2.5 h-2.5 text-rose-deep fill-current" /> desde Paraguay
                     </p>
                 </div>
