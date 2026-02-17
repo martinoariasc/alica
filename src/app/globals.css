@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @source "../../src";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 /* ── Alica Bebes Luxury Design Tokens ── */
 :root {
@@ -20,9 +20,10 @@
 
   /* Semantic Mappings - Increased contrast for readability */
   --alica-text-main: #2A1F1B;
-  --alica-text-muted: #5A4D48;
+  --alica-text-muted: #4A3B36;
   /* Darkened for better readability */
-  --alica-text-light: #7A6F6A;
+  --alica-text-light: #5A4D48;
+  /* Darkened for accessibility */
   /* Replacement for cases where text was too light */
   --alica-charcoal: var(--alica-cacao);
 }
@@ -40,7 +41,7 @@
   --color-rose-deep: var(--alica-rose-deep);
   --color-rose-light: var(--alica-rose-light);
   --font-heading: 'Italiana', serif;
-  --font-body: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-in: fadeIn 1s ease-out forwards;
 }
@@ -62,8 +63,8 @@ body {
   background-color: transparent;
   color: var(--alica-charcoal);
   font-family: var(--font-body);
-  line-height: 1.6;
-  font-weight: 500;
+  line-height: 1.7;
+  font-weight: 400;
   /* Increased from 300/400 for better legibility */
   letter-spacing: 0.01em;
   overflow-x: hidden;

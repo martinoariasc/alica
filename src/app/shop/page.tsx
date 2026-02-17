@@ -24,23 +24,13 @@ export default function ShopPage() {
     const [use, setUse] = useState<UseType | 'todos'>('todos');
     const [sortBy, setSortBy] = useState<'default' | 'price-asc' | 'price-desc'>('default');
 
-    const filtered = useMemo(() => {
-        let result = [...products];
-        if (gender !== 'todos') {
-            result = result.filter((p) => p.gender === gender || p.gender === 'unisex');
-        }
-        if (age !== 'todos') {
-            result = result.filter((p) => p.ageRange === age);
-        }
-        if (use !== 'todos') {
-            result = result.filter((p) => p.use.includes(use));
-        }
+    const individualProducts = useMemo(() => {
+        return filtered.filter(p => p.category !== 'Ediciones Especiales');
+    }, [filtered]);
 
-        if (sortBy === 'price-asc') result.sort((a, b) => a.price - b.price);
-        if (sortBy === 'price-desc') result.sort((a, b) => b.price - a.price);
-
-        return result;
-    }, [gender, age, use, sortBy]);
+    const comboProducts = useMemo(() => {
+        return filtered.filter(p => p.category === 'Ediciones Especiales');
+    }, [filtered]);
 
     const hasActiveFilters = gender !== 'todos' || age !== 'todos' || use !== 'todos';
 
@@ -76,14 +66,14 @@ export default function ShopPage() {
                             ))}
                         </div>
 
-                        {/* Dropdowns / Specifics - Removed Age and Use as per request */}
+                        {/* Dropdowns / Specifics */}
                         <div className="flex items-center gap-4 w-full md:w-auto overflow-x-auto no-scrollbar">
                             {hasActiveFilters && (
                                 <button
                                     onClick={clearFilters}
                                     className="text-[10px] font-bold tracking-[0.1em] uppercase text-rose-deep"
                                 >
-                                    Limpiar
+                                    Limpiar filtros
                                 </button>
                             )}
                         </div>
@@ -91,16 +81,21 @@ export default function ShopPage() {
                 </div>
             </div>
 
-            {/* Product Section */}
+            {/* Individual Collection Section */}
             <section className="py-20 px-6">
                 <div className="max-w-7xl mx-auto">
+                    <div className="mb-16">
+                        <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-rose-deep block opacity-60 mb-2">Selección Individual</span>
+                        <h2 className="font-heading text-4xl md:text-5xl text-charcoal text-left ml-0">Nuestra Colección</h2>
+                    </div>
+
                     <AnimatePresence mode="popLayout">
-                        {filtered.length > 0 ? (
+                        {individualProducts.length > 0 ? (
                             <motion.div
-                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-12 lg:gap-16"
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16"
                                 layout
                             >
-                                {filtered.map((product, i) => (
+                                {individualProducts.map((product, i) => (
                                     <motion.div
                                         key={product.slug}
                                         layout
@@ -118,65 +113,40 @@ export default function ShopPage() {
                                                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                 />
-
-                                                {/* Sophisticated Overlays */}
-                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-
-                                                {/* Badges */}
-                                                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                                                <div className="absolute top-6 left-6">
                                                     {product.isBestSeller && (
-                                                        <span className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-charcoal shadow-sm">
-                                                            Más amado
+                                                        <span className="bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-charcoal shadow-sm">
+                                                            Favorito
                                                         </span>
                                                     )}
                                                 </div>
-
                                                 <div className="absolute top-6 right-6">
                                                     <span className="bg-rose-deep text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-lg shadow-rose-deep/20">
                                                         -{Math.round((1 - product.price / product.oldPrice) * 100)}%
                                                     </span>
                                                 </div>
-
-                                                {/* Mini Tags - Higher Contrast */}
-                                                <div className="absolute bottom-6 left-6 flex gap-2">
-                                                    <span className="bg-white/80 backdrop-blur-md text-cacao border border-stone-100 px-3 py-1 rounded-full text-[10px] font-bold tracking-wide shadow-sm">
-                                                        {product.ageRange}
-                                                    </span>
-                                                </div>
                                             </div>
 
-                                            {/* Product Info - High Contrast & Action Button */}
-                                            <div className="mt-10 mb-6 text-center space-y-5">
-                                                <div className="space-y-2">
-                                                    <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-rose-deep block opacity-80">
-                                                        {product.category}
-                                                    </span>
-                                                    <h3 className="font-heading text-3xl md:text-4xl text-cacao group-hover:text-rose-deep transition-colors duration-500 font-light tracking-tight">
+                                            <div className="mt-8 text-center space-y-4">
+                                                <div className="space-y-1">
+                                                    <h3 className="font-heading text-2xl text-cacao group-hover:text-rose-deep transition-colors duration-500 font-light tracking-tight">
                                                         {product.emotionalName}
                                                     </h3>
+                                                    <p className="text-xs text-stone-400 italic font-light truncate px-4">
+                                                        "{product.emotionalPhrase}"
+                                                    </p>
                                                 </div>
-
-                                                <p className="font-body text-sm text-stone-400 italic font-light max-w-[280px] mx-auto line-clamp-1 leading-relaxed">
-                                                    "{product.emotionalPhrase}"
-                                                </p>
-
-                                                <div className="flex flex-col items-center gap-4 pt-2">
-                                                    <div className="flex items-center justify-center gap-3">
-                                                        <span className="text-sm text-cacao/60 line-through font-medium decoration-rose-deep/40 decoration-2">
-                                                            {formatPrice(product.oldPrice)}
-                                                        </span>
-                                                        <span className="text-2xl font-bold text-cacao tracking-tight">
-                                                            {product.slug === 'accesorios-alica-catalogo' ? 'Desde ' : ''}
-                                                            {formatPrice(product.price)}
-                                                        </span>
-                                                    </div>
-
-                                                    {/* Dedicated Call to Action for Intuition */}
-                                                    <div className="w-full pt-2">
-                                                        <div className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-cacao text-white text-[11px] font-bold uppercase tracking-[0.2em] group-hover:bg-rose-deep transition-all duration-500 shadow-lg shadow-cacao/10 group-hover:shadow-rose-deep/20">
-                                                            <span>Lo quiero</span>
-                                                            <Heart className="w-3.5 h-3.5 fill-current" />
-                                                        </div>
+                                                <div className="flex items-center justify-center gap-3">
+                                                    <span className="text-xs text-cacao/40 line-through font-medium">
+                                                        {formatPrice(product.oldPrice)}
+                                                    </span>
+                                                    <span className="text-xl font-bold text-cacao tracking-tight">
+                                                        {formatPrice(product.price)}
+                                                    </span>
+                                                </div>
+                                                <div className="pt-2">
+                                                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-cacao text-white text-[10px] font-bold uppercase tracking-[0.2em] group-hover:bg-gold transition-all duration-500">
+                                                        <span>Ver detalle</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,20 +155,92 @@ export default function ShopPage() {
                                 ))}
                             </motion.div>
                         ) : (
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                className="py-40 text-center"
-                            >
-                                <div className="text-5xl mb-6">✨</div>
-                                <h3 className="font-heading text-2xl text-charcoal mb-2">Ese par está pronto a llegar</h3>
-                                <p className="text-stone-400 font-light mb-8">No encontramos resultados para tu búsqueda.</p>
-                                <Button onClick={clearFilters} variant="outline">Ver todo lo disponible</Button>
-                            </motion.div>
+                            <div className="py-20 text-center opacity-50 italic">Pronto más modelos disponibles...</div>
                         )}
                     </AnimatePresence>
                 </div>
             </section>
+
+            {/* Special Editions / Combos Section - PREMIUM STYLE */}
+            {comboProducts.length > 0 && (
+                <section className="py-32 bg-bg-warm relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
+                    <div className="max-w-7xl mx-auto px-6 relative z-10">
+                        <div className="text-center mb-20">
+                            <div className="flex items-center justify-center gap-4 mb-4">
+                                <Sparkles className="w-5 h-5 text-gold animate-pulse" />
+                                <span className="text-[11px] font-bold tracking-[0.5em] uppercase text-gold">Sets Exclusivos</span>
+                                <Sparkles className="w-5 h-5 text-gold animate-pulse" />
+                            </div>
+                            <h2 className="font-heading text-5xl md:text-7xl text-cacao italic">Experiencias ALICA</h2>
+                            <p className="font-body text-cacao/50 mt-6 max-w-2xl mx-auto text-lg italic">
+                                Combinaciones diseñadas para acompañar cada etapa con la elegancia y suavidad que tu bebé merece.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                            {comboProducts.map((product) => (
+                                <motion.div
+                                    key={product.slug}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    className="group"
+                                >
+                                    <Link href={`/producto/${product.slug}`} className="block">
+                                        <div className="bg-white rounded-[2.5rem] p-4 shadow-xl border border-stone-100 transition-all duration-700 group-hover:shadow-rose-light/20 relative overflow-hidden">
+                                            <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden">
+                                                <Image
+                                                    src={product.images[0]}
+                                                    alt={product.name}
+                                                    fill
+                                                    className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                            </div>
+
+                                            <div className="p-8 text-center sm:text-left">
+                                                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-6">
+                                                    <div>
+                                                        <h3 className="font-heading text-3xl text-cacao group-hover:text-rose-deep transition-colors duration-500 tracking-tight">
+                                                            {product.emotionalName}
+                                                        </h3>
+                                                        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold mt-1">Edición de Autor</p>
+                                                    </div>
+                                                    <div className="flex flex-col items-center sm:items-end">
+                                                        <span className="text-sm text-cacao/30 line-through font-medium leading-none">{formatPrice(product.oldPrice)}</span>
+                                                        <span className="text-3xl font-bold text-cacao tracking-tighter">{formatPrice(product.price)}</span>
+                                                    </div>
+                                                </div>
+
+                                                <p className="text-sm text-cacao/60 italic leading-relaxed mb-8 line-clamp-2">
+                                                    "{product.description}"
+                                                </p>
+
+                                                <div className="w-full flex items-center justify-between pt-6 border-t border-stone-50">
+                                                    <span className="text-[10px] font-bold tracking-widest uppercase text-rose-deep">{product.scarcityText}</span>
+                                                    <div className="text-gold group-hover:translate-x-2 transition-transform duration-500">
+                                                        <Sparkles className="w-5 h-5" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {filtered.length === 0 && (
+                <div className="py-40 text-center">
+                    <div className="text-5xl mb-6">✨</div>
+                    <h3 className="font-heading text-2xl text-charcoal mb-2">Buscando el par ideal</h3>
+                    <p className="text-stone-400 font-light mb-8">No encontramos resultados con esos filtros.</p>
+                    <Button onClick={clearFilters} variant="outline">Ver todo</Button>
+                </div>
+            )}
         </main>
     );
 }

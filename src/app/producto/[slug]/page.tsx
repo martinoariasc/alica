@@ -13,7 +13,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Shield, Clock, Truck, Heart, Award, ChevronRight, ArrowLeft, Star, Sparkles } from 'lucide-react';
+import { Shield, Clock, Truck, Heart, Award, ChevronRight, ArrowLeft, Star, Sparkles, MessageCircle } from 'lucide-react';
 
 const LuxurySpacer = () => (
     <div className="w-full py-12 md:py-20 flex items-center justify-center pointer-events-none">
@@ -105,7 +105,7 @@ export default function ProductoPage({
                                                     <img
                                                         src={src}
                                                         alt={`${product.name} visualización ${i + 1}`}
-                                                        className="w-full h-full object-cover"
+                                                        className="w-full h-full object-contain p-8 md:p-12 hover:scale-105 transition-transform duration-700"
                                                     />
                                                 </SwiperSlide>
                                             ))}
@@ -148,10 +148,10 @@ export default function ProductoPage({
                                                 {product.ageRange}
                                             </span>
                                         </div>
-                                        <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-charcoal leading-[1.1] tracking-tight">
+                                        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight tracking-tight">
                                             {product.emotionalName}
                                         </h1>
-                                        <p className="font-body text-xl md:text-2xl text-stone-400 font-light italic leading-loose border-l-2 border-gold/20 pl-6 py-2">
+                                        <p className="font-body text-lg md:text-xl text-stone-500 italic leading-relaxed border-l-2 border-gold/40 pl-6 py-1">
                                             &ldquo;{product.emotionalPhrase}&rdquo;
                                         </p>
                                     </div>
@@ -164,7 +164,7 @@ export default function ProductoPage({
                                             <span className="text-5xl md:text-6xl font-normal text-cacao tracking-tighter">{formatPrice(product.price)}</span>
                                             <div className="flex flex-col gap-1">
                                                 <span className="text-xl text-stone-300 line-through font-light decoration-stone-200/50 decoration-1">{formatPrice(product.oldPrice)}</span>
-                                                <span className="text-[9px] font-bold text-rose-deep uppercase tracking-[0.2em]">Exclusividad con Ahorro</span>
+                                                <span className="text-[10px] font-bold text-rose-deep uppercase tracking-[0.2em] opacity-80">Exclusividad con Ahorro</span>
                                             </div>
                                         </div>
 
@@ -182,7 +182,7 @@ export default function ProductoPage({
                                 {/* Description - Better weight & Spacing */}
                                 <AnimatedSection delay={0.3}>
                                     <div className="prose prose-stone max-w-none">
-                                        <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed tracking-wide">
+                                        <p className="text-base md:text-lg text-cacao-light font-medium leading-relaxed tracking-wide opacity-90">
                                             {product.description}
                                         </p>
                                     </div>
@@ -312,5 +312,3 @@ export default function ProductoPage({
     );
 }
 
-// Fixed import of MessageCircle
-import { MessageCircle } from 'lucide-react';

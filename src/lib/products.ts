@@ -305,6 +305,7 @@ export const products: Product[] = [
             '👑 Vincha Especial: 30.000 Gs',
             '🎁 Pack x3 Vinchas: 45.000 Gs (ahorro)',
             '🤍 Baberito/Bandana: 35.000 Gs',
+            '🎁 Pack x3 Baberitos: 85.000 Gs (ahorro)',
             '🤍 Cubrepañal Lino: 95.000 Gs'
         ],
         materials: ['Algodón orgánico', 'Lino', 'Seda', 'Elástico premium'],
@@ -429,7 +430,7 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function getFeaturedProducts(): Product[] {
-    return products.filter((p) => p.isFeatured);
+    return products.filter((p) => p.isFeatured && p.category !== 'Ediciones Especiales');
 }
 
 export function getProductsByCategory(category: string): Product[] {

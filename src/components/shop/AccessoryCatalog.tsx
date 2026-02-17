@@ -43,6 +43,13 @@ const accessoryOptions: AccessoryOption[] = [
         icon: '🤍'
     },
     {
+        name: 'Pack x3 Baberitos',
+        price: 85000,
+        oldPrice: 105000,
+        description: 'Ahorrás 20.000 Gs. Máxima suavidad por triplicado.',
+        icon: '🎁'
+    },
+    {
         name: 'Cubrepañal de Lino',
         price: 95000,
         oldPrice: 120000,
