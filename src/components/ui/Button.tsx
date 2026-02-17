@@ -36,27 +36,27 @@ export default function Button({
 }: ButtonProps) {
 
     const variants = {
-        primary: "bg-transparent text-stone-900 border border-stone-900/30 hover:border-stone-900 hover:bg-stone-900/[0.03] transition-all duration-500",
-        secondary: "bg-stone-50 text-stone-900 border border-stone-200 hover:border-stone-900 transition-all duration-500",
-        outline: "bg-transparent text-white border border-white/30 hover:border-white hover:bg-white/[0.05] transition-all duration-500",
-        whatsapp: "bg-[#25D366] text-white border-2 border-transparent shadow-lg shadow-[#25D366]/20 hover:shadow-xl hover:shadow-[#25D366]/30",
-        ghost: "bg-transparent text-stone-600 border border-stone-100 hover:border-stone-400 hover:text-stone-900 transition-all duration-500",
-        caviar: "bg-transparent text-stone-900 border-b border-stone-300 hover:border-stone-900 hover:text-stone-950 px-0 rounded-none transition-all duration-700 tracking-[0.4em] font-light"
+        primary: "bg-white text-stone-900 border border-stone-200 hover:border-stone-900 shadow-sm hover:shadow-md transition-all duration-500",
+        secondary: "bg-stone-900 text-white border border-stone-900 hover:bg-stone-800 shadow-md hover:shadow-xl transition-all duration-500",
+        outline: "bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/[0.08] backdrop-blur-sm transition-all duration-500",
+        whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_10px_30px_-10px_rgba(37,211,102,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(37,211,102,0.6)] hover:-translate-y-1 scale-[0.98]",
+        ghost: "bg-transparent text-stone-600 hover:text-stone-900 transition-all duration-500",
+        caviar: "bg-transparent text-stone-900 border-b border-stone-200 hover:border-stone-900 hover:text-stone-950 px-0 rounded-none transition-all duration-700 tracking-[0.4em] font-light italic"
     };
 
     const sizes = {
-        sm: 'h-11 px-8 text-[10px]',
-        md: 'h-13 px-10 text-[11px]',
-        lg: 'h-16 px-14 text-[12px]',
+        sm: 'h-10 px-6 text-[9px]',
+        md: 'h-12 px-9 text-[10px]',
+        lg: 'h-14 px-12 text-[11px]',
     };
 
-    const baseStyles = "relative inline-flex items-center justify-center font-body font-medium tracking-[0.25em] uppercase rounded-sm transition-all duration-500 select-none cursor-pointer overflow-hidden group";
+    const baseStyles = "relative inline-flex items-center justify-center font-body font-medium tracking-[0.3em] uppercase transition-all duration-500 select-none cursor-pointer overflow-hidden group rounded-sm";
     const finalStyles = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
 
     const hoverAnimation = {
-        y: -3,
-        scale: 1.015,
-        transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+        y: -2,
+        scale: 1.01,
+        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
     };
     const tapAnimation = {
         scale: 0.97,
@@ -78,8 +78,8 @@ export default function Button({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={finalStyles}
-                    whileHover={hoverAnimation}
-                    whileTap={tapAnimation}
+                    whileHover={hoverAnimation as any}
+                    whileTap={tapAnimation as any}
                 >
                     {content}
                 </motion.a>
@@ -89,8 +89,8 @@ export default function Button({
             <Link href={href} passHref legacyBehavior>
                 <motion.a
                     className={finalStyles}
-                    whileHover={hoverAnimation}
-                    whileTap={tapAnimation}
+                    whileHover={hoverAnimation as any}
+                    whileTap={tapAnimation as any}
                 >
                     {content}
                 </motion.a>
@@ -104,8 +104,8 @@ export default function Button({
             onClick={onClick}
             disabled={disabled}
             className={finalStyles}
-            whileHover={hoverAnimation}
-            whileTap={tapAnimation}
+            whileHover={hoverAnimation as any}
+            whileTap={tapAnimation as any}
         >
             {content}
         </motion.button>

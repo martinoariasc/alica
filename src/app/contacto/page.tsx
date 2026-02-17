@@ -22,9 +22,9 @@ const contactInfo = [
     {
         icon: Instagram,
         title: 'Instagram',
-        text: '@alicabebes',
+        text: '@alicapy_',
         action: 'Ver perfil',
-        href: 'https://instagram.com/alicabebes',
+        href: 'https://instagram.com/alicapy_',
     },
     {
         icon: Mail,

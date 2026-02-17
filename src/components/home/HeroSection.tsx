@@ -91,23 +91,23 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto mt-4"
                     >
                         <Button
                             href="/shop"
-                            variant="outline"
+                            variant="primary"
                             size="lg"
-                            className="border-white/40 hover:border-white w-full sm:w-auto min-w-[200px]"
+                            className="w-full sm:w-auto min-w-[240px] shadow-2xl"
                         >
-                            Elegir su primer recuerdo
+                            Ver Colección
                         </Button>
                         <Button
                             href="/regalo"
-                            variant="caviar"
+                            variant="outline"
                             size="lg"
-                            className="text-white border-white/30 hover:border-white w-full sm:w-auto min-w-[200px]"
+                            className="w-full sm:w-auto min-w-[240px] backdrop-blur-md"
                         >
-                            🎁 Regalar amor eterno
+                            🎁 Guía de Regalos
                         </Button>
                     </motion.div>
                 </div>

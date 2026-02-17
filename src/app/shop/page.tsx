@@ -225,13 +225,13 @@ export default function ShopPage() {
 
                                             {/* Info */}
                                             <div className="p-5">
-                                                <span className="text-[10px] font-body uppercase tracking-[2px] text-rose-deep block mb-1">
+                                                <span className="text-[9px] font-body uppercase tracking-[3px] text-rose-deep/60 block mb-2">
                                                     {product.category}
                                                 </span>
-                                                <h3 className="font-heading text-lg font-semibold text-charcoal mb-1 group-hover:text-rose-deep transition-colors">
+                                                <h3 className="font-heading text-xl font-medium text-charcoal mb-2 group-hover:text-rose-deep transition-colors">
                                                     {product.emotionalName}
                                                 </h3>
-                                                <p className="text-xs text-muted mb-3 line-clamp-1 italic">
+                                                <p className="text-[11px] text-muted mb-4 line-clamp-1 italic font-light">
                                                     {product.emotionalPhrase}
                                                 </p>
                                                 <div className="flex items-center justify-between">

@@ -38,15 +38,18 @@ export default function BarefootBenefits() {
                 <div className="w-64 h-64 rounded-full bg-rose-light blur-[80px]" />
             </FloatingElement>
 
-            <div className="max-w-6xl mx-auto px-6 sm:px-12 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
                 <AnimatedSection blur>
-                    <div className="text-center mb-20 md:mb-28">
-                        <span className="font-body text-[11px] tracking-[0.4em] uppercase text-stone-400 mb-6 block font-bold">Diseño Fisiológico</span>
-                        <h2 className="font-heading text-4xl md:text-6xl text-charcoal leading-[1.1] mb-6">
+                    <div className="text-center mb-24 md:mb-36">
+                        <span className="font-body text-[10px] tracking-[0.5em] uppercase text-rose-deep mb-8 block font-bold opacity-70">Diseño Fisiológico</span>
+                        <h2 className="font-heading text-charcoal leading-[1.1] mb-8"
+                            style={{ fontSize: 'clamp(2rem, 5vw + 0.5rem, 5rem)' }}>
                             Su piecito necesita <span className="italic text-rose-deep">entender</span><br />
                             el mundo que pisa.
                         </h2>
-                        <p className="font-body text-lg text-muted max-w-2xl mx-auto font-light leading-relaxed">
+                        <div className="w-12 h-px bg-stone-200 mx-auto mb-10" />
+                        <p className="font-body text-muted max-w-2xl mx-auto font-light leading-relaxed"
+                            style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.15rem)' }}>
                             Los expertos coinciden: lo mejor para un bebé es andar descalzo. Pero no siempre se puede. Por eso creamos <span className="font-medium text-charcoal">ALICA</span>: la experiencia más cercana a no llevar nada, pero con la protección que te da tranquilidad.
                         </p>
                     </div>
@@ -62,8 +65,9 @@ export default function BarefootBenefits() {
                                     whileHover={{ y: -8 }}
                                     transition={{ duration: 0.4 }}
                                 >
-                                    <div className="w-16 h-16 mb-6 rounded-2xl bg-white/40 border border-white/60 shadow-sm flex items-center justify-center relative backdrop-blur-sm group-hover:bg-white/80 transition-colors">
-                                        <Icon className="w-7 h-7 text-charcoal/80 group-hover:text-rose-deep transition-colors" />
+                                    <div className="w-16 h-16 mb-8 rounded-full bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] flex items-center justify-center relative backdrop-blur-sm group-hover:shadow-[0_20px_40px_-10px_rgba(227,156,156,0.3)] transition-all duration-500 overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-rose-light/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <Icon className="w-6 h-6 text-charcoal/80 group-hover:text-rose-deep transition-all duration-500 relative z-10" />
                                     </div>
                                     <h3 className="font-heading text-xl text-charcoal mb-3 font-medium">
                                         {benefit.title}

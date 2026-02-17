@@ -11,10 +11,10 @@ export default function GlobalVideoBackground() {
     const y = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 
     return (
-        <div className="fixed inset-0 w-full h-full -z-50 overflow-hidden bg-bg-warm/80">
-            {/* The Video Layer */}
+        <div className="fixed inset-0 w-screen h-screen -z-50 overflow-hidden bg-[#FAF7F5]">
+            {/* The Video Layer - Fabric Texture */}
             <motion.div
-                className="absolute inset-0 w-full h-[120%]" // 120% height for parallax
+                className="absolute inset-0 w-screen h-[110%]"
                 style={{ y }}
             >
                 <video
@@ -22,18 +22,18 @@ export default function GlobalVideoBackground() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-40 mix-blend-multiply filter contrast-[0.9] saturate-[0.8]"
+                    className="w-full h-full object-cover opacity-60 mix-blend-multiply transition-opacity duration-1000"
                     preload="auto"
                 >
                     <source src="/videos/fondo-1.mp4" type="video/mp4" />
                 </video>
             </motion.div>
 
-            {/* Texture/Noise Overlay (Kept for premium feel + video combo) */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZmlsdGVyIGlkPSJnoiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjY1IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2cpIiBvcGFjaXR5PSIwLjA1Ii8+PC9zdmc+')] opacity-40 mix-blend-overlay pointer-events-none" />
+            {/* Premium Grainy Overlay */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
-            {/* Gradient Overlay to fade bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-warm/90 via-bg-warm/20 to-bg-warm/10 pointer-events-none" />
+            {/* Subtle Gradient to prevent harsh edges */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[#FAF7F5]/80 pointer-events-none" />
         </div>
     );
 }
