@@ -14,12 +14,12 @@ const footerLinks = [
 
 export default function Footer() {
     return (
-        <footer className="bg-stone-900 text-white relative overflow-hidden">
+        <footer className="bg-[#2A2421] text-[#F9F6F2] relative overflow-hidden">
             {/* Top sophisticated line */}
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
 
             {/* Decorative background element */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-deep/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/10 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
             <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
@@ -38,7 +38,7 @@ export default function Footer() {
                             </div>
                         </Link>
 
-                        <p className="text-lg md:text-xl font-body font-light text-stone-400 leading-relaxed max-w-sm italic">
+                        <p className="text-lg md:text-xl font-body font-light text-[#D1C9C2] leading-relaxed max-w-sm italic">
                             &ldquo;Porque sus primeros pasos son el comienzo de su historia más linda.&rdquo;
                         </p>
 
@@ -46,7 +46,7 @@ export default function Footer() {
                             <a
                                 href="https://instagram.com/alicapy_"
                                 target="_blank"
-                                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-stone-900 transition-all duration-500 group"
+                                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#F9F6F2] hover:text-[#2A2421] transition-all duration-500 group"
                                 aria-label="Instagram"
                             >
                                 <Instagram className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -62,15 +62,14 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Navigation Column */}
                     <div className="lg:col-span-3 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left pt-4">
-                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-white/40 font-bold">Explorar</h3>
+                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-[#F9F6F2]/40 font-bold">Explorar</h3>
                         <ul className="space-y-6">
                             {footerLinks.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-lg font-body font-light text-stone-300 hover:text-white transition-all duration-300 flex items-center gap-2 group"
+                                        className="text-lg font-body font-light text-[#D1C9C2] hover:text-[#F9F6F2] transition-all duration-300 flex items-center gap-2 group"
                                     >
                                         <span>{link.label}</span>
                                         <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-40 transition-opacity" />
@@ -82,10 +81,10 @@ export default function Footer() {
 
                     {/* Contact Column */}
                     <div className="lg:col-span-4 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left pt-4">
-                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-white/40 font-bold">Contacto</h3>
+                        <h3 className="font-heading text-xs tracking-[0.4em] uppercase text-[#F9F6F2]/40 font-bold">Contacto</h3>
                         <div className="space-y-6">
-                            <div className="flex items-center justify-center lg:justify-start gap-4 text-stone-300 group">
-                                <MapPin className="w-5 h-5 text-rose-deep opacity-60" />
+                            <div className="flex items-center justify-center lg:justify-start gap-4 text-[#D1C9C2] group">
+                                <MapPin className="w-5 h-5 text-gold opacity-60" />
                                 <span className="text-lg font-light">Asunción, Paraguay</span>
                             </div>
 
@@ -94,10 +93,10 @@ export default function Footer() {
                                     href={buildWhatsAppURL('¡Hola! Quiero hacer un pedido 🍼')}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-stone-900 text-sm font-bold tracking-[0.2em] uppercase overflow-hidden group transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:-translate-y-1"
+                                    className="relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-[#F9F6F2] text-[#2A2421] text-sm font-bold tracking-[0.2em] uppercase overflow-hidden group transition-all duration-500 hover:shadow-[0_0_30px_rgba(249,246,242,0.2)] hover:-translate-y-1"
                                 >
                                     <span className="relative z-10">Hacer mi pedido</span>
-                                    <div className="absolute inset-0 bg-stone-100 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                    <div className="absolute inset-0 bg-[#E6DCCD] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                                 </a>
                             </div>
                         </div>
@@ -106,12 +105,12 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="mt-28 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <p className="text-[11px] text-stone-500 tracking-[0.3em] uppercase">
+                    <p className="text-[11px] text-[#F9F6F2]/30 tracking-[0.3em] uppercase">
                         © {new Date().getFullYear()} Alica Bebés · Fine Handcrafted
                     </p>
-                    <div className="flex items-center gap-2 text-[11px] text-stone-500 tracking-[0.3em] uppercase">
+                    <div className="flex items-center gap-2 text-[11px] text-[#F9F6F2]/30 tracking-[0.3em] uppercase">
                         <span>Hecho con</span>
-                        <Heart className="w-3 h-3 text-rose-deep fill-current opacity-60" />
+                        <Heart className="w-3 h-3 text-gold fill-current opacity-60" />
                         <span>desde Paraguay</span>
                     </div>
                 </div>

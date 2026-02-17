@@ -16,7 +16,7 @@ import { Shield, Clock, Truck, Heart, Award, ChevronRight, ArrowLeft, Star, Spar
 
 const LuxurySpacer = () => (
     <div className="w-full py-12 md:py-20 flex items-center justify-center pointer-events-none">
-        <div className="w-px h-12 md:h-16 bg-gradient-to-b from-transparent via-rose-deep/10 to-transparent" />
+        <div className="w-px h-12 md:h-16 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
     </div>
 );
 

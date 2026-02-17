@@ -11,7 +11,7 @@ import { Heart, Sparkles, HandHeart, Eye, Shield, Leaf } from 'lucide-react';
 // Custom Luxury Spacer - Consistent across pages
 const LuxurySpacer = () => (
     <div className="w-full py-16 md:py-24 flex items-center justify-center pointer-events-none">
-        <div className="w-px h-16 md:h-24 bg-gradient-to-b from-transparent via-rose-deep/20 to-transparent" />
+        <div className="w-px h-16 md:h-24 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
     </div>
 );
 
@@ -222,7 +222,7 @@ export default function NosotrosPage() {
             <LuxurySpacer />
 
             {/* CTA */}
-            <section className="py-24 w-full bg-stone-900 overflow-hidden relative">
+            <section className="py-24 w-full bg-[#2A2421] overflow-hidden relative">
                 <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
                     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-light rounded-full blur-[100px]" />
                 </div>
