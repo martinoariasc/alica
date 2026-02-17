@@ -8,6 +8,7 @@ interface VideoSectionProps {
     className?: string;
     aspectRatio?: string;
     rounded?: string;
+    children?: React.ReactNode;
 }
 
 /**
@@ -19,6 +20,7 @@ export default function VideoSection({
     className = '',
     aspectRatio = 'aspect-[9/16]',
     rounded = 'rounded-3xl',
+    children,
 }: VideoSectionProps) {
     const ref = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -67,8 +69,12 @@ export default function VideoSection({
                 <source src={src} type="video/mp4" />
             </video>
 
-            {/* Premium soft vignette */}
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/10 via-transparent to-black/5" />
+            {/* Premium soft vignette & Children */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 via-transparent to-black/10 flex items-center justify-center text-center p-8">
+                <div className="pointer-events-auto">
+                    {children}
+                </div>
+            </div>
         </motion.div>
     );
 }

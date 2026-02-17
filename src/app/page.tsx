@@ -41,15 +41,24 @@ export default function Home() {
                 src="/videos/video-seccion-2.mp4"
                 aspectRatio="aspect-[4/5]"
                 rounded="rounded-[2.5rem]"
-              />
+              >
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-heading text-2xl md:text-4xl text-white/90 leading-tight drop-shadow-lg">
+                    EL REFUGIO<br />
+                    PERFECTO PARA<br />
+                    <span className="italic font-light text-white">TU TESORO</span>
+                  </span>
+                </div>
+              </VideoSection>
             </div>
             <div className="text-center flex flex-col justify-center items-center">
-              <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-6 block font-bold">Sin Prisas</span>
-              <h3 className="font-heading text-4xl md:text-6xl lg:text-7xl text-charcoal mb-8 md:mb-12 leading-[1.2] italic">
-                Coser memorias,<br />no solo zapatos.
+              <span className="font-body text-xs md:text-sm tracking-[0.5em] uppercase text-rose-deep mb-6 block font-bold">Para mamás extraordinarias</span>
+              <h3 className="font-heading text-4xl md:text-6xl lg:text-7xl text-charcoal mb-8 md:mb-12 leading-[1.2]">
+                Lo elegís por su piel,<br />
+                <span className="italic font-light text-stone-400">lo amás por su historia.</span>
               </h3>
               <p className="font-body text-muted leading-relaxed font-light text-lg md:text-xl max-w-2xl mx-auto text-center">
-                En un mundo donde todo es rápido y desechable, nosotros elegimos la pausa. Cada par de ALICA lleva horas de manos pacientes que saben que están vistiendo los pies de alguien muy importante.
+                Sabemos que cada decisión que tomás hoy es un "te amo" silencioso hacia su futuro. Por eso, nos tomamos el tiempo que el mundo ya no tiene: para coser a mano un calzado que respete su lenguaje y guarde para siempre la magia de sus primeros pasos. Porque tu bebé merece lo extraordinario, y vos mereces la paz de haberlo encontrado.
               </p>
             </div>
           </div>
