@@ -57,28 +57,28 @@ export default function StorySection() {
                     {/* The Narrative */}
                     <div className="order-1 lg:order-2 flex flex-col justify-center items-center text-center">
                         <AnimatedSection blur>
-                            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-10 block font-bold">
+                            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-rose-deep mb-6 block font-bold">
                                 Crecen muy rápido
                             </span>
-                            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-charcoal mb-12 leading-[1.3]">
+                            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-charcoal mb-8 leading-[1.2]">
                                 Mañana esos piecitos<br />
-                                <span className="italic text-stone-400 font-light block mt-4">ya no van a caber en tus manos.</span>
+                                <span className="italic text-stone-400 font-light block mt-2">ya no van a caber en tus manos.</span>
                             </h2>
-                            <p className="font-body text-base md:text-lg text-stone-500 leading-[2.2] font-light mb-12 max-w-xl mx-auto">
+                            <p className="font-body text-base md:text-lg text-stone-500 leading-relaxed font-light mb-10 max-w-xl mx-auto">
                                 Sabemos que querés congelar el tiempo. No podemos hacer eso, pero podemos darte el zapato que vas a guardar en su caja de recuerdos para siempre.
                             </p>
-                            <div className="mb-16 flex flex-col items-center">
-                                <div className="w-12 h-px bg-rose-deep/20 mb-8" />
-                                <p className="font-body text-xl text-stone-800 leading-relaxed font-medium italic">
+                            <div className="mb-12 flex flex-col items-center">
+                                <div className="w-10 h-px bg-rose-deep/20 mb-6" />
+                                <p className="font-body text-lg md:text-xl text-stone-800 leading-relaxed font-medium italic">
                                     "Es el primer regalo que le hago a su futuro."
                                 </p>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-10 w-full sm:w-auto items-center justify-center">
-                                <Button href="/shop" variant="primary" size="lg" className="w-full sm:w-auto min-w-[240px]">
+                            <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto items-center justify-center">
+                                <Button href="/shop" variant="primary" size="lg" className="w-full sm:w-auto min-w-[200px]">
                                     Ver Colección
                                 </Button>
-                                <Button href="/regalo" variant="caviar" size="lg" className="w-full sm:w-auto min-w-[240px]">
+                                <Button href="/regalo" variant="caviar" size="lg" className="w-full sm:w-auto min-w-[200px]">
                                     Un regalo eterno
                                 </Button>
                             </div>

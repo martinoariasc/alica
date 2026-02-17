@@ -44,14 +44,14 @@ export default function HeroSection() {
                 className="relative z-10 w-full max-w-[90vw] mx-auto px-4 text-center flex flex-col items-center justify-center h-full"
                 style={{ y, opacity, willChange: 'transform, opacity' }}
             >
-                <div className="flex-1 flex flex-col items-center justify-center pt-[10vh]">
+                <div className="flex-1 flex flex-col items-center justify-center pt-[5vh]">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <span className="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-white font-medium tracking-[0.2em] uppercase mb-10 border border-white/20 shadow-lg"
-                            style={{ fontSize: 'clamp(0.6rem, 1vw + 0.2rem, 0.875rem)' }}>
+                        <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white font-medium tracking-[0.2em] uppercase mb-6 border border-white/20 shadow-lg"
+                            style={{ fontSize: 'clamp(0.6rem, 0.8vw + 0.2rem, 0.8rem)' }}>
                             Cosidos a mano · Solo 15 pares por semana
                         </span>
                     </motion.div>
@@ -60,18 +60,18 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-body font-semibold !text-white leading-[1.3] mb-8 drop-shadow-2xl"
+                        className="font-body font-semibold !text-white leading-[1.2] mb-6 drop-shadow-2xl"
                         style={{
                             textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 5px 20px rgba(0,0,0,0.3)',
-                            fontSize: 'clamp(2.5rem, 6vw + 1rem, 6rem)' /* Fluid Typography */
+                            fontSize: 'clamp(2.5rem, 5vw + 1rem, 5rem)' /* Fluid Typography */
                         }}
                     >
                         <span className="text-white block">Sus primeros pasos</span>
-                        <span className="italic font-light text-white block mt-4">duran un suspiro...</span>
-                        <span className="font-heading text-[#FFFDD0] italic font-medium tracking-normal block mt-6"
+                        <span className="italic font-light text-white block mt-2">duran un suspiro...</span>
+                        <span className="font-heading text-[#FFFDD0] italic font-medium tracking-normal block mt-4"
                             style={{
                                 textShadow: '0 2px 5px rgba(0,0,0,0.8), 0 5px 20px rgba(0,0,0,0.5)',
-                                fontSize: 'clamp(3rem, 7vw + 1rem, 7rem)'
+                                fontSize: 'clamp(3rem, 6vw + 1rem, 6rem)'
                             }}>
                             hacelos eternos.
                         </span>
@@ -81,8 +81,8 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-body text-white/90 font-light mb-16 max-w-[90vw] md:max-w-2xl mx-auto leading-[2.2] drop-shadow-xl tracking-wide"
-                        style={{ fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)' }}
+                        className="font-body text-white/90 font-light mb-10 max-w-[90vw] md:max-w-2xl mx-auto leading-relaxed drop-shadow-xl tracking-wide text-center"
+                        style={{ fontSize: 'clamp(0.875rem, 1.2vw, 1rem)' }}
                     >
                         Zapatitos artesanales de suela blanda que abrazan sus piecitos con la ternura que solo una mamá entiende.
                     </motion.p>
@@ -91,13 +91,13 @@ export default function HeroSection() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-10 w-full sm:w-auto mt-6"
+                        className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto mt-4"
                     >
                         <Button
                             href="/shop"
                             variant="primary"
                             size="lg"
-                            className="w-full sm:w-auto min-w-[280px] shadow-2xl"
+                            className="w-full sm:w-auto min-w-[220px] shadow-2xl"
                         >
                             Ver Colección
                         </Button>
@@ -105,7 +105,7 @@ export default function HeroSection() {
                             href="/regalo"
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto min-w-[280px] backdrop-blur-md"
+                            className="w-full sm:w-auto min-w-[220px] backdrop-blur-md"
                         >
                             🎁 Guía de Regalos
                         </Button>

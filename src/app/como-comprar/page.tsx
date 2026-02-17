@@ -60,27 +60,27 @@ export default function ComoComprarPage() {
             </section>
 
             {/* Steps */}
-            <section className="pb-32">
+            <section className="pb-24">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                    <div className="space-y-12">
+                    <div className="space-y-8">
                         {steps.map((step, i) => {
                             const Icon = step.icon;
                             return (
                                 <AnimatedSection key={i} delay={i * 0.1}>
-                                    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start bg-white/50 backdrop-blur-sm rounded-[2rem] p-10 shadow-sm hover:shadow-xl transition-all duration-500 border border-white/20 text-center md:text-left">
+                                    <div className="flex flex-col md:flex-row gap-6 items-center md:items-start bg-white/50 backdrop-blur-sm rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-white/10 text-center md:text-left">
                                         <div className="flex-shrink-0">
-                                            <div className="w-20 h-20 rounded-[1.5rem] bg-rose-light/50 flex items-center justify-center relative">
-                                                <Icon className="w-8 h-8 text-rose-deep" />
-                                                <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-rose-deep text-white text-sm flex items-center justify-center font-bold">
+                                            <div className="w-16 h-16 rounded-2xl bg-rose-light/50 flex items-center justify-center relative">
+                                                <Icon className="w-7 h-7 text-rose-deep" />
+                                                <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-rose-deep text-white text-sm flex items-center justify-center font-bold">
                                                     {step.number}
                                                 </span>
                                             </div>
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="font-heading text-2xl font-semibold text-charcoal mb-4 leading-relaxed">
+                                            <h3 className="font-heading text-xl font-semibold text-charcoal mb-3 leading-relaxed">
                                                 {step.title}
                                             </h3>
-                                            <p className="text-muted leading-[2.2] font-light text-lg">
+                                            <p className="text-muted leading-relaxed font-light text-base md:text-lg">
                                                 {step.description}
                                             </p>
                                         </div>
@@ -91,12 +91,12 @@ export default function ComoComprarPage() {
                     </div>
 
                     {/* CTA */}
-                    <AnimatedSection className="text-center mt-32">
-                        <h3 className="font-heading text-3xl font-semibold text-charcoal mb-8">
+                    <AnimatedSection className="text-center mt-24">
+                        <h3 className="font-heading text-2xl md:text-3xl font-semibold text-charcoal mb-6">
                             ¿Lista para empezar?
                         </h3>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-                            <Button href="/shop" variant="primary" size="lg" className="min-w-[240px]">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <Button href="/shop" variant="primary" size="lg" className="min-w-[200px]">
                                 Ver productos
                             </Button>
                             <Button
@@ -104,7 +104,7 @@ export default function ComoComprarPage() {
                                 variant="whatsapp"
                                 size="lg"
                                 external
-                                className="min-w-[300px]"
+                                className="min-w-[240px]"
                             >
                                 Escribir por WhatsApp
                             </Button>

@@ -6,7 +6,7 @@
 :root {
   --alica-bg: #FAF7F5;
   --alica-bg-warm: #F0EBE5;
-  --alica-text-main: #4E423C;
+  --alica-text-main: #6c5538;
   --alica-text-muted: #857A74;
   --alica-blue: #D4DEE5;
   --alica-pink: #EAD8D4;
@@ -53,9 +53,9 @@ body {
   background-color: transparent;
   color: var(--alica-charcoal);
   font-family: var(--font-body);
-  line-height: 2.2;
-  letter-spacing: 0.05em;
-  /* Increased for airy feel */
+  line-height: 1.7;
+  /* Balanced premium line height */
+  letter-spacing: 0.02em;
   overflow-x: hidden;
 }
 
@@ -67,12 +67,11 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--alica-charcoal);
-  letter-spacing: 0.1em;
-  /* Premium spacing */
-  line-height: 1.5;
+  letter-spacing: 0.06em;
+  /* Elegant but readable */
+  line-height: 1.3;
   text-align: center;
   text-wrap: balance;
-  /* Elegant breaks */
   margin-left: auto;
   margin-right: auto;
 }

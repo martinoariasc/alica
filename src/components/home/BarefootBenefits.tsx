@@ -32,7 +32,7 @@ const benefits = [
 export default function BarefootBenefits() {
     const sectionRef = useRef<HTMLElement>(null);
     return (
-        <section ref={sectionRef} className="py-48 md:py-96 relative overflow-hidden w-full">
+        <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden w-full">
             {/* Texture overlay handled by global CSS, just need transparent bg */}
 
             {/* Floating Decorative Elements */}
@@ -42,22 +42,22 @@ export default function BarefootBenefits() {
 
             <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
                 <AnimatedSection blur>
-                    <div className="text-center mb-32 md:mb-48">
-                        <span className="font-body text-[10px] tracking-[0.5em] uppercase text-rose-deep mb-10 block font-bold opacity-70">Diseño Fisiológico</span>
-                        <h2 className="font-heading text-charcoal leading-[1.3] mb-12"
-                            style={{ fontSize: 'clamp(2rem, 5vw + 0.5rem, 5rem)' }}>
+                    <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
+                        <span className="font-body text-[10px] tracking-[0.5em] uppercase text-rose-deep mb-6 block font-bold opacity-70">Diseño Fisiológico</span>
+                        <h2 className="font-heading text-charcoal leading-[1.3] mb-8"
+                            style={{ fontSize: 'clamp(2rem, 4vw + 0.5rem, 4.5rem)' }}>
                             Su piecito necesita <span className="italic text-rose-deep">entender</span><br />
                             el mundo que pisa.
                         </h2>
-                        <div className="w-16 h-px bg-stone-200 mx-auto mb-12" />
-                        <p className="font-body text-muted max-w-2xl mx-auto font-light leading-[2.2]"
-                            style={{ fontSize: 'clamp(0.95rem, 1.2vw, 1.15rem)' }}>
+                        <div className="w-12 h-px bg-stone-200 mb-8" />
+                        <p className="font-body text-muted max-w-2xl text-center font-light leading-relaxed"
+                            style={{ fontSize: 'clamp(0.95rem, 1.1vw, 1.1rem)' }}>
                             Los expertos coinciden: lo mejor para un bebé es andar descalzo. Pero no siempre se puede. Por eso creamos <span className="font-medium text-charcoal">ALICA</span>: la experiencia más cercana a no llevar nada, pero con la protección que te da tranquilidad.
                         </p>
                     </div>
                 </AnimatedSection>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                     {benefits.map((benefit, i) => {
                         const Icon = benefit.icon;
                         return (
@@ -67,14 +67,14 @@ export default function BarefootBenefits() {
                                     whileHover={{ y: -8 }}
                                     transition={{ duration: 0.4 }}
                                 >
-                                    <div className="w-20 h-20 mb-10 rounded-full bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] flex items-center justify-center relative backdrop-blur-sm group-hover:shadow-[0_20px_40px_-10px_rgba(227,156,156,0.3)] transition-all duration-500 overflow-hidden">
+                                    <div className="w-16 h-16 mb-8 rounded-full bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] flex items-center justify-center relative backdrop-blur-sm group-hover:shadow-[0_20px_40px_-10px_rgba(227,156,156,0.3)] transition-all duration-500 overflow-hidden">
                                         <div className="absolute inset-0 bg-gradient-to-tr from-rose-light/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        <Icon className="w-8 h-8 text-charcoal/80 group-hover:text-rose-deep transition-all duration-500 relative z-10" />
+                                        <Icon className="w-6 h-6 text-charcoal/80 group-hover:text-rose-deep transition-all duration-500 relative z-10" />
                                     </div>
-                                    <h3 className="font-heading text-2xl text-charcoal mb-5 font-medium">
+                                    <h3 className="font-heading text-xl text-charcoal mb-4 font-medium">
                                         {benefit.title}
                                     </h3>
-                                    <p className="font-body text-sm text-muted leading-[2.2] font-light">
+                                    <p className="font-body text-sm text-muted leading-relaxed font-light">
                                         {benefit.description}
                                     </p>
                                 </motion.div>
