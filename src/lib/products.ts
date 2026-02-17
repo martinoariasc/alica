@@ -11,7 +11,6 @@
 
 export type Category = 'Línea Respetuosa' | 'Botitas con Alma' | 'Sandalias' | 'Alpargatitas' | 'Accesorios' | 'Cubrepañales' | 'Ediciones Especiales' | 'Colección Bautismo';
 export type Gender = 'nene' | 'nena' | 'unisex';
-export type AgeRange = '0-6 meses' | '6-12 meses' | '0-12 meses' | '1-2 años';
 export type UseType = 'primeros pasos' | 'gateo' | 'regalo' | 'regalo premium' | 'día a día' | 'ocasión especial' | 'fotos' | 'ajuar completo' | 'detalle de regalo';
 
 export interface Product {
@@ -26,7 +25,6 @@ export interface Product {
     images: string[];
     category: Category;
     gender: Gender;
-    ageRange: AgeRange;
     use: UseType[];
     isFeatured: boolean;
     benefits: string[];
@@ -56,7 +54,6 @@ export const products: Product[] = [
         ],
         category: 'Línea Respetuosa',
         gender: 'nena',
-        ageRange: '6-12 meses',
         use: ['primeros pasos', 'regalo', 'ocasión especial'],
         isFeatured: true,
         benefits: ['Suela blanda ultra-flexible', 'Costuras invisibles', 'Ajuste ergonómico'],
@@ -85,7 +82,6 @@ export const products: Product[] = [
         ],
         category: 'Botitas con Alma',
         gender: 'nena',
-        ageRange: '1-2 años',
         use: ['ocasión especial', 'regalo'],
         isFeatured: true,
         benefits: ['Suela blanda antideslizante', 'Interior acolchado', 'Fácil calce'],
@@ -97,13 +93,13 @@ export const products: Product[] = [
     },
     {
         slug: 'mocasin-luxury-nena-arena',
-        name: 'Mocasín Luxury Arena',
-        emotionalName: 'Esencia Natural',
-        emotionalPhrase: 'Tonos tierra que abrazan la calidez de su infancia.',
+        name: 'Mocasín "Dulce Ternura"',
+        emotionalName: 'Ternura en Rosa',
+        emotionalPhrase: 'Suavidad absoluta en cada detalle para sus momentos más dulces.',
         price: 185000,
         oldPrice: 220000,
-        description: 'Mocasín de cuero soft en tono arena. Versátil, elegante y diseñado bajo estándares de calzado respetuoso.',
-        shortDescription: 'Mocasín de cuero soft en tono arena.',
+        description: 'Mocasín de algodón soft premium en color rosa pastel con un delicado moño. Diseñados para brindar el máximo confort mientras acompañan sus primeros pasos con estilo.',
+        shortDescription: 'Mocasín de algodón soft en rosa pastel con moño.',
         images: [
             '/images/products/nenas/3/0c1ef560-6056-4a67-9f31-18657c222124.png',
             '/images/products/nenas/3/4f1a8ae6-f21c-4be3-8796-1d2612fe65cf.png',
@@ -111,15 +107,14 @@ export const products: Product[] = [
         ],
         category: 'Línea Respetuosa',
         gender: 'nena',
-        ageRange: '6-12 meses',
         use: ['ocasión especial', 'primeros pasos', 'día a día'],
         isFeatured: true,
-        benefits: ['Respetuoso con el crecimiento', 'Transpirable', 'Suavidad extrema'],
-        materials: ['Cuero soft', 'Plantilla de algodón'],
-        care: ['Limpiar con paño húmedo'],
+        benefits: ['Respetuoso con el crecimiento', 'Algodón extra suave', 'Ajuste ergonómico'],
+        materials: ['Algodón premium', 'Plantilla acolchada'],
+        care: ['Lavar a mano con cuidado'],
         productionTime: '7-10 días',
         guaranteeText: 'Hecho a Mano',
-        scarcityText: 'Muy solicitado',
+        scarcityText: 'Edición de Temporada',
     },
     {
         slug: 'mocasin-aventura-nene-marron',
@@ -138,7 +133,6 @@ export const products: Product[] = [
         ],
         category: 'Línea Respetuosa',
         gender: 'nene',
-        ageRange: '1-2 años',
         use: ['gateo', 'primeros pasos', 'día a día'],
         isFeatured: true,
         benefits: ['Protección natural', 'Suela de agarre suave', 'Máximo confort'],
@@ -167,7 +161,6 @@ export const products: Product[] = [
         ],
         category: 'Botitas con Alma',
         gender: 'nene',
-        ageRange: '6-12 meses',
         use: ['día a día', 'primeros pasos'],
         isFeatured: true,
         benefits: ['Suela ultra-flexible', 'Fácil de calzar', 'Ajuste seguro'],
@@ -195,7 +188,6 @@ export const products: Product[] = [
         ],
         category: 'Línea Respetuosa',
         gender: 'nene',
-        ageRange: '1-2 años',
         use: ['ocasión especial', 'regalo'],
         isFeatured: true,
         benefits: ['Ergonomía superior', 'Piel protegida', 'Diseño versátil'],
@@ -223,7 +215,6 @@ export const products: Product[] = [
         ],
         category: 'Alpargatitas',
         gender: 'nene',
-        ageRange: '6-12 meses',
         use: ['día a día', 'gateo'],
         isFeatured: true,
         benefits: ['Frescara total', 'Peso pluma', 'Lavable'],
@@ -233,31 +224,6 @@ export const products: Product[] = [
         guaranteeText: 'Diseño liviano',
         scarcityText: 'Pocas unidades',
     },
-    {
-        slug: 'cubrepanal-lino-natural',
-        name: 'Cubrepañal Lino Natural',
-        emotionalName: 'Suavidad que Envuelve',
-        emotionalPhrase: 'La frescura del lino para la piel más delicada.',
-        price: 95000,
-        oldPrice: 120000,
-        description: 'Cubrepañales confeccionados en lino de alta calidad, con elásticos suaves que no marcan su piel. Ideales para usar solos en verano o con medias en invierno. Un básico atemporal de la boutique.',
-        shortDescription: 'Cubrepañal de lino artesanal.',
-        images: [
-            '/images/products/nenas/1/5d31ca92-990a-4fb4-9c02-e2570be0b2d6.png'
-        ],
-        category: 'Cubrepañales',
-        gender: 'unisex',
-        ageRange: '0-6 meses',
-        use: ['día a día', 'ocasión especial'],
-        isFeatured: false,
-        benefits: ['Lino 100% respirable', 'Elásticos soft', 'Corte ergonómico'],
-        materials: ['Lino', 'Algodón'],
-        care: ['Lavar a mano con jabón neutro'],
-        productionTime: '3-5 días',
-        guaranteeText: 'Calidad Boutique',
-        scarcityText: 'Hecho a mano',
-    },
-
     {
         slug: 'zapatito-bautismo-blanco-pureza',
         name: 'Zapatito Bautismo Blanco',
@@ -274,7 +240,6 @@ export const products: Product[] = [
         ],
         category: 'Colección Bautismo',
         gender: 'unisex',
-        ageRange: '0-6 meses',
         use: ['ocasión especial', 'regalo'],
         isFeatured: true,
         benefits: ['Blanco inmaculado', 'Suela ceremonial suave', 'Packaging especial para la ocasión', 'Certificado de autenticidad'],
@@ -292,12 +257,11 @@ export const products: Product[] = [
         emotionalPhrase: 'Vinchas, Baberitos y Cubrepañales para completar su look con ternura.',
         price: 20000,
         oldPrice: 30000,
-        description: 'Catálogo completo de accesorios ALICA. Elegí entre Vinchas Clásicas (20.000 Gs), Vinchas Especiales (30.000 Gs), Pack de 3 Vinchas (45.000 Gs), Baberitos/Bandanas (35.000 Gs) y Cubrepañales de Lino (95.000 Gs). Todos confeccionados a mano con materiales premium que cuidan la piel delicada de tu bebé.',
+        description: 'Catálogo completo de accesorios ALICA. Elegí entre Vinchas Clásicas (20.000 Gs), Vinchas Especiales (30.000 Gs), Pack de 3 Vinchas (45.000 Gs) y Baberitos/Bandanas (35.000 Gs). Todos confeccionados a mano con materiales premium que cuidan la piel delicada de tu bebé.',
         shortDescription: 'Catálogo de accesorios premium.',
         images: ['/images/products/accesorios/Accesorios/f8fb2468-c130-4f46-8952-ec5918a890b7.jpg'],
         category: 'Accesorios',
         gender: 'unisex',
-        ageRange: '0-6 meses',
         use: ['día a día', 'regalo', 'ocasión especial'],
         isFeatured: true,
         benefits: [
@@ -305,8 +269,7 @@ export const products: Product[] = [
             '👑 Vincha Especial: 30.000 Gs',
             '🎁 Pack x3 Vinchas: 45.000 Gs',
             '🤍 Baberito/Bandana: 35.000 Gs',
-            '🎁 Pack x3 Baberitos: 45.000 Gs',
-            '🤍 Cubrepañal Lino: 95.000 Gs'
+            '🎁 Pack x3 Baberitos: 45.000 Gs'
         ],
         materials: ['Algodón orgánico', 'Lino', 'Seda', 'Elástico premium'],
         care: ['Lavar a mano con agua fría'],
@@ -330,7 +293,6 @@ export const products: Product[] = [
         ],
         category: 'Ediciones Especiales',
         gender: 'unisex',
-        ageRange: '0-6 meses',
         use: ['regalo', 'ocasión especial', 'fotos'],
         isFeatured: true,
         benefits: ['Look completo (3 piezas)', 'Materiales suaves y naturales', '🎁 Ebook Exclusivo Gratis', 'Packaging Boutique incluido'],
@@ -355,7 +317,6 @@ export const products: Product[] = [
         ],
         category: 'Ediciones Especiales',
         gender: 'unisex',
-        ageRange: '0-12 meses',
         use: ['ajuar completo', 'regalo premium'],
         isFeatured: true,
         benefits: ['Pasos que crecen (2 talles)', 'Colección completa adaptada', '🎁 Ebook exclusivo incluido', 'Ahorro máximo garantizado'],
@@ -380,7 +341,6 @@ export const products: Product[] = [
         ],
         category: 'Ediciones Especiales',
         gender: 'unisex',
-        ageRange: '0-6 meses',
         use: ['día a día', 'detalle de regalo'],
         isFeatured: true,
         benefits: ['Variedad de accesorios', 'Suavidad garantizada', '🎁 Ebook: 50 Consejos (Gratis)', 'Precio super accesible'],
@@ -405,7 +365,6 @@ export const products: Product[] = [
         ],
         category: 'Colección Bautismo',
         gender: 'unisex',
-        ageRange: '0-6 meses',
         use: ['ocasión especial', 'regalo'],
         isFeatured: true,
         benefits: [
@@ -447,10 +406,6 @@ export function getProductsByGender(gender: Gender): Product[] {
     return products.filter((p) => p.gender === gender || p.gender === 'unisex');
 }
 
-export function getProductsByAge(ageRange: AgeRange): Product[] {
-    return products.filter((p) => p.ageRange === ageRange);
-}
-
 export function getProductsByUse(use: UseType): Product[] {
     return products.filter((p) => p.use.includes(use));
 }
@@ -462,7 +417,6 @@ export function getGiftProducts(): Product[] {
 export function filterProducts(filters: {
     category?: string;
     gender?: Gender;
-    ageRange?: AgeRange;
     use?: UseType;
 }): Product[] {
     let result = products;
@@ -471,9 +425,6 @@ export function filterProducts(filters: {
     }
     if (filters.gender) {
         result = result.filter((p) => p.gender === filters.gender || p.gender === 'unisex');
-    }
-    if (filters.ageRange) {
-        result = result.filter((p) => p.ageRange === filters.ageRange);
     }
     if (filters.use) {
         result = result.filter((p) => p.use.includes(filters.use!));

@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
-import { products, type Gender, type AgeRange, type UseType } from '@/lib/products';
+import { products, type Gender, type UseType } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
 import { Heart, Filter, X, ChevronDown, Sparkles } from 'lucide-react';
@@ -16,27 +16,39 @@ const genderFilters: { label: string; value: Gender | 'todos' }[] = [
     { label: 'Nenas', value: 'nena' },
 ];
 
-
-
 export default function ShopPage() {
     const [gender, setGender] = useState<Gender | 'todos'>('todos');
-    const [age, setAge] = useState<AgeRange | 'todos'>('todos');
     const [use, setUse] = useState<UseType | 'todos'>('todos');
     const [sortBy, setSortBy] = useState<'default' | 'price-asc' | 'price-desc'>('default');
 
+    const filtered = useMemo(() => {
+        let result = products.filter((p) => {
+            const genderMatch = gender === 'todos' || p.gender === gender || p.gender === 'unisex';
+            const useMatch = use === 'todos' || p.use.includes(use);
+            return genderMatch && useMatch;
+        });
+
+        if (sortBy === 'price-asc') {
+            result.sort((a, b) => a.price - b.price);
+        } else if (sortBy === 'price-desc') {
+            result.sort((a, b) => b.price - a.price);
+        }
+
+        return result;
+    }, [gender, use, sortBy]);
+
     const individualProducts = useMemo(() => {
-        return filtered.filter(p => p.category !== 'Ediciones Especiales');
+        return filtered.filter(p => p.category !== 'Ediciones Especiales' && p.category !== 'Colección Bautismo');
     }, [filtered]);
 
     const comboProducts = useMemo(() => {
         return filtered.filter(p => p.category === 'Ediciones Especiales' || p.category === 'Colección Bautismo');
     }, [filtered]);
 
-    const hasActiveFilters = gender !== 'todos' || age !== 'todos' || use !== 'todos';
+    const hasActiveFilters = gender !== 'todos' || use !== 'todos';
 
     const clearFilters = () => {
         setGender('todos');
-        setAge('todos');
         setUse('todos');
         setSortBy('default');
     };
@@ -244,4 +256,3 @@ export default function ShopPage() {
         </main>
     );
 }
-

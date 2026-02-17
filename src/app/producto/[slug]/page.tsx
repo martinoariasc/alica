@@ -144,9 +144,6 @@ export default function ProductoPage({
                                             <span className="bg-rose-light/20 text-rose-deep px-4 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-[0.3em]">
                                                 {product.gender}
                                             </span>
-                                            <span className="text-stone-300 text-[10px] tracking-[0.3em] uppercase font-medium">
-                                                {product.ageRange}
-                                            </span>
                                         </div>
                                         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight tracking-tight">
                                             {product.emotionalName}

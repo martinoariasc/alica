@@ -49,13 +49,7 @@ const accessoryOptions: AccessoryOption[] = [
         description: 'Ahorrás 20.000 Gs. Máxima suavidad por triplicado.',
         icon: '🎁'
     },
-    {
-        name: 'Cubrepañal de Lino',
-        price: 95000,
-        oldPrice: 120000,
-        description: 'Lino premium respirable. El básico atemporal.',
-        icon: '🤍'
-    }
+
 ];
 
 export default function AccessoryCatalog() {
@@ -66,129 +60,153 @@ export default function AccessoryCatalog() {
     };
 
     return (
-        <section className="py-24 md:py-32 bg-gradient-to-b from-cream-light/30 to-white">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="py-24 md:py-40 bg-white relative overflow-hidden">
+            {/* Soft decorative elements */}
+            <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-rose-light/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-gold-muted/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2" />
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Hero Section */}
-                <AnimatedSection className="text-center mb-20" blur>
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <Heart className="w-5 h-5 text-rose-deep fill-current animate-pulse" />
-                        <span className="font-body text-[11px] tracking-[0.5em] uppercase text-cacao/40 font-bold">Catálogo de Accesorios</span>
-                        <Heart className="w-5 h-5 text-rose-deep fill-current animate-pulse" />
+                <AnimatedSection className="text-center mb-28" blur>
+                    <div className="flex items-center justify-center gap-4 mb-8">
+                        <div className="h-[1px] w-8 bg-gold-muted" />
+                        <span className="font-body text-[10px] tracking-[0.6em] uppercase text-gold font-bold">Detalles Boutique</span>
+                        <div className="h-[1px] w-8 bg-gold-muted" />
                     </div>
-                    <h1 className="font-heading text-4xl md:text-7xl text-cacao mb-8 leading-[1.1]">
+                    <h1 className="font-heading text-5xl md:text-8xl text-cacao mb-10 leading-[1] tracking-tight">
                         Los Detalles que <br className="hidden md:block" />
-                        <span className="italic font-light text-stone-400">Enamoran</span>
+                        <span className="italic font-light text-rose-deep drop-shadow-sm">Enamoran</span>
                     </h1>
-                    <p className="font-body text-cacao/60 text-lg md:text-xl max-w-3xl mx-auto italic">
-                        Elegí entre nuestros accesorios premium. Cada uno confeccionado a mano con materiales que cuidan la piel delicada de tu bebé.
+                    <p className="font-body text-charcoal/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                        Complementos artesanales diseñados para armonizar con cada paso. <br className="hidden md:block" />
+                        Suavidad táctil y elegancia atemporal para la piel más delicada.
                     </p>
                 </AnimatedSection>
 
-                {/* Main Image */}
-                <div className="mb-20">
-                    <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl">
+                {/* Main Feature Image - Full Width Aesthetic */}
+                <div className="mb-32">
+                    <div className="relative aspect-[16/9] md:aspect-[24/10] rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(42,31,27,0.15)] group">
                         <Image
                             src="/images/products/accesorios/Accesorios/f8fb2468-c130-4f46-8952-ec5918a890b7.jpg"
                             alt="Accesorios ALICA"
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-[3s] group-hover:scale-110"
+                            priority
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                        <div className="absolute bottom-8 left-8 text-white">
-                            <p className="text-sm uppercase tracking-[0.3em] mb-2 opacity-80">Colección Completa</p>
-                            <h2 className="font-heading text-3xl md:text-5xl">Accesorios ALICA</h2>
+                        <div className="absolute inset-0 bg-gradient-to-t from-cacao/40 via-transparent to-transparent opacity-60" />
+                        <div className="absolute bottom-12 left-12 text-white">
+                            <span className="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block opacity-80">Catálogo Completo</span>
+                            <h2 className="font-heading text-4xl md:text-6xl italic leading-none">Esenciales ALICA</h2>
                         </div>
                     </div>
                 </div>
 
-                {/* Price Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                {/* Luxury Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 mb-32">
                     {accessoryOptions.map((item, index) => (
                         <motion.div
                             key={item.name}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.21, 0.45, 0.32, 0.9] }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-3xl p-8 border border-stone-100 shadow-lg hover:shadow-2xl transition-all duration-500 group"
+                            className="group flex flex-col"
                         >
-                            {/* Icon & Name */}
-                            <div className="flex items-start justify-between mb-6">
-                                <div>
-                                    <span className="text-4xl mb-3 block">{item.icon}</span>
-                                    <h3 className="font-heading text-2xl text-cacao mb-2 group-hover:text-rose-deep transition-colors">
-                                        {item.name}
-                                    </h3>
-                                </div>
+                            <div className="bg-bg-warm/50 rounded-[2.5rem] p-10 border border-linen/50 transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] hover:-translate-y-2 flex flex-col h-full relative overflow-hidden">
+                                {/* Discount Badge */}
                                 {item.oldPrice > item.price && (
-                                    <div className="bg-rose-deep text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                                    <div className="absolute top-8 right-8 bg-rose-deep/90 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">
                                         -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}%
                                     </div>
                                 )}
-                            </div>
 
-                            {/* Description */}
-                            <p className="text-cacao/70 text-sm leading-relaxed mb-6 italic">
-                                {item.description}
-                            </p>
+                                {/* Icon Layer */}
+                                <div className="mb-8 relative self-center sm:self-start">
+                                    <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500">
+                                        {item.icon}
+                                    </div>
+                                </div>
 
-                            {/* Price */}
-                            <div className="mb-6">
-                                {item.oldPrice > item.price && (
-                                    <p className="text-sm text-cacao/30 line-through mb-1">
-                                        Gs. {item.oldPrice.toLocaleString()}
+                                {/* Content */}
+                                <div className="flex-grow text-center sm:text-left">
+                                    <h3 className="font-heading text-3xl text-cacao mb-4 group-hover:text-rose-deep transition-colors duration-500">
+                                        {item.name}
+                                    </h3>
+                                    <p className="text-charcoal/50 text-[13px] leading-relaxed mb-8 italic line-clamp-2">
+                                        "{item.description}"
                                     </p>
-                                )}
-                                <p className="text-3xl font-bold text-cacao">
-                                    Gs. {item.price.toLocaleString()}
-                                </p>
-                            </div>
+                                </div>
 
-                            {/* CTA Button */}
-                            <button
-                                onClick={() => handleWhatsAppOrder(item.name, item.price)}
-                                className="w-full h-14 bg-cacao text-white rounded-full flex items-center justify-center gap-3 font-bold uppercase tracking-[0.2em] text-[11px] hover:bg-rose-deep transition-all duration-500 shadow-xl shadow-cacao/10 hover:shadow-rose-deep/30 group-hover:-translate-y-1"
-                            >
-                                <ShoppingBag className="w-4 h-4" />
-                                <span>Lo Quiero</span>
-                            </button>
+                                {/* Pricing & CTA */}
+                                <div className="mt-auto space-y-6 pt-6 border-t border-linen/30">
+                                    <div className="flex flex-col items-center sm:items-start">
+                                        <div className="flex items-baseline gap-3">
+                                            <span className="text-2xl md:text-3xl font-bold text-cacao tracking-tight">
+                                                Gs. {item.price.toLocaleString()}
+                                            </span>
+                                            {item.oldPrice > item.price && (
+                                                <span className="text-xs text-cacao/30 line-through font-medium">
+                                                    {item.oldPrice.toLocaleString()}
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        onClick={() => handleWhatsAppOrder(item.name, item.price)}
+                                        className="w-full h-14 bg-cacao text-white rounded-full flex items-center justify-center gap-3 font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-rose-deep transition-all duration-500 shadow-xl shadow-cacao/10 hover:shadow-rose-deep/20 group-hover:animate-soft-pulse relative overflow-hidden"
+                                    >
+                                        <ShoppingBag className="w-4 h-4" />
+                                        <span>Lo Quiero</span>
+                                    </button>
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* Benefits Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-cream-light rounded-3xl p-12 md:p-16"
-                >
-                    <h3 className="font-heading text-3xl md:text-4xl text-cacao mb-12 text-center">
-                        Por qué elegir <span className="italic font-light text-stone-400">ALICA</span>
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { icon: '✨', title: 'Hecho a Mano', desc: 'Cada pieza es única y confeccionada con amor' },
-                            { icon: '🤍', title: 'Materiales Premium', desc: 'Algodón orgánico, lino y seda de la mejor calidad' },
-                            { icon: '💝', title: 'Suavidad Garantizada', desc: 'Cuidamos la piel delicada de tu bebé' }
-                        ].map((benefit, i) => (
-                            <div key={i} className="text-center">
-                                <span className="text-5xl mb-4 block">{benefit.icon}</span>
-                                <h4 className="font-heading text-xl text-cacao mb-3">{benefit.title}</h4>
-                                <p className="text-cacao/60 text-sm leading-relaxed">{benefit.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
+                {/* Elevated Quote / Philosphy Section */}
+                <div className="max-w-4xl mx-auto mb-32 border-y border-linen py-16 text-center">
+                    <p className="font-heading text-3xl md:text-4xl text-cacao italic font-light leading-snug">
+                        "En <span className="text-gold">ALICA</span>, creemos que los detalles <br className="hidden md:block" /> no son el complemento, son la esencia del alma."
+                    </p>
+                </div>
 
-                {/* Trust Badge */}
-                <div className="mt-16 text-center">
-                    <div className="inline-flex items-center gap-3 px-8 py-4 bg-white rounded-full shadow-lg border border-gold/20">
-                        <Check className="w-5 h-5 text-gold" />
-                        <span className="text-sm font-medium text-cacao">Producción: Inmediata a 3 días hábiles</span>
+                {/* Why Section - Redesigned to be more Boutique */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+                    {[
+                        { icon: '✨', title: 'Curación Artesanal', desc: 'Cada puntada es ejecutada con precisión y amor por manos paraguayas.' },
+                        { icon: '🌿', title: 'Pureza Orgánica', desc: 'Sustentabilidad y suavidad: utilizamos solo las fibras más nobles para su piel.' },
+                        { icon: '🕯️', title: 'Diseño Ceremonial', desc: 'Piezas que trascienden el tiempo para convertirse en herencia familiar.' }
+                    ].map((benefit, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.2 }}
+                            viewport={{ once: true }}
+                            className="text-center group"
+                        >
+                            <div className="w-12 h-12 rounded-full border border-gold/30 mx-auto flex items-center justify-center mb-6 group-hover:bg-gold/5 transition-colors duration-500 text-gold font-bold italic">
+                                0{i + 1}
+                            </div>
+                            <h4 className="font-heading text-2xl text-cacao mb-4 tracking-tight">{benefit.title}</h4>
+                            <p className="text-charcoal/50 text-sm leading-relaxed px-4">{benefit.desc}</p>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Final Trust Badge */}
+                <div className="mt-28 flex justify-center">
+                    <div className="inline-flex items-center gap-4 px-10 py-5 bg-bg-warm/50 rounded-full border border-linen/50 backdrop-blur-sm group hover:border-gold/30 transition-all duration-500">
+                        <div className="w-2 h-2 rounded-full bg-gold animate-soft-pulse" />
+                        <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-cacao/70">
+                            Tiempo de confección: <span className="text-cacao">2-3 días hábiles</span>
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
     );
 }
+
