@@ -67,13 +67,36 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--alica-charcoal);
-  letter-spacing: 0.06em;
-  /* Elegant but readable */
-  line-height: 1.3;
+  letter-spacing: 0.02em;
+  /* More refined for luxury */
+  line-height: 1.2;
   text-align: center;
   text-wrap: balance;
   margin-left: auto;
   margin-right: auto;
+  transition: all 0.5s ease;
+}
+
+/* Structural Helpers */
+.container-premium {
+  width: 100%;
+  max-width: min(95vw, 1600px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ── Scrollbar ── */

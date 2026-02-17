@@ -2,19 +2,19 @@
 
 import { useState, useMemo } from 'react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import SectionTitle from '@/components/ui/SectionTitle';
 import Button from '@/components/ui/Button';
 import { products, type Gender, type AgeRange, type UseType } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
-import { Heart, Filter, X } from 'lucide-react';
+import { Heart, Filter, X, ChevronDown, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const genderFilters: { label: string; value: Gender | 'todos' }[] = [
     { label: 'Todos', value: 'todos' },
-    { label: '👦 Nenes', value: 'nene' },
-    { label: '👧 Nenas', value: 'nena' },
-    { label: '🤍 Unisex', value: 'unisex' },
+    { label: 'Nenes', value: 'nene' },
+    { label: 'Nenas', value: 'nena' },
+    { label: 'Unisex', value: 'unisex' },
 ];
 
 const ageFilters: { label: string; value: AgeRange | 'todos' }[] = [
@@ -25,22 +25,22 @@ const ageFilters: { label: string; value: AgeRange | 'todos' }[] = [
 ];
 
 const useFilters: { label: string; value: UseType | 'todos' }[] = [
-    { label: 'Todos los usos', value: 'todos' },
-    { label: '👣 Primeros pasos', value: 'primeros pasos' },
-    { label: '🐛 Gateo', value: 'gateo' },
-    { label: '🎁 Regalo', value: 'regalo' },
-    { label: '☀️ Día a día', value: 'día a día' },
-    { label: '✨ Ocasión especial', value: 'ocasión especial' },
+    { label: 'Todo uso', value: 'todos' },
+    { label: 'Primeros pasos', value: 'primeros pasos' },
+    { label: 'Gateo', value: 'gateo' },
+    { label: 'Regalo', value: 'regalo' },
+    { label: 'Día a día', value: 'día a día' },
+    { label: 'Fiesta', value: 'ocasión especial' },
 ];
 
 export default function ShopPage() {
     const [gender, setGender] = useState<Gender | 'todos'>('todos');
     const [age, setAge] = useState<AgeRange | 'todos'>('todos');
     const [use, setUse] = useState<UseType | 'todos'>('todos');
-    const [showFilters, setShowFilters] = useState(false);
+    const [sortBy, setSortBy] = useState<'default' | 'price-asc' | 'price-desc'>('default');
 
     const filtered = useMemo(() => {
-        let result = products;
+        let result = [...products];
         if (gender !== 'todos') {
             result = result.filter((p) => p.gender === gender || p.gender === 'unisex');
         }
@@ -50,8 +50,12 @@ export default function ShopPage() {
         if (use !== 'todos') {
             result = result.filter((p) => p.use.includes(use));
         }
+
+        if (sortBy === 'price-asc') result.sort((a, b) => a.price - b.price);
+        if (sortBy === 'price-desc') result.sort((a, b) => b.price - a.price);
+
         return result;
-    }, [gender, age, use]);
+    }, [gender, age, use, sortBy]);
 
     const hasActiveFilters = gender !== 'todos' || age !== 'todos' || use !== 'todos';
 
@@ -59,236 +63,227 @@ export default function ShopPage() {
         setGender('todos');
         setAge('todos');
         setUse('todos');
+        setSortBy('default');
     };
 
     return (
-        <>
-            {/* Hero Banner */}
-            <section className="pt-32 pb-16 bg-gradient-to-b from-rose-light/10 to-transparent relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-pink-soft/20 rounded-full blur-[120px] -translate-y-1/2" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-soft/20 rounded-full blur-[100px] translate-y-1/2" />
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <main className="min-h-screen bg-[#FDFCFB]">
+            {/* Immersive Hero Header */}
+            <section className="relative pt-32 pb-20 overflow-hidden">
+                <div className="absolute inset-0 bg-neutral-50/50" />
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-rose-light/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
                     <AnimatedSection>
-                        <SectionTitle
-                            title="Nuestra Colección"
-                            subtitle="Cada par tiene una historia esperándote"
-                        />
-                        <p className="text-center text-muted mt-4 max-w-lg mx-auto">
-                            Descubrí el zapatito perfecto para tu bebé. Todos hechos a mano con amor y materiales premium.
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-rose-deep/5 text-rose-deep text-[10px] font-bold tracking-[0.3em] uppercase mb-6">
+                            Colección Permanente
+                        </span>
+                        <h1 className="font-heading text-5xl md:text-7xl text-charcoal mb-6 tracking-tight">
+                            Nuestra <span className="italic font-light text-stone-400">Colección</span>
+                        </h1>
+                        <p className="font-body text-stone-500 max-w-xl mx-auto text-lg font-light leading-relaxed">
+                            Diseñados para respetar el crecimiento natural, <br className="hidden md:block" />
+                            creados para ser guardados como un tesoro.
                         </p>
                     </AnimatedSection>
                 </div>
             </section>
 
-            {/* Filters & Grid */}
-            <section className="pb-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
-                    {/* Production Time Banner */}
-                    <AnimatedSection>
-                        <div className="bg-charcoal text-white rounded-2xl p-4 mb-10 text-center max-w-2xl mx-auto">
-                            <p className="text-sm md:text-base font-light">
-                                ⏳ <strong>Slow Fashion:</strong> Todos nuestros zapatitos son hechos a mano bajo pedido.
-                                <span className="block sm:inline"> El tiempo de confección es de <strong>7 a 10 días hábiles</strong>.</span>
-                            </p>
-                        </div>
-                    </AnimatedSection>
-
-                    {/* Filter Toggle (Mobile) */}
-                    <div className="md:hidden mb-6">
-                        <button
-                            onClick={() => setShowFilters(!showFilters)}
-                            className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-white border border-rose-light text-charcoal font-medium text-sm transition-all hover:border-rose-deep cursor-pointer"
-                        >
-                            <Filter className="w-4 h-4" />
-                            {showFilters ? 'Ocultar filtros' : 'Filtrar productos'}
-                            {hasActiveFilters && (
-                                <span className="w-5 h-5 rounded-full bg-rose-deep text-white text-[10px] flex items-center justify-center">
-                                    !
-                                </span>
-                            )}
-                        </button>
-                    </div>
-
-                    {/* Filter Sections */}
-                    <AnimatedSection>
-                        <div className={`space-y-4 mb-10 ${showFilters ? 'block' : 'hidden md:block'}`}>
-                            {/* Gender Filter */}
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {genderFilters.map((f) => (
-                                    <button
-                                        key={f.value}
-                                        onClick={() => setGender(f.value)}
-                                        className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${gender === f.value
-                                            ? 'bg-rose-deep text-white shadow-md shadow-rose/20'
-                                            : 'bg-white text-charcoal/60 hover:bg-rose-light hover:text-charcoal border border-transparent hover:border-rose-light'
-                                            }`}
-                                    >
-                                        {f.label}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* Age Filter */}
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {ageFilters.map((f) => (
-                                    <button
-                                        key={f.value}
-                                        onClick={() => setAge(f.value)}
-                                        className={`px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 cursor-pointer ${age === f.value
-                                            ? 'bg-charcoal text-white shadow-md'
-                                            : 'bg-white text-charcoal/50 hover:bg-bg-warm hover:text-charcoal border border-transparent hover:border-charcoal/10'
-                                            }`}
-                                    >
-                                        {f.label}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* Use Filter */}
-                            <div className="flex flex-wrap justify-center gap-3">
-                                {useFilters.map((f) => (
-                                    <button
-                                        key={f.value}
-                                        onClick={() => setUse(f.value)}
-                                        className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.2em] font-medium transition-all duration-500 cursor-pointer ${use === f.value
-                                            ? 'bg-stone-900 text-white shadow-xl scale-105'
-                                            : 'bg-white/40 backdrop-blur-sm text-stone-500 hover:bg-white hover:text-stone-900 border border-stone-200/50 shadow-sm'
-                                            }`}
-                                    >
-                                        {f.label}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* Clear Filters */}
-                            {hasActiveFilters && (
-                                <div className="text-center">
-                                    <button
-                                        onClick={clearFilters}
-                                        className="inline-flex items-center gap-1 text-xs text-muted hover:text-rose-deep transition-colors cursor-pointer"
-                                    >
-                                        <X className="w-3 h-3" />
-                                        Limpiar filtros
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    </AnimatedSection>
-
-                    {/* Results count */}
-                    <p className="text-center text-sm text-muted mb-8">
-                        {filtered.length} {filtered.length === 1 ? 'producto' : 'productos'}
-                    </p>
-
-                    {/* Product Grid */}
-                    <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                        layout
-                    >
-                        <AnimatePresence mode="popLayout">
-                            {filtered.map((product, i) => (
-                                <motion.div
-                                    key={product.slug}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.9 }}
-                                    transition={{ duration: 0.3, delay: i * 0.03 }}
+            {/* Sticky Filter Bar - Luxury Style */}
+            <div className="sticky top-[72px] z-30 bg-white/80 backdrop-blur-md border-y border-stone-100 shadow-sm">
+                <div className="max-w-7xl mx-auto px-6 py-4">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                        {/* Categories Desktop */}
+                        <div className="hidden md:flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 md:pb-0">
+                            {genderFilters.map((f) => (
+                                <button
+                                    key={f.value}
+                                    onClick={() => setGender(f.value)}
+                                    className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-300 whitespace-nowrap ${gender === f.value
+                                            ? 'bg-charcoal text-white shadow-lg'
+                                            : 'text-stone-400 hover:text-charcoal hover:bg-stone-50'
+                                        }`}
                                 >
-                                    <Link
-                                        href={`/producto/${product.slug}`}
-                                        className="block group"
+                                    {f.label}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Mobile Selector / Info */}
+                        <div className="md:hidden flex items-center justify-center gap-4 w-full">
+                            <span className="text-xs font-bold tracking-widest uppercase text-stone-400">Filtrar por</span>
+                            <div className="h-px w-8 bg-stone-200" />
+                        </div>
+
+                        {/* Dropdowns / Specifics */}
+                        <div className="flex items-center gap-4 w-full md:w-auto overflow-x-auto md:overflow-visible no-scrollbar">
+                            <select
+                                value={age}
+                                onChange={(e) => setAge(e.target.value as any)}
+                                className="appearance-none bg-stone-50 border border-stone-100 rounded-full px-6 py-2 text-xs font-medium text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-light/50 cursor-pointer min-w-[140px]"
+                            >
+                                {ageFilters.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
+                            </select>
+
+                            <select
+                                value={use}
+                                onChange={(e) => setUse(e.target.value as any)}
+                                className="appearance-none bg-stone-50 border border-stone-100 rounded-full px-6 py-2 text-xs font-medium text-stone-600 focus:outline-none focus:ring-2 focus:ring-rose-light/50 cursor-pointer min-w-[140px]"
+                            >
+                                {useFilters.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
+                            </select>
+
+                            {hasActiveFilters && (
+                                <button
+                                    onClick={clearFilters}
+                                    className="p-2 rounded-full bg-rose-deep/10 text-rose-deep hover:bg-rose-deep/20 transition-colors"
+                                    title="Limpiar filtros"
+                                >
+                                    <X className="w-4 h-4" />
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Product Section */}
+            <section className="py-20 px-6">
+                <div className="max-w-7xl mx-auto">
+                    {/* Slow Fashion Banner Reimagined */}
+                    <AnimatedSection>
+                        <div className="mb-16 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left bg-stone-900 text-stone-100 p-6 md:p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-rose-deep/20 transition-colors duration-700" />
+                            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                <Sparkles className="w-6 h-6 text-rose-deep" />
+                            </div>
+                            <div>
+                                <h4 className="font-heading text-xl mb-1">Tu par se cose exclusivamente para vos</h4>
+                                <p className="font-body text-sm font-light text-stone-400">
+                                    En un mundo industrial, nosotros elegimos lo artesanal. <span className="text-white font-medium">Entrega en 7-10 días hábiles.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </AnimatedSection>
+
+                    <AnimatePresence mode="popLayout">
+                        {filtered.length > 0 ? (
+                            <motion.div
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-12 lg:gap-16"
+                                layout
+                            >
+                                {filtered.map((product, i) => (
+                                    <motion.div
+                                        key={product.slug}
+                                        layout
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, scale: 0.95 }}
+                                        transition={{ duration: 0.5, delay: i * 0.05 }}
                                     >
-                                        <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-transparent hover:border-rose-light/50">
-                                            {/* Image */}
-                                            <div className="aspect-square bg-bg-warm relative overflow-hidden">
-                                                <img
+                                        <Link href={`/producto/${product.slug}`} className="group block">
+                                            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-stone-100 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)]">
+                                                <Image
                                                     src={product.images[0]}
                                                     alt={product.name}
-                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                    fill
+                                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                 />
-                                                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-deep text-white text-xs font-medium">
-                                                    -{Math.round((1 - product.price / product.oldPrice) * 100)}%
+
+                                                {/* Sophisticated Overlays */}
+                                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+
+                                                {/* Badges */}
+                                                <div className="absolute top-6 left-6 flex flex-col gap-2">
+                                                    {product.isBestSeller && (
+                                                        <span className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase text-charcoal shadow-sm">
+                                                            Más amado
+                                                        </span>
+                                                    )}
                                                 </div>
-                                                {/* Wishlist */}
-                                                <div className="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-rose-light cursor-pointer">
-                                                    <Heart className="w-4 h-4 text-rose-deep" />
+
+                                                <div className="absolute top-6 right-6">
+                                                    <span className="bg-rose-deep text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-lg shadow-rose-deep/20">
+                                                        -{Math.round((1 - product.price / product.oldPrice) * 100)}%
+                                                    </span>
                                                 </div>
-                                                {/* Gender/Age badge */}
-                                                <div className="absolute bottom-3 left-3 flex gap-1">
-                                                    <span className="px-2 py-0.5 rounded-full bg-white/80 backdrop-blur-sm text-[10px] text-charcoal/70 font-medium">
+
+                                                {/* Mini Tags */}
+                                                <div className="absolute bottom-6 left-6 flex gap-2">
+                                                    <span className="bg-white/20 backdrop-blur-md text-white border border-white/30 px-3 py-1 rounded-full text-[10px] font-medium tracking-wide">
                                                         {product.ageRange}
                                                     </span>
                                                 </div>
                                             </div>
 
-                                            {/* Info */}
-                                            <div className="p-5">
-                                                <span className="text-[9px] font-body uppercase tracking-[3px] text-rose-deep/60 block mb-2">
+                                            {/* Product Info - Refined Typography */}
+                                            <div className="mt-8 text-center space-y-3">
+                                                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-rose-deep/60 block">
                                                     {product.category}
                                                 </span>
-                                                <h3 className="font-heading text-xl font-medium text-charcoal mb-2 group-hover:text-rose-deep transition-colors">
+                                                <h3 className="font-heading text-2xl md:text-3xl text-charcoal group-hover:text-rose-deep transition-colors duration-300">
                                                     {product.emotionalName}
                                                 </h3>
-                                                <p className="text-[11px] text-muted mb-4 line-clamp-1 italic font-light">
-                                                    {product.emotionalPhrase}
+                                                <p className="font-body text-sm text-stone-400 italic font-light max-w-[240px] mx-auto line-clamp-1">
+                                                    "{product.emotionalPhrase}"
                                                 </p>
-                                                <div className="flex items-center justify-between">
-                                                    <div className="flex items-center gap-2">
-                                                        <span className="text-xs text-muted line-through">
-                                                            {formatPrice(product.oldPrice)}
-                                                        </span>
-                                                        <span className="text-base font-semibold text-charcoal">
-                                                            {formatPrice(product.price)}
-                                                        </span>
-                                                    </div>
-                                                    <span className="text-xs text-rose-deep font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                        Ver detalle →
+                                                <div className="flex items-center justify-center gap-3 pt-2">
+                                                    <span className="text-sm text-stone-300 line-through font-light">
+                                                        {formatPrice(product.oldPrice)}
+                                                    </span>
+                                                    <span className="text-xl font-medium text-charcoal">
+                                                        {formatPrice(product.price)}
                                                     </span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
-
-                    {/* Empty state */}
-                    {filtered.length === 0 && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-center py-20"
-                        >
-                            <span className="text-5xl mb-4 block">🔍</span>
-                            <p className="text-muted text-lg mb-4">
-                                No encontramos productos con estos filtros.
-                            </p>
-                            <button
-                                onClick={clearFilters}
-                                className="text-rose-deep font-medium hover:underline cursor-pointer"
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="py-40 text-center"
                             >
-                                Ver todos los productos
-                            </button>
-                        </motion.div>
-                    )}
+                                <div className="text-5xl mb-6">✨</div>
+                                <h3 className="font-heading text-2xl text-charcoal mb-2">Ese par está pronto a llegar</h3>
+                                <p className="text-stone-400 font-light mb-8">No encontramos resultados para tu búsqueda.</p>
+                                <Button onClick={clearFilters} variant="outline">Ver todo lo disponible</Button>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            </section>
 
-                    {/* Bottom CTA */}
-                    <AnimatedSection className="text-center mt-16">
-                        <p className="text-muted mb-4">
-                            ¿No encontrás lo que buscás? ¡Te ayudamos!
+            {/* Bottom Emotional CTA */}
+            <section className="py-32 bg-stone-50 overflow-hidden relative">
+                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <AnimatedSection blur>
+                        <h2 className="font-heading text-4xl md:text-5xl text-charcoal mb-8 leading-tight">
+                            ¿Dudas con el talle o el modelo?
+                        </h2>
+                        <p className="font-body text-lg text-stone-500 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                            No te preocupes. Escribinos ahora mismo y una mamá de nuestro equipo te ayudará a elegir el talle perfecto según el piecito de tu bebé.
                         </p>
-                        <Button
-                            href="/contacto"
-                            variant="outline"
-                        >
-                            Consultanos por WhatsApp
-                        </Button>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <Button
+                                href="https://wa.me/595981000000" // Replace with real number or utility
+                                variant="primary"
+                                size="lg"
+                                className="min-w-[260px] shadow-2xl"
+                                external
+                            >
+                                Escribir por WhatsApp 🍼
+                            </Button>
+                            <Button href="/contacto" variant="outline" size="lg" className="min-w-[260px]">
+                                Ver guía de talles
+                            </Button>
+                        </div>
                     </AnimatedSection>
                 </div>
             </section>
-        </>
+        </main>
     );
 }
