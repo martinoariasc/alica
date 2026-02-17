@@ -54,7 +54,7 @@ const accessoryOptions: AccessoryOption[] = [
 export default function AccessoryCatalog() {
     const handleWhatsAppOrder = (itemName: string, price: number) => {
         const message = `Hola! Me interesa el accesorio: *${itemName}* (${price.toLocaleString()} Gs)`;
-        const whatsappUrl = `https://wa.me/595981234567?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/595984328246?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     };
 

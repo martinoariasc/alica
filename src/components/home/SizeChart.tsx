@@ -17,7 +17,7 @@ const sizes = [
 
 export default function SizeChart() {
     return (
-        <section className="py-24 md:py-32 relative overflow-hidden w-full bg-transparent">
+        <section id="talles" className="py-24 md:py-32 relative overflow-hidden w-full bg-transparent">
             <div className="max-w-[95%] xl:max-w-7xl mx-auto px-6 relative z-10">
                 <AnimatedSection className="text-center mb-16 md:mb-20" blur>
                     <h2 className="font-heading text-4xl md:text-6xl text-charcoal mb-4">

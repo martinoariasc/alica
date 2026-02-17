@@ -42,7 +42,7 @@ export default function ExclusiveKits() {
                             <div className="bg-white rounded-[2.5rem] overflow-hidden border border-stone-100 shadow-2xl flex flex-col group hover:shadow-gold/10 transition-all duration-700 relative h-full">
                                 {/* Scarcity Badge */}
                                 <div className="absolute top-6 right-6 z-20">
-                                    <div className="bg-rose-deep text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg animate-bounce">
+                                    <div className="bg-rose-deep text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
                                         {kit.scarcityText}
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@ export default function ExclusiveKits() {
                                         src={kit.images[0]}
                                         alt={kit.name}
                                         fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-1000"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60" />
                                 </div>
@@ -110,17 +110,9 @@ export default function ExclusiveKits() {
                                             href={`/producto/${kit.slug}`}
                                             className="w-full h-16 bg-cacao text-white rounded-full flex items-center justify-center gap-3 font-bold uppercase tracking-[0.2em] text-[11px] group-hover:bg-rose-deep transition-all duration-500 shadow-xl shadow-cacao/10 hover:shadow-rose-deep/30"
                                         >
-                                            <span>Aprovechar Oferta</span>
+                                            <span>Lo quiero</span>
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </Link>
-                                    </div>
-                                </div>
-
-                                {/* Boutique Guarantee Stamp */}
-                                <div className="absolute bottom-4 left-0 right-0 flex justify-center opacity-20 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                    <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.3em] font-bold text-cacao">
-                                        <ShieldCheck className="w-3 h-3" />
-                                        {kit.guaranteeText}
                                     </div>
                                 </div>
                             </div>

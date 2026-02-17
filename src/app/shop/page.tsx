@@ -166,6 +166,7 @@ export default function ShopPage() {
                                                             {formatPrice(product.oldPrice)}
                                                         </span>
                                                         <span className="text-2xl font-bold text-cacao tracking-tight">
+                                                            {product.slug === 'accesorios-alica-catalogo' ? 'Desde ' : ''}
                                                             {formatPrice(product.price)}
                                                         </span>
                                                     </div>

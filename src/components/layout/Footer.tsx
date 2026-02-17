@@ -12,7 +12,7 @@ export default function Footer() {
     const footerLinks = [
         { name: 'Catálogo', href: '/shop' },
         { name: 'Filosofía', href: '/nosotros' },
-        { name: 'Guía de Talles', href: '/talles' },
+        { name: 'Guía de Talles', href: '/#talles' },
         { name: 'Contacto', href: '/contacto' },
     ];
 
@@ -68,14 +68,14 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-white/10">
                     {/* Location */}
                     <div className="space-y-4 text-center md:text-left">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Ubicación</h3>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold text-center md:text-left">Ubicación</h3>
                         <p className="text-lg font-body font-light text-white">Asunción, República del Paraguay</p>
                         <p className="text-sm font-body font-light text-white/70 italic">Envíos a todo el país</p>
                     </div>
 
                     {/* Quick Links */}
                     <div className="space-y-4 text-center md:text-left">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Explorar</h3>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold text-center md:text-left">Explorar</h3>
                         <div className="grid grid-cols-1 gap-3">
                             {footerLinks.map((link) => (
                                 <Link
@@ -91,7 +91,7 @@ export default function Footer() {
 
                     {/* Promise */}
                     <div className="space-y-4 text-center md:text-left">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Promesa ALICA</h3>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold text-center md:text-left">Promesa ALICA</h3>
                         <p className="text-sm font-body font-light leading-relaxed text-white/70 italic">
                             Calzado diseñado para respetar el crecimiento natural, cosido a mano con materiales premium.
                         </p>
@@ -99,7 +99,7 @@ export default function Footer() {
 
                     {/* Social */}
                     <div className="space-y-6 flex flex-col items-center md:items-start lg:items-end">
-                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold">Sigamos Conectadas</h3>
+                        <h3 className="font-body text-[10px] tracking-[0.5em] uppercase text-[#d4af37] font-bold text-center md:text-left lg:text-right">Sigamos Conectadas</h3>
                         <div className="flex gap-4">
                             {socialLinks.map((social) => {
                                 const Icon = social.icon;

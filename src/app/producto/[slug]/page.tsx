@@ -4,6 +4,7 @@ import { use } from 'react';
 import { getProductBySlug, products } from '@/lib/products';
 import { formatPrice, buildWhatsAppURL } from '@/lib/utils';
 import { notFound } from 'next/navigation';
+import AccessoryCatalog from '@/components/shop/AccessoryCatalog';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -30,6 +31,26 @@ export default function ProductoPage({
 
     if (!product) {
         notFound();
+    }
+
+    // If this is the accessory catalog, render the special catalog view
+    if (slug === 'accesorios-alica-catalogo') {
+        return (
+            <main className="bg-transparent min-h-screen">
+                <div className="pt-32 pb-8">
+                    <div className="max-w-7xl mx-auto px-6">
+                        <nav className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                            <Link href="/" className="hover:text-rose-deep transition-colors">Inicio</Link>
+                            <span className="opacity-30">/</span>
+                            <Link href="/shop" className="hover:text-rose-deep transition-colors">Tienda</Link>
+                            <span className="opacity-30">/</span>
+                            <span className="text-stone-900 font-bold">Accesorios</span>
+                        </nav>
+                    </div>
+                </div>
+                <AccessoryCatalog />
+            </main>
+        );
     }
 
     const discount = Math.round((1 - product.price / product.oldPrice) * 100);

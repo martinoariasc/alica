@@ -93,7 +93,7 @@ export default function BaptismCollection() {
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <Button
-                                href="/shop/zapatito-bautismo-blanco-pureza"
+                                href="/producto/zapatito-bautismo-blanco-pureza"
                                 variant="primary"
                                 size="lg"
                                 className="flex-1"
@@ -101,7 +101,7 @@ export default function BaptismCollection() {
                                 Ver Zapatito Individual
                             </Button>
                             <Button
-                                href="/shop/kit-primer-sacramento-bautismo"
+                                href="/producto/kit-primer-sacramento-bautismo"
                                 variant="outline"
                                 size="lg"
                                 className="flex-1 border-2 border-gold text-gold hover:bg-gold hover:text-white"
@@ -150,7 +150,7 @@ export default function BaptismCollection() {
                                 <p className="text-white text-3xl font-bold">285.000 Gs</p>
                             </div>
                             <Button
-                                href="/shop/kit-primer-sacramento-bautismo"
+                                href="/producto/kit-primer-sacramento-bautismo"
                                 variant="primary"
                                 size="lg"
                                 className="bg-white text-cacao hover:bg-gold-muted"

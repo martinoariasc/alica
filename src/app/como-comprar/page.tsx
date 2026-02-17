@@ -34,7 +34,7 @@ const steps = [
         icon: Hammer,
         number: '04',
         title: 'Producción artesanal',
-        description: 'Hacemos tu pedido a mano con dedicación. Tarda entre 3 a 7 días hábiles.',
+        description: 'Hacemos tu pedido a mano con dedicación. Tarda entre 3 a 10 días hábiles dependiendo del modelo.',
     },
     {
         icon: Truck,
