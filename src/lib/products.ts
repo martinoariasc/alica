@@ -9,7 +9,7 @@
  * 5. scarcityText: El texto de urgencia (ej: "Solo 5 pares").
  */
 
-export type Category = 'Línea Respetuosa' | 'Botitas con Alma' | 'Sandalias' | 'Alpargatitas' | 'Accesorios';
+export type Category = 'Línea Respetuosa' | 'Botitas con Alma' | 'Sandalias' | 'Alpargatitas' | 'Accesorios' | 'Ediciones Especiales';
 export type Gender = 'nene' | 'nena' | 'unisex';
 export type AgeRange = '0-6 meses' | '6-12 meses' | '1-2 años';
 export type UseType = 'primeros pasos' | 'gateo' | 'regalo' | 'día a día' | 'ocasión especial';
