@@ -17,7 +17,7 @@ export default function StorySection() {
     const imageY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%']);
 
     return (
-        <section ref={sectionRef} className="py-32 md:py-48 relative overflow-hidden w-full">
+        <section ref={sectionRef} className="py-20 md:py-48 relative overflow-hidden w-full">
             {/* Soft Ambient Background Elements with Parallax */}
             <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
                 <ParallaxLayer speed={0.2}>

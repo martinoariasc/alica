@@ -18,30 +18,34 @@ export default function ProductCarousel() {
     const featured = getFeaturedProducts();
 
     return (
-        <section className="py-40 md:py-80 relative overflow-hidden w-full">
+        <section className="py-20 md:py-32 relative overflow-hidden w-full bg-white">
             <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6">
                 <AnimatedSection blur>
-                    <SectionTitle
-                        title="Tesoros de Edición Limitada"
-                        subtitle="Cada par es único. Cuando se va, se va para siempre."
-                    />
+                    <div className="text-center mb-16 md:mb-20 flex flex-col items-center">
+                        <span className="font-body text-[10px] tracking-[0.5em] uppercase text-rose-deep mb-4 block font-bold opacity-70">Selección Boutique</span>
+                        <h2 className="font-heading text-4xl md:text-6xl text-charcoal mb-4">
+                            Favoritos de la semana
+                        </h2>
+                        <p className="font-body text-muted italic text-base md:text-xl">
+                            Tesoros de Edición Limitada · Confección Artesanal
+                        </p>
+                    </div>
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.2} className="w-full max-w-[1920px] mx-auto">
+                <AnimatedSection delay={0.2} className="w-full">
                     <Swiper
                         modules={[Autoplay, Pagination]}
-                        spaceBetween={24}
+                        spaceBetween={16}
                         slidesPerView={1.2}
-                        centeredSlides={false}
-                        autoplay={{ delay: 4000, disableOnInteraction: false }}
+                        centeredSlides={true}
+                        autoplay={{ delay: 5000, disableOnInteraction: false }}
                         pagination={{ clickable: true }}
                         breakpoints={{
-                            640: { slidesPerView: 2.2 },
-                            1024: { slidesPerView: 3.2 },
-                            1280: { slidesPerView: 4.2 },
-                            1600: { slidesPerView: 5.2 },
+                            640: { slidesPerView: 2.2, spaceBetween: 24, centeredSlides: false },
+                            1024: { slidesPerView: 3.2, spaceBetween: 24, centeredSlides: false },
+                            1280: { slidesPerView: 4.2, spaceBetween: 32, centeredSlides: false },
                         }}
-                        className="!pb-14"
+                        className="!pb-16"
                     >
                         {featured.map((product) => (
                             <SwiperSlide key={product.slug}>
@@ -52,7 +56,7 @@ export default function ProductCarousel() {
                                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                                     >
                                         {/* Product Image */}
-                                        <div className="aspect-[4/5] relative overflow-hidden bg-bg-warm">
+                                        <div className="aspect-square md:aspect-[4/5] relative overflow-hidden bg-bg-warm">
                                             <Image
                                                 src={product.images[0]}
                                                 alt={product.name}

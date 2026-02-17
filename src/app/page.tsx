@@ -13,7 +13,7 @@ import VideoSection from '@/components/ui/VideoSection';
 
 // Custom Luxury Spacer - "The Art of the Pause"
 const LuxurySpacer = () => (
-  <div className="w-full py-16 md:py-24 flex items-center justify-center">
+  <div className="w-full py-8 md:py-24 flex items-center justify-center">
     <div className="w-px h-16 md:h-24 bg-gradient-to-b from-transparent via-rose-deep/20 to-transparent" />
   </div>
 );
@@ -68,12 +68,7 @@ export default function Home() {
       <LuxurySpacer />
 
       {/* 4. DESIRE: The Product Showcase */}
-      <div className="relative">
-        <h2 className="text-center font-heading text-4xl md:text-5xl text-charcoal mb-16">
-          Favoritos de la semana
-        </h2>
-        <ProductCarousel />
-      </div>
+      <ProductCarousel />
 
       <LuxurySpacer />
 

@@ -32,7 +32,7 @@ const benefits = [
 export default function BarefootBenefits() {
     const sectionRef = useRef<HTMLElement>(null);
     return (
-        <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden w-full">
+        <section ref={sectionRef} className="py-20 md:py-32 relative overflow-hidden w-full">
             {/* Texture overlay handled by global CSS, just need transparent bg */}
 
             {/* Floating Decorative Elements */}
