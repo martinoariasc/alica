@@ -1,3 +1,4 @@
+// Verified update - 2026-02-17
 import type { Metadata } from 'next';
 import { Italiana, Montserrat } from 'next/font/google';
 import './globals.css';
