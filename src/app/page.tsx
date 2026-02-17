@@ -29,12 +29,17 @@ export default function Home() {
 
       <LuxurySpacer />
 
-      {/* 2. PROBLEM/SOLUTION: "Why soft sole?" */}
+      {/* 2. DESIRE: The Product Showcase - Moved up for early conversion */}
+      <ProductCarousel />
+
+      <LuxurySpacer />
+
+      {/* 3. PROBLEM/SOLUTION: "Why soft sole?" */}
       <BarefootBenefits />
 
       <LuxurySpacer />
 
-      {/* 3. BRAND VALUE: "Sin Prisas" (Video Interlude) */}
+      {/* 4. BRAND VALUE: "Sin Prisas" (Video Interlude) */}
       <section className="w-full px-6 sm:px-12">
         <div className="max-w-[95%] 2xl:max-w-[1920px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
@@ -66,11 +71,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <LuxurySpacer />
-
-      {/* 4. DESIRE: The Product Showcase */}
-      <ProductCarousel />
 
       <LuxurySpacer />
 

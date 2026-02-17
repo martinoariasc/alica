@@ -90,13 +90,13 @@ export default function BaptismCollection() {
                             ))}
                         </div>
 
-                        {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                        {/* CTA Buttons - Centered and Premium */}
+                        <div className="flex flex-col sm:flex-row gap-5 pt-8 justify-start">
                             <Button
                                 href="/producto/zapatito-bautismo-blanco-pureza"
                                 variant="primary"
                                 size="lg"
-                                className="flex-1"
+                                className="min-w-[220px]"
                             >
                                 Ver Zapatito Individual
                             </Button>
@@ -104,7 +104,7 @@ export default function BaptismCollection() {
                                 href="/producto/kit-primer-sacramento-bautismo"
                                 variant="outline"
                                 size="lg"
-                                className="flex-1 border-2 border-gold text-gold hover:bg-gold hover:text-white"
+                                className="min-w-[220px] border-2 border-gold text-gold hover:bg-gold hover:text-white"
                             >
                                 <Gift className="w-4 h-4" />
                                 Ver Kit Completo
@@ -140,20 +140,20 @@ export default function BaptismCollection() {
                             Kit &ldquo;Primer Sacramento&rdquo;
                         </h3>
 
-                        <p className="font-body text-white/80 text-lg leading-relaxed">
-                            Zapatito Ceremonial + Vincha Especial + Cubrepañal de Lino + Tarjeta Personalizada + <strong className="text-gold">Ebook de Regalo</strong>
+                        <p className="font-body text-white/80 text-lg md:text-xl leading-relaxed">
+                            Zapatito Ceremonial + Vincha Especial + <strong className="text-gold">Vela Artesanal</strong> + Tarjeta Personalizada + <strong className="text-gold">Ebook de Regalo</strong>
                         </p>
 
-                        <div className="flex items-center justify-center gap-4 pt-4">
-                            <div className="text-left">
-                                <p className="text-white/50 text-sm line-through">420.000 Gs</p>
-                                <p className="text-white text-3xl font-bold">285.000 Gs</p>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-6">
+                            <div className="text-center md:text-left">
+                                <p className="text-white/40 text-sm line-through tracking-wider">420.000 Gs</p>
+                                <p className="text-white text-4xl md:text-5xl font-bold tracking-tight">285.000 Gs</p>
                             </div>
                             <Button
                                 href="/producto/kit-primer-sacramento-bautismo"
                                 variant="primary"
                                 size="lg"
-                                className="bg-white text-cacao hover:bg-gold-muted"
+                                className="bg-white text-cacao hover:bg-gold-muted px-12 h-16 rounded-full shadow-xl"
                             >
                                 Ver Kit Completo
                             </Button>

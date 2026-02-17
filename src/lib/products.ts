@@ -268,7 +268,7 @@ export const products: Product[] = [
         description: 'Diseñado especialmente para el sacramento del Bautismo. Cada puntada lleva la intención de honrar este momento único e irrepetible. Confeccionado en cuero blanco inmaculado, con suela ultra-suave que respeta sus primeros pasos hacia la fe. Un recuerdo que guardará para siempre.',
         shortDescription: 'Zapatito ceremonial para Bautismo.',
         images: [
-            '/images/products/unisex/1/077af128-0170-4b78-9f31-02166a759043.png',
+            '/images/products/unisex/zapatito-bautismo.png',
             '/images/products/unisex/1/935b3283-9d6c-4dfa-a9c5-be068fda942f.png',
             '/images/products/unisex/1/90c083ca-0c98-4ab5-896a-3f62a12c8895.jpg'
         ],
@@ -318,11 +318,11 @@ export const products: Product[] = [
         slug: 'set-primer-look-alica',
         name: 'Combo "Mi Primer Look"',
         emotionalName: 'Elegancia desde el Día 1',
-        emotionalPhrase: 'Zapatito + Cubrepañal + Vincha con descuento especial.',
+        emotionalPhrase: 'Un outfit completo pensado para sus primeras memorias.',
         price: 215000,
         oldPrice: 255000,
-        description: 'La solución ideal para sus primeras fotos o salidas. Incluye: 1 par de Zapatitos de cuero suave + 1 Cubrepañal + 1 Vincha artesanal. + De Regalo: Ebook "50 Consejos para tu bebé". Todo lo que necesita para lucir impecable y sentirse cómodo.',
-        shortDescription: 'Zapatito + Cubrepañal + Vincha + Ebook.',
+        description: 'La solución ideal para sus primeras fotos o salidas. Incluye: 1 par de Zapatitos de cuero suave + 1 Cubrepañal + 1 Accesorio a elección (Vincha artesanal para nena o Baberito para nene). + De Regalo: Ebook "50 Consejos para tu bebé". Todo lo que necesita para lucir impecable y sentirse cómodo.',
+        shortDescription: 'Zapatito + Cubrepañal + Vincha/Babero + Ebook.',
         images: [
             '/images/products/combos/combo 1/86a79d33-f191-46b9-88f9-a68739804258.jpg',
             '/images/products/combos/combo 1/9100d608-5048-4949-aae5-22ff1961d566.jpg'
@@ -332,7 +332,7 @@ export const products: Product[] = [
         ageRange: '0-6 meses',
         use: ['regalo', 'ocasión especial', 'fotos'],
         isFeatured: true,
-        benefits: ['Outfit completo (3 piezas)', 'Materiales suaves y naturales', '🎁 Ebook Exclusivo Gratis', 'Packaging Boutique incluido'],
+        benefits: ['Look completo (3 piezas)', 'Materiales suaves y naturales', '🎁 Ebook Exclusivo Gratis', 'Packaging Boutique incluido'],
         materials: ['Cuero Premium', 'Algodón'],
         care: ['Limpieza suave con paño húmedo'],
         productionTime: '3-5 días',
@@ -347,8 +347,8 @@ export const products: Product[] = [
         emotionalPhrase: 'Todo lo que tu bebé necesita para sus primeras etapas de oro.',
         price: 385000,
         oldPrice: 495000,
-        description: 'Nuestra oferta más completa e irresistible. Incluye: 2 pares de Zapatitos de diferentes tamaños para acompañar su crecimiento + 1 Cubrepañal + 1 Baberito + Pack de 3 Vinchas (si es nena). + De Regalo: Ebook "50 Consejos para tu bebé". La máxima expresión de ALICA en un solo paquete pensado para durar.',
-        shortDescription: '2 Zapatitos + 3 Vinchas + Cubrepañal + Baberito + Ebook.',
+        description: 'Nuestra oferta más completa. Incluye: 2 pares de Zapatitos de diferentes tamaños para acompañar su crecimiento + 1 Cubrepañal + 1 Baberito + Accesorios según elección (Pack de 3 Vinchas para nena). + De Regalo: Ebook "50 Consejos para tu bebé". La máxima expresión de ALICA en un solo paquete pensado para durar.',
+        shortDescription: '2 Zapatitos + Accesorios + Cubrepañal + Baberito + Ebook.',
         images: [
             '/images/products/combos/combo 3/3583681e-da95-4c77-b33b-ff06d74afa40.jpg'
         ],
@@ -357,7 +357,7 @@ export const products: Product[] = [
         ageRange: '0-12 meses',
         use: ['ajuar completo', 'regalo premium'],
         isFeatured: true,
-        benefits: ['Pasos que crecen (2 talles)', 'Colección completa (7 piezas)', '🎁 Ebook exclusivo incluido', 'Ahorro máximo garantizado'],
+        benefits: ['Pasos que crecen (2 talles)', 'Colección completa adaptada', '🎁 Ebook exclusivo incluido', 'Ahorro máximo garantizado'],
         materials: ['Cuero', 'Algodón', 'Seda'],
         care: ['Instrucciones según el modelo'],
         productionTime: '5-7 días',
@@ -369,11 +369,11 @@ export const products: Product[] = [
         slug: 'trio-ternura-y-cuento',
         name: 'Combo "Detalles que Enamoran"',
         emotionalName: 'Ternura en cada Accesorio',
-        emotionalPhrase: 'Pack de 3 Vinchas + Baberito + Ebook de Regalo.',
+        emotionalPhrase: 'Accesorios esenciales con Ebook de Regalo.',
         price: 65000,
         oldPrice: 85000,
-        description: 'Un kit de accesorios esenciales para el día a día. Incluye: 1 Pack de 3 Vinchas artesanales + 1 Baberito/Bandana de algodón. + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". El toque de elegancia que complementa cualquier look.',
-        shortDescription: 'Pack 3 Vinchas + Baberito + Ebook.',
+        description: 'Un kit de accesorios esenciales para el día a día. Puedes elegir entre Pack de 3 Vinchas artesanales (versión nena) o Set de Baberitos/Bandanas premium. + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". El toque de elegancia que complementa cualquier look.',
+        shortDescription: 'Accesorios Pack + Ebook.',
         images: [
             '/images/products/combos/combo 2/Whisk_f2be5b1fb2af7acb63748dde1191dad1eg.png'
         ],
@@ -396,10 +396,10 @@ export const products: Product[] = [
         emotionalPhrase: 'Porque este día merece ser recordado con elegancia eterna.',
         price: 285000,
         oldPrice: 420000,
-        description: 'El regalo perfecto para padrinos y familiares. Este kit ceremonial incluye: Zapatito Bautismo Blanco + Vincha Especial Blanca + Cubrepañal de Lino Natural + Packaging Premium con Tarjeta de Dedicatoria Personalizada + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". Cada elemento ha sido seleccionado para honrar la pureza de este sacramento.',
+        description: 'El regalo perfecto para padrinos y familiares. Este kit ceremonial incluye: Zapatito Bautismo Blanco + Vincha Especial Blanca + Vela Artesanal + Tarjeta de Dedicatoria Personalizada + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". Cada elemento ha sido seleccionado para honrar la pureza de este sacramento.',
         shortDescription: 'Kit completo ceremonial para Bautismo + Ebook.',
         images: [
-            '/images/products/unisex/1/077af128-0170-4b78-9f31-02166a759043.png',
+            '/images/products/unisex/zapatito-bautismo.png',
             '/images/products/unisex/1/935b3283-9d6c-4dfa-a9c5-be068fda942f.png'
         ],
         category: 'Colección Bautismo',
@@ -410,12 +410,12 @@ export const products: Product[] = [
         benefits: [
             '✨ Zapatito Ceremonial Blanco',
             '👑 Vincha Especial incluida',
-            '🤍 Cubrepañal de Lino Premium',
+            '🕯️ Vela Artesanal',
             '🎁 Ebook Exclusivo Gratis',
             '💌 Tarjeta personalizada para padrinos',
             '📦 Caja boutique con lazo de seda'
         ],
-        materials: ['Cuero blanco', 'Lino', 'Seda', 'Algodón orgánico'],
+        materials: ['Cuero blanco', 'Cera de soja', 'Seda', 'Algodón orgánico'],
         care: ['Conservar como recuerdo familiar'],
         productionTime: '10-14 días (preparación ceremonial)',
         guaranteeText: 'Bendición Garantizada',

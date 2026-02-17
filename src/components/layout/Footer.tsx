@@ -45,7 +45,7 @@ export default function Footer() {
                     </motion.div>
 
                     <h2 className="font-heading text-3xl md:text-5xl text-white leading-tight italic max-w-2xl px-4">
-                        &ldquo;Porque sus primeros pasos son el comienzo de <span className="text-[#d4af37]">su historia más linda</span>.&rdquo;
+                        &ldquo;Porque sus primeros pasos son el comienzo de <span className="text-white">su historia más linda</span>.&rdquo;
                     </h2>
 
                     <div className="w-12 h-px bg-white/30" />

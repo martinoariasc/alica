@@ -146,17 +146,17 @@ export default function ShopPage() {
                                             </div>
 
                                             {/* Product Info - High Contrast & Action Button */}
-                                            <div className="mt-8 text-center space-y-4">
-                                                <div className="space-y-1">
-                                                    <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-rose-deep block">
+                                            <div className="mt-10 mb-6 text-center space-y-5">
+                                                <div className="space-y-2">
+                                                    <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-rose-deep block opacity-80">
                                                         {product.category}
                                                     </span>
-                                                    <h3 className="font-heading text-2xl md:text-3xl text-cacao group-hover:text-rose-deep transition-colors duration-300 font-medium">
+                                                    <h3 className="font-heading text-3xl md:text-4xl text-cacao group-hover:text-rose-deep transition-colors duration-500 font-light tracking-tight">
                                                         {product.emotionalName}
                                                     </h3>
                                                 </div>
 
-                                                <p className="font-body text-base text-cacao italic font-medium max-w-[260px] mx-auto line-clamp-1 opacity-90">
+                                                <p className="font-body text-sm text-stone-400 italic font-light max-w-[280px] mx-auto line-clamp-1 leading-relaxed">
                                                     "{product.emotionalPhrase}"
                                                 </p>
 

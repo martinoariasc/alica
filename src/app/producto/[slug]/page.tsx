@@ -139,52 +139,53 @@ export default function ProductoPage({
 
                                 {/* Identification */}
                                 <AnimatedSection delay={0.1}>
-                                    <div className="space-y-4">
-                                        <div className="flex items-center gap-3">
-                                            <span className="bg-rose-light/30 text-rose-deep px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                                    <div className="space-y-6">
+                                        <div className="flex items-center gap-4">
+                                            <span className="bg-rose-light/20 text-rose-deep px-4 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-[0.3em]">
                                                 {product.gender}
                                             </span>
-                                            <span className="text-stone-300 text-xs tracking-widest uppercase">
+                                            <span className="text-stone-300 text-[10px] tracking-[0.3em] uppercase font-medium">
                                                 {product.ageRange}
                                             </span>
                                         </div>
-                                        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight">
+                                        <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-charcoal leading-[1.1] tracking-tight">
                                             {product.emotionalName}
                                         </h1>
-                                        <p className="font-body text-xl md:text-2xl text-stone-400 font-light italic leading-relaxed">
+                                        <p className="font-body text-xl md:text-2xl text-stone-400 font-light italic leading-loose border-l-2 border-gold/20 pl-6 py-2">
                                             &ldquo;{product.emotionalPhrase}&rdquo;
                                         </p>
                                     </div>
                                 </AnimatedSection>
 
-                                {/* Pricing & Scarcity - Increased Visibility */}
+                                {/* Pricing & Scarcity - Increased Visibility & Space */}
                                 <AnimatedSection delay={0.2}>
-                                    <div className="flex flex-col gap-6 p-8 rounded-[2rem] bg-white border border-stone-100 shadow-sm">
-                                        <div className="flex items-center flex-wrap gap-4">
-                                            <span className="text-4xl md:text-5xl font-bold text-cacao tracking-tight">{formatPrice(product.price)}</span>
-                                            <div className="flex flex-col">
-                                                <span className="text-lg text-cacao/40 line-through font-medium decoration-rose-deep/40 decoration-2">{formatPrice(product.oldPrice)}</span>
-                                                <span className="text-[10px] font-bold text-rose-deep uppercase tracking-widest">Ahorrás {formatPrice(product.oldPrice - product.price)}</span>
+                                    <div className="flex flex-col gap-8 p-10 rounded-[2.5rem] bg-white border border-stone-50 shadow-[0_20px_50px_rgba(0,0,0,0.03)]">
+                                        <div className="flex items-baseline flex-wrap gap-6">
+                                            <span className="text-5xl md:text-6xl font-normal text-cacao tracking-tighter">{formatPrice(product.price)}</span>
+                                            <div className="flex flex-col gap-1">
+                                                <span className="text-xl text-stone-300 line-through font-light decoration-stone-200/50 decoration-1">{formatPrice(product.oldPrice)}</span>
+                                                <span className="text-[9px] font-bold text-rose-deep uppercase tracking-[0.2em]">Exclusividad con Ahorro</span>
                                             </div>
-                                            <span className="ml-auto bg-rose-deep text-white text-[11px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-rose-deep/20">
-                                                OFERTA -{discount}%
-                                            </span>
                                         </div>
 
-                                        <div className="h-px w-full bg-stone-100" />
+                                        <div className="h-px w-full bg-stone-50" />
 
-                                        <div className="flex items-center gap-3 text-rose-deep bg-rose-light/10 p-4 rounded-xl border border-rose-light/20">
-                                            <Clock className="w-5 h-5" />
-                                            <span className="text-sm font-bold uppercase tracking-[0.05em]">{product.scarcityText}</span>
+                                        <div className="flex items-center gap-4 text-rose-deep/70">
+                                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-rose-light/10">
+                                                <Clock className="w-4 h-4" />
+                                            </div>
+                                            <span className="text-xs font-bold uppercase tracking-[0.1em]">{product.scarcityText}</span>
                                         </div>
                                     </div>
                                 </AnimatedSection>
 
-                                {/* Description - Better weight */}
+                                {/* Description - Better weight & Spacing */}
                                 <AnimatedSection delay={0.3}>
-                                    <p className="text-lg md:text-xl text-cacao-light font-medium leading-relaxed">
-                                        {product.description}
-                                    </p>
+                                    <div className="prose prose-stone max-w-none">
+                                        <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed tracking-wide">
+                                            {product.description}
+                                        </p>
+                                    </div>
                                 </AnimatedSection>
 
                                 {/* Actions - High Contrast */}
