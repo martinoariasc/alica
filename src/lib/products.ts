@@ -9,7 +9,7 @@
  * 5. scarcityText: El texto de urgencia (ej: "Solo 5 pares").
  */
 
-export type Category = 'Línea Respetuosa' | 'Botitas con Alma' | 'Sandalias' | 'Alpargatitas' | 'Accesorios' | 'Cubrepañales' | 'Ediciones Especiales';
+export type Category = 'Línea Respetuosa' | 'Botitas con Alma' | 'Sandalias' | 'Alpargatitas' | 'Accesorios' | 'Cubrepañales' | 'Ediciones Especiales' | 'Colección Bautismo';
 export type Gender = 'nene' | 'nena' | 'unisex';
 export type AgeRange = '0-6 meses' | '6-12 meses' | '1-2 años';
 export type UseType = 'primeros pasos' | 'gateo' | 'regalo' | 'día a día' | 'ocasión especial';
@@ -282,6 +282,33 @@ export const products: Product[] = [
         scarcityText: '¡El favorito de mamá!',
     },
     {
+        slug: 'zapatito-bautismo-blanco-pureza',
+        name: 'Zapatito Bautismo Blanco',
+        emotionalName: 'Pureza Sagrada',
+        emotionalPhrase: 'Para el día en que recibe la bendición más grande.',
+        price: 165000,
+        oldPrice: 210000,
+        description: 'Diseñado especialmente para el sacramento del Bautismo. Cada puntada lleva la intención de honrar este momento único e irrepetible. Confeccionado en cuero blanco inmaculado, con suela ultra-suave que respeta sus primeros pasos hacia la fe. Un recuerdo que guardará para siempre.',
+        shortDescription: 'Zapatito ceremonial para Bautismo.',
+        images: [
+            '/images/products/unisex/1/077af128-0170-4b78-9f31-02166a759043.png',
+            '/images/products/unisex/1/935b3283-9d6c-4dfa-a9c5-be068fda942f.png',
+            '/images/products/unisex/1/90c083ca-0c98-4ab5-896a-3f62a12c8895.jpg'
+        ],
+        category: 'Colección Bautismo',
+        gender: 'unisex',
+        ageRange: '0-6 meses',
+        use: ['ocasión especial', 'regalo'],
+        isFeatured: true,
+        benefits: ['Blanco inmaculado', 'Suela ceremonial suave', 'Packaging especial para la ocasión', 'Certificado de autenticidad'],
+        materials: ['Cuero premium blanco', 'Forro de seda'],
+        care: ['Guardar como reliquia familiar'],
+        productionTime: '7-10 días (hecho con devoción)',
+        guaranteeText: 'Recuerdo Eterno',
+        scarcityText: 'Edición Ceremonial',
+        isBestSeller: true,
+    },
+    {
         slug: 'vincha-clasica-minimal',
         name: 'Vincha Clásica',
         emotionalName: 'Sutileza Diaria',
@@ -449,6 +476,39 @@ export const products: Product[] = [
         productionTime: '2-3 días',
         guaranteeText: 'Calidad Premium ALICA',
         scarcityText: '¡Combo más buscado!',
+    },
+    {
+        slug: 'kit-primer-sacramento-bautismo',
+        name: 'Kit "Primer Sacramento"',
+        emotionalName: 'El Regalo que Trasciende',
+        emotionalPhrase: 'Porque este día merece ser recordado con elegancia eterna.',
+        price: 285000,
+        oldPrice: 420000,
+        description: 'El regalo perfecto para padrinos y familiares. Este kit ceremonial incluye: Zapatito Bautismo Blanco + Vincha Especial Blanca + Cubrepañal de Lino Natural + Packaging Premium con Tarjeta de Dedicatoria Personalizada + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". Cada elemento ha sido seleccionado para honrar la pureza de este sacramento.',
+        shortDescription: 'Kit completo ceremonial para Bautismo + Ebook.',
+        images: [
+            '/images/products/unisex/1/077af128-0170-4b78-9f31-02166a759043.png',
+            '/images/products/unisex/1/935b3283-9d6c-4dfa-a9c5-be068fda942f.png'
+        ],
+        category: 'Colección Bautismo',
+        gender: 'unisex',
+        ageRange: '0-6 meses',
+        use: ['ocasión especial', 'regalo'],
+        isFeatured: true,
+        benefits: [
+            '✨ Zapatito Ceremonial Blanco',
+            '👑 Vincha Especial incluida',
+            '🤍 Cubrepañal de Lino Premium',
+            '🎁 Ebook Exclusivo Gratis',
+            '💌 Tarjeta personalizada para padrinos',
+            '📦 Caja boutique con lazo de seda'
+        ],
+        materials: ['Cuero blanco', 'Lino', 'Seda', 'Algodón orgánico'],
+        care: ['Conservar como recuerdo familiar'],
+        productionTime: '10-14 días (preparación ceremonial)',
+        guaranteeText: 'Bendición Garantizada',
+        scarcityText: 'Solo 3 kits por mes',
+        isBestSeller: true,
     }
 ];
 

@@ -11,6 +11,7 @@ import FinalCTA from '@/components/home/FinalCTA';
 import Separator from '@/components/ui/Separator';
 import VideoSection from '@/components/ui/VideoSection';
 import ExclusiveKits from '@/components/home/ExclusiveKits';
+import BaptismCollection from '@/components/home/BaptismCollection';
 
 // Custom Luxury Spacer - "The Art of the Pause"
 const LuxurySpacer = () => (
