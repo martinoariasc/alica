@@ -149,30 +149,7 @@ export const products: Product[] = [
         scarcityText: 'Solo 15 unidades por semana',
         isBestSeller: true,
     },
-    {
-        slug: 'vincha-nudo-marron',
-        name: 'Vincha Nudo Marrón',
-        emotionalName: 'El Detalle Final',
-        emotionalPhrase: 'Porque los pequeños detalles crean los grandes recuerdos.',
-        price: 65000,
-        oldPrice: 85000,
-        description: 'Vincha de tela elástica premium en tono marrón chocolate. Suave, ligera y eterna.',
-        shortDescription: 'Vincha elástica de nudo suave.',
-        images: [
-            '/images/products/accesorios/Accesorios/f8fb2468-c130-4f46-8952-ec5918a890b7.jpg'
-        ],
-        category: 'Accesorios',
-        gender: 'nena',
-        ageRange: '0-6 meses',
-        use: ['regalo', 'día a día', 'ocasión especial'],
-        isFeatured: true,
-        benefits: ['No aprieta', 'Tela hipoalergénica', 'Talle único'],
-        materials: ['Algodón elástico premium'],
-        care: ['Lavar a mano'],
-        productionTime: '2-3 días',
-        guaranteeText: 'Ternura Garantizada',
-        scarcityText: 'Ideal para combinar',
-    },
+
     {
         slug: 'combo-ternura-accesorios',
         name: 'Combo Ternura (Vinchas + Baberito)',
