@@ -87,11 +87,16 @@ export default function AccessoryCatalog() {
                             priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-cacao/40 via-transparent to-transparent opacity-60" />
-                        <div className="absolute bottom-12 left-12 text-white">
+                        <div className="absolute bottom-12 left-12 text-center w-full md:w-auto md:text-left text-white">
                             <span className="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block opacity-80">Catálogo Completo</span>
                             <h2 className="font-heading text-4xl md:text-6xl italic leading-none">Esenciales ALICA</h2>
                         </div>
                     </div>
+                </div>
+
+                {/* Elegant Spacer */}
+                <div className="w-full py-16 flex items-center justify-center">
+                    <div className="w-px h-12 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
                 </div>
 
                 {/* Luxury Grid */}
@@ -155,26 +160,30 @@ export default function AccessoryCatalog() {
                     ))}
                 </div>
 
-                {/* Elegant Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-40" />
+                {/* Elegant Spacer */}
+                <div className="w-full py-24 flex items-center justify-center">
+                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
+                </div>
 
                 {/* Elevated Quote / Philosphy Section - Better Centered & Spaced */}
                 <div className="max-w-4xl mx-auto mb-40 text-center px-4">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
+                        initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.5 }}
+                        transition={{ duration: 1.8 }}
                         viewport={{ once: true }}
                     >
-                        <p className="font-heading text-4xl md:text-5xl lg:text-6xl text-cacao italic font-light leading-[1.3] mb-8">
+                        <p className="font-heading text-3xl md:text-4xl text-cacao italic font-light leading-[1.5] mb-8">
                             "En <span className="text-gold">ALICA</span>, creemos que los detalles <br className="hidden md:block" /> no son el complemento, son la esencia del alma."
                         </p>
-                        <div className="w-16 h-[1px] bg-gold/30 mx-auto" />
+                        <div className="w-12 h-[1px] bg-gold/20 mx-auto" />
                     </motion.div>
                 </div>
 
-                {/* Elegant Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-40" />
+                {/* Elegant Spacer */}
+                <div className="w-full py-24 flex items-center justify-center">
+                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
+                </div>
 
                 {/* Why Section - Redesigned to be more Boutique */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-16 mb-40 px-4">
@@ -198,6 +207,11 @@ export default function AccessoryCatalog() {
                             <p className="font-body text-charcoal/40 text-[15px] leading-relaxed px-4 font-light italic">"{benefit.desc}"</p>
                         </motion.div>
                     ))}
+                </div>
+
+                {/* Elegant Spacer */}
+                <div className="w-full py-24 flex items-center justify-center">
+                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
                 </div>
 
                 {/* Final Trust Badge */}

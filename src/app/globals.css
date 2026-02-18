@@ -70,6 +70,21 @@ body {
   /* Increased from 300/400 for better legibility */
   letter-spacing: 0.01em;
   overflow-x: hidden;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span:not([class*="icon"]):not([class*="lucide"]) {
+  text-align: center;
+  text-wrap: balance;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1,
@@ -84,10 +99,6 @@ h6 {
   line-height: 1.2;
   font-weight: 500;
   /* Ensured solid presence */
-  text-align: center;
-  text-wrap: balance;
-  margin-left: auto;
-  margin-right: auto;
   transition: all 0.5s ease;
 }
 
