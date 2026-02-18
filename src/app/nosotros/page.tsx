@@ -201,16 +201,16 @@ export default function NosotrosPage() {
                         {values.map((value, i) => {
                             const Icon = value.icon;
                             return (
-                                <AnimatedSection key={value.title} delay={i * 0.1}>
+                                <AnimatedSection key={value.title} delay={i * 0.1} className="h-full">
                                     <motion.div
-                                        className="p-10 rounded-[2.5rem] bg-white border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-500 group"
+                                        className="h-full p-8 md:p-10 rounded-[2.5rem] bg-white border border-stone-100 shadow-sm hover:shadow-xl hover:shadow-stone-200/50 transition-all duration-500 group flex flex-col items-center text-center"
                                         whileHover={{ y: -8 }}
                                     >
-                                        <div className="w-16 h-16 rounded-[1.5rem] bg-rose-light/20 flex items-center justify-center mb-8 group-hover:bg-rose-deep group-hover:text-white transition-colors duration-500">
-                                            <Icon className="w-7 h-7 text-rose-deep group-hover:text-white transition-colors duration-500" />
+                                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-[1.2rem] md:rounded-[1.5rem] bg-rose-light/20 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-rose-deep group-hover:text-white transition-colors duration-500 shrink-0">
+                                            <Icon className="w-6 h-6 md:w-7 md:h-7 text-rose-deep group-hover:text-white transition-colors duration-500" />
                                         </div>
-                                        <h3 className="font-heading text-2xl font-semibold text-charcoal mb-4 tracking-tight">{value.title}</h3>
-                                        <p className="text-stone-500 font-light leading-relaxed text-base">{value.desc}</p>
+                                        <h3 className="font-heading text-xl md:text-2xl font-semibold text-charcoal mb-4 tracking-tight leading-tight">{value.title}</h3>
+                                        <p className="text-stone-500 font-light leading-relaxed text-sm md:text-base flex-grow">{value.desc}</p>
                                     </motion.div>
                                 </AnimatedSection>
                             );

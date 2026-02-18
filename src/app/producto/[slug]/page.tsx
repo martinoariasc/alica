@@ -193,10 +193,10 @@ export default function ProductoPage({
                                             variant="whatsapp"
                                             size="lg"
                                             external
-                                            className="w-full h-20 text-lg flex items-center justify-center gap-4 rounded-full shadow-2xl shadow-green-500/10 hover:shadow-green-500/20 transition-all duration-500"
+                                            className="w-full h-20 text-lg flex items-center justify-center gap-4 rounded-full shadow-2xl shadow-green-500/10 hover:shadow-green-500/20 transition-all duration-500 animate-soft-pulse"
                                         >
                                             <MessageCircle className="w-6 h-6" />
-                                            Gestionar Pedido Personalizado
+                                            Lo Quiero 🤍
                                         </Button>
 
                                         <Button

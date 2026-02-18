@@ -157,8 +157,8 @@ export default function ShopPage() {
                                                     </span>
                                                 </div>
                                                 <div className="pt-2">
-                                                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-cacao text-white text-[10px] font-bold uppercase tracking-[0.2em] group-hover:bg-gold transition-all duration-500">
-                                                        <span>Ver detalle</span>
+                                                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-cacao text-white text-[10px] font-bold uppercase tracking-[0.2em] group-hover:bg-gold transition-all duration-500 group-hover:animate-soft-pulse">
+                                                        <span>Lo Quiero</span>
                                                     </div>
                                                 </div>
                                             </div>
