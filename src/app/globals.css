@@ -4,27 +4,27 @@
 
 /* ── Alica Bebes Luxury Design Tokens ── */
 :root {
-  --alica-bg: #FDFCFB;
-  --alica-bg-warm: #F9F6F2;
-  --alica-linen: #F0EBE5;
-  --alica-cacao: #2A1F1B;
-  /* Deeper, richer espresso */
-  --alica-cacao-light: #4A3B36;
-  --alica-gold: #D4B692;
-  /* More refined gilded gold */
-  --alica-gold-muted: #E2D1B9;
-  --alica-rose: #EAD8D4;
-  --alica-rose-deep: #BFA5A0;
-  --alica-rose-light: #F5EBE8;
+  --alica-bg: #FCFAF7;
+  /* Softer, creamier white */
+  --alica-bg-warm: #F7F3EE;
+  --alica-linen: #EFE9E1;
+  --alica-cacao: #211A17;
+  /* Darker, richer chocolate */
+  --alica-cacao-light: #3D322E;
+  --alica-gold: #C5A073;
+  /* More antique gold */
+  --alica-gold-muted: #DBC4A7;
+  --alica-rose: #E5CDCA;
+  --alica-rose-deep: #A6847E;
+  --alica-rose-light: #F2E8E6;
+  --alica-champagne: #F9F1E8;
+  --alica-nude: #F3E5D8;
   --alica-white: #FFFFFF;
 
-  /* Semantic Mappings - Increased contrast for readability */
-  --alica-text-main: #2A1F1B;
-  --alica-text-muted: #4A3B36;
-  /* Darkened for better readability */
-  --alica-text-light: #5A4D48;
-  /* Darkened for accessibility */
-  /* Replacement for cases where text was too light */
+  /* Semantic Mappings */
+  --alica-text-main: #211A17;
+  --alica-text-muted: #524641;
+  --alica-text-light: #7A6F6A;
   --alica-charcoal: var(--alica-cacao);
 }
 
@@ -40,6 +40,8 @@
   --color-rose: var(--alica-rose);
   --color-rose-deep: var(--alica-rose-deep);
   --color-rose-light: var(--alica-rose-light);
+  --color-champagne: var(--alica-champagne);
+  --color-nude: var(--alica-nude);
   --font-heading: 'Italiana', serif;
   --font-body: 'Inter', sans-serif;
   --animate-float: float 6s ease-in-out infinite;

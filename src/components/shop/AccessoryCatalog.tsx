@@ -102,50 +102,55 @@ export default function AccessoryCatalog() {
                 </div>
 
                 {/* Luxury Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-32">
                     {accessoryOptions.map((item, index) => (
                         <motion.div
                             key={item.name}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.21, 0.45, 0.32, 0.9] }}
+                            transition={{ duration: 1, delay: index * 0.1, ease: [0.21, 0.45, 0.32, 0.9] }}
                             viewport={{ once: true }}
                             className="group flex flex-col"
                         >
-                            <div className="bg-bg-warm/50 rounded-[2.5rem] p-10 border border-linen/50 transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] hover:-translate-y-2 flex flex-col h-full relative overflow-hidden">
-                                {/* Discount Badge */}
+                            <div className="bg-white rounded-[3rem] p-12 border border-stone-100 transition-all duration-700 hover:shadow-[0_60px_100px_-30px_rgba(42,31,27,0.1)] hover:-translate-y-3 flex flex-col h-full relative overflow-hidden group">
+                                {/* Subtle Texture Background */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-champagne/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                                {/* Discount Badge - More Elegant */}
                                 {item.oldPrice > item.price && (
-                                    <div className="absolute top-8 right-8 bg-rose-deep/90 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-10">
-                                        -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}%
+                                    <div className="absolute top-10 right-10 flex flex-col items-end">
+                                        <div className="bg-rose-deep text-white text-[8px] font-bold uppercase tracking-[0.3em] px-3 py-1.5 rounded-full z-10 shadow-lg">
+                                            Edición Limitada
+                                        </div>
                                     </div>
                                 )}
 
-                                {/* Icon Layer */}
-                                <div className="mb-8 relative self-center sm:self-start">
-                                    <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500">
-                                        {item.icon}
-                                    </div>
+                                {/* Header Info */}
+                                <div className="mb-10 relative">
+                                    <div className="w-12 h-px bg-gold/30 mb-8" />
+                                    <h3 className="font-heading text-4xl text-cacao mb-6 group-hover:text-rose-deep transition-colors duration-500 leading-tight">
+                                        {item.name}
+                                    </h3>
+                                    <div className="h-[1px] w-full bg-gradient-to-r from-stone-100 to-transparent" />
                                 </div>
 
                                 {/* Content */}
-                                <div className="flex-grow text-center sm:text-left">
-                                    <h3 className="font-heading text-3xl text-cacao mb-4 group-hover:text-rose-deep transition-colors duration-500">
-                                        {item.name}
-                                    </h3>
-                                    <p className="text-charcoal/50 text-[13px] leading-relaxed mb-8 italic line-clamp-2">
-                                        "{item.description}"
+                                <div className="flex-grow">
+                                    <p className="text-stone-400 text-sm leading-relaxed mb-10 font-light tracking-wide">
+                                        {item.description}
                                     </p>
                                 </div>
 
                                 {/* Pricing & CTA */}
-                                <div className="mt-auto space-y-6 pt-6 border-t border-linen/30">
-                                    <div className="flex flex-col items-center sm:items-start">
-                                        <div className="flex items-baseline gap-3">
-                                            <span className="text-2xl md:text-3xl font-bold text-cacao tracking-tight">
+                                <div className="mt-auto space-y-10 pt-8">
+                                    <div className="flex flex-col gap-2">
+                                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-300">Inversión</span>
+                                        <div className="flex items-baseline gap-4">
+                                            <span className="text-3xl font-normal text-cacao tracking-tight">
                                                 Gs. {item.price.toLocaleString()}
                                             </span>
                                             {item.oldPrice > item.price && (
-                                                <span className="text-xs text-cacao/30 line-through font-medium">
+                                                <span className="text-sm text-stone-300 line-through font-light">
                                                     {item.oldPrice.toLocaleString()}
                                                 </span>
                                             )}
@@ -154,10 +159,10 @@ export default function AccessoryCatalog() {
 
                                     <button
                                         onClick={() => handleWhatsAppOrder(item.name, item.price)}
-                                        className="w-full h-14 bg-cacao text-white rounded-full flex items-center justify-center gap-3 font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-rose-deep transition-all duration-500 shadow-xl shadow-cacao/10 hover:shadow-rose-deep/20 group-hover:animate-soft-pulse relative overflow-hidden"
+                                        className="w-full h-16 bg-cacao text-white rounded-full flex items-center justify-center gap-4 font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-gold transition-all duration-700 hover:shadow-2xl hover:shadow-gold/20 relative z-10"
                                     >
-                                        <ShoppingBag className="w-4 h-4" />
-                                        <span>Lo Quiero</span>
+                                        <div className="w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-white animate-pulse" />
+                                        <span>Solicitar ahora</span>
                                     </button>
                                 </div>
                             </div>
