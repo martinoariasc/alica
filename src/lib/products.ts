@@ -349,38 +349,6 @@ export const products: Product[] = [
         productionTime: '2-3 días',
         guaranteeText: 'Detalles Premium',
         scarcityText: '¡Combo favorito!',
-    },
-    {
-        slug: 'kit-primer-sacramento-bautismo',
-        name: 'Kit "Primer Sacramento"',
-        emotionalName: 'El Regalo que Trasciende',
-        emotionalPhrase: 'Porque este día merece ser recordado con elegancia eterna.',
-        price: 285000,
-        oldPrice: 420000,
-        description: 'El regalo perfecto para padrinos y familiares. Este kit ceremonial incluye: Zapatito Bautismo Blanco + Vincha Especial Blanca + Vela Artesanal + Tarjeta de Dedicatoria Personalizada + De Regalo: Ebook "50 Consejos para cuidar a tu bebé". Cada elemento ha sido seleccionado para honrar la pureza de este sacramento.',
-        shortDescription: 'Kit completo ceremonial para Bautismo + Ebook.',
-        images: [
-            '/images/products/unisex/zapatito-bautismo.png',
-            '/images/products/unisex/1/935b3283-9d6c-4dfa-a9c5-be068fda942f.png'
-        ],
-        category: 'Colección Bautismo',
-        gender: 'unisex',
-        use: ['ocasión especial', 'regalo'],
-        isFeatured: true,
-        benefits: [
-            '✨ Zapatito Ceremonial Blanco',
-            '👑 Vincha Especial incluida',
-            '🕯️ Vela Artesanal',
-            '🎁 Ebook Exclusivo Gratis',
-            '💌 Tarjeta personalizada para padrinos',
-            '📦 Caja boutique con lazo de seda'
-        ],
-        materials: ['Cuero blanco', 'Cera de soja', 'Seda', 'Algodón orgánico'],
-        care: ['Conservar como recuerdo familiar'],
-        productionTime: '10-14 días (preparación ceremonial)',
-        guaranteeText: 'Bendición Garantizada',
-        scarcityText: 'Solo 3 kits por mes',
-        isBestSeller: true,
     }
 ];
 

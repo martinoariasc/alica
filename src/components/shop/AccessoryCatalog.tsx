@@ -102,67 +102,59 @@ export default function AccessoryCatalog() {
                 </div>
 
                 {/* Luxury Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-40">
                     {accessoryOptions.map((item, index) => (
                         <motion.div
                             key={item.name}
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: index * 0.1, ease: [0.21, 0.45, 0.32, 0.9] }}
+                            transition={{ duration: 1.2, delay: index * 0.15, ease: [0.215, 0.61, 0.355, 1] }}
                             viewport={{ once: true }}
-                            className="group flex flex-col"
+                            className="group"
                         >
-                            <div className="bg-white rounded-[3rem] p-12 border border-stone-100 transition-all duration-700 hover:shadow-[0_60px_100px_-30px_rgba(42,31,27,0.1)] hover:-translate-y-3 flex flex-col h-full relative overflow-hidden group">
-                                {/* Subtle Texture Background */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-champagne/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                                {/* Discount Badge - More Elegant */}
+                            <div className="flex flex-col h-full bg-white/40 backdrop-blur-sm border-b border-linen/50 pb-12 transition-all duration-700 hover:border-gold/30">
+                                {/* Elegant Badge Alternative */}
                                 {item.oldPrice > item.price && (
-                                    <div className="absolute top-10 right-10 flex flex-col items-end">
-                                        <div className="bg-rose-deep text-white text-[8px] font-bold uppercase tracking-[0.3em] px-3 py-1.5 rounded-full z-10 shadow-lg">
-                                            Edición Limitada
-                                        </div>
+                                    <div className="mb-6">
+                                        <span className="text-[8px] font-bold uppercase tracking-[0.4em] text-rose-deep bg-rose-light/20 px-4 py-1.5 rounded-full">
+                                            Pieza Selecta
+                                        </span>
                                     </div>
                                 )}
 
-                                {/* Header Info */}
-                                <div className="mb-10 relative">
-                                    <div className="w-12 h-px bg-gold/30 mb-8" />
-                                    <h3 className="font-heading text-4xl text-cacao mb-6 group-hover:text-rose-deep transition-colors duration-500 leading-tight">
+                                {/* Header Section */}
+                                <div className="space-y-4 mb-10">
+                                    <h3 className="font-heading text-4xl text-cacao tracking-tight group-hover:text-gold transition-colors duration-500">
                                         {item.name}
                                     </h3>
-                                    <div className="h-[1px] w-full bg-gradient-to-r from-stone-100 to-transparent" />
+                                    <div className="w-8 h-[1px] bg-gold/40 group-hover:w-16 transition-all duration-700" />
                                 </div>
 
-                                {/* Content */}
-                                <div className="flex-grow">
-                                    <p className="text-stone-400 text-sm leading-relaxed mb-10 font-light tracking-wide">
+                                {/* Content Section */}
+                                <div className="flex-grow mb-12">
+                                    <p className="font-body text-charcoal/50 text-[14px] leading-relaxed font-light tracking-wide max-w-[90%]">
                                         {item.description}
                                     </p>
                                 </div>
 
-                                {/* Pricing & CTA */}
-                                <div className="mt-auto space-y-10 pt-8">
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-300">Inversión</span>
-                                        <div className="flex items-baseline gap-4">
-                                            <span className="text-3xl font-normal text-cacao tracking-tight">
-                                                Gs. {item.price.toLocaleString()}
+                                {/* Pricing & Actions */}
+                                <div className="space-y-10 pt-8 border-t border-linen/30">
+                                    <div className="flex items-baseline gap-4">
+                                        <span className="text-3xl font-light text-cacao tracking-tighter">
+                                            Gs. {item.price.toLocaleString()}
+                                        </span>
+                                        {item.oldPrice > item.price && (
+                                            <span className="text-xs text-stone-300 line-through font-extralight tracking-widest">
+                                                {item.oldPrice.toLocaleString()}
                                             </span>
-                                            {item.oldPrice > item.price && (
-                                                <span className="text-sm text-stone-300 line-through font-light">
-                                                    {item.oldPrice.toLocaleString()}
-                                                </span>
-                                            )}
-                                        </div>
+                                        )}
                                     </div>
 
                                     <button
                                         onClick={() => handleWhatsAppOrder(item.name, item.price)}
-                                        className="w-full h-16 bg-cacao text-white rounded-full flex items-center justify-center gap-4 font-bold uppercase tracking-[0.25em] text-[10px] hover:bg-gold transition-all duration-700 hover:shadow-2xl hover:shadow-gold/20 relative z-10"
+                                        className="inline-flex items-center justify-center h-14 px-10 border border-cacao text-cacao text-[10px] font-bold uppercase tracking-[0.4em] rounded-full hover:bg-cacao hover:text-white transition-all duration-500 group-hover:shadow-[0_15px_30px_rgba(33,26,23,0.1)] relative overflow-hidden"
                                     >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-white animate-pulse" />
-                                        <span>Solicitar ahora</span>
+                                        <span className="relative z-10">Solicitar Información</span>
                                     </button>
                                 </div>
                             </div>
