@@ -62,30 +62,16 @@ html {
 }
 
 body {
-  background-color: transparent;
+  background-color: var(--alica-bg);
   color: var(--alica-charcoal);
   font-family: var(--font-body);
-  line-height: 1.7;
+  line-height: 1.6;
   font-weight: 400;
-  /* Increased from 300/400 for better legibility */
   letter-spacing: 0.01em;
   overflow-x: hidden;
-  text-align: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span:not([class*="icon"]):not([class*="lucide"]) {
-  text-align: center;
-  text-wrap: balance;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* Removed global text-align: center to allow for professional layouts */
 
 h1,
 h2,
@@ -95,11 +81,15 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--alica-charcoal);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   font-weight: 500;
-  /* Ensured solid presence */
-  transition: all 0.5s ease;
+  text-wrap: balance;
+}
+
+p {
+  line-height: 1.8;
+  color: var(--alica-text-muted);
 }
 
 /* Structural Helpers */
@@ -280,6 +270,15 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Premium Utilities ── */
+.shadow-premium-gold {
+  box-shadow: 0 20px 50px -15px rgba(197, 160, 115, 0.1), 0 10px 30px -10px rgba(197, 160, 115, 0.05);
+}
+
+.shadow-premium-cacao {
+  box-shadow: 0 20px 50px -15px rgba(33, 26, 23, 0.2), 0 10px 30px -10px rgba(33, 26, 23, 0.1);
 }
 
 /* ── Reduced Motion ── */

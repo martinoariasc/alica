@@ -36,20 +36,20 @@ export default function Button({
 }: ButtonProps) {
 
     const variants = {
-        primary: "bg-white text-cacao border border-stone-100 hover:border-gold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-5px_rgba(0,0,0,0.1)] transition-all duration-700",
-        secondary: "bg-cacao text-white border border-cacao hover:bg-cacao-light shadow-xl hover:shadow-2xl transition-all duration-500",
+        primary: "bg-cacao text-white border border-cacao hover:bg-transparent hover:text-cacao shadow-sm hover:shadow-xl transition-all duration-700",
+        secondary: "bg-white text-cacao border border-linen hover:border-gold hover:bg-stone-50 transition-all duration-500",
         outline: "bg-transparent text-white border border-white/30 hover:border-white hover:bg-white/[0.05] backdrop-blur-md transition-all duration-500",
         outlineDark: "bg-transparent text-cacao border border-cacao/10 hover:border-cacao hover:bg-cacao/[0.02] transition-all duration-500",
-        whatsapp: "bg-[#25D366] text-white border border-[#25D366]/50 shadow-[0_15px_35px_-10px_rgba(37,211,102,0.4)] hover:shadow-[0_25px_45px_-10px_rgba(37,211,102,0.5)]",
+        whatsapp: "bg-white text-cacao border border-stone-200 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] hover:border-gold hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] flex items-center justify-center gap-3",
         ghost: "bg-transparent text-cacao/60 hover:text-cacao transition-all duration-500",
         caviar: "bg-white/40 backdrop-blur-sm text-cacao border border-stone-200 hover:border-gold hover:bg-white transition-all duration-700 tracking-[0.4em] font-light italic",
         luxury: "bg-cacao text-white border border-cacao hover:border-gold hover:bg-transparent hover:text-cacao shadow-[0_15px_45px_-15px_rgba(0,0,0,0.3)] transition-all duration-700"
     };
 
     const sizes = {
-        sm: 'h-11 px-6 text-[10px]',
-        md: 'h-14 px-10 text-[11px]',
-        lg: 'h-16 px-14 text-[12px]',
+        sm: 'h-10 px-6 text-[9px]',
+        md: 'h-14 px-10 text-[10px]',
+        lg: 'h-18 px-14 text-[11px]',
     };
 
     const baseStyles = "relative inline-flex items-center justify-center font-body font-semibold tracking-[0.25em] uppercase transition-all duration-700 select-none cursor-pointer overflow-hidden group rounded-full";

@@ -16,16 +16,16 @@ export default function SectionTitle({
     className = '',
 }: SectionTitleProps) {
     const alignStyles = {
-        left: 'text-left',
-        center: 'text-center',
-        right: 'text-right',
+        left: 'text-left items-start',
+        center: 'text-center items-center',
+        right: 'text-right items-end',
     };
 
     return (
-        <div className={cn('mb-12', alignStyles[align], className)}>
+        <div className={cn('mb-20 md:mb-32 flex flex-col', alignStyles[align], className)}>
             <h2
                 className={cn(
-                    'font-heading text-3xl md:text-4xl lg:text-5xl font-semibold mb-4',
+                    'font-heading text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-6',
                     light ? 'text-white' : 'text-cacao'
                 )}
             >
@@ -34,20 +34,20 @@ export default function SectionTitle({
             {subtitle && (
                 <p
                     className={cn(
-                        'text-lg md:text-xl max-w-2xl font-light',
+                        'text-lg md:text-xl lg:text-2xl max-w-3xl font-light italic opacity-60 leading-relaxed',
                         align === 'center' ? 'mx-auto' : '',
                         light ? 'text-white/80' : 'text-muted'
                     )}
                 >
-                    {subtitle}
+                    &ldquo;{subtitle}&rdquo;
                 </p>
             )}
             <div
                 className={cn(
-                    'mt-6 h-[2px] w-16 rounded-full',
-                    align === 'center' ? 'mx-auto' : '',
-                    align === 'right' ? 'ml-auto' : '',
-                    light ? 'bg-white/40' : 'bg-rose'
+                    'mt-10 h-px w-24 bg-gradient-to-r from-transparent via-gold/40 to-transparent',
+                    align === 'left' ? 'via-gold/40 to-transparent ml-0 mr-auto' : '',
+                    align === 'right' ? 'via-gold/40 to-transparent ml-auto mr-0' : '',
+                    light ? 'via-white/20' : ''
                 )}
             />
         </div>
