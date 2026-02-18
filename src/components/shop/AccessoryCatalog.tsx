@@ -22,13 +22,6 @@ const accessoryOptions: AccessoryOption[] = [
         icon: '🎀'
     },
     {
-        name: 'Vincha Especial',
-        price: 30000,
-        oldPrice: 45000,
-        description: 'Con detalles artesanales. Para ocasiones especiales.',
-        icon: '👑'
-    },
-    {
         name: 'Pack x3 Vinchas',
         price: 45000,
         oldPrice: 60000,
@@ -162,15 +155,29 @@ export default function AccessoryCatalog() {
                     ))}
                 </div>
 
-                {/* Elevated Quote / Philosphy Section */}
-                <div className="max-w-4xl mx-auto mb-32 border-y border-linen py-16 text-center">
-                    <p className="font-heading text-3xl md:text-4xl text-cacao italic font-light leading-snug">
-                        "En <span className="text-gold">ALICA</span>, creemos que los detalles <br className="hidden md:block" /> no son el complemento, son la esencia del alma."
-                    </p>
+                {/* Elegant Divider */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-40" />
+
+                {/* Elevated Quote / Philosphy Section - Better Centered & Spaced */}
+                <div className="max-w-4xl mx-auto mb-40 text-center px-4">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.5 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="font-heading text-4xl md:text-5xl lg:text-6xl text-cacao italic font-light leading-[1.3] mb-8">
+                            "En <span className="text-gold">ALICA</span>, creemos que los detalles <br className="hidden md:block" /> no son el complemento, son la esencia del alma."
+                        </p>
+                        <div className="w-16 h-[1px] bg-gold/30 mx-auto" />
+                    </motion.div>
                 </div>
 
+                {/* Elegant Divider */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-40" />
+
                 {/* Why Section - Redesigned to be more Boutique */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-16 mb-40 px-4">
                     {[
                         { icon: '✨', title: 'Curación Artesanal', desc: 'Cada puntada es ejecutada con precisión y amor por manos paraguayas.' },
                         { icon: '🌿', title: 'Pureza Orgánica', desc: 'Sustentabilidad y suavidad: utilizamos solo las fibras más nobles para su piel.' },
@@ -180,15 +187,15 @@ export default function AccessoryCatalog() {
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.2 }}
+                            transition={{ delay: i * 0.2, duration: 1 }}
                             viewport={{ once: true }}
                             className="text-center group"
                         >
-                            <div className="w-12 h-12 rounded-full border border-gold/30 mx-auto flex items-center justify-center mb-6 group-hover:bg-gold/5 transition-colors duration-500 text-gold font-bold italic">
+                            <div className="w-16 h-16 rounded-full border border-gold/10 mx-auto flex items-center justify-center mb-10 group-hover:bg-gold/5 transition-all duration-700 text-gold font-light italic text-xl">
                                 0{i + 1}
                             </div>
-                            <h4 className="font-heading text-2xl text-cacao mb-4 tracking-tight">{benefit.title}</h4>
-                            <p className="text-charcoal/50 text-sm leading-relaxed px-4">{benefit.desc}</p>
+                            <h4 className="font-heading text-3xl text-cacao mb-6 tracking-tight">{benefit.title}</h4>
+                            <p className="font-body text-charcoal/40 text-[15px] leading-relaxed px-4 font-light italic">"{benefit.desc}"</p>
                         </motion.div>
                     ))}
                 </div>

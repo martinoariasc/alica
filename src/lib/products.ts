@@ -266,7 +266,6 @@ export const products: Product[] = [
         isFeatured: true,
         benefits: [
             '🎀 Vincha Clásica: 20.000 Gs',
-            '👑 Vincha Especial: 30.000 Gs',
             '🎁 Pack x3 Vinchas: 45.000 Gs',
             '🤍 Baberito/Bandana: 35.000 Gs',
             '🎁 Pack x3 Baberitos: 45.000 Gs'
